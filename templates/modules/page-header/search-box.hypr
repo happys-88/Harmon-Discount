@@ -1,0 +1,17 @@
+﻿<form id="searchbox" class="mz-searchbox" action="/search">
+    <span class="mz-searchbox-field{% if not themeSettings.useSearchAutocomplete %} hide-autocomplete{% endif %}">
+        <label for="search-field" class="hide" aria-labelledby="search-field">
+            <span>{{labels.searchQuery}}</span></label>
+        <input placeholder="Find a Bargain!" aria-label="{{labels.searchQuery}}" id="search-field" type="search" class="mz-searchbox-input ml-header-search-field form-control" autocomplete="off" name="query" data-mz-role="searchquery">
+        <button class="mz-searchbox-button" type="submit">
+            <span class="glyphicon glyphicon-search">
+                <span class="hide">Search</span>
+            </span>
+        </button>
+    </span>
+    {% require_script "modules/contextify" %}
+    {% if themeSettings.useSearchAutocomplete %}
+        {% require_script "modules/search-autocomplete" %}
+    {% endif %}
+    <input type="hidden" name="categoryId" value="{{themeSettings.allProductsCategoryId}}">
+</form>
