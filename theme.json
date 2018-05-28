@@ -8,7 +8,7 @@
     "isTablet": true,
     "name": "Harmon Discount",
     "allowProduction": true,
-    "baseTheme": "https://github.com/happys-88/CTS-BaseTheme",  
+    "baseTheme": "https://github.com/happys-88/Harmon-Discount",  
     "baseThemeVersion": {
       "commit": "6b128945a4d14e3626903f743c2ea2137584c406"
     }
