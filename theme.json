@@ -8,9 +8,9 @@
     "isTablet": true,
     "name": "Harmon Discount",
     "allowProduction": true,
-    "baseTheme": "https://github.com/happys-88/Harmon-Discount",  
+    "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "6b128945a4d14e3626903f743c2ea2137584c406"
+      "commit": "0f3f869b02bc085194cb0aaadcb05d00af2a0ea2"
     }
   },
   "editors": [
@@ -1845,6 +1845,161 @@
       ],
       "icon": "/resources/admin/widgets/new_arrival.png",
       "id": "new_arrivals_product",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "id": "slider",
+      "displayName": "Home Multipanel Slider", 
+      "displayTemplate": "catalog/slider",
+      "editViewFields": [
+        {
+          "xtype": "panel",
+          "title": "First Slide",
+          "items": [
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Title",
+              "name": "slideTitleOne",
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 1",
+              "name": "slide1_ShortDescText1",   
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 2",
+              "name": "slide1_ShortDescText2",    
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 3 (Pink Heading)", 
+              "name": "slide1_ShortDescText3",  
+              "xtype": "mz-input-text" 
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Link/Url",
+              "name": "slideLinkOne",
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Image",
+              "name": "slideImageOne",
+              "xtype": "mz-input-image"
+            },
+            {
+              "anchor": "100%", 
+              "fieldLabel": "Add Button Ttile",
+              "name": "slideButtonOne",
+              "xtype": "mz-input-text"
+            }
+          ]
+        },
+        {
+          "xtype": "panel",
+          "title": "Second Slide",
+          "items": [
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Title",
+              "name": "slideTitleTwo",
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 1", 
+              "name": "slide2_ShortDescText1",   
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 2",
+              "name": "slide2_ShortDescText2",    
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 3 (Pink Heading)", 
+              "name": "slide2_ShortDescText3",   
+              "xtype": "mz-input-text" 
+            },
+            {
+              "anchor": "100%", 
+              "fieldLabel": "Add Link/Url",
+              "name": "slideLinkTwo",
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Button Ttile",
+              "name": "slideButtonTwo",
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%", 
+              "fieldLabel": "Add Image",
+              "name": "slideImageTwo",
+              "xtype": "mz-input-image"
+            }
+          ]
+        },
+        {
+          "xtype": "panel",
+          "title": "Third Slider", 
+          "items": [
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Title",
+              "name": "slideTitleThree",
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 1",
+              "name": "slide3_ShortDescText1",   
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 2",
+              "name": "slide3_ShortDescText2",    
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Description Text 3 (Pink Heading)", 
+              "name": "slide3_ShortDescText3",  
+              "xtype": "mz-input-text" 
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Link/Url",
+              "name": "slideLinkThree",
+              "xtype": "mz-input-text"
+            },
+            {
+              "anchor": "100%",
+              "fieldLabel": "Add Image",
+              "name": "slideImageThree",
+              "xtype": "mz-input-image"
+            },
+            {
+              "anchor": "100%",  
+              "fieldLabel": "Add Button Ttile",
+              "name": "slideButtonThree",
+              "xtype": "mz-input-text"
+            }
+          ]
+        }
+      ],
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
       "validPageTypes": [
         "*"
       ]
