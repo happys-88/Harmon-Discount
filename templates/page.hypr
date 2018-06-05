@@ -27,15 +27,19 @@
                     <meta property="og:title" content='{{ PageContext.metaTitle|replace("'","&rsquo;")|replace('"','&rdquo;')|safe }}'>
                 {%endif%}
             {%endif%}
-        {% endif %}{% if PageContext.MetaDescription %}
+        {% endif %}
+
+        {% if PageContext.MetaDescription %}
         <meta property="og:description" content='{{ PageContext.MetaDescription|replace("'","&rsquo;")|safe }}'>
         {% endif %}{% if model.mainImage %}
         <meta property="og:image" content='https:{% make_url "image" model.mainImage with maxWidth=350 as_parameters %}'>
         {%else%}
-        <meta property="og:image" content='{% if themeSettings.defaultStoreImage %}{{themeSettings.defaultStoreImage}}{% endif %}'>
+        <meta property="og:image" content='{% if themeSettings.defaultStoreImage %}{{themeSettings.defaultStoreImage}}{% endif %}'> 
         {% endif %}{% if PageContext.MetaKeywords %}
         <meta name="keywords" content='{{ PageContext.MetaKeywords|replace("'","&rsquo;") }}'>
-        {% endif %}{% if PageContext.MetaDescription %}
+        {% endif %}
+
+        {% if PageContext.MetaDescription %}
         <meta name="description" content='{{ PageContext.MetaDescription|replace("'","&rsquo;")|safe}}'>
         {% endif %}{% if PageContext.correlationId %}
         <meta name="correlationId" content="{{ PageContext.correlationId }}">

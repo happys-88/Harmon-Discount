@@ -5,10 +5,10 @@
 {% block body-tag-classes %}mz-homepage{% endblock body-tag-classes %}
 
 {% block body-content %}
-    {% dropzone "home-dropzone-1" scope="page" %}
-    {% dropzone "home-dropzone-2" scope="page" %}
-    {% dropzone "home-dropzone-3" scope="page" %}
-    {% dropzone "home-dropzone-4" scope="page" %}     
+    {% dropzone "home-dropzone-1" scope="template" %}
+    {% dropzone "home-dropzone-2" scope="template" %}
+    {% dropzone "home-dropzone-3" scope="template" %}
+    {% dropzone "home-dropzone-4" scope="template" %}      
 {% endblock body-content %}
 {% block body-below-content %}
 {% endblock body-below-content %}
