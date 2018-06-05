@@ -68,5 +68,10 @@
             
         </li>
         {% endif %}
-    </ul>    
+        <li class="mz-utilitynav-item">
+           <a href="/flippPage">
+                <p>Monthly Ad</p>
+            </a>            
+        </li>
+    </ul>  
 </nav>

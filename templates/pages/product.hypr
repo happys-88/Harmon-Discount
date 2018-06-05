@@ -71,6 +71,11 @@
         };
     </script>
 {% endblock ensighten-data %}
+
+{% block webcollage-script %}
+    <script src="//scontent.webcollage.net/api/v2/product-content"></script>
+{% endblock webcollage-script %}
+
 {% block body-content %}
 {% preload_json model "product" %}
 <div class="product-wrapper">

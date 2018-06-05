@@ -144,3 +144,8 @@
   {% endfor %}
 </div>
 {% endif %}
+
+<div id="wc-power-page"></div>
+{% block webcollage-loader %}
+  <script>Webcollage.loadProductContent('harmondiscount', '078462253104', {"power-page":{autoPlayAndStop: true}});</script>
+{% endblock webcollage-loader %}

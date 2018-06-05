@@ -1,0 +1,23 @@
+{% extends "page" %}
+
+{% block body-content %}
+	{% block live-chat-script %}
+        <script src="http://circulars.harmondiscount.com/hosted_services/iframe.js"></script>
+        <div id="flipp-container"></div>
+        <script>
+            // Flipp Hosted Circular
+            var containerId = 'flipp-container';
+            var circFrame = new wishabi.hostedservices.iframe.decorate(
+                containerId,
+                'harmonfacevalues',
+                wishabi.hostedservices.iframe.Sizing.PAGE,
+                {
+                    minHeight: 500,
+                    initialHeight: 500,
+                    extraPadding: 0,
+                    queryParameters: ''
+                }
+            );
+        </script>
+    {% endblock live-chat-script  %}
+{% endblock body-content %}
