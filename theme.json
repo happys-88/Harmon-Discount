@@ -218,6 +218,14 @@
       ]
     },
     {
+      "documentType": "web_page",
+      "entityType": "webpage",
+      "id": "flippPage",
+      "template": "flippPage",
+      "title": "Flipp Flyer",
+      "userCreatable": true
+    }, 
+    {
       "entityType": "siteTemplate",
       "id": "site_page",
       "template": "page",
