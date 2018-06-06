@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "9071651f42405ee9ee0b5149e978ee610c6a68dd"
+      "commit": "e290444078d82d64dcc577341f6f649171fe2fe0"
     }
   },
   "editors": [
@@ -221,10 +221,10 @@
       "documentType": "web_page",
       "entityType": "webpage",
       "id": "flippPage",
-      "template": "flippPage",
+      "template": "flipp-page",  
       "title": "Flipp Flyer",
       "userCreatable": true
-    }, 
+    },
     {
       "entityType": "siteTemplate",
       "id": "site_page",
@@ -837,6 +837,12 @@
       "displayName": "Featured Products",
       "displayTemplate": "catalog/featuredproducts",
       "editViewFields": [
+        {
+          "anchor": "100%",
+          "fieldLabel": "Title",
+          "name": "title",
+          "xtype": "mz-input-text"
+        }, 
         {
           "anchor": "100%",
           "fieldLabel": "Products",
@@ -2008,6 +2014,81 @@
         }
       ],
       "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "displayName": "Shop By Brand",
+      "displayTemplate": "misc/shop-by-brand",
+      "editViewFields": [
+        {
+          "anchor": "100%",
+          "fieldLabel": "Choose Shop By Brand",
+          "name": "shopByBrand",
+          "xtype": "mz-input-categorymulti"
+        }
+      ],
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "id": "shop-by-brand",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "displayName": "Shop By Category",
+      "displayTemplate": "misc/shop-by-category",
+      "editViewFields": [
+        {
+          "anchor": "100%",
+          "fieldLabel": "Choose Shop By Category",
+          "name": "shopByCategory",
+          "xtype": "mz-input-categorymulti"
+        }
+      ],
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png", 
+      "id": "shop-by-category",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "id": "shopNowWidget",
+      "displayName": "Shop Now Widget",
+      "displayTemplate": "misc/shop-now-widget",
+      "editViewFields": [
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Image for the widget", 
+          "name": "slideImageOne",
+          "xtype": "mz-input-image"
+        },
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add First Title",
+          "name": "TitleOne",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Second Title",
+          "name": "TitleTwo",
+          "xtype": "mz-input-text"
+        }, 
+        {
+          "anchor": "50%",
+          "fieldLabel": "Button Text Value",
+          "name": "ButtonTextValue",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Link",
+          "name": "shopNowWidgetUrl",
+          "xtype": "mz-input-text"
+        }
+      ],
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png", 
       "validPageTypes": [
         "*"
       ]
