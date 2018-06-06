@@ -1,4 +1,7 @@
 {% extends "page" %}
+{% block head-tag-scripts %}
+     <script src="//scontent.webcollage.net/api/v2/product-content"></script>
+{% endblock head-tag-scripts %}
 {% block title-tag-content %}{% firstof pageContext.metaTitle|replace("'","&rsquo;")|replace('"',"”")|safe model.content.productName|replace("'","&rsquo;")|replace('"',"”")|safe %}  - {% parent %}{% endblock title-tag-content %}
 {% block body-tag-classes %}mz-product{% endblock body-tag-classes %} 
 {% block ensighten-data %}
@@ -71,10 +74,6 @@
         };
     </script>
 {% endblock ensighten-data %}
-
-{% block webcollage-script %}
-    <script src="//scontent.webcollage.net/api/v2/product-content"></script>
-{% endblock webcollage-script %}
 
 {% block body-content %}
 {% preload_json model "product" %}

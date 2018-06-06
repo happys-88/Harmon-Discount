@@ -145,7 +145,10 @@
 </div>
 {% endif %}
 
-<div id="wc-power-page"></div>
-{% block webcollage-loader %}
-  <script>Webcollage.loadProductContent('harmondiscount', '078462253104', {"power-page":{autoPlayAndStop: true}});</script>
-{% endblock webcollage-loader %}
+<!-- WebCollage code snippet. Place the <div> tag as per the UI requirement -->
+ <div id="wc-power-page"></div>
+  {% block webcollage-loader %}
+    <!-- <script>Webcollage.loadProductContent('harmondiscount', '079656031782', {"power-page":{autoPlayAndStop: true}});</script> -->
+    <script>Webcollage.loadProductContent('harmondiscount', {{ model.productCode }}, {"power-page":{autoPlayAndStop: true}});</script>
+    model.productCode
+  {% endblock webcollage-loader %}
