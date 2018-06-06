@@ -7,8 +7,9 @@
 {% block body-content %}
     {% dropzone "home-dropzone-1" scope="template" %}
     {% dropzone "home-dropzone-2" scope="template" %}
-    {% dropzone "home-dropzone-3" scope="template" %}
-    {% dropzone "home-dropzone-4" scope="template" %}      
+    {% dropzone "home-dropzone-3-brands" scope="template" %}  
+    {% dropzone "home-dropzone-4" scope="template" %}
+    {% dropzone "home-dropzone-5" scope="template" %}       
 {% endblock body-content %}
 {% block body-below-content %}
 {% endblock body-below-content %}

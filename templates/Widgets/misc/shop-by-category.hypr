@@ -1,6 +1,6 @@
 
 <div class="mz-shop-by-category"> 
-	<h2 class="heading-2"><span>{{labels.shopByCategoryHeading}}</span></h2> 
+	<h2 class="heading-2"><span>{{ Model.config.title }}</span></h2>   
 		<ul class="mz-shop-by-categorylist row">   
 			{% for getCategoryId in model.config.shopByCategory %}
 				{% for categoryObject in categories.all %} 

@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "e290444078d82d64dcc577341f6f649171fe2fe0"
+      "commit": "0c4e265ba44871ba263e3e925d1d563cc85c8ebe"
     }
   },
   "editors": [
@@ -221,7 +221,7 @@
       "documentType": "web_page",
       "entityType": "webpage",
       "id": "flippPage",
-      "template": "flipp-page",  
+      "template": "flipp-page",
       "title": "Flipp Flyer",
       "userCreatable": true
     },
@@ -842,7 +842,7 @@
           "fieldLabel": "Title",
           "name": "title",
           "xtype": "mz-input-text"
-        }, 
+        },
         {
           "anchor": "100%",
           "fieldLabel": "Products",
@@ -2024,6 +2024,12 @@
       "editViewFields": [
         {
           "anchor": "100%",
+          "fieldLabel": "Title",
+          "name": "title",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "100%",
           "fieldLabel": "Choose Shop By Brand",
           "name": "shopByBrand",
           "xtype": "mz-input-categorymulti"
@@ -2041,12 +2047,18 @@
       "editViewFields": [
         {
           "anchor": "100%",
+          "fieldLabel": "Title",
+          "name": "title",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "100%",
           "fieldLabel": "Choose Shop By Category",
           "name": "shopByCategory",
           "xtype": "mz-input-categorymulti"
         }
       ],
-      "icon": "/resources/admin/widgets/28_deal_of_the_day.png", 
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
       "id": "shop-by-category",
       "validPageTypes": [
         "*"
@@ -2059,7 +2071,7 @@
       "editViewFields": [
         {
           "anchor": "50%",
-          "fieldLabel": "Add Image for the widget", 
+          "fieldLabel": "Add Image for the widget",
           "name": "slideImageOne",
           "xtype": "mz-input-image"
         },
@@ -2071,10 +2083,10 @@
         },
         {
           "anchor": "50%",
-          "fieldLabel": "Add Second Title",
+          "fieldLabel": "Add Description Text", 
           "name": "TitleTwo",
           "xtype": "mz-input-text"
-        }, 
+        },
         {
           "anchor": "50%",
           "fieldLabel": "Button Text Value",
@@ -2088,7 +2100,7 @@
           "xtype": "mz-input-text"
         }
       ],
-      "icon": "/resources/admin/widgets/28_deal_of_the_day.png", 
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
       "validPageTypes": [
         "*"
       ]

@@ -1,12 +1,15 @@
-.shop-by-brand{ 
+.shop-by-brand{  
     float: left;
     width: 100%;
     .shop-by-brand-list{
-        float: left;
+        display: table; 
         width: 100%;
         margin: 0;
         padding: 0;
         list-style: none;
+        li{
+            display: table-cell;
+        }
         .brand-logo{
             width: 100%;
             display: table;
@@ -16,6 +19,7 @@
                 display: table-cell;
                 vertical-align: middle;
                 img{
+                    width: auto; 
                     max-width: 100%;
                 }
             }
