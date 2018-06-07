@@ -4,7 +4,7 @@
             var currentElemnt = $(this);
             currentElemnt.removeAttr("style");
             var currentDropWidth = currentElemnt.outerWidth(),
-                rightReference = $(".logo").offset().left + $(".ml-header-content").outerWidth(),
+                rightReference = $(".logo").offset().left + $(".mz-header-content").outerWidth(),
                 currentParentOffset = currentElemnt.parents(".mz-sitenav-item").offset().left,
                 arrowPosition = currentElemnt.parents(".mz-sitenav-item").width() / 2 - 10,
                 leftOrigin = $(".mz-sitenav-list").offset().left;
@@ -34,7 +34,7 @@
             var $this = $(this),
                 config = $this.data();
 
-            $this.find(config.mzContextify).each(function() {
+            $this.find(config.mzContextify).each(function() { 
                 var $item = $(this);
                 if (config.mzContextifyAttr === "class") {
                     $item.addClass(config.mzContextifyVal);

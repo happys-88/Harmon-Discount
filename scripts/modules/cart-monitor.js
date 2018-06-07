@@ -9,7 +9,7 @@ define(['modules/jquery-mozu', 'modules/api', 'bootstrap', 'modules/page-header/
         userId = user.userId,
         $document = $(document),
         CartMonitor = {
-            setAmount: function(amount) {
+            setAmount: function(amount) {  
                 var localAmount = Hypr.engine.render("{{price|currency}}", { locals: { price: amount } });
                 this.$amountEl.text(localAmount);
             },
@@ -27,7 +27,7 @@ define(['modules/jquery-mozu', 'modules/api', 'bootstrap', 'modules/page-header/
                     $.cookie('mozucart', JSON.stringify(summary.data), { path: '/' });
                     savedCarts[userId] = summary.data;
                     $document.ready(function() {
-                        $('.ml-header-global-cart-wrapper').css('display', 'block');
+                        $('.mz-header-global-cart-wrapper').css('display', 'block');
                         CartMonitor.setCount(summary.data.totalQuantity);
                         CartMonitor.setAmount(summary.data.total);
                         GlobalCart.update(showGlobalCart);
@@ -54,7 +54,7 @@ define(['modules/jquery-mozu', 'modules/api', 'bootstrap', 'modules/page-header/
         CartMonitor.$el = $('[data-mz-role="cartcount"]').text(savedCart.totalQuantity || 0);
         CartMonitor.$amountEl = $('[data-mz-role="cartamount"]').text(savedCart.total || 0);
         try {
-            $('.ml-header-global-cart-wrapper').doubletaptogoipad();
+            $('.mz-header-global-cart-wrapper').doubletaptogoipad();
         } catch (e0) {
         }
     });

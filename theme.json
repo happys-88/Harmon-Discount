@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "0c4e265ba44871ba263e3e925d1d563cc85c8ebe"
+      "commit": "b797d6ee807c75b0e82960ce2c0b383474f91d5a"
     }
   },
   "editors": [
@@ -2083,7 +2083,7 @@
         },
         {
           "anchor": "50%",
-          "fieldLabel": "Add Description Text", 
+          "fieldLabel": "Add Description Text",
           "name": "TitleTwo",
           "xtype": "mz-input-text"
         },
