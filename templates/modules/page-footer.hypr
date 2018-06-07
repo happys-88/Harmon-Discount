@@ -4,10 +4,7 @@
 			<div class="col-xs-12 hidden-xs">
 				{% dropzone "footer-dropzone-1" scope="site" %}
 				{% dropzone "footer-dropzone-2" scope="site" %} 
-				{% comment %}
-					{% dropzone "footer" scope="site" %}
-				{% endcomment %}
-			</div>
+			</div> 
 		</div>
 	</div>
 </div>
@@ -56,15 +53,18 @@
 				<div class="row container-links">
 					<div class="col-xs-12">
 						<div class="row">
-							<div class="col-xs-4">
+							<div class="col-xs-3">
 								{% dropzone "footer-cat-links-col1" scope="site" %}
 							</div>
-							<div class="col-xs-4">
+							<div class="col-xs-3">
 								{% dropzone "footer-cat-links-col2" scope="site" %}
 							</div>
-							<div class="col-xs-4 top-pad">
+							<div class="col-xs-3">
 								{% dropzone "footer-cat-links-col3" scope="site" %}
 							</div>
+							<div class="col-xs-3">
+								{% dropzone "footer-cat-links-col4" scope="site" %}
+							</div> 
 						</div>
 					</div>								
 				</div>
