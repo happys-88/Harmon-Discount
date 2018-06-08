@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "b797d6ee807c75b0e82960ce2c0b383474f91d5a"
+      "commit": "212e73eee54c91cc42b509932aadc24b62efef78"
     }
   },
   "editors": [
