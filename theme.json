@@ -2104,6 +2104,53 @@
       "validPageTypes": [
         "*"
       ]
+    },
+    {
+      "displayName": "Global Footer Widget",  
+      "displayTemplate": "misc/global-footer-widget",
+      "editViewFields": [
+        {
+          "anchor": "100%", 
+          "fieldLabel": "Add image for first widget", 
+          "name": "firstImage",
+          "xtype": "mz-input-image"
+        },
+        {
+          "anchor": "100%", 
+          "fieldLabel": "Add url for first widget",
+          "name": "firstUrl", 
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "100%", 
+          "fieldLabel": "Add image for second widget", 
+          "name": "secondImage",
+          "xtype": "mz-input-image"
+        },
+        {
+          "anchor": "100%", 
+          "fieldLabel": "Add url for second widget",
+          "name": "secondUrl", 
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "100%", 
+          "fieldLabel": "Add image for third widget", 
+          "name": "thirdImage", 
+          "xtype": "mz-input-image"
+        },
+        {
+          "anchor": "100%", 
+          "fieldLabel": "Add url for third widget",
+          "name": "thirdUrl",  
+          "xtype": "mz-input-text"
+        }
+      ],
+      "id": "globalFooterWidget", 
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "validPageTypes": [
+        "*"
+      ]
     }
   ]
 }

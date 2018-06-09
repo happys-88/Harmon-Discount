@@ -39,7 +39,7 @@
       margin-bottom: 0;
     }
     .site-root-nav,
-    .ml-global-footer,
+    .mz-global-footer,
     .footer-icons,
     .mz-checkout-qty-label-mobile,
     .mz-print-hide,
@@ -50,7 +50,7 @@
     a[href]:after {
         content: none !important;
     }
-    #mz-shipping-section,#mz-billing-section{
+    #mz-shipping-section,#mz-billing-section{ 
       width: 50%; 
       float: left;
     }

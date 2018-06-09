@@ -202,7 +202,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', [
         'build',
         'mozusync:upload',
-        'compress',
         'mozutheme:check',
         'watch:sync'
     ]);
