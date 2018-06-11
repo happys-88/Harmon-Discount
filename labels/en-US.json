@@ -534,7 +534,7 @@
     "findAStore": "Find A Store",
     "storeTitle": "Store locator | Christmas Tree Shops andThat!",
     "visitOurSites": "Visit our other sites:",
-    "copyWriteText": "Christmas Tree Shops.",
+    "copyWriteText": "Harmon Stores, Inc.", 
     "storeDetails": "Expanded Health & Beauty Section",
     "seeMore": "see more",
     "prev": "prev",
@@ -631,5 +631,8 @@
     "requiredField": "Indicates a required field",
     "selectedTopicMissing": "Please select a topic",
     "checkoutPaypal": "Checkout via Paypal",
-    "paypalMessage": "You will be redirected to the PayPal website"
+    "paypalMessage": "You will be redirected to the PayPal website",
+
+    // Custom Labels - Harmon
+    "shopAllBrands": "Shop All Brands" 
 }

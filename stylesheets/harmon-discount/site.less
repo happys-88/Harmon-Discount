@@ -6,7 +6,7 @@
 @baseBlueColor: #495363;
 @cartColor: #d05f2a; 
 @headingTwoFontSize: 24px;
-@headingTwoColor: #00adce; 
+@headingTwoColor: #000;  
 @dropzoneMargin: 70px;
 @primaryColor: #002C50;
 @textColorWhite: #fff;
@@ -84,13 +84,15 @@ img[data-mztp]{
 	font-size: @headingTwoFontSize;
 	color: @headingTwoColor;
 	line-height: @headingTwoFontSize+4;
-	text-transform: uppercase;
+	text-transform: none;
 	position: relative;
-	margin: @gutter 0;
+	margin: 0 0 30px; 
+	font-weight: normal;
+	text-align: center;   
 	span{
 		display: inline-block;
 		background: @textColorWhite; 
-		padding-right: @gutter;
+		padding: 0 25px; 
 		position: relative;
 		z-index: 9;
 	}
@@ -140,6 +142,13 @@ img[data-mztp]{
 	background: #e20177; 
 }
 
+/**** Featured Products ****/
+.mz-homepage{
+	.mz-featured-products{
+		margin-bottom: 60px; 
+	}
+}
+
 /**** Footer ****/
 .mz-global-footer{
 	background: #4bb1da;
@@ -160,6 +169,100 @@ img[data-mztp]{
 	} 
 	
 }
+
+/**** Footer ****/
 footer{
-	background: #000; 
+	background: #000;
+	.row{
+		margin-bottom: 10px; 
+	}
+	.regular-footer{
+		border: none; 
+	}
+	.container-menu{
+		min-height: inherit; 
+	}
+	.container-links{
+		h4{
+			font-size: 14px;
+			color: #fff; 
+			line-height: 20px;
+			text-transform: uppercase;
+			font-weight: normal; 
+		}
+		ul{
+			float: left;
+			width: 100%;
+			margin-bottom: 15px; 
+			li{
+				a{
+					font-size: 14px;
+					line-height: 20px;
+					font-weight: normal; 
+					font-family: @fontFamily; 
+				}
+			}
+		}
+	} 
+	.button_promotional{
+		background: #9f146c; 
+	}
+	.container-copyright{
+		min-height: inherit;
+		margin-top: 20px; 
+		ul{
+			li{
+				float: left;
+				padding-left: 8px;
+				margin-left: 6px;
+				border-left: 1px solid #fff;
+				line-height: 12px; 
+				a{  
+					font-size: 12px;
+					color: #fff; 
+					line-height: 14px; 
+					margin: 0; 
+					font-family: @fontFamily; 
+					font-weight: normal;  
+				}
+				&:first-child{
+					padding: 0;
+					margin: 0; 
+					border: none; 
+				}
+				&.copy-text{
+					font-size: 12px;
+					color: #fff; 
+					line-height: 14px; 
+					margin: 0; 
+					font-family: @fontFamily; 
+					font-weight: normal;
+					margin-left: 8px;
+					border: none;  
+				}
+			}
+		}
+	}
+}
+
+.footer-bottom{ 
+	.visit-our-sites{ 
+		padding: 30px 0 60px; 
+		text-align: center; 
+		p{
+			font-size: 12px;
+			color: #242424;
+			line-height: 18px;
+			margin: 0 0 25px; 
+			font-weight: normal;
+		} 
+		.footer-logos{
+			display: table;
+			width: 100%;
+			li{
+				display: table-cell; 
+				vertical-align: bottom; 
+			}
+		}
+	}
 }

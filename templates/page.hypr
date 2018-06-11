@@ -146,14 +146,13 @@
             {% endblock page-footer %}
             {% block copyright-footer %}
                 <div class="container footer-bottom">
-                    <div class="row container-visit">
-                        <div class="col-xs-12 text-center"><p>{{ labels.visitOurSites }}</p></div>
-                    </div>
-                    <div class="row container-visit-img">
-                        <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 visit-our-sites"> 
+                            <p>{{ labels.visitOurSites }}</p>
                             {% dropzone "other-sites" scope="site" %}
                         </div>
-                    </div>
+                    </div> 
+                    
                 </div>
             {% endblock copyright-footer%}
         </div>
