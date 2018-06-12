@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "212e73eee54c91cc42b509932aadc24b62efef78"
+      "commit": "67fda4c4fd0fee666e00e4a2e03ebf00d20448b3"
     }
   },
   "editors": [
@@ -2106,47 +2106,47 @@
       ]
     },
     {
-      "displayName": "Global Footer Widget",  
+      "displayName": "Global Footer Widget",
       "displayTemplate": "misc/global-footer-widget",
       "editViewFields": [
         {
-          "anchor": "100%", 
-          "fieldLabel": "Add image for first widget", 
+          "anchor": "100%",
+          "fieldLabel": "Add image for first widget",
           "name": "firstImage",
           "xtype": "mz-input-image"
         },
         {
-          "anchor": "100%", 
+          "anchor": "100%",
           "fieldLabel": "Add url for first widget",
-          "name": "firstUrl", 
+          "name": "firstUrl",
           "xtype": "mz-input-text"
         },
         {
-          "anchor": "100%", 
-          "fieldLabel": "Add image for second widget", 
+          "anchor": "100%",
+          "fieldLabel": "Add image for second widget",
           "name": "secondImage",
           "xtype": "mz-input-image"
         },
         {
-          "anchor": "100%", 
+          "anchor": "100%",
           "fieldLabel": "Add url for second widget",
-          "name": "secondUrl", 
+          "name": "secondUrl",
           "xtype": "mz-input-text"
         },
         {
-          "anchor": "100%", 
-          "fieldLabel": "Add image for third widget", 
-          "name": "thirdImage", 
+          "anchor": "100%",
+          "fieldLabel": "Add image for third widget",
+          "name": "thirdImage",
           "xtype": "mz-input-image"
         },
         {
-          "anchor": "100%", 
+          "anchor": "100%",
           "fieldLabel": "Add url for third widget",
-          "name": "thirdUrl",  
+          "name": "thirdUrl",
           "xtype": "mz-input-text"
         }
       ],
-      "id": "globalFooterWidget", 
+      "id": "globalFooterWidget",
       "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
       "validPageTypes": [
         "*"

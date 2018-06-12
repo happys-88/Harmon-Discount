@@ -18,7 +18,7 @@ function ($, bxSlider) {
             }
             else{
                 minSlides = 6;
-                slideWidth = 275;     
+                slideWidth = 200;       
             } 
             
         }
@@ -33,8 +33,8 @@ function ($, bxSlider) {
                 moveSlides: 1,
                 slideMargin: 0,
                 infiniteLoop: false,
-                controls: false,
-                pager: true,
+                controls: true,
+                pager: false, 
                 touchEnabled: true,
                 onSliderLoad: function() {
                     $(".slider").css("visibility", "visible");  
