@@ -634,5 +634,10 @@
     "paypalMessage": "You will be redirected to the PayPal website",
 
     // Custom Labels - Harmon
-    "shopAllBrands": "Shop All Brands" 
+    "shopAllBrands": "Shop All Brands",
+
+    //My account
+    "logInMsg"                               :    "Welcome back! Please enter your email address and password to sign into your online shopping account",
+    "signUpMsg"                              :   "Sign up with an email address and password",
+    "createNewAccount"                       :   "Create New Account"
 }
