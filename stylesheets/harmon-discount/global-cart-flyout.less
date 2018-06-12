@@ -1,14 +1,14 @@
-
 #global-cart {
     width: 566px;
     border-radius: 0px;
-    .media-list{
-        .listing-wrapper{
+    padding: 0 0 15px;
+    .media-list {
+        .listing-wrapper {
             max-height: 300px;
             overflow-y: auto;
         }
     }
-    .heading{
+    .heading {
         p {
             font-size: 14px;
             color: #292929;
@@ -16,52 +16,50 @@
             font-weight: normal;     
         }
     } 
-    padding: 0 0 15px;
-        .arrow-up{
-                &:after {
-                border-bottom-color: #e0e0e0;
-            }
+    .arrow-up {
+        &:after {
+            border-bottom-color: #e0e0e0;
         }
-        .listing {
-            padding: 15px 15px 30px 0;
-            p {
-                font-size: 14px;
-                color: #393939;
-                font-family: @fontFamily;
-            }
-            .title-box {
-                    .media-heading {
-                        a {
+    }
+    .listing {
+        padding: 15px 15px 30px 0;
+        p {
+            font-size: 14px;
+            color: #393939;
+            font-family: @fontFamily;
+        }
+        .title-box {
+            .media-heading {
+                a {
                     font-size: 14px;
                     color: #393939;
                     font-family: @fontFamily;
                     font-weight: 700;
                 }
             }
-         }
-            .item-image{
-                a {
-                    width: 100px;
-                    height: 100px;
-                   }
-            } 
-                span {
-                font-size: 14px;
-                color: #ff6c1f;
-                font-weight: 600;
-                &.is-crossedout {
-                    font-weight: 600;
-                    font-size: 14px;
-                    color: #262626;
-                }
-                .is-saleprice {
-                    color: #262626;
-                }
-            }
-           
         }
-        .mz-discount-row{
-            &.order-level-discount {
+        .item-image{
+            a {
+                width: 100px;
+                height: 100px;
+            }
+        } 
+        span {
+            font-size: 14px;
+            color: #ff6c1f;
+            font-weight: 600;
+            &.is-crossedout {
+                font-weight: 600;
+                font-size: 14px;
+                color: #262626;
+            }
+            .is-saleprice {
+                color: #262626;
+            }
+        }           
+    }
+    .mz-discount-row {
+        &.order-level-discount {
             background: #e0e0e0;
             padding: 10px 15px;
             text-align: center;
@@ -79,20 +77,18 @@
                 font-weight: normal;
                 color: #333333;
                 font-family: @fontFamily;
-              }
-         }
+            }
+        }
     }
-    .checkout{
-        a{
+    .checkout {
+        a {
             font-weight: normal;
             font-size: 16px;
             color: #666666;
         }
-        .button_primary {
-            background: #ff6c1f;
-            font-size: 16px;
+        .mz-button {
+            margin-top: 0;
             width: 100%;
-            height: 40px;
         }
     }
 }
