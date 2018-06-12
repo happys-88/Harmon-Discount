@@ -10,7 +10,17 @@
 	}
 </script>
 {% if model.items.length>0 %}
-	<div class="media-list">	
+	<div class="media-list">
+			<div class="mz-discount-row order-level-discount">
+					<span class="discount"> Spend $50 more for FREE SHIPPING </span>
+			</div>
+		{% if model.orderDiscounts.length > 0 %}
+			<div class="mz-discount-row order-level-discount">
+				{% for orderDiscount in model.orderDiscounts  %}
+					<span class="discount">{{ orderDiscount.impact |currency }} {{ orderDiscount.discount.name }}</span>
+				{% endfor %}
+			</div>
+		{% endif %} 	
 		<div class="row heading">
 			<div class="col-xs-7">
 				<p>{{ labels.item }}</p>
@@ -22,6 +32,7 @@
 				<p>{{ labels.price }}</p>
 			</div>
 		</div>
+		<div class="listing-wrapper">
 		{% for items in model.cartItems  %}
 			<div class="row listing">
 				<div class="col-xs-3 item-image">
@@ -30,12 +41,12 @@
 						  {% if colorAttr %}
 						    {% with colorAttr.value|replace(" ","_") as colorValue %}
 						      {% with "/cms/files/{0}_{1}_v1.jpg"|string_format(items.product.productCode, colorValue) as fileName %}
-						            <img class="mz-itemlisting-thumb-img mz-carttable-item-image" src="https:{% make_url "cdn" fileName with maxWidth=105 as_parameter %}" {% if items.product.imageAlternateText %}alt="{{ items.product.imageAlternateText }}" {%else%}alt='{{ items.product.name|safe }}' {% endif %} />   
+						            <img class="mz-itemlisting-thumb-img mz-carttable-item-image" src="https:{% make_url "cdn" fileName with maxWidth=100 as_parameter %}" {% if items.product.imageAlternateText %}alt="{{ items.product.imageAlternateText }}" {%else%}alt='{{ items.product.name|safe }}' {% endif %} />   
 						      {% endwith %}     
 						    {% endwith %}
 						  {% else %}
 						    {% if items.product.imageUrl %}
-						          <img class="mz-itemlisting-thumb-img mz-carttable-item-image" src="{% make_url "image" items.product with maxWidth=105 as_parameters %}" {% if items.product.imageAlternateText %}alt="{{ items.product.imageAlternateText }}" {%else%}alt='{{ items.product.name|safe }}' {% endif %} />
+						          <img class="mz-itemlisting-thumb-img mz-carttable-item-image" src="{% make_url "image" items.product with maxWidth=100 as_parameters %}" {% if items.product.imageAlternateText %}alt="{{ items.product.imageAlternateText }}" {%else%}alt='{{ items.product.name|safe }}' {% endif %} />
 						    {% else %}
 						      	{% include "modules/product/product-no-image" %}
 						    {% endif %}    
@@ -81,6 +92,7 @@
 				</div>
 			</div>
 		{% endfor %}
+		</div>
 	</div>
 	<div class="row total">
 		<div class="col-xs-5">
@@ -94,26 +106,20 @@
             {%else%}
             <span>{{ labels.merchandiseSubtotal }}: {{ model.subtotal|currency }}</span>
             {%endif%}
-			{% if model.orderDiscounts %}
-				{% for orderDiscount in model.orderDiscounts  %}
-					<span class="discount">
-						<div><p>: - {{ orderDiscount.impact |currency }}</p>{{ orderDiscount.discount.name }}</div>
-					</span>
-				{% endfor %}
-			{% endif %}
+		
 			{% if themeSettings.globalCartShowSubtotal %}
 			<span> {{ labels.subtotal }}: {{ model.total|currency }}</span>
 			{% endif %}
 	    </div>
 	</div>
 	<div class="row checkout">
-		<div class="col-xs-7">
+		<div class="col-xs-6">
 			<a href="/cart" class="btn link-green text-uppercase">{{ labels.openCart }}</a>
 			{% if (themeSettings.globalCartEnableSaveCart && user.isAnonymous && user.isAuthenticated && false)  %}
 				<button data-mz-action="openLiteRegistration" class="btn btn-default">Save Cart</button>
 			{% endif %}
 		</div>
-		<div class="col-xs-5 text-right">
+		<div class="col-xs-6 text-right">
 			{% if not user.isAnonymous && user.isAuthenticated %}
 			<form method="post" value="" id="registeredCheckout">
 				<button type="submit" class="btn btn-default button_primary font-medium" data-mz-action="proceedToCheckout">{{ labels.checkout }}</button>
@@ -123,6 +129,7 @@
 			{% endif%}
 		</div>
 	</div>
+	
 {% else %}
 	<div class="text-center">
 		<div class="global-cart-empty-text">Your Shopping cart is empty</div>
