@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "67fda4c4fd0fee666e00e4a2e03ebf00d20448b3"
+      "commit": "1f61cea2faeea7bb4e80031251edb41865e65a19"
     }
   },
   "editors": [
@@ -292,8 +292,8 @@
     {
       "documentType": "web_page",
       "entityType": "webpage",
-      "id": "location",
-      "template": "location",
+      "id": "store-locator", 
+      "template": "store-locator", 
       "title": "Store Locator",
       "userCreatable": true
     },

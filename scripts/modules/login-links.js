@@ -399,30 +399,7 @@ define(['modules/backbone-mozu', 'shim!vendor/bootstrap/js/popover[shim!vendor/b
             }
         }
     });
-    var MyAccountPopover = function(e) {
-        var self = this;
-        this.init = function(el) {
-            self.popoverEl = $('#my-account-content');
-            self.bindListeners.call(el, true);
-            $('#my-account').attr('href', '#');
-        };
-        this.bindListeners = function(on) {
-            var onOrOff = on ? "on" : "off";
-            var selfObj = $(this);
-            //$(this).parent()[onOrOff]('mouseover', '[data-mz-action="my-account"]', self.openPopover);
-            selfObj.parent()[onOrOff]('click', '[data-mz-action="my-account"]', self.openPopover);
-
-            selfObj.parent()[onOrOff]('touchend', function(e) {
-                if ($(e.target).data('toggle') !== 'popover' && ($('div.popover.in').length > 0)) {
-                    $(this).mouseleave();
-                    e.stopPropagation();
-                } else {
-                    $(e.target).mouseenter();
-                }
-            });
-        };
-    };
-
+    
     var LoginRegistrationModal = function() {
         var self = this;
         this.init = function(el) {
@@ -591,35 +568,12 @@ define(['modules/backbone-mozu', 'shim!vendor/bootstrap/js/popover[shim!vendor/b
             var modal = new LoginRegistrationModal();
             modal.init(this);
         });
-        $('#my-account').attr('href', '#');
-        $('[data-mz-action="my-account"]').click(function() {
-            var popover = new MyAccountPopover();
-            popover.init(this);
-            $(this).data('mz.popover', popover);
-        });
+
         $('[data-mz-action="signuppage-submit"]').attr('disabled', false);
         $('[data-mz-action="loginpage-submit"]').attr('disabled', false);
         $('[data-mz-action="forgotpasswordpage-submit"]').attr('disabled', false);
-        $("#my-account").popover({
-            html: true,
-            placement: 'bottom',
-            content: function() {
-                return $('#my-account-content').html();
-            },
-            container: 'body',
-            template: '<div class="popover myaccountpop"><div class="arrow"></div><div class="popover-content"></div></div>'
-        });
-        $(window).resize(function() {
-            var account = $(".myaccountpop.in");
-            var accountLink = $(".user-link");
-            if (accountLink.length && account.length) {
-                var accountWidth = account.width();
-                var accountLinkWidth = accountLink.outerWidth();
-                var accountLinkOffset = accountLink.offset().left;
-                account.css("left", (accountLinkOffset - (accountWidth / 2 - accountLinkWidth / 2)));
-            }
-        });
-        $('body').on('touchend click', function(e) {
+        
+        $('body').on('touchend click', function(e) { 
             //only buttons
             if ($(e.target).data('toggle') !== 'modal' && !$(e.target).parents().is('.modal.in')) {
                 $('[data-toggle="modal"]').modal('hide');
