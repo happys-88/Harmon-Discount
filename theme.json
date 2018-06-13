@@ -292,8 +292,8 @@
     {
       "documentType": "web_page",
       "entityType": "webpage",
-      "id": "location",
-      "template": "location",
+      "id": "store-locator",
+      "template": "store-locator",
       "title": "Store Locator",
       "userCreatable": true
     },
@@ -2148,6 +2148,23 @@
       ],
       "id": "globalFooterWidget",
       "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "id": "dropzoneImage",
+      "displayName": "Dropzone Image",
+      "displayTemplate": "cms/dropzone-image",
+      "editViewFields": [
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Image",
+          "name": "dropzoneImage",
+          "xtype": "mz-input-image"
+        }
+      ],
+      "icon": "/resources/admin/widgets/trending.png",
       "validPageTypes": [
         "*"
       ]
