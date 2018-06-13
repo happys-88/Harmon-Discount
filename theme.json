@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "67fda4c4fd0fee666e00e4a2e03ebf00d20448b3"
+      "commit": "1f61cea2faeea7bb4e80031251edb41865e65a19"
     }
   },
   "editors": [
@@ -643,7 +643,7 @@
     "deliverySurchargeHeader": "Freight Delivery Surcharge",
     "deliverySurchargeContent": "Bulky items such as furniture and rugs cost more to ship due to greater size and weight. Therefore, a delivery surcharge will be billed in addition to the standard shipping charge.Surcharge amounts vary. The surcharge amount is noted on each product detail page.",
     "useDebugScripts": false,
-    "showcouponCodeBasket": false,
+    "showcouponCodeBasket": true,
     "showemptyBasket": false,
     "useSearchAutocomplete": true,
     "allowCustomerInitiatedReturns": false,
