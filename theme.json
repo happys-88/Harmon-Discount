@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "1f61cea2faeea7bb4e80031251edb41865e65a19"
+      "commit": "67fda4c4fd0fee666e00e4a2e03ebf00d20448b3"
     }
   },
   "editors": [
@@ -292,8 +292,8 @@
     {
       "documentType": "web_page",
       "entityType": "webpage",
-      "id": "store-locator", 
-      "template": "store-locator", 
+      "id": "store-locator",
+      "template": "store-locator",
       "title": "Store Locator",
       "userCreatable": true
     },
@@ -2148,6 +2148,23 @@
       ],
       "id": "globalFooterWidget",
       "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "id": "dropzoneImage",
+      "displayName": "Dropzone Image",
+      "displayTemplate": "cms/dropzone-image",
+      "editViewFields": [
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Image",
+          "name": "dropzoneImage",
+          "xtype": "mz-input-image"
+        }
+      ],
+      "icon": "/resources/admin/widgets/trending.png",
       "validPageTypes": [
         "*"
       ]

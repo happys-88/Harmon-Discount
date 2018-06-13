@@ -50,7 +50,7 @@
         {% dropzone "category-page-top" scope="page" %}
         <div id="products-wrapper" class="mz-l-paginatedlist-header">
             <div class="title-sortby-wrappper">
-                <h1 class="mz-pagetitle">{{ pageName|replace("~", ""|safe }}</h1>
+                <h1 class="mz-pagetitle">{{ navigation.currentNode.name|upper }}</h1>
                 <div data-mz-pagesort class="mz-sortby">
                     {% include "modules/common/page-sort" %}
                 </div>
@@ -64,31 +64,30 @@
 </div>
 {% endif %}
 <div class="mz-l-paginatedlist pull-right{% if model.facets %} col-xs-12 col-sm-8 col-md-9{%else%} col-xs-12{% endif %}">
-    <div>
-        <div class="mz-l-paginatedlist-header">
-            <div data-mz-pageview class="mz-pageview">
-                {% include "modules/common/page-view" %}
-            </div>            
-            <div data-mz-pagenumbers class="mz-pagenumbers">
-                {% include "modules/common/page-numbers" %}
-            </div>
-            <div data-mz-pagingcontrols class="mz-pagingcontrols">
-                {% include "modules/common/paging-controls" %}
-            </div>
+    <div class="mz-l-paginatedlist-header">
+        <div data-mz-pageview class="mz-pageview">
+            {% include "modules/common/page-view" %}
+        </div>            
+        <div data-mz-pagenumbers class="mz-pagenumbers">
+            {% include "modules/common/page-numbers" %}
         </div>
-        <div data-mz-productlist class="mz-l-paginatedlist-list">
-            {% include "modules/product/product-list-tiled" %}
-        </div>
-        <div class="mz-l-paginatedlist-footer">
-            <div class="back-to-top">
-                <button class="btn btn-default mz-back-to-top-button">{{ labels.backToTop }}</button>
-            </div>
-            <div data-mz-pagenumbers class="mz-pagenumbers">
-                {% include "modules/common/page-numbers" %}
-            </div>
-            <div data-mz-pagingcontrols class="mz-pagingcontrols">
-                {% include "modules/common/paging-controls" %}
-            </div>
+        <div data-mz-pagingcontrols class="mz-pagingcontrols">
+            {% include "modules/common/paging-controls" %}
         </div>
     </div>
+    <div data-mz-productlist class="mz-l-paginatedlist-list">
+        {% include "modules/product/product-list-tiled" %}
+    </div>
+    <div class="mz-l-paginatedlist-footer">
+        <div class="back-to-top">
+            <button class="btn btn-default mz-back-to-top-button">{{ labels.backToTop }}</button>
+        </div>
+        <div data-mz-pagenumbers class="mz-pagenumbers">
+            {% include "modules/common/page-numbers" %}
+        </div>
+        <div data-mz-pagingcontrols class="mz-pagingcontrols">
+            {% include "modules/common/paging-controls" %}
+        </div>
+    </div>
+    {% dropzone "category-page-bottom" scope="page" %}
 </div>

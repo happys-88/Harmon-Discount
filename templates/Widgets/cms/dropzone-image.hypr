@@ -1,0 +1,5 @@
+<div class="mz-dropzone-image">
+	{% if model.config.dropzoneImage %}
+		<img src="{% make_url "image" model.config.dropzoneImage %}" {% if model.config.dropzoneImage.altText %}alt="{{ model.config.dropzoneImage.altText }}"{% endif %}>
+	{% endif %}
+</div>
