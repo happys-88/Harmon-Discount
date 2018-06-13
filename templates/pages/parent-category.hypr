@@ -32,9 +32,23 @@
             {% endfor %}
         </div>
         <div class="col-xs-12 col-sm-9">
-            {% dropzone "parent-category-page-top" scope="page" %}
+            <div class="col-xs-12 col-sm-12">
+                {% dropzone "Merchandise" scope="page" %}
+            </div>
+            <div class="col-xs-12 col-sm-12">
+                {% dropzone "New" scope="page" %}
+            </div>
+            <div class="col-xs-12 col-sm-12">
+                {% dropzone "Brands" scope="page" %}
+            </div>
+            <div class="col-xs-12 col-sm-12">
+                {% dropzone "Feature" scope="page" %}
+            </div>
+            <div class="col-xs-12 col-sm-12">
+                {% dropzone "Category" scope="page" %}
+            </div>
         </div>
+       
     </div>
-    {% dropzone "parent-category-page-bottom" scope="page" %}
 </div>
 {% endblock body-content %}
