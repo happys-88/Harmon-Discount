@@ -292,10 +292,10 @@
     {
       "documentType": "web_page",
       "entityType": "webpage",
-      "id": "store-locator",
-      "template": "store-locator",
+      "id": "location",
+      "template": "location",
       "title": "Store Locator",
-      "userCreatable": true
+      "userCreatable": true 
     },
     {
       "documentType": "web_page",
