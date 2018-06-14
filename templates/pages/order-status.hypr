@@ -2,7 +2,8 @@
 
 {% block title-tag-content %}{% firstof pageContext.metaTitle labels.orderStatus %} - {% parent %}{% endblock title-tag-content %}
 
-{% block body-tag-classes %} mz-loginpage {% endblock body-tag-classes %}
+{% block body-tag-classes %}mz-loginpage {% endblock body-tag-classes %} 
+
 {% block ensighten-data %}
 <script type="text/javascript">
         var pageData = {
@@ -21,30 +22,33 @@
         };
     </script>
 {% endblock ensighten-data %}
+
 {% block body-content %}
-    <div class="mz-l-container">
-        {% include "modules/common/message-bar" with model=model.messages %}
-        <div class="mz-l-2column">
-            <div class="mz-l-column">
-                <h1 class="mz-pagetitle">{{ labels.orderStatus }}</h1>
+<div class="mz-customer-service-page">
+    <div class="mz-l-container"> 
+        <div class="row"> 
+            {% include "modules/common/message-bar" with model=model.messages %}
+            <div class="col-xs-12 col-sm-9 pull-right"> 
+                <h3 class="mz-l-stack-sectiontitle">Order Status</h3>   
                 <p>Orders placed as a guest or single order lookup</p>
-                <form method="post" class="mz-loginform mz-loginform-page" name="mz-anonymousorder">
+                <div class="mz-track-order-form">
+                    <form method="post" class="mz-loginform mz-loginform-page" name="mz-anonymousorder">
                     <input type="hidden" name="order-returnUrl" value="{{ model.returnUrl }}"/>
                     <div class="mz-l-formfieldgroup">
                         <div class="mz-l-formfieldgroup-row">
-                            <div class="mz-l-formfieldgroup-cell">
+                            <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
                                 <label for="ordernum">{{ labels.orderNumber }}</label>
                             </div>
-                            <div class="mz-l-formfieldgroup-cell">
-                                <input name="ordernum" value="" type="text" data-mz-order-number />
+                            <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
+                                <input class="form-control" name="ordernum" value="" type="text" data-mz-order-number />
                             </div>
                         </div>
                         <div class="mz-l-formfieldgroup-row">
-                            <div class="mz-l-formfieldgroup-cell">
+                            <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
                                 <label for="verifywith">{{ labels.verifyWith }}</label>
                             </div>
-                            <div class="mz-l-formfieldgroup-cell">
-                                <select data-mz-verify-with>
+                            <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
+                                <select class="form-control" data-mz-verify-with>
                                     {% if themeSettings.zipCodeEnabled %}<option value="zipCode">{{ labels.billingPostalCode }}</option>{% endif %}
                                     {% if themeSettings.phoneNumberEnabled %}<option value="phoneNumber">{{ labels.billingPhoneNumber }}</option>{% endif %}
                                     {% if themeSettings.billingEmailEnabled %}<option value="email">{{ labels.billingEmail }}</option>{% endif %}
@@ -52,28 +56,35 @@
                             </div>
                         </div>
                         <div class="mz-l-formfieldgroup-row">
-                            <div class="mz-l-formfieldgroup-cell">
+                            <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
                                 <label for="verification">{{ labels.verification }}</label>
                             </div>
-                            <div class="mz-l-formfieldgroup-cell">
-                                <input name="verification" value="" type="text" data-mz-verification />
+                            <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
+                                <input class="form-control" name="verification" value="" type="text" data-mz-verification />
                             </div>
                         </div>
                         <div class="mz-l-formfieldgroup-row">
-                            <div class="mz-l-formfieldgroup-cell"></div>
-                            <div class="mz-l-formfieldgroup-cell">
+                            <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12"></div>
+                            <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
                                 <section data-mz-role="popover-message" class="mz-popover-message"></section>
                             </div>
                         </div>
                         <div class="mz-l-formfieldgroup-row">
-                            <div class="mz-l-formfieldgroup-cell"></div>
-                            <div class="mz-l-formfieldgroup-cell">
-                                <button class="mz-button button_primary mz-button-large mz-login-button" data-mz-action="anonymousorder-submit">{{ labels.submit }}</button>
+                            <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12"></div>
+                            <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12"> 
+                                <button class="mz-button mz-login-button" data-mz-action="anonymousorder-submit">{{ labels.submit }}</button>
                             </div>
                         </div>
                     </div>
-                </form>
+                    </form>
+                </div>
             </div>
+            <div class="col-xs-12 col-sm-3 mz-content-left-nav">        
+                <div class="mz-l-sidebar">
+                    {% include "pages/content-left-nav" %}      
+                </div>
+            </div> 
         </div>
     </div>
+</div> 
 {% endblock body-content %}

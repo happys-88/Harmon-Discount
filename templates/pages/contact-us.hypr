@@ -10,13 +10,13 @@
 	<div class="mz-customer-service-page">
 		<div class="mz-l-container">
 			<div class="row"> 
-				<div class="col-sm-9 col-lg-10 mz-customer-service-panels pull-right">
+				<div class="col-xs-12 col-sm-9 pull-right"> 
 						<h3 class="mz-l-stack-sectiontitle">{{ pageContext.metaTitle }}</h3>
 					<div id="contactus-container">
 						{% include "modules/contact-us/contact-us" with model=model %}
 					</div>
 				</div>
-				<div class="col-sm-3 col-lg-2 mz-customer-service-nav">     
+				<div class="col-xs-12 col-sm-3 mz-customer-service-nav">     
 					<div class="mz-l-sidebar">
 						{% include "modules/customer-service/service-nav" %}
 					</div>

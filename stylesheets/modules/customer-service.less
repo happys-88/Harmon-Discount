@@ -1,7 +1,13 @@
-.mz-customer-service-nav {
-    margin-top: 40px;
-    .mz-l-sidebar {
+.mz-customer-service-nav,
+.mz-content-left-nav {
+	margin-bottom: 30px;   
+    .mz-l-sidebar { 
         margin-top: 0;
+        .mz-l-stack-sectiontitle{
+        	padding: 0;
+        	margin-bottom: 6px;
+        	border: none;  
+        }
     }
     .mz-scrollnav {
     	border-bottom: 1px solid #e0e0e0;
@@ -10,8 +16,9 @@
             .mz-scrollnav-link {
                 border-top: 1px solid #e0e0e0;
                 color: #495363;
-                font-weight: 700;
+                font-weight: 500; 
                 text-transform: capitalize;
+                padding: 10px 10px;   
                 &:visited, 
                 &:focus, 
                 &:active {
@@ -26,7 +33,8 @@
         }
     }
 }
-.mz-customer-service-page {	
+.mz-customer-service, 
+.mz-aboutus, .mz-customer-service-page, .mz-track-order-form { 
 	#contactus-container{
 		.mz-l-container{
 			margin-bottom: 40px;
@@ -50,16 +58,21 @@
 	    float: left;
 	    width: 100%;
 	    max-width: 585px;
+	    .form-group {
+			float: left;
+			width: 100%;
+			label {
+			    line-height: 35px;
+			    margin: 0; 
+			    text-align: right;
+			    font-weight: normal; 
+			}
+			.form-control{
+				padding: 5px 10px;   
+			} 
+		}
 	}
-	.form-group {
-		float: left;
-		width: 100%;
-	}
-	label {
-	    line-height: 35px;
-	    margin-bottom: 0;
-	    text-align: right;
-	}
+	
 	input[type="text"], 
 	input[type="email"], 
 	select,
@@ -79,3 +92,52 @@
 		}
 	}
 }
+
+.mz-loginpage{
+	.mz-track-order-form{  
+		.mz-loginform{
+			.mz-l-formfieldgroup-row{ 
+				float: left;
+				width: 100%;
+				display: block;
+				margin-bottom: 15px;   
+				.mz-l-formfieldgroup-cell{
+					padding: 0 15px;    
+				}
+				label {
+				    font-size: 14px; 
+				    line-height: 35px;
+				    margin: 0; 
+				    text-align: right;
+				    font-weight: normal; 
+				}
+				.form-control{
+					width: 100%; 
+					height: auto;  
+					padding: 8px 10px;   
+				} 
+				
+				input[type="text"], 
+				input[type="email"], 
+				select,
+				textarea {
+					border: 1px solid #d4d4d4;
+					border-radius: 0;
+					margin-bottom: 0px;
+				}
+				textarea {
+					min-height: 100px;
+					max-height: 150px;
+				}
+				button {
+					&.mz-button {
+					    float: right;
+					    width: 70%;
+					    margin: 0; 
+					}
+				}
+			}
+		}
+	}
+}  
+
