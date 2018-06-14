@@ -1273,13 +1273,15 @@ define('pages/cart',['modules/api', 'modules/backbone-mozu', 'underscore', 'modu
                             limitperorderModel = limitperorder;
                         }
                     } else {
-                        for (var j = 0; j < cartItems[i].mfgPartNumbers.length; j++) {
-                            skuID = cartItems[i].mfgPartNumbers[j].toString();
-                            if (limitAttribute) {
-                                limitperorder = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
-                                limitperorderModel = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
-                                obj[skuID] = limitperorder;
-                                limitperorderModel = limitperorder;
+                        if(cartItems[i].mfgPartNumbers) {
+                            for (var j = 0; j < cartItems[i].mfgPartNumbers.length; j++) {
+                                skuID = cartItems[i].mfgPartNumbers[j].toString();
+                                if (limitAttribute) {
+                                    limitperorder = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
+                                    limitperorderModel = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
+                                    obj[skuID] = limitperorder;
+                                    limitperorderModel = limitperorder;
+                                }
                             }
                         }
                     }
@@ -1350,13 +1352,15 @@ define('pages/cart',['modules/api', 'modules/backbone-mozu', 'underscore', 'modu
                             limitperorderModel = limitperorder;
                         }
                     } else {
-                        for (var j = 0; j < cartItems[i].mfgPartNumbers.length; j++) {
-                            skuID = cartItems[i].mfgPartNumbers[j].toString();
-                            if (limitAttribute) {
-                                limitperorder = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
-                                limitperorderModel = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
-                                obj[skuID] = limitperorder;
-                                limitperorderModel = limitperorder;
+                        if(cartItems[i].mfgPartNumbers) {
+                            for (var j = 0; j < cartItems[i].mfgPartNumbers.length; j++) {
+                                skuID = cartItems[i].mfgPartNumbers[j].toString();
+                                if (limitAttribute) {
+                                    limitperorder = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
+                                    limitperorderModel = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
+                                    obj[skuID] = limitperorder;
+                                    limitperorderModel = limitperorder;
+                                }
                             }
                         }
                     }

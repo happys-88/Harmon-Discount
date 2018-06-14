@@ -1828,7 +1828,7 @@
                 if ((this.get('createAccount') || isAuthenticated) && billingInfo.getDigitalCreditsToAddToCustomerAccount().length > 0) {
                     process.push(this.addDigitalCreditToCustomerAccount);
                 }
-
+                console.log("saving new customer : "+isSavingNewCustomer);
                 //save contacts
                 if (!this.isNonMozuCheckout() && (isAuthenticated || isSavingNewCustomer)) {
                     if (!isSameBillingShippingAddress && !isSavingCreditCard) {

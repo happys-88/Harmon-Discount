@@ -1,3 +1,7 @@
 <a href='{% make_url "product" model %}'>
     {% include "modules/product/product-image" with productImage=model.mainImage productMaxWidth=themeSettings.maxProductImageThumbnailSize as_parameter %}
 </a>
+ <div id="wc-power-page"></div>
+  {% block webcollage-loader %}
+   <script>Webcollage.loadProductContent('harmondiscount', '{{ model.productCode }}', {"power-page":{autoPlayAndStop: true}});</script>    
+  {% endblock webcollage-loader %}
