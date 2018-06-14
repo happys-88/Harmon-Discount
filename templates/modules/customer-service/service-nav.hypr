@@ -1,0 +1,34 @@
+<nav class="mz-scrollnav" id="account-nav">
+    <ul class="mz-scrollnav-list nav">
+        <li class="mz-scrollnav-item active">
+            <a class="mz-scrollnav-link" href="/customer-service">{{ labels.customerService }}</a>
+        </li>
+        <li class="mz-scrollnav-item">
+            <a class="mz-scrollnav-link" href="/order-tracking">Order Tracking</a>
+        </li>
+        <li class="mz-scrollnav-item">
+            <a class="mz-scrollnav-link" href="/shipping-information"> Shipping Info</a>
+        </li>
+        <li class="mz-scrollnav-item">
+            <a class="mz-scrollnav-link" href="/contact-us">Contact Us</a>
+        </li>
+        <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/100-guarantee">100% guarantee</a>
+        </li>
+        <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/FAQS">FAQS</a>
+        </li>
+        <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/return-policy">Return Policy</a>
+        </li>
+        <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/privacy-policy">privacy Policy</a>
+        </li>
+        <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/term-conditions">Term & Condition</a>
+        </li>
+        <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/product-recalls">Product Recalls</a>
+        </li>
+    </ul>
+</nav>

@@ -219,6 +219,51 @@
     },
     {
       "documentType": "web_page",
+      "editor": "landing-page",
+      "entityType": "webpage",
+      "id": "Brands",
+      "template": "brand-gateway",
+      "title": "Brands Gateway",
+      "userCreatable": true
+    },
+    {
+      "documentType": "web_page",
+      "editor": "landing-page",
+      "entityType": "webpage",
+      "id": "Customer-Service",
+      "template": "customer-service",
+      "title": "Customer Service",
+      "userCreatable": true
+    },
+    {
+      "documentType": "web_page",
+      "editor": "landing-page",
+      "entityType": "webpage",
+      "id": "ShippingInfo",
+      "template": "shipping-info",
+      "title": "Shipping Info",
+      "userCreatable": true
+    },
+    {
+      "documentType": "web_page",
+      "editor": "landing-page",
+      "entityType": "webpage",
+      "id": "Orde-tracking",
+      "template": "order-tracking",
+      "title": "Order Tracking",
+      "userCreatable": true
+    },
+    {
+      "documentType": "web_page",
+      "editor": "landing-page",
+      "entityType": "webpage",
+      "id": "Customer-service-blank-page",
+      "template": "customer-service-blank-page",
+      "title": "Customer Service Blank Page",
+      "userCreatable": true
+    },
+    {
+      "documentType": "web_page",
       "entityType": "webpage",
       "id": "flippPage",
       "template": "flipp-page",

@@ -1,8 +1,5 @@
 <div class="mz-l-container">
-	<div class="mz-contactus-title">
-		<h1 class="mz-pagetitle">{{ labels.contactus }}</h1>
-	</div>
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
 	<p class="mz-contactus-subtitle">
 		<span class="mz-contactus-subtitle-text">{{ labels.contactusByEmail }}:</span>
 		<span class="mz-indicates-required-text pull-right text-right">*{{ labels.requiredField }}</span>
@@ -77,7 +74,7 @@
     {% endif %}
     <div class="mz-l-formfieldgroup-row margin-bottom-30">
         <div class="mz-l-formfieldgroup-cell text-center">
-            <button class="mz-button button_primary mz-button-large" type="button" data-mz-action="contactUsSubmit">{{ labels.send }}</button>
+            <button class="mz-button" type="button" data-mz-action="contactUsSubmit">{{ labels.send }}</button>
         </div>
     </div>
     </div>
