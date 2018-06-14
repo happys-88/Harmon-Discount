@@ -83,7 +83,7 @@
 	<!-- Widget code -->
 	<div class="row" style="padding-top: 10px;">
 		<div class="col-xs-12">
-			{% dropzone "cart-advert" scope="page" %}
+			{% dropzone "cart-advert" scope="site" %} 
 		</div>
 	</div>
 </div>

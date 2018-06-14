@@ -19,5 +19,5 @@
                 }
             );
         </script>
-    {% endblock live-chat-script  %}
+    {% endblock live-chat-script  %} 
 {% endblock body-content %}

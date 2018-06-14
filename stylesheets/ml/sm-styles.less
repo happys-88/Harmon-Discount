@@ -1,18 +1,18 @@
 @media (min-width: 768px) {
 
 	//Site-wide rules
-	#global-header-container {
+	#global-header-container {  
     	font-size: @fontSize;
 	}
 	#global-header-wrapper {
-		.ml-header-global-include-close {
+		.ml-header-global-include-close {   
 			right: 15px;
 		}
 	}
 	//Header
 	.mz-pageheader{
 		background: @colorWhite;
-		.ml-header-links-wrapper {
+		.mz-header-links-wrapper {
 			position: static;
 			left: auto;
 			right: auto;
@@ -91,7 +91,7 @@
                 }
 			}
 		}
-		.ml-header-content {
+		.mz-header-content {
 			position: static;
 			left: auto;
 			top: auto;
@@ -100,22 +100,19 @@
 			height: auto;
 			float: left;
     		width: 100%;
-			.ml-header-logo-wrapper{
+			.mz-header-logo-wrapper{
 				position: static;
 				padding: 0;
 				float: left;
 				max-width: 40%;
 						
 			}	
-			.ml-header-global-cart-wrapper {
+			.mz-header-global-cart-wrapper {
 				float: right;
 			    padding: @defaultGutter 0 5px 5px;
 				width: 73px;
 				position: relative;
-			    &:hover{
-			    	#global-cart{display: block;}
-			    }
-				.ml-header-global-cart-text {
+			    .ml-header-global-cart-text { 
 					display: none;
 				}
 				.mz-utilitynav-link-cart {
@@ -141,7 +138,7 @@
 					padding-top: 1px;
 				}
 			}
-			.ml-header-search-wrapper {
+			.mz-header-search-wrapper {
 				position: relative;
 				top: auto;
 				left: auto;
@@ -153,7 +150,7 @@
 			}
 		}
 	}	
-	.ml-header-global-cart-wrapper, .ml-header-global-cart-wrapper:hover{
+	.mz-header-global-cart-wrapper, .mz-header-global-cart-wrapper:hover{
 		#global-cart{display: none;}
 	}
 	//Navigation
@@ -219,22 +216,22 @@
     }
 
     //Login screen
-    .modal-dialog.login-modal{ 
-    	width: 370px!important;    
-    	margin: 0 auto!important;
-    	.modal-content{
-	    	.login-btn{ 
-	            height: 34px!important;
-	            line-height: 34px!important;
-		    }
-		    .nav-tabs{
-		    	top: -45px!important;
-		    }
-		    .arrow{
-		    	top: 34px!important;
-		    }
-	    }
-	}
+	//.modal-dialog.login-modal{ 
+	//    	width: 370px!important;    
+	//    	margin: 0 auto!important;
+	//    	.modal-content{
+	//     	.login-btn{ 
+	//             height: 34px!important;
+	//             line-height: 34px!important;
+	// 	    }
+	// 	    .nav-tabs{
+	// 	    	top: -45px!important;
+	// 	    }
+	// 	    .arrow{
+	// 	    	top: 34px!important;
+	// 	    }
+	//     }
+	// }
 	.popover.myaccountpop {
 		max-width: 303px;  
 		width: 303px;
@@ -396,7 +393,7 @@
 	}
 
     //Footer
-	.ml-global-footer{
+	.mz-global-footer{ 
 	    display:block;
 	    margin-bottom: 27px;
 	}

@@ -82,7 +82,7 @@ define([
             }
         }
 
-        function updateUi(response) {
+        function updateUi(response) { 
             var url = response.canonicalUrl;
             if (url && url.substr(url.length - 2) === '&&')
                 url = url.substring(0, url.length - 1);

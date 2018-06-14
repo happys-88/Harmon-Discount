@@ -47,7 +47,7 @@ define([
         initialize: function() {
             var self = this;
             $(window).scroll(function() {
-                if ($(window).scrollTop() >= $(document).height() - $(window).height() - $('.ml-global-footer').height() - $('footer').height() - 200) {
+                if ($(window).scrollTop() >= $(document).height() - $(window).height() - $('.mz-global-footer').height() - $('footer').height() - 200) {
                     if ($(".view-all.selected").length) {
                         self.loadMoreProducts();
                     }

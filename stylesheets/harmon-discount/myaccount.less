@@ -1,0 +1,134 @@
+#liteRegistrationModal {
+    .modal-dialog {
+        &.login-modal {
+            width: 700px !important;
+        }
+    }
+    .modal-content {
+        border-radius: 0;
+        button {
+            &.close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 1;
+            }
+        }
+    }
+    .modal-body {
+        margin-top: 10px;
+        .pull-left,
+        .pull-right {
+            width: 50%;
+        }
+        .pull-left {
+            padding-right: 15px;
+        }
+        .pull-right {
+            border-left: 1px solid #e0e0e0;
+            padding-left: 15px;
+        }
+        .mz-pagetitle {
+            font-size: 22px;
+            margin: 10px 0;
+            text-transform: uppercase;
+        }
+        .mz-l-formfieldgroup {
+            display: block;
+            .input-group {
+                margin-bottom: 15px;
+            }
+            .input-group-addon {
+                padding: 10px 15px;
+                font-size: 12px;
+                line-height: 10px;
+                border-radius: 0;
+            }
+            input[type="text"], 
+            input[type="password"],
+            input[type="email"], 
+            input[type="tel"] {
+                border: 1px solid #d4d4d4;
+                margin-bottom: 0px;
+                width: 100%;
+                height: 36px;
+            }
+        }
+        p {
+            margin: 10px 0;
+        }
+        .mz-btn-section {
+            float: left;
+            margin-top: 10px;
+            width: 100%;
+            .mz-cancel-button {
+                display: inline-block;
+                margin: 7px 0;
+            }
+            button {
+                &.mz-button { 
+                    float: right;
+                    margin-top: 0;
+                    width: 70%;
+                }
+            }
+        }
+        .mz-forgot {
+            color: #00adce;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        .popover-message {
+            display: block;
+            float: left;
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+    .modal-footer {
+        p {
+            margin: 6px 0;
+            font-weight: 500;
+            i {
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+/**** My Account Dropdown ****/
+#mz-logged-in-notice { 
+    .dropdown-menu {
+        border: 1px solid @textColor; 
+        width: 240px;
+        border-radius: 0;
+        border-top: 20px solid @textColor;
+        margin-top: 10px;
+        padding: 0;
+        position: absolute;
+        left: 0; 
+        &:after {
+            content: "";
+            border: 10px solid transparent;
+            border-bottom: 10px solid @textColor; 
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: -40px;
+            left: 50px;  
+            margin: auto;
+        }
+    }
+    .my-account-details {
+        h4 {
+            border-top: 1px solid #e0e0e0;
+            font-size: 14px;
+            margin: 0;
+            padding: 12px 15px;
+            text-transform: uppercase;
+            text-align: left; 
+        }
+    }
+}

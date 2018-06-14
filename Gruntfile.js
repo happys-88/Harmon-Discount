@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     require('time-grunt')(grunt);
     grunt.initConfig({
-        mozuconfig: grunt.file.exists('./mozu.config.json') ? grunt.file.readJSON('./mozu.config.json') : {},
+        mozuconfig: grunt.file.exists('./mozu.config.json') ? grunt.file.readJSON('./mozu.config.json') : {}, 
         pkg: pkg,
         copy: {
             packagedeps: {
@@ -115,6 +115,7 @@ module.exports = function (grunt) {
                 ],
                 'tasks': [
                     'newer:jshint:develop',
+                    'newer:mozutheme:quickcompile',
                     'newer:mozusync:upload'
                 ]
             },
@@ -128,6 +129,7 @@ module.exports = function (grunt) {
             },
             'sync': {
                 'files': [
+                'scripts/**/*.js',
                     'admin/**/*',
                     'resources/**/*',
                     'packageconfig.xml',
@@ -138,7 +140,11 @@ module.exports = function (grunt) {
                     '!*.orig',
                     '!.inherited'
                 ],
-                'tasks': ['newer:mozusync:upload']
+
+                'tasks': [
+                    'mozutheme:quickcompile',
+                    'newer:mozusync:upload'
+                ]
             }
         },
         mozusync: {
@@ -197,8 +203,6 @@ module.exports = function (grunt) {
         'build',
         'mozusync:upload',
         'mozutheme:check',
-        'compress',
         'watch:sync'
-        
     ]);
 };

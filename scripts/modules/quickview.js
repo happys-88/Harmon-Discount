@@ -368,6 +368,9 @@ define([
                                     $('html,body').animate({
                                         scrollTop: $('header').offset().top
                                     }, 1000);
+                                } else {
+                                    $('[data-mz-validationmessage-for="item-out-of-stock"]').text("* This item is out of stock.");
+                                    blockUiLoader.unblockUi();
                                 }
                             });
                         }

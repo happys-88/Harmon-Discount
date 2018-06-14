@@ -59,10 +59,13 @@
         {% if PageContext.CrawlerInfo.NextUrl  %}
         <link rel="next" href="{{PageContext.CrawlerInfo.NextUrl}}">
         {% endif %}
+
         {% block stylesheets %}
-        <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/storefront.less" %}" title="default" media="all">
-        <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/ml/print.less" %}" media="print">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet"> 
+            <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/storefront.less" %}" title="default" media="all">
+            <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/ml/print.less" %}" media="print">
         {% endblock stylesheets %}
+
         {% block head-tag-scripts %}
         <script type="text/javascript" src="{% make_url "cdn" "/scripts/vendor/modernizr.min.js" %}"></script>
         {% endblock head-tag-scripts %}
@@ -119,7 +122,7 @@
                                 <span class="hide">Close</span>
                             </button>
                         </div>
-                        {% dropzone "home-promo-below-navigation" scope="site" %}
+                        {% dropzone "home-promo-below-navigation" scope="site" %} 
                     </div>
                 </div>
             </div> 
@@ -143,14 +146,13 @@
             {% endblock page-footer %}
             {% block copyright-footer %}
                 <div class="container footer-bottom">
-                    <div class="row container-visit">
-                        <div class="col-xs-12 text-center"><p>{{ labels.visitOurSites }}</p></div>
-                    </div>
-                    <div class="row container-visit-img">
-                        <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 visit-our-sites"> 
+                            <p>{{ labels.visitOurSites }}</p>
                             {% dropzone "other-sites" scope="site" %}
                         </div>
-                    </div>
+                    </div> 
+                    
                 </div>
             {% endblock copyright-footer%}
         </div>

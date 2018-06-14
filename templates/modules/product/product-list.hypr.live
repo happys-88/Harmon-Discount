@@ -6,6 +6,4 @@
         {% endfor %}
     </ul>
     {% endif %}
-    <div id="loaderIcon"></div>
-    {% require_script "modules/category/infinite-scroller" %}
-</div>
+</div> 

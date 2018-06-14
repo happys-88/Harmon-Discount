@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "9071651f42405ee9ee0b5149e978ee610c6a68dd"
+      "commit": "67fda4c4fd0fee666e00e4a2e03ebf00d20448b3"
     }
   },
   "editors": [
@@ -218,6 +218,14 @@
       ]
     },
     {
+      "documentType": "web_page",
+      "entityType": "webpage",
+      "id": "flippPage",
+      "template": "flipp-page",
+      "title": "Flipp Flyer",
+      "userCreatable": true
+    },
+    {
       "entityType": "siteTemplate",
       "id": "site_page",
       "template": "page",
@@ -284,8 +292,8 @@
     {
       "documentType": "web_page",
       "entityType": "webpage",
-      "id": "location",
-      "template": "location",
+      "id": "store-locator",
+      "template": "store-locator",
       "title": "Store Locator",
       "userCreatable": true
     },
@@ -635,7 +643,7 @@
     "deliverySurchargeHeader": "Freight Delivery Surcharge",
     "deliverySurchargeContent": "Bulky items such as furniture and rugs cost more to ship due to greater size and weight. Therefore, a delivery surcharge will be billed in addition to the standard shipping charge.Surcharge amounts vary. The surcharge amount is noted on each product detail page.",
     "useDebugScripts": false,
-    "showcouponCodeBasket": false,
+    "showcouponCodeBasket": true,
     "showemptyBasket": false,
     "useSearchAutocomplete": true,
     "allowCustomerInitiatedReturns": false,
@@ -829,6 +837,12 @@
       "displayName": "Featured Products",
       "displayTemplate": "catalog/featuredproducts",
       "editViewFields": [
+        {
+          "anchor": "100%",
+          "fieldLabel": "Title",
+          "name": "title",
+          "xtype": "mz-input-text"
+        },
         {
           "anchor": "100%",
           "fieldLabel": "Products",
@@ -2000,6 +2014,157 @@
         }
       ],
       "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "displayName": "Shop By Brand",
+      "displayTemplate": "misc/shop-by-brand",
+      "editViewFields": [
+        {
+          "anchor": "100%",
+          "fieldLabel": "Title",
+          "name": "title",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "100%",
+          "fieldLabel": "Choose Shop By Brand",
+          "name": "shopByBrand",
+          "xtype": "mz-input-categorymulti"
+        }
+      ],
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "id": "shop-by-brand",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "displayName": "Shop By Category",
+      "displayTemplate": "misc/shop-by-category",
+      "editViewFields": [
+        {
+          "anchor": "100%",
+          "fieldLabel": "Title",
+          "name": "title",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "100%",
+          "fieldLabel": "Choose Shop By Category",
+          "name": "shopByCategory",
+          "xtype": "mz-input-categorymulti"
+        }
+      ],
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "id": "shop-by-category",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "id": "shopNowWidget",
+      "displayName": "Shop Now Widget",
+      "displayTemplate": "misc/shop-now-widget",
+      "editViewFields": [
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Image for the widget",
+          "name": "slideImageOne",
+          "xtype": "mz-input-image"
+        },
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add First Title",
+          "name": "TitleOne",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Description Text",
+          "name": "TitleTwo",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "50%",
+          "fieldLabel": "Button Text Value",
+          "name": "ButtonTextValue",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Link",
+          "name": "shopNowWidgetUrl",
+          "xtype": "mz-input-text"
+        }
+      ],
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "displayName": "Global Footer Widget",
+      "displayTemplate": "misc/global-footer-widget",
+      "editViewFields": [
+        {
+          "anchor": "100%",
+          "fieldLabel": "Add image for first widget",
+          "name": "firstImage",
+          "xtype": "mz-input-image"
+        },
+        {
+          "anchor": "100%",
+          "fieldLabel": "Add url for first widget",
+          "name": "firstUrl",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "100%",
+          "fieldLabel": "Add image for second widget",
+          "name": "secondImage",
+          "xtype": "mz-input-image"
+        },
+        {
+          "anchor": "100%",
+          "fieldLabel": "Add url for second widget",
+          "name": "secondUrl",
+          "xtype": "mz-input-text"
+        },
+        {
+          "anchor": "100%",
+          "fieldLabel": "Add image for third widget",
+          "name": "thirdImage",
+          "xtype": "mz-input-image"
+        },
+        {
+          "anchor": "100%",
+          "fieldLabel": "Add url for third widget",
+          "name": "thirdUrl",
+          "xtype": "mz-input-text"
+        }
+      ],
+      "id": "globalFooterWidget",
+      "icon": "/resources/admin/widgets/28_deal_of_the_day.png",
+      "validPageTypes": [
+        "*"
+      ]
+    },
+    {
+      "id": "dropzoneImage",
+      "displayName": "Dropzone Image",
+      "displayTemplate": "cms/dropzone-image",
+      "editViewFields": [
+        {
+          "anchor": "50%",
+          "fieldLabel": "Add Image",
+          "name": "dropzoneImage",
+          "xtype": "mz-input-image"
+        }
+      ],
+      "icon": "/resources/admin/widgets/trending.png",
       "validPageTypes": [
         "*"
       ]

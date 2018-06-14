@@ -38,7 +38,7 @@
     "anonOrderNumberMissing": "The order number you provided was not found. Please validate the order number and try again or contact customer service.",
     "anonAuthError": "Sorry, the information you provided did not match our records. Please check the information that you provided and try again or contact the customer service department.",
     "signUp": "Sign Up",
-    "signupEmailupdates": "Sign me up for Christmas Tree Shops Email Updates about new services and special offers!",
+    "signupEmailupdates": "Sign me up updates and exclusive offers!",
     "recoveryQuestion": "Select a recovery question",
     "recoveryAnswer": "Enter Answer",
     "secureConnectionMessage": "Your Connection to this website is secure.",
@@ -526,7 +526,7 @@
     "exclusivePricelist": "The following items are not available for purchase and have been removed.",
     "newPriceList": "You are now eligible for special pricing.",
     "openCart": "View Cart",
-    "footerSignUpEmail": "Sign up for email and receive $10 off your order of $50 or more!",
+    "footerSignUpEmail": "Email Sign up for Exclusive Offers",
     "connectWithUs": "Connect with us",
     "storeLocator": "Store locator",
     "shop": "shop",
@@ -534,7 +534,7 @@
     "findAStore": "Find A Store",
     "storeTitle": "Store locator | Christmas Tree Shops andThat!",
     "visitOurSites": "Visit our other sites:",
-    "copyWriteText": "Christmas Tree Shops.",
+    "copyWriteText": "Harmon Stores, Inc.", 
     "storeDetails": "Expanded Health & Beauty Section",
     "seeMore": "see more",
     "prev": "prev",
@@ -631,5 +631,13 @@
     "requiredField": "Indicates a required field",
     "selectedTopicMissing": "Please select a topic",
     "checkoutPaypal": "Checkout via Paypal",
-    "paypalMessage": "You will be redirected to the PayPal website"
+    "paypalMessage": "You will be redirected to the PayPal website",
+
+    // Custom Labels - Harmon
+    "shopAllBrands": "Shop All Brands",
+
+    //My account
+    "logInMsg"                               :    "Welcome back! Please enter your email address and password to sign into your online shopping account",
+    "signUpMsg"                              :   "Sign up with an email address and password",
+    "createNewAccount"                       :   "Create New Account"
 }

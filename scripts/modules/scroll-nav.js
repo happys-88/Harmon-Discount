@@ -8,13 +8,13 @@
                     refreshFn = _.debounce(function () {
                         $nav.scrollspy('refresh');
                     }, 500);
-                $this.on('click', 'a', function (e) {
+                $this.on('click', 'a', function (e) { 
                     e.preventDefault();
                     $(this.getAttribute('href')).ScrollTo({ axis: 'y', offsetTop: gutterWidth });
                 }).affix({
                     offset: {
                         top: $this.offset().top - gutterWidth,
-                        bottom: $('.ml-global-footer').outerHeight(true)+ $('footer').outerHeight(true)+ $('.footer-bottom').outerHeight(true)
+                        bottom: $('.mz-global-footer').outerHeight(true)+ $('footer').outerHeight(true)+ $('.footer-bottom').outerHeight(true)
                     }
                 });
                 $(window).on('resize', refreshFn);

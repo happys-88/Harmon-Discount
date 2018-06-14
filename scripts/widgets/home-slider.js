@@ -12,6 +12,7 @@ function ($, _, api, Backbone, bxSlider) {
             moveSlides: 1,
             slideMargin: 0,
             infiniteLoop: false,
+            controls: true,   
             pager: true,
             hideControlOnEnd: true,
             touchEnabled: true,

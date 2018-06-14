@@ -1,10 +1,10 @@
-body {
-    .fontsMedium();
-    font-size: @fontSize;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-input, select, textarea, button, a {
+// body {
+//     .fontsMedium();
+//     font-size: @fontSize;
+//     -webkit-font-smoothing: antialiased;
+//     -moz-osx-font-smoothing: grayscale;
+// }
+input, select, textarea, button, a { 
     outline: none;
     &:visited {
         outline: none;
@@ -29,7 +29,7 @@ input, select, textarea, button, a {
     .border-radius-plain(0);
 }
 .checkout-hide-element{
-    .ml-header-search-wrapper, .ml-header-links-wrapper, .ml-header-global-cart-wrapper{display: none!important;}    
+    .mz-header-search-wrapper, .mz-header-links-wrapper, .mz-header-global-cart-wrapper{display: none!important;}    
 }
 
 //Site-wide rules
@@ -51,7 +51,7 @@ input, select, textarea, button, a {
             color: inherit;
         }
     }
-    .ml-header-links-wrapper {
+    .mz-header-links-wrapper {
         .clearfix();
         text-transform: uppercase;
         position: absolute;
@@ -178,12 +178,12 @@ input, select, textarea, button, a {
             .mz-logged-in-notice{padding-bottom: 10px;}
         }   
     }
-    .ml-header-content {
+    .mz-header-content {
         position: relative;
         padding: @mobileRowHeight 0;
         background: @primaryColor;
         height: @mobileRowHeight*3;
-        .ml-header-logo-wrapper {
+        .mz-header-logo-wrapper {
             position: absolute;
             left: 0;
             top: 0;
@@ -218,7 +218,7 @@ input, select, textarea, button, a {
                 }
             }
         }
-        .ml-header-search-wrapper {
+        .mz-header-search-wrapper {
              width: 100%;
              position: absolute;
              top: @mobileRowHeight*2+5;
@@ -1131,7 +1131,7 @@ ul.tabs {
     color: @colorWhite;
     padding: 10px 0;
     background: @navBorder;
-    &.ml-global-footer{
+    &.mz-global-footer{
         display:none;
     }
 }
@@ -1422,6 +1422,7 @@ footer {
 #mz-drop-zone-copyright{float: right;}
 
 //login popup  
+/*
 #liteRegistrationModal{ 
     padding-right: 0px;    
     .modal-dialog.login-modal{      
@@ -1519,8 +1520,7 @@ footer {
                 .arrow{display: block;}
             }   
             .nav-tabs {  
-                position: absolute;
-                top: -60px !important;   
+                position: absolute;   
                 width: 100%;       
                 border-bottom: none;             
             }
@@ -1584,7 +1584,8 @@ footer {
             }
         }   
     } 
-}        
+} 
+*/      
 
 .mz-sitenav-sub-container{display: none;}
 .mz-l-paginatedlist{
@@ -3692,9 +3693,9 @@ footer {
 .mz-checkout{
     .mz-l-pagewrapper {
         #global-header-wrapper,
-        .ml-header-content,
+        .mz-header-content,
         .mz-utilitynav-list,
-        .ml-header-links-wrapper{
+        .mz-header-links-wrapper{
             display: none !important;
         }
     }

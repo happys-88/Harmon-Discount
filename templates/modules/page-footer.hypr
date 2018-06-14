@@ -1,13 +1,9 @@
-﻿<div class="ml-global-footer">
+﻿<div class="mz-global-footer">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 hidden-xs">
-				{% dropzone "footer-dropzone-1" scope="site" %}
-				{% dropzone "footer-dropzone-2" scope="site" %} 
-				{% comment %}
-					{% dropzone "footer" scope="site" %}
-				{% endcomment %}
-			</div>
+				{% dropzone "footer-dropzone-2" scope="site" %}  
+			</div> 
 		</div>
 	</div>
 </div>
@@ -23,7 +19,7 @@
 							<div class="input-group">					  	
 								<input type="email" id="footerSignUpInput" maxlength="254" class="form-control" placeholder="{{ labels.yourEmailAddress }}">
 								<span class="input-group-btn">
-									<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp">{{ labels.signUp }}</button>
+									<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp">{{ labels.signUp }}</button> 
 								</span>
 							</div>
 							<span id="emailHelpBlock" class="text-danger"></span>
@@ -32,7 +28,7 @@
 					{% endif %}
 					<form class="form">
 						<div class="form-group">
-							<label for="footerZipCodeInput" class="control-label text-uppercase">{{ labels.storeLocator }}</label>
+							<label for="footerZipCodeInput" class="control-label text-uppercase">{{ labels.storeLocator }} <i class="fa fa-map-marker"></i></label>
 							<div class="input-group">					  	
 								<input type="text" id="footerZipCodeInput" class="form-control" maxlength="50" placeholder="{{ labels.enterZipCode }}">
 								<span class="input-group-btn">
@@ -43,39 +39,39 @@
 						</div>
 					</form>					
 				</div>
-				<div class="container-social">
-					<div class="heading text-uppercase">{{ labels.connectWithUs }}</div>
-					<div>
-						<a title="Facebook" href="https://www.facebook.com/ChristmasTreeShopsandThat" target="_blank"><i class="fa fa-facebook custom-icon"><span class="hide">Facebook Icon</span></i></a>
-						<a title="Instagram" href="https://instagram.com/christmastreeshops/" target="_blank"><i class="fa fa-instagram"><span class="hide">Instagram Icon</span></i></a>
-						<a title="Pinterest" href="https://www.pinterest.com/CTSandThat/" target="_blank"><i class="fa fa-pinterest"><span class="hide">Pinterest Icon</span></i></a>
-					</div>
-				</div>
+				
 			</div>
 			<div class="col-xs-12 container-menu col-sm-7 col-md-8 hidden-xs regular-footer {% if themeSettings.footerEnableMini %}mini-footer-on{% else %}mini-footer-off{% endif %}">
 				<div class="row container-links">
 					<div class="col-xs-12">
 						<div class="row">
-							<div class="col-xs-4">
+							<div class="col-xs-3">
 								{% dropzone "footer-cat-links-col1" scope="site" %}
 							</div>
-							<div class="col-xs-4">
+							<div class="col-xs-3">
 								{% dropzone "footer-cat-links-col2" scope="site" %}
 							</div>
-							<div class="col-xs-4 top-pad">
+							<div class="col-xs-3">
 								{% dropzone "footer-cat-links-col3" scope="site" %}
 							</div>
+							<div class="col-xs-3">
+								{% dropzone "footer-cat-links-col4" scope="site" %}
+							</div> 
 						</div>
 					</div>								
 				</div>
-				<div class="row container-copyright">
-					<div class="col-md-12 term-text">
-						{% dropzone "footer-copy-links" scope="site" %}
-						<span class="no-hover copy-text">&copy; {% now Y %} {{ labels.copyWriteText }}</span>
-					</div>
-				</div>
+				
 
-			</div>		
+			</div>
+			<div class="col-xs-12 container-copyright">
+				<ul>
+					<li><a href="/site-map" target="_blank">Site Map</a></li>
+					<li><a href="/privacy-policy" target="_blank">Privacy Policy</a></li>
+					<li><a href="/terms-conditions" target="_blank">Terms &amp; Conditions</a></li>
+					<li><a href="/product-recalls" target="_blank">Product Recalls</a></li>
+					<li class="copy-text">Copyright {% now Y %} {{ labels.copyWriteText }}</li> 
+				</ul> 
+			</div>  		
 		</div>
 		<div class="row">
 			<div class="col-xs-12 {% if themeSettings.footerEnableMini %}mini-footer-off{% else %}mini-footer-on{% endif %}">

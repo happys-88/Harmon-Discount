@@ -1,29 +1,354 @@
 
-/**** Styles For Harmon Discount ****/ 
+/**** Custom Styles for harmon discount ****/ 
 
-.mz-pageheader{
-	.ml-header-links-wrapper{
-		background: #e0e0e0;  
+/**** Custom Variables ****/
+@fontFamily: "Montserrat", sans-serif;
+@headingTwoFontSize: 24px;
+@headingTwoColor: #000;  
+@dropzoneMargin: 70px;
+@primaryColor: #002C50;
+@textColorWhite: #fff;
+@buttonBgColor: #d15f2a;
+@defaultBorderColor: #d4d4d4;
+@listItemColor: #00adce; 
+
+@mobileNavBorderBtm: #cbcbcb; 
+@mobileNavSubMenuBg: #f1f1f1;
+@textColorGrey: #262626;   
+
+html, body{
+	height: 100%;
+	min-height: 100%;
+}
+body{
+  background: @textColorWhite;
+  font-family: @fontFamily;
+  font-size: 14px;
+  font-weight: normal; 
+}
+
+ul, ol{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img{
+	height: auto;
+	max-width: 100%;
+}
+.clearfix{
+	clear: both;
+}
+.clearfix::after { 
+    content: "";
+    clear: both;
+    display: table;
+}
+.no-padding{
+	padding: 0;
+}
+.no-padding-left{
+	padding-left: 0;
+}
+
+.container{
+	max-width: 1440px;        
+}
+
+.mz-cms-content{
+	padding: 0 !important;
+	overflow: visible !important;  
+}
+
+img[data-mztp]{
+	display: none;
+}
+
+.mz-l-pagecontent {
+  	h1 {
+		&.mz-pagetitle {
+		    color: #495363;
+		    border-bottom: 1px solid #e0e0e0;
+		    font-size: 30px;
+		    margin-top: 16px;
+		    margin-bottom: 40px;
+		    padding-bottom: 12px;
+		    text-transform: uppercase;
+		}
 	}
 }
-#home-promo-wrapper{
+
+.heading-2{
+	font-size: @headingTwoFontSize;
+	color: @headingTwoColor;
+	line-height: @headingTwoFontSize+4;
+	text-transform: none;
+	position: relative;
+	margin: 0 0 30px; 
+	font-weight: 500; 
+	text-align: center;   
+	span{
+		display: inline-block;
+		background: @textColorWhite; 
+		padding: 0 25px; 
+		position: relative;
+		z-index: 9;
+	}
+	&:after{
+		position: absolute;
+	    content: "";
+	    background: #e0e0e0;
+	    width: 100%;
+	    height: 1px;
+	    right: 0;
+	    top: 14px;
+	}
+}
+.heading-3{
+	font-size: 14px;
+	color: @textColorWhite;
+	line-height: 22px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 0 16px;
+	margin: 0 0 14px;
+	background: #00adce;
+}
+
+/**** Home Page ****/
+#home-promo-wrapper{ 
 	box-shadow: none;
 	background: #e0e0e0;
-	font-size: 16px;
-	padding: 7px 15px;      
+	font-size: 14px;
+	padding: 7px 15px;
+	display: block;
+	font-family: @fontFamily;           
 }
 .bx-wrapper{
+	.bx-controls-direction{
+		a{
+			width: 27px;
+			height: 42px; 
+			text-indent: -9999px;
+			&.bx-prev{
+				background: url('../resources/images/harmon/slider-arrow.png') no-repeat 0 0;
+				left: 0;    
+			}
+			&.bx-next{ 
+				background: url('../resources/images/harmon/slider-arrow.png') no-repeat -35px 0px;
+				right: 0;    
+			}  
+		}
+	}
 	.bx-pager{
 		bottom: 0;    
 		&.bx-default-pager{
 			a{
 				width: 15px;
 				height: 15px;
-				border-radius: 50%;  
+				border-radius: 50%;   
 			}  
 		}   
 	}
 }
-footer{
-	background: #000; 
+.mz-sitenav{
+	background: #e20177; 
 }
+
+/**** Product Listing ****/
+.mz-productlist{
+	.mz-productlist-list{
+		.mz-productlist-item{ 
+			.mz-productlisting-image{
+				min-height: 170px;
+				padding-bottom: 15px;
+				border-bottom: 1px solid #e0e0e0; 
+				margin-bottom: 12px;   
+				img{
+					display: inline-block; 
+				}
+			}
+			.mz-productlisting-info{
+				.ml-product-info-wrapper{
+					min-height: 60px; 
+					.mz-productlisting-title{
+						font-size: 14px;
+						color: @textColorGrey; 
+						line-height: 18px; 
+						font-weight: normal;  
+					}	
+				}
+				.ml-product-price-wrapper{
+					.mz-pricestack{
+						span{
+							font-size: 14px;
+							color: @textColorGrey; 
+							line-height: 18px; 
+							font-weight: normal;
+							&.is-crossedout{
+								color: #ff6c1f;  
+							} 	
+						}
+						 	
+					}
+					
+				}
+					
+			}
+			
+		}	
+	}
+}   
+
+
+/**** Featured Products ****/
+.mz-homepage{
+	.mz-featured-products{
+		margin-bottom: 60px;
+		.mz-productlist{
+			.grid-view{
+				.mz-productlist-item,
+				.mz-productlist-item:nth-child(2n+1),
+				.mz-productlist-item:nth-child(3n+1){
+					clear: none;
+
+				} 
+			}
+			.mz-product-badge,
+			.quick-view-btn{ 
+				display: none !important;   
+			}
+		}
+		.bx-wrapper{
+			.bx-controls-direction{
+				a{
+					top: 70px; 
+				}
+			}
+		}
+	}
+}
+
+/**** Footer ****/
+.mz-global-footer{
+	background: #4bb1da;
+	margin: 0;
+	.global-footer-widget{
+		float: left;
+		width: 100%; 
+		li{ 
+			.divider{ 
+				width: 1px;
+				background: #81c1e1;
+				position: absolute;
+				right: 0; 
+				top: 25px;
+				bottom: 25px; 
+			}  
+		}  
+	} 
+	
+}
+
+/**** Footer ****/
+footer{
+	background: #000;
+	.row{
+		margin-bottom: 10px; 
+	}
+	.regular-footer{
+		border: none; 
+	}
+	.container-menu{
+		min-height: inherit; 
+	}
+	.container-links{
+		h4{
+			font-size: 14px;
+			color: #fff; 
+			line-height: 20px;
+			text-transform: uppercase;
+			font-weight: normal; 
+		}
+		ul{
+			float: left;
+			width: 100%;
+			margin-bottom: 15px; 
+			li{
+				a{
+					font-size: 14px;
+					line-height: 20px;
+					font-weight: normal; 
+					font-family: @fontFamily; 
+				}
+			}
+		}
+	} 
+	.button_promotional{
+		background: #9f146c; 
+	}
+	.container-copyright{
+		min-height: inherit;
+		margin-top: 20px; 
+		ul{
+			li{
+				float: left;
+				padding-left: 8px;
+				margin-left: 6px;
+				border-left: 1px solid #fff;
+				line-height: 12px; 
+				a{  
+					font-size: 12px;
+					color: #fff; 
+					line-height: 14px; 
+					margin: 0; 
+					font-family: @fontFamily; 
+					font-weight: normal;  
+				}
+				&:first-child{
+					padding: 0;
+					margin: 0; 
+					border: none; 
+				}
+				&.copy-text{
+					font-size: 12px;
+					color: #fff; 
+					line-height: 14px; 
+					margin: 0; 
+					font-family: @fontFamily; 
+					font-weight: normal;
+					margin-left: 8px;
+					border: none;  
+				}
+			}
+		}
+	}
+}
+
+.footer-bottom{ 
+	.visit-our-sites{ 
+		padding: 30px 0 60px; 
+		text-align: center; 
+		p{
+			font-size: 12px;
+			color: #242424;
+			line-height: 18px;
+			margin: 0 0 25px; 
+			font-weight: normal;
+		} 
+		.footer-logos{
+			display: table;
+			width: 100%;
+			li{
+				display: table-cell; 
+				vertical-align: bottom; 
+			}
+		}
+	}
+}
+
+/*** Validation error msg ***/
+.mz-validationmessage {
+    font-size: 11px;
+}
+/***\ Validation error msg ***/
