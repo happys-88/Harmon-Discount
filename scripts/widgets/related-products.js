@@ -76,7 +76,7 @@
                     }
                 }
 
-                if (!productCodes || !productCodes.length) {
+                if (!productCodes || !productCodes.length) { 
                     if (pageContext.isEditMode) {
                         rp.html('<b>tbd preview content</b>');
                     }
@@ -88,7 +88,7 @@
                         var availableColors = [];
                         if (product.options) {
                             for (var i = 0; i < product.options.length; i++) {
-                                if (product.options[i].attributeFQN == "tenant~COLOR") {
+                                if (product.options[i].attributeFQN == "tenant~color") {  
                                     for (var j = 0; j < product.options[i].values.length; j++) {
                                         var color = product.options[i].values[j].stringValue.trim().replace(/ /g, '_').toLowerCase();
                                         var swatchIconSize = HyprLiveContext.locals.themeSettings.listProductSwatchIconSize;

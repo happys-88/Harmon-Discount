@@ -145,3 +145,145 @@
         }
     } 
 }
+
+/*** Qucik View ***/
+#quickViewModal {
+    .modal-dialog {
+        .modal-content {
+            ul {
+                &.tabs {
+                    li {
+                        font-size: 13px;
+                        font-weight: 600;
+                        line-height: 40px;
+                    }
+                }
+            }
+            .tab_container {
+                .mz-product-top-content {
+                    .mz-productdetail-options {
+                        .mz-productoptions-optioncontainer {
+                            .mz-productoptions-optionlabel {
+                                font-size: 13px;
+                                font-weight: 600;
+                                line-height: 30px;
+                                padding-top: 0;
+                            }
+                        }
+                    }
+                    .mz-productcodes-productcode {
+                        font-weight: 500;
+                    }
+                    .mz-view-all-brand {
+                        color: #999;
+                        font-size: 14px;
+                        font-weight: 600;
+                        padding: 10px 0 0;
+                        a {
+                            color: #24a2d3;
+                        }
+                    }
+                    .stock-info {
+                        color: #999;
+                        font-weight: 400;
+                        span {
+                            font-weight: 600;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .mz-pagetitle {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }                               
+                    .mz-productdetail-conversion-controls {
+                        label {
+                            font-size: 13px;
+                            font-weight: 600;
+                        }
+                    }
+                    .mz-productdetail-conversion {
+                        .mz-productdetail-price {
+                            .mz-pricestack .mz-price {
+                                font-size: 24px;
+                                font-weight: 500;
+                                line-height: 28px;
+                            }
+                        }
+                    }
+                    
+                }
+                #description-tab {
+                    line-height: 18px;
+                }
+            }
+            .mz-productimages {
+                .mz-productimages-thumbs {
+                    width: 339px;
+                    margin: 0 16px;
+                    #productpager-Carousel {
+                        &.products_list  {
+                            height: 74px;
+                            margin-top: 8px;
+                            li {
+                                border: 1px solid #e0e0e0;
+                                height: 74px;
+                                .mz-productimages-thumb {
+                                    outline: 0;
+                                }
+                                &.active {
+                                    border: 1px solid #9e9e9e;
+                                    img {
+                                        border: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }                 
+                    .bx-wrapper {
+                        .bx-controls-direction {
+                            a {
+                                background-size: cover;
+                                width: 16px;
+                                height: 22px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                &.bx-prev {
+                                    left: -23px;
+                                }
+                                &.bx-next {
+                                    background-position: -18px 0px;
+                                    right: -23px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .full-product {
+                padding: 15px 0 5px;
+                a {
+                    color: #24a2d3;
+                    text-decoration: underline;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    &:focus, 
+                    &:active,
+                    &:visited {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+  
+    .mz-button {
+        width: 100%;
+        &.button_disabled {
+            background: #fe832e;
+            color: #fff;
+            opacity: 0.5;
+        }
+    }
+}
+/***\ Qucik View ***/
