@@ -1,12 +1,11 @@
 {% extends "page" %}
 {% block title-tag-content %}{% firstof pageContext.metaTitle|safe model.name|safe %}  - {% parent %}{% endblock title-tag-content %}
 {% block body-tag-classes %}mz-contactus{% endblock body-tag-classes %}
-{% block breadcrumbs %}
-    {% include "modules/customer-service-breadcumb" %}
-{% endblock breadcrumbs %}
-{% block body-content %}
+
+{% block body-content %} 
 	{% preload_json selectTopic "selectTopic" %}
-	 {% require_script "pages/contactus" %}
+	{% require_script "pages/contactus" %}
+
 	<div class="mz-customer-service-page">
 		<div class="mz-l-container">
 			<div class="row"> 
@@ -16,11 +15,11 @@
 						{% include "modules/contact-us/contact-us" with model=model %}
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-3 mz-customer-service-nav">     
-					<div class="mz-l-sidebar">
-						{% include "modules/customer-service/service-nav" %}
-					</div>
-				</div>
+				<div class="col-xs-12 col-sm-3 mz-content-left-nav">        
+	                <div class="mz-l-sidebar">
+	                    {% include "pages/content-left-nav" %}       
+	                </div>
+	            </div> 
 			</div>
 		</div>
 	</div>

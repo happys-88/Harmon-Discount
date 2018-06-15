@@ -609,7 +609,7 @@
     "storeNoMsg": "Store Number is required 3 digit number",
     "successfullyAddedItems": "The following item(s) have successfully added to your cart",
     "contactusByEmail": "To Contact Us By Email",
-    "myCommentQuestion": "My comment/question concerns",
+    "myCommentQuestion": "Subject",  
     "send": "Send",
     "contactUsMessage": "Message",
     "contactUsMessageMissing": "Please enter your message",
@@ -637,7 +637,7 @@
     "shopAllBrands": "Shop All Brands",
 
     //My account
-    "logInMsg"                               :    "Welcome back! Please enter your email address and password to sign into your online shopping account",
-    "signUpMsg"                              :   "Sign up with an email address and password",
-    "createNewAccount"                       :   "Create New Account"
+    "logInMsg" :    "Welcome back! Please enter your email address and password to sign into your online shopping account",
+    "signUpMsg" :   "Sign up with an email address and password",
+    "createNewAccount": "Create New Account" 
 }

@@ -1,13 +1,13 @@
 
-{% if model.properties.page_type_definition=="customer-service" or pageContext.cmsContext.template.path=="order-status" or pageContext.cmsContext.template.path=="order-tracking" %}    
-    <h3 class="mz-l-stack-sectiontitle">Customer Service</h3>
+{% if model.properties.page_type_definition=="customer-service" or pageContext.cmsContext.template.path=="order-status" or pageContext.cmsContext.template.path=="contact-us" %}     
+    <h3 class="mz-l-stack-sectiontitle">Customer Service</h3> 
     <nav class="mz-scrollnav"> 
         <ul class="mz-scrollnav-list nav">
             <li class="mz-scrollnav-item">
                 <a class="mz-scrollnav-link" href="user/order-status">Order Status</a>      
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/shipping-information"> Shipping Info</a>
+                <a class="mz-scrollnav-link" href="/shipping-information">Shipping Info</a>
             </li>
             <li class="mz-scrollnav-item">
                 <a class="mz-scrollnav-link" href="/contact-us">Contact Us</a>

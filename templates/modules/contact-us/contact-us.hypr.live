@@ -1,55 +1,62 @@
 <div class="mz-l-container">
-    <div class="col-md-8">
-	<p class="mz-contactus-subtitle">
-		<span class="mz-contactus-subtitle-text">{{ labels.contactusByEmail }}:</span>
-		<span class="mz-indicates-required-text pull-right text-right">*{{ labels.requiredField }}</span>
-	</p>
-	<div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell">
+    <form name="contactUsForm" method="post" id="contactUsForm" action="">      
+    <div class="mz-l-formfieldgroup-row"> 
+        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
             <label for="firstname">{{ labels.firstName }}</label>
         </div>
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
             <input type="text" name="firstname" data-mz-value="firstname" placeholder="{{ labels.firstName }}" maxlength="{{themeSettings.firstNameLength}}" class="form-control">
         </div>
     </div>
     <div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
             <label for="lastname">{{ labels.lastName }}</label>
         </div>
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
             <input type="text" name="lastname" data-mz-value="lastname" placeholder="{{ labels.lastName }}" maxlength="{{themeSettings.lastNameLength}}" class="form-control">
         </div>
     </div>
     <div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
             <label for="email">*{{ labels.email }}</label>
         </div>
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
             <input type="email" id="emailAddress" name="email" data-mz-value="email" placeholder="{{ labels.emailAddress }}" maxlength="{{themeSettings.emailLength}}" class="form-control">
             <span class="mz-validationmessage" data-mz-validationmessage-for="email"></span> 
         </div>
     </div>
     <div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
             <label for="myCommentQuestion">*{{ labels.myCommentQuestion }}:</label>
         </div>
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
             <select id="selectedTopic" name="selectedTopic" data-mz-value="selectedTopic" class="select form-control">
                 <option value="" selected>{{labels.selectTopic}}</option>
+                {% comment %}
                 {% if model.selectTopic and model.selectTopic.length>0 %}
                     {% for val in model.selectTopic %} 
                         <option value="{{ val.id }}">{{ val.displayName }}</option>
                     {% endfor %}
                 {% endif %}
+                {% endcomment %}
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Gift Certificates and Promotions">Gift Certificates and Promotions</option>
+                <option value="My Account Information">My Account Information</option>
+                <option value="Order Inquiry">Order Inquiry</option>
+                <option value="Placing an Order">Placing an Order</option>
+                <option value="Product Questions">Product Questions</option>
+                <option value="Returns">Returns</option>
+                <option value="Store Experience">Store Experience</option>  
+
             </select>
             <span class="mz-validationmessage" data-mz-validationmessage-for="selectedTopic"></span>
         </div>
 	</div>
 	<div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
             <label for="message">*{{ labels.contactUsMessage }}</label>
         </div>
-        <div class="mz-l-formfieldgroup-cell">
+        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12"> 
             <textarea rows="5" cols="50" id="message" name="message" data-mz-value="message" maxlength="{{ themeSettings.contactUsMessageLength }}" class="form-control"></textarea>
             <span class="mz-validationmessage" data-mz-validationmessage-for="message"></span>
         </div>
@@ -72,10 +79,11 @@
         <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async></script>
     </div>
     {% endif %}
-    <div class="mz-l-formfieldgroup-row margin-bottom-30">
-        <div class="mz-l-formfieldgroup-cell text-center">
+    <div class="mz-l-formfieldgroup-row">
+        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12"></div> 
+        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
             <button class="mz-button" type="button" data-mz-action="contactUsSubmit">{{ labels.send }}</button>
         </div>
     </div>
-    </div>
+    </form>
 </div>

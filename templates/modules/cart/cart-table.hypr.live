@@ -1,3 +1,6 @@
+{% for thresholdMsg in model.discountThresholdMessages %}
+  <span class="discount">{{ thresholdMsg.message }} </span> 
+{% endfor %} 
 <div class="col-md-6 pull-right col-sm-6 col-xs-12 text-right hidden-xs mz-button-checkout-cart-top">
   {% if not user.isAnonymous && user.isAuthenticated %}
    <button id="cart-checkout-btn" class="mz-button mz-button-large{% if model.isLoading %} button_disabled{% endif %}" data-mz-action="proceedToCheckout"{% if model.isLoading %} disabled="disabled"{% endif %}>

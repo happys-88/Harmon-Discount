@@ -11,9 +11,11 @@
 </script>
 {% if model.items.length>0 %}
 	<div class="media-list">
-			<div class="mz-discount-row order-level-discount">
-					<span class="discount"> Spend $50 more for FREE SHIPPING </span>
-			</div>
+		<div class="mz-discount-row order-level-discount">
+			{% for thresholdMsg in model.discountThresholdMessages %}
+	            <span class="discount">{{ thresholdMsg.message }} </span> 
+	        {% endfor %} 
+		</div>
 		{% if model.orderDiscounts.length > 0 %}
 			<div class="mz-discount-row order-level-discount">
 				{% for orderDiscount in model.orderDiscounts  %}

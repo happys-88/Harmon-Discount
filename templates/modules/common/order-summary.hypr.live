@@ -1,4 +1,7 @@
 ﻿<div class="mz-ordersummary col-xs-12 mz-reset-padding">
+  {% for thresholdMsg in model.discountThresholdMessages %}
+      <span class="discount">{{ thresholdMsg.message }} </span> 
+  {% endfor %}
         <div class="mz-header-basket-md-sm hidden-xs">
                 <div class="mz-ordersummary-header-product col-sm-8 mz-order-content-container">{{ labels.product }}</div>
                 <div class="mz-ordersummary-header-each col-sm-2">{{ labels.price }}</div>

@@ -34,11 +34,11 @@
     }
 }
 .mz-customer-service, 
-.mz-aboutus, .mz-customer-service-page, .mz-track-order-form { 
+.mz-aboutus{  
 	#contactus-container{
 		.mz-l-container{
 			margin-bottom: 40px;
-			width:50%;
+			width: 50%;
 		}
 	}
 	h3 {
@@ -54,90 +54,58 @@
 	.mz-dropzone {
 		margin-bottom: 30px;
 	}
-	form {
-	    float: left;
-	    width: 100%;
-	    max-width: 585px;
-	    .form-group {
-			float: left;
-			width: 100%;
-			label {
-			    line-height: 35px;
-			    margin: 0; 
-			    text-align: right;
-			    font-weight: normal; 
-			}
-			.form-control{
-				padding: 5px 10px;   
-			} 
+}
+
+/**** Order Status and Contact Us forms ****/ 
+#contactus-container, .mz-track-order-form{  
+	float: left;
+	width: 100%;
+	max-width: 585px; 
+}
+.mz-customer-service-page, .mz-track-order-form { 
+	.mz-l-formfieldgroup-row{ 
+		float: left;
+		width: 100%;
+		display: block;
+		margin-bottom: 15px;   
+		.mz-l-formfieldgroup-cell{
+			padding: 0 15px;    
 		}
-	}
-	
-	input[type="text"], 
-	input[type="email"], 
-	select,
-	textarea {
-		border: 1px solid #d4d4d4;
-		border-radius: 0;
-		margin-bottom: 0px;
-	}
-	textarea {
-		min-height: 100px;
-		max-height: 150px;
-	}
-	button {
-		&.mz-button {
-		    float: right;
-		    width: 70%;
+		label {
+		    display: block; 
+		    font-size: 14px !important;  
+		    line-height: 35px;
+		    margin: 0; 
+		    text-align: right;
+		    font-weight: normal; 
+		}
+		.form-control{
+			width: 100%; 
+			height: auto !important;   
+			padding: 8px 10px;   
+		} 
+		
+		input[type="text"], 
+		input[type="email"], 
+		select,
+		textarea {
+			border: 1px solid #d4d4d4;
+			border-radius: 0;
+			margin-bottom: 0px;
+		}
+		textarea {
+			min-height: 100px;
+			max-height: 150px;
+		}
+		button {
+			&.mz-button {
+			    float: right;
+			    width: 50%; 
+			    margin: 0; 
+			}
 		}
 	}
 }
+	
 
-.mz-loginpage{
-	.mz-track-order-form{  
-		.mz-loginform{
-			.mz-l-formfieldgroup-row{ 
-				float: left;
-				width: 100%;
-				display: block;
-				margin-bottom: 15px;   
-				.mz-l-formfieldgroup-cell{
-					padding: 0 15px;    
-				}
-				label {
-				    font-size: 14px; 
-				    line-height: 35px;
-				    margin: 0; 
-				    text-align: right;
-				    font-weight: normal; 
-				}
-				.form-control{
-					width: 100%; 
-					height: auto;  
-					padding: 8px 10px;   
-				} 
-				
-				input[type="text"], 
-				input[type="email"], 
-				select,
-				textarea {
-					border: 1px solid #d4d4d4;
-					border-radius: 0;
-					margin-bottom: 0px;
-				}
-				textarea {
-					min-height: 100px;
-					max-height: 150px;
-				}
-				button {
-					&.mz-button {
-					    float: right;
-					    width: 70%;
-					    margin: 0; 
-					}
-				}
-			}
-		}
-	}
-}  
 
