@@ -217,10 +217,20 @@
         }
       ]
     },
+   {
+      "documentType": "web_page",
+      "editor": "landing-page",
+      "entityType": "webpage",
+      "id": "credit-card-landing-page",
+      "template": "credit-card-landing-page",
+      "title": "Credit Card Landing Page",
+      "userCreatable": true
+    },
     {
       "documentType": "web_page",
+      "editor": "landing-page",
       "entityType": "webpage",
-      "id": "Brands",
+      "id": "brands",
       "template": "brand-gateway",
       "title": "Brands Gateway",
       "userCreatable": true
@@ -236,7 +246,7 @@
     {
       "documentType": "web_page",
       "entityType": "webpage",
-      "id": "Orde-tracking",
+      "id": "order-tracking",
       "template": "order-tracking",
       "title": "Order Tracking",
       "userCreatable": true
