@@ -7,62 +7,65 @@
 <div class="mz-customer-service-page">
     <div class="mz-l-container">
         <div class="row"> 
-                <div class="col-xs-12">
-                        <div class="col-xs-6">
-                                <div class="left"><a href="https://comenity.net/harmonfacevalues/pub/apply/ApplyIntro.xhtml?cmp=464_web_apply_webbtn"><img src="https://sep.yimg.com/ay/yhst-29523360387793/harmon-credit-card-19.gif" width="470" height="277" border="0" hspace="0" vspace="0" alt="Harmon Face Values Mastercard credit card"></a></div>
-                                <div class="col-xs-12">
-                                        <p>Special introductory offer! Get a $25 off $100
-                                                coupon when you receive your card. Already a cardholder? <a href="https://comenity.net/harmonfacevalues ">Manage Your Account</a></p>
-                                </div>
-                        </div>
-                        <div class="col-xs-6">
-                                <div class="right"><img src="https://sep.yimg.com/ay/yhst-29523360387793/harmon-credit-card-20.gif" width="455" height="331" border="0" hspace="0" vspace="0" alt="Harmon Face Values Mastercard credit card"></div>
-                        </div>
+            
+            <div class="col-md-12 col-sm-12 col-xs-12 mz-l-creditCard">
+                <div class="col-md-6 col-sm-6 col-xs-12 mz-l-card-img">
+                    <a href="https://comenity.net/harmonfacevalues/pub/apply/ApplyIntro.xhtml?cmp=464_web_apply_webbtn"><img src="https://sep.yimg.com/ay/yhst-29523360387793/harmon-credit-card-19.gif" alt="Harmon Face Values Mastercard credit card"></a>
                 </div>
-               
-                <div class="col-xs-12">
-                        <div id="creditcard-reward-bar"><strong>Earn rewards<sup>2</sup> with every purchase, everywhere</strong> and enjoy special financing.<sup>3</sup></div>
+                <div class="col-md-6 col-sm-6 col-xs-12 mz-l-card-img">
+                    <img src="https://sep.yimg.com/ay/yhst-29523360387793/harmon-credit-card-20.gif" alt="Harmon Face Values Mastercard credit card">
                 </div>
-                <div class="col-xs-12"></div>
-                <div class="col-xs-12 reward-logo-bar">
-                    <div class="col-xs-2 brand-img">
-                            <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-1.jpg" width="200" height="300" border="0" hspace="20" vspace="10" alt="Harmon Face Values Mastercard credit card">
-                    </div>
-                    <div class="col-xs-2 brand-img">
-                            <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-2.jpg" width="200" height="300" border="0" hspace="20" vspace="10" alt="Harmon Face Values Mastercard credit card">
-                    </div>
-                    <div class="col-xs-2 brand-img">
-                            <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-3.jpg" width="200" height="300" border="0" hspace="20" vspace="10" alt="Harmon Face Values Mastercard credit card">
-                    </div>
-                    <div class="col-xs-2 brand-img">
-                            <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-4.jpg" width="200" height="300" border="0" hspace="20" vspace="10" alt="Harmon Face Values Mastercard credit card">
-                    </div>
-                    <div class="col-xs-2 brand-img">
-                            <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-5.jpg" width="200" height="300" border="0" hspace="20" vspace="10" alt="Harmon Face Values Mastercard credit card">
+                <div class="mz-l-card-account col-md-12 col-sm-12 col-xs-12">
+                    <div class="mz-l-card-accountCoupon">
+                        Special introductory offer! Get a $25 off $100</br>
+                        coupon when you receive your card. Already a </br>cardholder? <a href="https://comenity.net/harmonfacevalues ">Manage Your Account</a>
                     </div>
                 </div>
-               <div class="cardholder-bar col-xs-12">
-                   <div class="cardholder-inner">
-                    <div class="cardholder col-xs-6">
-                    <a href="https://comenity.net/harmonfacevalues/pub/apply/ApplyIntro.xhtml?cmp=464_web_apply_webbtn"><img src="https://lib.store.yahoo.net/lib/yhst-29523360387793/creditcard-apply.png" alt="Become a cardholder - Apply now"></a>
-                  </div>
-                    <div class="cardholder col-xs-6">
+                <div class="mz-l-card-reward-bar col-md-12 col-sm-12 col-xs-12">
+                    <strong>Earn rewards<sup>2</sup> with every purchase, everywhere</strong> </br>and enjoy special financing.<sup>3</sup>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 mz-l-card-reward-logo-bar">
+                <div class="col-md-12 col-sm-12 col-xs-12 mz-l-card-reward-text">rewards run in the family</div>
+                <div class="col-md-12 col-sm-12 col-xs-12 mz-l-card-reward-logo">
+                    <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
+                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-1.jpg" alt="Harmon Face Values Mastercard credit card">
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
+                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-2.jpg" alt="Harmon Face Values Mastercard credit card">
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
+                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-3.jpg" alt="Harmon Face Values Mastercard credit card">
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
+                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-4.jpg" alt="Harmon Face Values Mastercard credit card">
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-12 brand-img">
+                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-5.jpg" alt="Harmon Face Values Mastercard credit card">
+                    </div>
+                </div>
+
+                <div class="mz-l-cardholder-bar col-md-12 col-sm-12 col-xs-12">
+                    <div class="mz-l-cardholder col-md-6 col-sm-6 col-xs-6">
+                        <a href="https://comenity.net/harmonfacevalues/pub/apply/ApplyIntro.xhtml?cmp=464_web_apply_webbtn"><img src="https://lib.store.yahoo.net/lib/yhst-29523360387793/creditcard-apply.png" alt="Become a cardholder - Apply now"></a>
+                    </div>
+                    <div class="mz-l-cardholder col-md-6 col-sm-6 col-xs-6">
                         <a href="https://comenity.net/harmonfacevalues"><img src="https://lib.store.yahoo.net/lib/yhst-29523360387793/creditcard-manage.png" alt="Already a cardholder? Manage your account"></a>
                     </div>
                 </div>
+
+                <div class="mz-l-creditcard-final-text">
+                    The Harmon Face Values Mastercard® credit card is issued by Comenity Capital Bank, pursuant to a license from Mastercard® International Incorporated. Mastercard and the Mastercard Brand Mark are registered trademarks of Mastercard International Incorporated.<br><br>1 Subject to credit approval and availability. Exclusions apply, see welcome kit insert for full details.
+                    2 Reward Certificates are issued in $10 increments with your billing statement. Restrictions and exclusions apply, see Reward 
+                    Certificate for details. The Harmon Face Values Rewards Program is provided by Bed Bath &amp; Beyond Inc., which is solely responsible
+                    for the program’s operation. Bed Bath &amp; Beyond Inc. may change the terms of the program at any time without notice. See comenity.net/harmonfacevalues for full rewards terms and conditions.
+                    3 Interest will be charged to your Account (at the standard variable Purchase APR) from the purchase date if the promotional purchase balance is not paid in full within the 6 or 12 month promotional period or if you make a late payment. Minimum monthly payments are required for this plan during the promotional period. To avoid being charged the interest accrued at the standard variable Purchase APR of 25.49%, 19.49%, or 15.49%, based on your creditworthiness and the Prime Rate you must may the total promotional purchase balance within the promotional period. Required minimum purchase of $250-$499.99 for 6 months and $500 or more for 12 months. Bed Bath &amp; Beyond Mastercard credit card accounts are offered by Comenity Capital Bank, which determines qualifications for credit and promotion eligibility. At no time will the minimum payment due be less than $30. Minimum Interest Charge is $2 per Credit Plan. Standard variable Purchase APR of 25.49%, 19.49%, or 15.49%, based on your creditworthiness and the Prime Rate. Rates are accurate as of May 1, 2018. Subject to credit approval and availability. Account must be in good standing at time of transaction. Offer valid only for purchases made in store and online at Bed Bath &amp; Beyond, buybuy BABY, Christmas Tree Shops andThat!, Cost Plus World Market and Harmon Face Values. 
+                    4 Each merchant is assigned a code by a third party that indicates the merchant’s area of business. Bonus percent (%) back in rewards will only be awarded if the merchant code for the purchase matches a category eligible for the offer. Comenity Capital Bank does not have the ability to control assignment of merchant codes.
+                    5 Qualifying credit cardholders will receive the offer by mail approximately 90 days after meeting the offer requirements. Offer valid in Bed Bath &amp; Beyond, buybuy BABY, Christmas Tree Shops andThat!, Cost Plus World Market, and Harmon Face Values stores, and online at bedbathandbeyond.com, buybuybaby.com and worldmarket.com.
+                </div>
             </div>
-                
-             <div class="col-xs-12">
-                    <div class="creditcard-final-text">
-                           
-                            The Harmon Face Values Mastercard® credit card is issued by Comenity Capital Bank, pursuant to a license from Mastercard® International Incorporated. Mastercard and the Mastercard Brand Mark are registered trademarks of Mastercard International Incorporated.<br><br>1 Subject to credit approval and availability. Exclusions apply, see welcome kit insert for full details.
-                            2 Reward Certificates are issued in $10 increments with your billing statement. Restrictions and exclusions apply, see Reward 
-                            Certificate for details. The Harmon Face Values Rewards Program is provided by Bed Bath &amp; Beyond Inc., which is solely responsible
-                            for the program’s operation. Bed Bath &amp; Beyond Inc. may change the terms of the program at any time without notice. See comenity.net/harmonfacevalues for full rewards terms and conditions.
-                            3 Interest will be charged to your Account (at the standard variable Purchase APR) from the purchase date if the promotional purchase balance is not paid in full within the 6 or 12 month promotional period or if you make a late payment. Minimum monthly payments are required for this plan during the promotional period. To avoid being charged the interest accrued at the standard variable Purchase APR of 25.49%, 19.49%, or 15.49%, based on your creditworthiness and the Prime Rate you must may the total promotional purchase balance within the promotional period. Required minimum purchase of $250-$499.99 for 6 months and $500 or more for 12 months. Bed Bath &amp; Beyond Mastercard credit card accounts are offered by Comenity Capital Bank, which determines qualifications for credit and promotion eligibility. At no time will the minimum payment due be less than $30. Minimum Interest Charge is $2 per Credit Plan. Standard variable Purchase APR of 25.49%, 19.49%, or 15.49%, based on your creditworthiness and the Prime Rate. Rates are accurate as of May 1, 2018. Subject to credit approval and availability. Account must be in good standing at time of transaction. Offer valid only for purchases made in store and online at Bed Bath &amp; Beyond, buybuy BABY, Christmas Tree Shops andThat!, Cost Plus World Market and Harmon Face Values. 
-                            4 Each merchant is assigned a code by a third party that indicates the merchant’s area of business. Bonus percent (%) back in rewards will only be awarded if the merchant code for the purchase matches a category eligible for the offer. Comenity Capital Bank does not have the ability to control assignment of merchant codes.
-                            5 Qualifying credit cardholders will receive the offer by mail approximately 90 days after meeting the offer requirements. Offer valid in Bed Bath &amp; Beyond, buybuy BABY, Christmas Tree Shops andThat!, Cost Plus World Market, and Harmon Face Values stores, and online at bedbathandbeyond.com, buybuybaby.com and worldmarket.com.</div>
-             </div>
+
         </div>
     </div>
 </div>

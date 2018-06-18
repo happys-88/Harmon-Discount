@@ -1,61 +1,63 @@
 .mz-customer-service-page{
-    .reward-logo-bar{
-        margin-top:40px;
-        .brand-img{
-            margin-right:35px;
-            img{
-                width: auto
-             }
-        }
-    }
-    .right{
-        float: right;
-        margin: 0 auto;
-        text-align: center;
-    }
-    #creditcard-reward-bar {
-        background-color: #da1663;
-        color: #fff;
-        text-align: center;
-        font: 300 40px 'Nunito';
-        padding: 20px;
-        background-image: url(/lib/yhst-29523360387793/reward-bar-bg.jpg);
-        background-position: center;
-    }
-    #creditCardIntro {
-        text-align: center;
-        padding: 10px 0;
-    }
-    .cardholder-bar {
-        border-top: 2px solid #cceffc;
-        border-bottom: 2px solid #cceffc;
-        padding: 30px 0 20px;
-        margin-top: 40px;
-        .cardholder-inner {
-            display: table;
-            width: 100%;
-            .cardholder {
-                display: table-cell;
-                width: 50%;
+    .mz-l-container{
+        .mz-l-creditCard{
+            .mz-l-card-img{
                 text-align: center;
-                &:first-child{
-                    border-right: 2px solid #cceffc;
-                }
-                
-                a {
-                    text-decoration: none;
-                    img {
-                        border: 0;
-                    }
+            }
+            .mz-l-card-account{
+                .mz-l-card-accountCoupon{
+                    width: 50%;
+                    text-align: center;
+                    color: #666666;
+                    a{color: #666666!important;}
                 }
             }
+            .mz-l-card-reward-bar{
+                background-color: #da1663;
+                color: #fff;
+                text-align: center;
+                font: 300 40px 'Nunito';
+                padding: 20px;
+                background-image: url('http://cdn-sb.mozu.com/25333-m1/cms/files/reward-bar-bg.jpg');
+                background-position: center;
+                margin-top: 20px;
+            }
         }
-    }
-    .creditcard-final-text {
-        font-family: @fontFamily;
-        font-size: @fontSize;
-        color: @textColor;
-        margin: 50px 0 50px;
+        .mz-l-card-reward-logo-bar{
+            .mz-l-card-reward-text{
+                text-align: center;
+                color: #00AEEF;
+                font-size: 34px;
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+            .mz-l-card-reward-logo{
+                text-align: center;
+                .brand-img{
+                    display: inline-block;
+                    float: none;
+                    vertical-align: middle;
+                }
+            }
+            .mz-l-cardholder-bar{
+                border-top: 2px solid #cceffc;
+                border-bottom: 2px solid #cceffc;
+                padding: 30px 0 20px;
+                margin: 40px auto;
+                .mz-l-cardholder{
+                    text-align: center;
+                    border-right: 2px solid #cceffc;
+                    &:last-child{border:none;}
+                }
+            }
+            .mz-l-creditcard-final-text{
+                float: left;
+                width: 100%;
+                color: #999999;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
     }
 }
  
