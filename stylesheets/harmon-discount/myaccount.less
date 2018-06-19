@@ -132,3 +132,561 @@
         }
     }
 }
+
+//My account page
+//My Account Page/Section
+.mz-myaccount {
+    .mz-breadcrumbs {
+        position: relative;
+        .mz-breadcrumb-current {
+            nav {
+                position: absolute;
+                top: 8px;
+                left: 140px;
+            }
+            li {
+                &.mz-scrollnav-item {
+                    display: none;
+                    &.active {
+                        display: block;
+                    }
+                    a {
+                        cursor: default;
+                        pointer-events: none;
+                        border-top: 0;
+                        font-weight: 400;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+    .mz-myaccount-nav {
+        margin-top: 7px;
+        .mz-l-sidebar {
+            margin-top: 0;
+        }
+        .mz-scrollnav {
+            border-bottom: 1px solid #e0e0e0;
+            .mz-scrollnav-item {
+                margin: 0;
+                .mz-scrollnav-link {
+                    border-top: 1px solid #e0e0e0;
+                    color: #495363;
+                    font-weight: 700;
+                    &:visited, 
+                    &:focus, 
+                    &:active {
+                        color: #495363;
+                    }
+                }
+                &.active {
+                    a {
+                        background-color: #e0e0e0;
+                    }
+                }
+            }
+        }
+    }
+}
+.mz-myaccount-panels {
+    .mz-l-stack-section {
+        h3 {
+            &.mz-l-stack-sectiontitle {
+                border-bottom: 1px solid #e0e0e0;
+                font-size: 22px;
+                font-weight: 600;
+                line-height: 40px;
+                margin: 0 0 30px!important;
+                text-transform: uppercase;
+                a {
+                    color: #e20177;
+                    float: right;
+                    font-size: 14px;
+                    font-weight: 500;
+                    &:hover {
+                        color: #e20177;
+                    }
+                    &.mz-link-edit-accountsettings {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+    li {
+        list-style: none;
+    }
+    .mz-l-stack-section {
+        margin-bottom: 40px;
+    }
+    .mz-itemlisting {
+        .mz-itemlisting-title {
+            color: #495363;
+        }
+    }
+    .form-group {
+        float: left;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .control-label {
+        font-weight: 600;
+        line-height: 35px;
+        margin-bottom: 0;
+        text-align: right;
+    }
+    .mz-label {
+        text-align: right;
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 35px;
+            margin-bottom: 0;
+        }
+    }
+    .form-control {
+        border-radius: 0;
+        border: 1px solid #d4d4d4;
+        margin-bottom: 0;
+    }
+    .mz-l-formfieldgroup {
+        display: block;
+        input[type="text"], 
+        input[type="password"], 
+        input[type="tel"], 
+        input[type="email"], 
+        select {
+            width: 100%;
+        }
+    }
+    .mz-validationmessage {
+        margin-top: 3px;
+    }
+    #account-settings  {
+        h3 {
+            &.mz-l-stack-sectiontitle {
+                a {
+                    &.mz-link-edit-accountsettings {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+    .mz-accountsettings {
+        float: left;
+        width: 100%;
+        .mz-accountsettings-section {
+            max-width: 485px;
+            width: 100%;
+            margin-top: 0;
+            padding-top: 0;
+            .checkbox, .radio {
+                line-height: 20px;
+            }
+        }
+        .mz-accountsettings-btn-section {
+            max-width: 485px;
+            width: 100%;
+        }
+        .mz-accountsettings-displayname {
+            font-weight: 700;
+        }
+        .mz-validationmessage {
+            font-size: 12px;
+        }
+    }
+    //Password section
+    .mz-passwordsection {
+        float: left;
+        width: 100%;
+        .mz-accountsettings-password {
+            float: left;
+            width: 100%;
+            max-width: 485px;
+            label {
+                color: #000;
+                font-size: 14px;
+            }
+            input {
+                height: 34px;
+            }
+            .mz-validationmessage {
+                font-size: 12px;
+            }
+        }
+    }
+    //Adderss book
+    .mz-accountaddressbook {
+        li {
+            list-style: none;
+            &.mz-accountaddressbook-contact {
+                position: relative;
+                &.mz-accountaddressbook-form {
+                    width: 50%;
+                    margin: 0 0 30px;
+                    padding: 0;
+                }
+                .mz-accountaddressbook-contactdetails {
+                    div {
+                        &:nth-child(1) {
+                            font-weight: 600;
+                        }
+                    }
+                    .mz-accountaddressbook-contacttype {
+                        strong {
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+        .mz-new-accountaddressbook {
+            float: left;
+            li {
+                &.mz-accountaddressbook-contact {
+                    &.mz-accountaddressbook-form {
+                        max-width: 485px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .mz-accountaddressbook-contact {
+            border-left: 1px solid #e0e0e0;
+            border-right: 0;
+            float: left;
+            width: 33.33%;
+            min-height: 200px;
+            margin: 0 0 30px 0;
+            padding: 0 15px;
+            &:first-child {
+                border-left: 0;
+                padding-left: 0;
+            }
+            .mz-l-formfieldgroup-row {
+                margin: 0 0 15px;
+            }
+            .mz-accountaddressbook-actions {
+                position: absolute;
+                top: 0;
+                right: 0;
+                .mz-accountaddressbook-edit {
+                    color: #e20177;
+                    font-weight: 500;
+                }
+                .mz-accountaddressbook-delete {
+                    font-weight: 500;
+                }
+            }
+            .mz-validationmessage {
+                font-size: 12px;
+            }
+        }
+        .mz-accountaddressbook-empty {
+            line-height: 12px;
+        }
+    }
+    //Recently order
+    .mz-recent-order-product {
+        float: left;
+        width: 100%;
+        .mz-itemlisting {
+            position: relative;
+            min-height: 120px;
+            .mz-itemlisting-thumb {
+                border: 1px solid #e0e0e0;
+                width: 100px;
+                height: 100px;
+                padding: 15px;
+                position: absolute;
+                top: 10px;
+                text-align: center;
+            }
+            .mz-itemlisting-details {
+                padding-left: 130px;
+            }
+        }
+        .mz-l-stack-section {
+            padding: 15px;
+            .mz-itemlisting {
+                padding-top: 0;
+            }
+        }
+        .mz-myaccount-panels {
+            .mz-l-stack-section {
+                margin-bottom: 0;
+            }
+        }
+    }
+    //Order history
+    .mz-accountorderhistory {
+        .mz-orderhistory-section {
+            .mz-pagingcontrols,
+            .mz-pagenumbers {
+                margin: 0px 0 15px 0;
+            }
+            .mz-itemlisting {
+                padding: 15px;
+            }
+            .mz-orderlist {
+                li {
+                    margin-bottom: 30px;
+                }
+                .mz-orderlisting {
+                    .mz-orderlisting-items {
+                        .mz-itemlisting {
+                            a {
+                                .mz-productlisting-imageplaceholder {
+                                    float: none;
+                                    margin: 0;
+                                }
+                                img {
+                                    float: none;
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
+                    .mz-itemlisting-thumb {
+                        margin: 0;
+                        a {
+                            border: 1px solid #e0e0e0;
+                            display: block;
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+            .mz-propertylist {
+                dt {
+                    font-weight: 600;
+                }
+                a {
+                    color: #e20177;
+                    &:hover {
+                        color: #e20177;
+                    }
+                }
+            }
+        }
+    }
+    //Payment
+    #paymentmethods {
+        .mz-accountpaymentmethods {
+            .mz-paymentmethod {
+                border-left: 1px solid #e0e0e0;
+                border-right: 0;
+                width: 50%;
+                min-height: 200px;
+                margin: 0 0 30px 0;
+                padding: 0 15px;
+                position: relative;
+                &:nth-child(odd) {
+                    border-left: 0;
+                }
+                .mz-paymentmethod-actions {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+            }
+            .mz-accountpaymentmethods-form {
+                margin: 0;
+                width: 100%;
+                max-width: 485px;
+            }
+        }
+        .mz-paymentmethod-actions {
+            .mz-paymentmethod-edit {
+                color: #d15f2a;
+            }
+        }
+        .mz-accountpaymentmethods-method {
+            &.mz-accountpaymentmethods-form {
+                .mz-creditcardform {
+                    display: block;
+                    .mz-creditcard-billingaddresses {
+                        .text-left {
+                            text-align: left;
+                        }
+                        .mz-contactselector {
+                            label {
+                                &.mz-contactselector-contact {
+                                    &:last-child {
+                                        min-height: auto;
+                                    }
+                                    .mz-contactselector-inputwrapper,
+                                    .mz-contactselector-summarywrapper {
+                                        padding: 0;
+                                        line-height: 24px;
+                                        input[type=radio] {
+                                            margin-top: 0; 
+                                        }
+                                    }
+                                    .mz-contactselector-summarywrapper {
+                                        .mz-addresssummary {
+                                            font-weight: 500;
+                                            line-height: 20px;
+                                            span {
+                                                &:nth-child(1) {
+                                                    font-weight: 700;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .mz-contactselector-contact {
+                                min-height: 140px;
+                                text-align: left;
+                                .mz-contactselector-summarywrapper {
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                    label {
+                        display: block;
+                        line-height: 33px;
+                        margin-bottom: 0;
+                        text-align: right;
+                        &[for="editingcard-is-primary"] {
+                            text-align: left;
+                        }
+                    }
+                    input {
+                        &#editingcard-is-primary {
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //Wishlist
+    .mz-accountwishlist-list {
+        .mz-wishlist-itemlisting {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            .mz-itemlisting {
+                min-height: 200px;
+                padding-top: 0;
+                .mz-itemlisting-thumb-sku {
+                    width: 100px;
+                    height: 100px;
+                    position: absolute;
+                    top: 60px;
+                    .mz-itemlisting-thumb {
+                        border: 1px solid #e0e0e0;
+                        width: 100%;
+                        height: 100%;
+                        margin-right: 0;
+                        padding: 15px;
+                        text-align: center;
+                    }
+                }
+                .mz-product-info {
+                    padding-left: 130px;
+                }
+                .mz-itemlisting-details {
+                    margin-right: 0;
+                    padding-right: 0;
+                }
+                .mz-itemlisting-quantity {
+                    padding: 0;
+                    text-align: center;
+                }
+                .mz-itemlisting-price {
+                    padding-left: 0;
+                    text-align: center;
+                }
+               .mz-title {
+                    border-bottom: 1px solid #ccc;
+                    margin-bottom: 20px;
+                    padding: 10px 0;
+                    text-transform: uppercase; 
+                }
+                .mz-product-code {
+                    width: 100%;
+                    float: left;
+                    padding-top: 6px;
+                }
+            }
+            .mz-itemlisting-actions {
+                float: none;
+                padding: 0px;
+                width: 100%;
+                a {
+                    &.mz-itemlisting-action {
+                        display: inline-block;
+                        line-height: 10px;
+                        margin: 5px 0 0 6px;
+                        &.mz-button {
+                            &:hover,
+                            &:focus,
+                            &:active {
+                                color: #d15f2a;
+                                text-decoration: none;
+                            }
+                        }
+                        .fa {
+                            color: #d15f2a;
+                        }
+                    }
+                }
+                .mz-itemlisting-prompt {
+                    padding: 3px 15px;
+                    text-align: left;
+                    p {
+                        margin: 0;
+                    }
+                    a {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    //Btn
+    .mz-button {
+        &.mz-accountsettings-editdone,
+        &.mz-accountsettings-passworddone,
+        &.mz-contact-save,
+        &.mz-creditcard-save {
+            float: right;
+            width: 65%;  
+        }
+        &.mz-accountsettings-passwordedit {
+            margin-top: 10px;
+        }
+        &.mz-accountsettings-editcancel,
+        &.mz-accountsettings-passwordcancel,
+        &.mz-contact-cancel,
+        &.mz-creditcard-cancel {
+            background: #fff;
+            border: 0;
+            color: #666;
+            margin-top: 18px;
+            padding: 0;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.mz-myaccount .mz-myaccount-nav, .mz-myaccount .mz-myaccount-panels {
+    padding: 0 15px;
+}
+
+.mz-myaccount .mz-myaccount-nav .mz-l-sidebar h2 {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 40px;
+    margin: 0;
+    text-transform: capitalize;
+}
