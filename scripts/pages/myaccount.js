@@ -209,7 +209,7 @@
     });
 
     function updateUi(response) {
-        $('html, body').animate({ scrollTop: $("h1.mz-pagetitle").offset().top - 10 }, 3000, function () {
+        $('html, body').animate({ scrollTop: $("h3.mz-l-stack-sectiontitle").offset().top - 10 }, 3000, function () {
             setTimeout(function () {
                 $("#orderhistory img").each(function () {
                     if (this.height === 0 && this.width === 0)
@@ -472,7 +472,7 @@
             this.editing.contact = false;
             this.model.endEditContact();
             this.render();
-            $('html, body').animate({ scrollTop: $("h1.mz-pagetitle").offset().top - 10 }, 1000);
+            $('html, body').animate({ scrollTop: $("h3.mz-l-stack-sectiontitle").offset().top - 10 }, 1000);
         },
         beginDeleteContact: function (e) {
             var self = this,
@@ -594,7 +594,7 @@
             $(hash).show();
             $('a[href="' + hash + '"]').parent('li').addClass('active');
             $("#account-panels").css('visibility', 'visible');
-            $('html, body').animate({ scrollTop: $("h1.mz-pagetitle").offset().top - 10 }, 700);
+            $('html, body').animate({ scrollTop: $("h3.mz-l-stack-sectiontitle").offset().top - 10 }, 700);
         } else {
             $(".account_content:first").show();
             $(".mz-scrollnav-list li:first-child").addClass('active');
@@ -606,7 +606,7 @@
             var activeTab = $(this).children('a').attr("href").replace("#", "");
             $(".account_content").fadeOut(500);
             $("#" + activeTab).delay(400).fadeIn(1000);
-            $('html, body').animate({ scrollTop: $("h1.mz-pagetitle").offset().top - 10 }, 700);
+            $('html, body').animate({ scrollTop: $("h3.mz-l-stack-sectiontitle").offset().top - 10 }, 700);
             $("ul.mz-scrollnav-list li").removeClass("active");
             $(this).addClass("active");
         });
@@ -615,7 +615,7 @@
             $(".account_content").fadeOut(500);
             $("#" + activeTab).delay(400).fadeIn(1000);
             $('a[href="' + activeTab + '"]').parent('li').addClass('active');
-            $('html, body').animate({ scrollTop: $("h1.mz-pagetitle").offset().top - 10 }, 1000);
+            $('html, body').animate({ scrollTop: $("h3.mz-l-stack-sectiontitle").offset().top - 10 }, 1000);
             $('[data-toggle="popover"]').popover('hide');
         });
         // TODO: upgrade server-side models enough that there's no delta between server output and this render,

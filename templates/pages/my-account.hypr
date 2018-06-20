@@ -28,10 +28,6 @@
     {% endblock ensighten-data %}
     <div class="mz-l-container">
         <div class="row">
-            <div class="col-xs-12">
-                <h1 class="mz-pagetitle">{{ labels.myAccount }}</h1>
-            </div>
-
             <div class="mz-myaccount-nav col-xs-12 col-sm-3 col-md-2">
                 <div class="mz-l-sidebar">
                     <h2>{{ labels.myAccount }}</h2>
@@ -50,6 +46,21 @@
                         {% include "modules/my-account/my-account-password" %}
                     </div>
                 </li>
+                <li id="addressbook" class="account_content">
+                    <div class="mz-l-stack-section mz-accountaddressbook" id="account-addressbook">
+                        {% include "modules/my-account/my-account-addressbook" %}
+                    </div>
+                </li>
+                 <li id="orderhistory" class="account_content">
+                    <div class="mz-l-stack-section mz-accountorderhistory" id="account-orderhistory">
+                        {% include "modules/my-account/my-account-orderhistory" with model=model.orderHistory showPaging=true %}
+                    </div>
+                </li>
+                <li id="paymentmethods" class="account_content">
+                    <div class="mz-l-stack-section mz-accountpaymentmethods" id="account-paymentmethods">
+                        {% include "modules/my-account/my-account-paymentmethods" %}
+                    </div>
+                </li>
                 {% comment %}
                 {% if siteContext.generalSettings.isWishlistCreationEnabled %}
                 <li id="wishlist" class="account_content">
@@ -58,25 +69,9 @@
                     </div>
                 </li>
                 {% endif %}
-                {% endcomment %}
-                <li id="orderhistory" class="account_content">
-                    <div class="mz-l-stack-section mz-accountorderhistory" id="account-orderhistory">
-                        {% include "modules/my-account/my-account-orderhistory" with model=model.orderHistory showPaging=true %}
-                    </div>
-                </li>
                 <li id="returnhistory" class="account_content">
                     <div class="mz-l-stack-section mz-accountreturnhistory" id="account-returnhistory">
                         {% include "modules/my-account/my-account-returnhistory" with model=model.returnHistory %}
-                    </div>
-                </li>
-                <li id="paymentmethods" class="account_content">
-                    <div class="mz-l-stack-section mz-accountpaymentmethods" id="account-paymentmethods">
-                        {% include "modules/my-account/my-account-paymentmethods" %}
-                    </div>
-                </li>
-                <li id="addressbook" class="account_content">
-                    <div class="mz-l-stack-section mz-accountaddressbook" id="account-addressbook">
-                        {% include "modules/my-account/my-account-addressbook" %}
                     </div>
                 </li>
                 <li id="{{ labels.digitalCreditsAnchor }}" class="account_content">
@@ -84,6 +79,7 @@
                         {% include "modules/my-account/my-account-storecredit" %}
                     </div>
                 </li>
+                {% endcomment %}
             </ul>
         </div>
     </div>

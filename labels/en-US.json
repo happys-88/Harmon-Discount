@@ -639,5 +639,7 @@
     //My account
     "logInMsg" :    "Welcome back! Please enter your email address and password to sign into your online shopping account",
     "signUpMsg" :   "Sign up with an email address and password",
-    "createNewAccount": "Create New Account" 
+    "createNewAccount": "Create New Account",
+    "forgetPasswordMsg" :  "Our apologies for any inconvenience trying to login. Let's try and recover your password. To have your password reset, enter the email address associated to your Harmon Discount Explorer account below.",
+    "clickHere"  :   "Click here"
 }

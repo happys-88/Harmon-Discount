@@ -39,10 +39,10 @@
             </a>
         </li>
         {% endcomment %}
-        <li class="mz-scrollnav-item">
+        <div class="mz-scrollnav-item">
             <a class="mz-scrollnav-link" href="/logout">
                 {{ labels.logOut }}
             </a>
-        </li>
+        </div>
     </ul>
 </nav>

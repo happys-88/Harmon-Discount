@@ -77,11 +77,11 @@
         </div>   
     {% else %}
         {% if model.acceptsMarketing  %}
-            <div class="mz-accountsettings-section mz-subscription-message-account">
+            <div class="form-group mz-accountsettings-section mz-subscription-message-account">
                 <div>{{labels.subscribedMessage}}</div>
             </div>
         {% else %}
-            <div class="mz-accountsettings-section mz-subscription-message-account">
+            <div class="form-group mz-accountsettings-section mz-subscription-message-account">
                 <div>{{labels.unSubscribedMessage}}</div>
             </div>
         {% endif %}
