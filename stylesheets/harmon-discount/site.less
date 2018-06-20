@@ -359,3 +359,162 @@ footer{
     font-weight: 500;
 }
 /***\ Validation error msg ***/
+
+/********Detail Page********/
+.mz-text-style{
+	font-weight: bold;
+	font-size: 14px;
+	color: #292929;
+}
+
+.mz-product{
+	#page-wrapper{
+		#page-content{
+			.product-wrapper{
+				.mz-product-top-content{
+					.mz-pagetitle{
+						width: auto;
+						height: auto;
+						font-family: Montserrat;
+						font-size: 26px;
+						font-weight: 300;
+						font-style: normal;
+						font-stretch: normal;
+						line-height: 1.23;
+						letter-spacing: normal;
+						text-align: left;
+						color: #242424;
+					}
+				}
+				.mz-breadcrumbs{
+					ul{li{ & a, & .mz-breadcrumb-current{font-size: 12px;margin-right: 5px;color: #535353;} } }
+				}
+				.mz-l-container{
+					.mz-l-carousel{display: none;}
+					.mz-productdetail-wrap{
+						#product-detail{
+							.mz-productdetail-shortdesc{border:none;}
+							.mz-productdetail-options{
+								.mz-productoptions{
+									.mz-productoptions-valuecontainer{
+										.product-color-swatches{
+											li{
+												width: 26px;
+												height: 26px;
+												border: 1px solid #fff;
+												box-shadow: none;
+												&.active{outline:2px solid #F02689;}
+											}
+										}
+									}
+									.mz-productoptions-optionlabel{.mz-text-style();}
+								}
+							}
+							.mz-l-stack-section{
+								.mz-productdetail-conversion-controls{
+									.mz-qty-label{.mz-text-style();}
+									.qty-block{
+										background-color: #ffffff;
+										border: solid 1px #c1c1c1;
+										width: 83px;
+  										min-height: 34px;
+									}
+								}
+								.mz-pricestack{
+									.not-range{
+										.mz-price{
+											font-size: 24px;
+											font-weight: 300;
+											font-style: normal;
+											font-stretch: normal;
+											line-height: 0.63;
+											letter-spacing: normal;
+											color: #ff6c1f;
+										}
+									}
+								}
+								.mz-productdetail-conversion-buttons{
+									margin-top: 5px;
+									#add-to-cart{
+										font-size: 18px;
+										padding: 12px 66px;
+										font-weight: normal;
+										font-style: normal;
+										font-stretch: normal;
+										line-height: 1;
+										letter-spacing: normal;
+										text-align: center;
+										color: #ffffff;
+										background-color: #FF842D;
+									}
+									#add-to-cart.button_disabled{
+										opacity: 0.5;	
+									}
+								}
+							}
+							.stock-info{
+								font-size: 14px;
+								font-weight: normal;
+								font-style: normal;
+								font-stretch: normal;
+								line-height: 1.36;
+								letter-spacing: normal;
+								text-align: left;
+								color: #ff6c1f;
+								margin-bottom: 5px;
+							}
+							.mz-productdetail-properties.mz-l-stack-section{display: none;}
+						}
+					}
+					.mz-productdetail-properties{
+						width: 100%;
+						float: left;
+						margin-top: 50px;
+						.mz-l-stack-sectiontitle{display: none;}
+						.mz-propertylist{
+							max-width: 100%;
+							display: -webkit-box;
+							display: -webkit-flex;
+							display: -ms-flexbox;
+							display: flex;
+							-webkit-flex-wrap: wrap;
+							-ms-flex-wrap: wrap;
+							flex-wrap: wrap;
+							#Ingredients_, #Warnings_{order:3;}
+							.mz-prop-tab{
+								order:-1;
+								width: 33.3333%;
+								font-size: 16px;
+								font-weight: normal;
+								font-style: normal;
+								font-stretch: normal;
+								line-height: 0.63;
+								letter-spacing: normal;
+								color: #000000;
+								text-transform: uppercase;
+								font-weight: bold;
+								border-bottom: 1px solid #C1C1C1;
+								padding-bottom: 14px;
+								& a{text-decoration: none;}
+								& a:focus, & a:hover, & a:active, & a:visited{color: #000000; border-bottom: 2px solid #f02689;padding-bottom: 8px;}
+							}
+							#Ingredients, #Warnings, #Product_Details{
+								font-size: 14px;
+								font-weight: 300;
+								text-align: left;
+								color: #000000;
+								margin-top: 20px;
+								line-height: 24px;
+							}
+							.mz-prop-tab.Product_Details{text-align: right;}
+							.mz-prop-tab.Ingredients{text-align: center;}
+							.mz-prop-tab.Warnings{text-align: left;}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/********Detail Page********/

@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "67fda4c4fd0fee666e00e4a2e03ebf00d20448b3"
+      "commit": "f2dbc9c0d7ab90b22998f0a2696c7ab0684a5649"
     }
   },
   "editors": [
@@ -217,7 +217,7 @@
         }
       ]
     },
-   {
+    {
       "documentType": "web_page",
       "editor": "landing-page",
       "entityType": "webpage",
@@ -652,7 +652,7 @@
     "showMSRP": true,
     "showProductDetailMeasurements": true,
     "showProductDetailMfgPartNumber": true,
-    "showProductDetailProperties": false,
+    "showProductDetailProperties": true,
     "showProductDetailShortDesc": true,
     "showProductDetailUPC": true,
     "ctslogo": "resources/images/cts-logo-sm.png",

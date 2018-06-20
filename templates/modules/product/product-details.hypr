@@ -55,6 +55,31 @@
                 </div>
             </div>
         </div>
+        <div class="col-xs-12">
+            {% if model.properties and themeSettings.showProductDetailProperties %}
+                <div class="mz-productdetail-properties mz-l-stack-section">
+                  <h4 class="mz-l-stack-sectiontitle">{{ labels.properties }}</h4>
+                  <div class="mz-propertylist mz-propertylist-justified tab-content">
+                    {% for property in model.properties %}
+                    {% if property.values and not property.isHidden %}
+                    <div class="mz-prop-tab {{property.attributeDetail.name}}"><a data-toggle="tab" href="#{{property.attributeDetail.name}}">{{property.attributeDetail.name}}</a></div>
+                    {% for v in property.values %}
+                    <div id="{{property.attributeDetail.name}}" class="tab-pane fade">{% if v.stringValue %}{% if v.stringValue == 'CHR(38)' %}
+                &amp;
+                {% else %}
+                    {% if v.stringValue == 'CHR(64)' %}
+                    @
+                    {% else %}
+                        {{ v.stringValue }}
+                    {% endif %}
+                {% endif %}{% else %}{{v.value}}{% endif %}</div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+            {% endif %}
+        </div>
     </div>
     <div class="row">
         <div class="social-sharing col-md-9 col-xs-12 mz-reset-padding-left{% if model.content.productImages.length <=1 %} mz-share-with-container-other{% endif %}">
@@ -84,3 +109,8 @@
     {% include "modules/product/recent/recently-viewed-products" %}
     {% endif %}
 </div>
+
+<script type="text/javascript">
+
+
+</script>

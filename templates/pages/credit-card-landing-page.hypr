@@ -8,27 +8,27 @@
     <div class="mz-l-container">
         <div class="row"> 
             
-            <div class="col-md-12 col-sm-12 col-xs-12 mz-l-creditCard">
+            <div class="col-xs-12 mz-l-creditCard">
                 <div class="col-md-6 col-sm-6 col-xs-12 mz-l-card-img">
                     <a href="https://comenity.net/harmonfacevalues/pub/apply/ApplyIntro.xhtml?cmp=464_web_apply_webbtn"><img src="https://sep.yimg.com/ay/yhst-29523360387793/harmon-credit-card-19.gif" alt="Harmon Face Values Mastercard credit card"></a>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 mz-l-card-img">
                     <img src="https://sep.yimg.com/ay/yhst-29523360387793/harmon-credit-card-20.gif" alt="Harmon Face Values Mastercard credit card">
                 </div>
-                <div class="mz-l-card-account col-md-12 col-sm-12 col-xs-12">
+                <div class="mz-l-card-account col-xs-12">
                     <div class="mz-l-card-accountCoupon">
                         Special introductory offer! Get a $25 off $100</br>
                         coupon when you receive your card. Already a </br>cardholder? <a href="https://comenity.net/harmonfacevalues ">Manage Your Account</a>
                     </div>
                 </div>
-                <div class="mz-l-card-reward-bar col-md-12 col-sm-12 col-xs-12">
+                <div class="mz-l-card-reward-bar col-xs-12">
                     <strong>Earn rewards<sup>2</sup> with every purchase, everywhere</strong> </br>and enjoy special financing.<sup>3</sup>
                 </div>
             </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-12 mz-l-card-reward-logo-bar">
-                <div class="col-md-12 col-sm-12 col-xs-12 mz-l-card-reward-text">rewards run in the family</div>
-                <div class="col-md-12 col-sm-12 col-xs-12 mz-l-card-reward-logo">
+            <div class="col-xs-12 mz-l-card-reward-logo-bar">
+                <div class="col-xs-12 mz-l-card-reward-text">rewards run in the family</div>
+                <div class="col-xs-12 mz-l-card-reward-logo">
                     <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
                         <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-1.jpg" alt="Harmon Face Values Mastercard credit card">
                     </div>
@@ -46,11 +46,11 @@
                     </div>
                 </div>
 
-                <div class="mz-l-cardholder-bar col-md-12 col-sm-12 col-xs-12">
-                    <div class="mz-l-cardholder col-md-6 col-sm-6 col-xs-6">
+                <div class="mz-l-cardholder-bar col-xs-12">
+                    <div class="mz-l-cardholder col-md-6 col-sm-6 col-xs-12">
                         <a href="https://comenity.net/harmonfacevalues/pub/apply/ApplyIntro.xhtml?cmp=464_web_apply_webbtn"><img src="https://lib.store.yahoo.net/lib/yhst-29523360387793/creditcard-apply.png" alt="Become a cardholder - Apply now"></a>
                     </div>
-                    <div class="mz-l-cardholder col-md-6 col-sm-6 col-xs-6">
+                    <div class="mz-l-cardholder col-md-6 col-sm-6 col-xs-12">
                         <a href="https://comenity.net/harmonfacevalues"><img src="https://lib.store.yahoo.net/lib/yhst-29523360387793/creditcard-manage.png" alt="Already a cardholder? Manage your account"></a>
                     </div>
                 </div>
