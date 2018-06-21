@@ -159,4 +159,58 @@
 		}	
 	}
 	
+
+/********Detail Page********/
+.mz-text-style{
+	font-weight: bold;
+	font-size: 14px;
+	color: #292929;
+}
+
+.mz-product{
+	#page-wrapper{
+		#page-content{
+			.product-wrapper{
+				.mz-l-container{
+					.mz-productdetail-properties{
+						width: 100%;
+						float: left;
+						margin-top: 50px;
+						.mz-l-stack-sectiontitle{display: none;}
+						.mz-propertylist{
+							max-width: 100%;
+							display: -webkit-box;
+							display: -webkit-flex;
+							display: -ms-flexbox;
+							display: flex;
+							-webkit-flex-wrap: wrap;
+							-ms-flex-wrap: wrap;
+							flex-wrap: wrap;
+							#ingredients, #warnings{order:3;}
+							.mz-prop-tab{
+								order:-1;
+								width: 33.3333%;
+								& a:focus, & a:hover, & a:active, & a:visited{
+									color: #000000; 
+									border-bottom: 2px solid #f02689;
+									padding-bottom: 8px;
+									outline: none;
+								}
+							}
+							.mz-prop-tab.Product.Details{text-align: right;}
+							.mz-prop-tab.Ingredients{text-align: center;}
+							.mz-prop-tab.Warnings{text-align: left;}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/********Detail Page********/
+
+
+
+
 }

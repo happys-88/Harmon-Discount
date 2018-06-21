@@ -62,9 +62,9 @@
                   <div class="mz-propertylist mz-propertylist-justified tab-content">
                     {% for property in model.properties %}
                     {% if property.values and not property.isHidden %}
-                    <div class="mz-prop-tab {{property.attributeDetail.name}}"><a data-toggle="tab" href="#{{property.attributeDetail.name}}">{{property.attributeDetail.name}}</a></div>
+                    <div class="mz-prop-tab {{property.attributeDetail.name}}"><a data-toggle="tab" data-parent=".mz-propertylist" href="#{{property.attributeDetail.name|slugify}}">{{property.attributeDetail.name}}</a></div>
                     {% for v in property.values %}
-                    <div id="{{property.attributeDetail.name}}" class="tab-pane fade">{% if v.stringValue %}{% if v.stringValue == 'CHR(38)' %}
+                    <div id="{{property.attributeDetail.name|slugify}}" class="tab-pane fade">{% if v.stringValue %}{% if v.stringValue == 'CHR(38)' %}
                 &amp;
                 {% else %}
                     {% if v.stringValue == 'CHR(64)' %}
@@ -110,7 +110,4 @@
     {% endif %}
 </div>
 
-<script type="text/javascript">
-
-
-</script>
+{% require_script "pages/custom_DetailPage" %}

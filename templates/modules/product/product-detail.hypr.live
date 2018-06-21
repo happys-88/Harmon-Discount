@@ -1,4 +1,8 @@
 {% include "modules/product/product-promo-message" %}
+<div class="mz-productdetail-reviewsRatings">
+  <div class="mz-productdetail-reviewsText">Read a Review - Write A review</div>
+  <div class="mz-productdetail-reviewsPercentage">11 out of 12(92%) reviewers recommend this product</div>
+</div>
 <div class="mz-productdetail-shortdesc mz-l-stack-section">
   <span itemscope itemprop="description">{{ model.content.productShortDescription|safe }}</span>
 </div>
@@ -87,12 +91,12 @@
 {% if model.properties and themeSettings.showProductDetailProperties %}
 <div class="mz-productdetail-properties mz-l-stack-section">
   <h4 class="mz-l-stack-sectiontitle">{{ labels.properties }}</h4>
-  <dl class="mz-propertylist mz-propertylist-justified">
+  <div class="mz-propertylist mz-propertylist-justified">
     {% for property in model.properties %}
     {% if property.values and not property.isHidden %}
-    <dt>{{property.attributeDetail.name}}</dt>
+    <div class="{{property.attributeDetail.name|slugify}}">{{property.attributeDetail.name}}</div>
     {% for v in property.values %}
-    <dd>{% if v.stringValue %}{% if v.stringValue == 'CHR(38)' %}
+    <div class="{{property.attributeDetail.name|slugify}}">{% if v.stringValue %}{% if v.stringValue == 'CHR(38)' %}
 &amp;
 {% else %}
 	{% if v.stringValue == 'CHR(64)' %}
@@ -100,11 +104,11 @@
 	{% else %}
 		{{ v.stringValue }}
 	{% endif %}
-{% endif %}{% else %}{{v.value}}{% endif %}</dd>
+{% endif %}{% else %}{{v.value}}{% endif %}</div>
     {% endfor %}
     {% endif %}
     {% endfor %}
-  </dl>
+  </div>
 </div>
 {% endif %}
 
