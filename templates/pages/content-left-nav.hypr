@@ -1,4 +1,3 @@
-
 {% if model.properties.page_type_definition=="customer-service" or pageContext.cmsContext.template.path=="order-status" or pageContext.cmsContext.template.path=="contact-us" %}     
     <h3 class="mz-l-stack-sectiontitle">Customer Service</h3> 
     <nav class="mz-scrollnav"> 
@@ -13,22 +12,22 @@
                 <a class="mz-scrollnav-link" href="/contact-us">Contact Us</a>
             </li>
             <li class="mz-scrollnav-item">
-                    <a class="mz-scrollnav-link" href="/100-guarantee">100% guarantee</a> 
+                <a class="mz-scrollnav-link" href="/100-guarantee">100% guarantee</a> 
             </li>
             <li class="mz-scrollnav-item">
-                    <a class="mz-scrollnav-link" href="/FAQS">FAQS</a>
+                <a class="mz-scrollnav-link" href="/FAQS">FAQS</a>
             </li>
             <li class="mz-scrollnav-item">
-                    <a class="mz-scrollnav-link" href="/return-policy">Return Policy</a>
+                <a class="mz-scrollnav-link" href="/return-policy">Return Policy</a>
             </li>
             <li class="mz-scrollnav-item">
-                    <a class="mz-scrollnav-link" href="/privacy-policy">Privacy Policy</a> 
+                <a class="mz-scrollnav-link" href="/privacy-policy">Privacy Policy</a> 
             </li>
             <li class="mz-scrollnav-item">
-                    <a class="mz-scrollnav-link" href="/term-conditions">Terms &amp; Conditions</a>  
+                <a class="mz-scrollnav-link" href="/term-conditions">Terms &amp; Conditions</a>  
             </li>
             <li class="mz-scrollnav-item">
-                    <a class="mz-scrollnav-link" href="/product-recalls">Product Recalls</a>
+                <a class="mz-scrollnav-link" href="/product-recalls">Product Recalls</a>
             </li>
         </ul>
     </nav> 
@@ -45,7 +44,7 @@
                 <a class="mz-scrollnav-link" href="/our-partnerships">Our Partnerships</a>
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/">Media Relations</a> 
+                <a class="mz-scrollnav-link" href="/media-relations">Media Relations</a> 
             </li>
             <li class="mz-scrollnav-item">
                 <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/CorporateResponsibilityReport">Corporate Responsibility</a>
@@ -57,10 +56,8 @@
                 <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/brandcareers">Careers</a>  
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="corporate-sales">Corporate Sales</a>   
+                <a class="mz-scrollnav-link" href="/corporate-sales">Corporate Sales</a>   
             </li>
         </ul>
     </nav>
 {% endif %}
-
-  
