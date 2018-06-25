@@ -63,22 +63,22 @@
 	<h1 class="mz-pagetitle">{{ labels.yourCart }}</h1>
 	<!-- Check if model is not empty and form product table if not-->
 	{% if not model.isEmpty %}  
-			<form method="post" id="cartform">
-				{% dropzone "cart-top" scope="template" %}
-				<input type="hidden" name="id" value="{{model.id}}" />
-		        {% include "modules/common/message-bar" with model=model.messages %}
-		        <div class="mz-table mz-table-cart" id="cart">
-		            {% include "modules/cart/cart-table" %}
-		        </div>
-			</form>
+		<form method="post" id="cartform">
+			{% dropzone "cart-top" scope="template" %}
+			<input type="hidden" name="id" value="{{model.id}}" />
+	        {% include "modules/common/message-bar" with model=model.messages %}
+	        <div class="mz-table mz-table-cart" id="cart">
+	            {% include "modules/cart/cart-table" %}
+	        </div>
+		</form>
 	<!-- Show empty cart if model is empty -->
 	{% else %}
-			<div class="cart-div">Your cart is empty.</div>
-			<div class="cart-div">
-	            <a href="/" class="btn">
-	            	<div class="mz-button font-large button_primary"> Continue Shopping</div>
-	            </a>
-	        </div>
+		<div class="cart-div">Your cart is empty.</div>
+		<div class="cart-div">
+            <a href="/" class="btn">
+            	<div class="mz-button mz-button-large"> Continue Shopping</div>
+            </a>
+        </div>
 	{% endif %}
 	<!-- Widget code -->
 	<div class="row" style="padding-top: 10px;">

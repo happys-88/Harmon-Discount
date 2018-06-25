@@ -75,8 +75,17 @@
             }
         }
     }
+    .mz-shipping-destinations {
+        .mz-shipping-row-item {
+            a {
+                color: #00adce;
+                font-weight: 500;
+            }
+        }
+    }
     .mz-checkoutform-shipping {
         float: left;
+        padding-top: 0;
         width: 100%;
         .mz-l-formfieldgroup-row {
             float: left;
@@ -90,15 +99,23 @@
             font-size: 12px;
         } 
     }
-    .mz-contactselector {
-        a {
-            color: #00adce;
+    .mz-checkoutform-shippingaddress {
+        .mz-contactselector {
+            margin-top: 15px;
+            select {
+                height: 34px;
+                margin-bottom: 15px;
+            }
+            a {
+                color: #00adce;
+                font-weight: 500;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
     //Payment Info
-    // .mz-l-formfieldgroup {
-    //     display: block;
-    // }
     .mz-paymentselector {
         &.mz-l-formfieldgroup {
             display: block;
@@ -110,6 +127,16 @@
                     text-align: right;
                 }
             }
+            .mz-l-formfieldgroup-cell {
+                .mz-paymentselector-reenter-cvv {
+                    float: left;
+                    width: 100%;
+                    label {
+                        line-height: 35px;
+                        margin-right: 0;
+                    }
+                }
+            }
         }
     }
     .mz-payment-credit-card-securitycode-row {
@@ -119,6 +146,18 @@
         .cvv-code {
             font-size: 10px;
             font-weight: 500;
+        }
+    }
+    .mz-checkoutform-paymentinfo {
+        .mz-l-formfieldgroup-row {
+            .mz-l-formfieldgroup-cell {
+                select {
+                    height: 34px;
+                }
+                .mz-l-formfieldgroup-halfsize {
+                    height: 34px;
+                }
+            }
         }
     }
     //Address popup
@@ -171,8 +210,6 @@
             text-align: right;
         }
     }
-
-
     //Order Summary
     .mz-header-basket-md-sm {
         font-weight: 600;
