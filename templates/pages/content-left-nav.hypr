@@ -39,19 +39,25 @@
     <nav class="mz-scrollnav"> 
         <ul class="mz-scrollnav-list nav">
             <li class="mz-scrollnav-item"> 
-                <a class="mz-scrollnav-link" href="/track-my-order">{{ labels.trackMyOrder }}</a>
+                <a class="mz-scrollnav-link" href="/who-we-are">Who We Are</a>  
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/shipping-info">{{ labels.shippingInfo }}</a>
+                <a class="mz-scrollnav-link" href="/our-partnerships">Our Partnerships</a>
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/return-exchange">{{ labels.returnAndExchange }}</a>
+                <a class="mz-scrollnav-link" href="/">Media Relations</a> 
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/price-match-request">{{ labels.priceMatchRequest }}</a>
+                <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/CorporateResponsibilityReport">Corporate Responsibility</a>
+            </li> 
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/">Investor Relations</a>  
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/contact-us">{{ labels.contactUs }}</a> 
+                <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/brandcareers">Careers</a>  
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="corporate-sales">Corporate Sales</a>   
             </li>
         </ul>
     </nav>

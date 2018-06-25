@@ -2,17 +2,22 @@
 {% if themeSettings.rviEnable %}
     {% require_script "modules/product/recently-viewed-products" %}
 {% endif %}
+
 {% require_script "pages/product" %}
 {% with model.properties|findwhere('attributeFQN', "tenant~limitPerOrder") as limitPerOrder %}
     {% preload_json limitPerOrder.values|first "limit" %}
 {% endwith %}
+
 {% with model.properties|findwhere('attributeFQN', "tenant~Video_Id") as video_Id %}
     {% preload_json video_Id.values|first "Video_Id" %}
 {% endwith %}
-<div itemscope itemtype="http://schema.org/Product" class="mz-l-container">
+
+<div itemscope itemtype="http://schema.org/Product" class="mz-l-container"> 
+    {% comment %}
     {% if PageContext.isTablet or PageContext.isDesktop %}
-    {% include "modules/product/product-top-carousel" %}
+        {% include "modules/product/product-top-carousel" %}
     {% endif %}
+    {% endcomment %} 
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div data-mz-productimages class="mz-productimages mz-product-left-container margin-top-15">
@@ -55,6 +60,7 @@
                 </div>
             </div>
         </div>
+        {% comment %}
         <div class="col-xs-12">
             {% if model.properties and themeSettings.showProductDetailProperties %}
                 <div class="mz-productdetail-properties mz-l-stack-section">
@@ -80,6 +86,7 @@
                 </div>
             {% endif %}
         </div>
+        {% endcomment %}  
     </div>
     <div class="row">
         <div class="social-sharing col-md-9 col-xs-12 mz-reset-padding-left{% if model.content.productImages.length <=1 %} mz-share-with-container-other{% endif %}">
