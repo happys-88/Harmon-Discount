@@ -2,14 +2,16 @@
 {% block contact-selector %}
     <div class="mz-l-formfieldgroup-cell">
         {% if model.length != 0 %}
-        <select aria-label="{{labels.selectShippingContact}}" data-mz-single-fulfillment-contact class="mz-contactselector" data-mz-value="{{ contactcontext }}contactId" name="contactId" {% if isLoading %} disabled {% endif %}>
-        <option value="" disabled selected hidden>{{labels.selectSavedAddress}}</option>
-            {% for destination in model %}
-                {% if destination.customerContactType != "Billing"%}
-                    <option value="{{ destination.id }}" data-mz-customerContactId="{{destination.customerContactId}}" {% if destination.id && destination.id == destinationId %} selected {% endif %}> {% include "modules/common/address-list" with model=destination.destinationContact %}</option>
-                {% endif %}
-            {% endfor %}
-        </select>
+        <div class="fform-group">
+            <select aria-label="{{labels.selectShippingContact}}" data-mz-single-fulfillment-contact class="form-control mz-contactselector" data-mz-value="{{ contactcontext }}contactId" name="contactId" {% if isLoading %} disabled {% endif %}>
+            <option value="" disabled selected hidden>{{labels.selectSavedAddress}}</option>
+                {% for destination in model %}
+                    {% if destination.customerContactType != "Billing"%}
+                        <option value="{{ destination.id }}" data-mz-customerContactId="{{destination.customerContactId}}" {% if destination.id && destination.id == destinationId %} selected {% endif %}> {% include "modules/common/address-list" with model=destination.destinationContact %}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </option>
         <span class="mz-validationmessage shipping-contact-id" data-mz-validationmessage-for="shippingContactId"></span>
         {% endif %}
          <span class="mz-shipping-flex-layout">

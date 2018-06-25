@@ -1,0 +1,235 @@
+//Checkout
+.mz-checkout {
+    .mz-checkout-header {
+        border-bottom: 1px solid #e0e0e0;
+        float: left;
+        padding-bottom: 15px;
+        width: 100%;
+        .logo {
+            display: block;
+            max-width: 250px;
+        }
+        .mz-phone-number {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+    h1 {
+        float: left;
+        width: 100%;
+    }
+    .mz-pagetitle {
+        .mz-pagetitle-note {
+            font-weight: 600;
+            a {
+                color: #00adce;
+            }
+        }
+    }
+    #checkout-rightcol {
+        padding-left: 15px;
+    }
+    .mz-formstep {
+        .mz-formstep-header {
+            font-weight: 600;
+            &.mz-checkoutform-header {
+                &>a {
+                    color: #e20177;
+                    font-weight: 500;
+                    bottom: 8px;
+                }
+            }
+        }
+    }
+    .form-group {
+        float: left;
+        width: 100%;
+    }
+    label {
+        font-weight: 600;
+        line-height: 35px;
+        margin-bottom: 0;
+    }
+    .mz-formgroup-align,
+    .mz-l-formfieldgroup {
+        select,
+        input[type="text"], 
+        input[type="password"], 
+        input[type="email"],
+        input[type="tel"] {
+            margin-bottom: 0;
+            width: 100%;
+        }
+    }
+    .mz-validationmessage {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+    .mz-checkoutform-shippingaddress {
+        .mz-formgroup-align {
+            &.mz-label {
+                line-height: 35px;
+                label {
+                    line-height: 35px;
+                }
+            }
+        }
+    }
+    .mz-checkoutform-shipping {
+        float: left;
+        width: 100%;
+        .mz-l-formfieldgroup-row {
+            float: left;
+            width: 100%;
+        }
+    }
+    .mz-checkout-saved-card {
+        .mz-checkout-payment-change {
+            color: #e20177;
+            font-weight: 500;
+            font-size: 12px;
+        } 
+    }
+    .mz-contactselector {
+        a {
+            color: #00adce;
+        }
+    }
+    //Payment Info
+    // .mz-l-formfieldgroup {
+    //     display: block;
+    // }
+    .mz-paymentselector {
+        &.mz-l-formfieldgroup {
+            display: block;
+            .form-group {
+                float: left;
+                width: 100%;
+                label {
+                    display: block;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    .mz-payment-credit-card-securitycode-row {
+        label {
+            line-height: 16px;
+        }
+        .cvv-code {
+            font-size: 10px;
+            font-weight: 500;
+        }
+    }
+    //Address popup
+    #mzModalDialog {
+        .modal-dialog {
+            width: 520px;
+            .modal-content {
+                border-radius: 0;
+                .modal-body {
+                    float: left;
+                    width: 100%;
+                }
+                .mz-contact-dialog {
+                    .mz-formgroup-align {
+                        label {
+                            line-height: 35px;
+                        }
+                    }
+                }
+                .modal-footer {
+                    .mz-button {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    .mz-checkoutform-paymentinfo {
+        .mz-checkout-digitalcredit {
+            .mz-l-formfieldgroup-cell {
+                input[type="text"] {
+                    height: 34px;
+                }
+                .mz-button {
+                    width: 80px;
+                    height: 34px;
+                }
+            }
+        }
+    }
+    //Complete your order (agree, sign up)
+    .mz-checkoutform-review.mz-formstep .mz-formstep-desc {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .mz-create-account-fields {
+        .form-group {
+            float: left;
+            width: 100%;
+            text-align: right;
+        }
+    }
+
+
+    //Order Summary
+    .mz-header-basket-md-sm {
+        font-weight: 600;
+    }
+    .mz-ordersummary-checkout {
+        .mz-ordersummary {
+            .mz-ordersummary-item-product {
+                img {
+                    width: auto;
+                }
+            }
+        }
+        .mz-productlisting-imageplaceholder {
+            &>.mz-productlisting-imageplaceholdertext {
+                font-size: 12px;
+                line-height: 78px;
+            }
+
+        }
+    }
+    .mz-carttable-item {
+        padding: 15px 0;
+    }
+    .mz-checkout-total-row {
+        padding: 8px 0;
+        font-weight: 600;
+    }
+    .mz-ordersummary {
+        .mz-ordersummary-totalvalue, 
+        .mz-ordersummary-itemtotal {
+            font-weight: 600;
+        }
+    }
+    .mz-carttable-item-info-wrap {
+        max-width: 100%;
+        .mz-carttable-item-code {
+            font-size: 14px;
+        }
+        .mz-product-option {
+            font-weight: 600;
+            font-size: 13px;
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+
+    //Coupon code
+    #coupon-code {
+        height: 34px;
+        margin-bottom: 0;
+    }
+    .mz-checkoutform-couponcode {
+        .mz-button[disabled] {
+            &:hover {
+                background: #fe832e;
+            }
+        }
+    }
+}

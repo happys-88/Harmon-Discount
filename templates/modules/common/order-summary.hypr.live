@@ -34,7 +34,7 @@
                           {{ labels.item }}# <span>{{ item.product.productCode }}</span>
                         </div>
                         {% if item.product.options and themeSettings.showCartItemOptions and item.product.productType != themeSettings.oneSizeProductType %}
-                        <div>
+                        <div class="mz-product-option">
                           {% for option in item.product.options %}
                             <div>{% if option.name == "OTHER" %}
                                 OPTION

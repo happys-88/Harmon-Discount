@@ -1,9 +1,8 @@
 <h3 class="mz-formstep-header mz-checkoutform-header">
-        {{ labels.shippingMethod }}
-        <a href="javascript:;" class="mz-formstep-edit" data-mz-action="edit">{{ labels.change }}</a>
+    {{ labels.shippingMethod }}
+    <a href="javascript:;" class="mz-formstep-edit" data-mz-action="edit">{{ labels.change }}</a>
 </h3>
 <div class="mz-formstep-body mz-checkoutform">
-
     {% if model.isMultiShipMode %}
         {% include "modules/multi-ship-checkout/shipping-methods" %}
     {% else %}
@@ -11,6 +10,6 @@
         {%comment%} {% include "modules/multi-ship-checkout/shipping-methods-single" %}{% endcomment%}
     {% endif %}
     <div class="mz-formstep-next">
-        <button type="button" class="mz-button button_primary" data-mz-action="next">{{ labels.next }}</button>
+        <button type="button" class="mz-button mz-button-large" data-mz-action="next">{{ labels.next }}</button>
     </div>
 </div>
