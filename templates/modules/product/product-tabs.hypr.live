@@ -1,60 +1,33 @@
-<div class="mz-product-detail-tabs">
-    <ul class="tabs">
+<div class="mz-product-tabs"> 
+    <ul class="nav nav-tabs" role="tablist">
         {% if model.content.productFullDescription %}
-            <li class="active" rel="productLongDesc">{{ themeSettings.productLongDescHeader }}</li>
+            <li role="presentation" class="active"><a href="#longDescription" aria-controls="longDescription" role="tab" data-toggle="tab">Product Details</a></li> 
         {% endif %}
-        {% if productTabs %}
-            {% for productTab in productTabs %} 
-                {% if model|get_product_attribute_value(productTab.key) %}
-                    <li rel="{{ productTab.key|replace("tenant~") }}">{{ productTab.label }}</li>
-                {% else %}
-                <!-- for CAWarning and Prop_65 -->
-                {% if model|get_product_attribute("tenant~ingredients") and productTab.key === "tenant~ingredients" or if model|get_product_attribute("tenant~warning") and productTab.key === "tenant~warning" %} 
-                {% with model.properties|findwhere("attributeFQN", productTab.key)|last as CA %}
-                    {% if CA.key === "values"%}
-                    {% for val in CA.value %}
-                        {% if val.value === true %}
-                        <li rel="{{ productTab.key|replace("tenant~") }}">{{ productTab.label }} </li>
-                        {% endif %}
-                    {% endfor %}
-                    {% endif %}
-                {% endwith %}
-                {% endif %}
-            {% endif %}
-            {% endfor %}
+        {% if (model|get_product_attribute_value("tenant~ingredients")) %} 
+            <li role="presentation"><a href="#prodIngredients" aria-controls="prodIngredients" role="tab" data-toggle="tab">Ingredients</a></li> 
         {% endif %}
+        {% if (model|get_product_attribute_value("tenant~warning")) %}  
+            <li role="presentation"><a href="#prodWarning" aria-controls="prodWarning" role="tab" data-toggle="tab">Warning</a></li>    
+        {% endif %}
+        
     </ul>
-    <div class="tab_container">
+
+    <div class="tab-content"> 
         {% if model.content.productFullDescription %}
-            <div class="d_active tab_drawer_heading" rel="productLongDesc">{{ themeSettings.productLongDescHeader }} <span></span></div>
-            <div id="productLongDesc" class="tab_content">
-                {{ model.content.productFullDescription|safe }}
+            <div role="tabpanel" class="tab-pane active" id="longDescription"> 
+                {{ model.content.productFullDescription|safe }}    
+            </div>
+        {% endif %}  
+        {% if (model|get_product_attribute_value("tenant~ingredients")) %} 
+            <div role="tabpanel" class="tab-pane" id="prodIngredients">
+                {{ model|get_product_attribute_value("tenant~ingredients")|safe }}      
             </div>
         {% endif %}
-        {% if productTabs %}
-            {% for productTab in productTabs %}
-            {% if model|get_product_attribute_value(productTab.key) %}
-                <h3 class="tab_drawer_heading" rel="{{ productTab.key|replace("tenant~") }}">{{ productTab.label }} <span></span></h3>
-                <div id="{{ productTab.key|replace("tenant~") }}" class="tab_content">
-                <p>{{ model|get_product_attribute_value(productTab.key)|safe }}</p>
-                </div>
-            {% else %}
-                {% if model|get_product_attribute("tenant~ingredients") and productTab.key === "tenant~ingredients" or  if model|get_product_attribute("tenant~warning") and productTab.key === "tenant~warning" %}
-                {% with model.properties|findwhere("attributeFQN", productTab.key)|last as CA %}
-                    {% if CA.key === "values"%}
-                    {% for val in CA.value %} 
-                        {% if val.value === true %}
-                        <h3 class="tab_drawer_heading" rel="{{ productTab.key|replace("tenant~") }}">{{ productTab.label }} <span></span></h3>
-                        <div id="{{ productTab.key|replace("tenant~") }}" class="tab_content">
-                            <p>{{ productTab.content|safe }}</p>
-                        </div>
-                        {% endif %}
-                    {% endfor %}
-                    {% endif %}
-                {% endwith %}
-                {% endif %}
-            {% endif %}
-            {% endfor %}
-        {% endif %}
+        {% if (model|get_product_attribute_value("tenant~warning")) %} 
+            <div role="tabpanel" class="tab-pane" id="prodWarning"> 
+                {{ model|get_product_attribute_value("tenant~warning")|safe }}    
+            </div>
+        {% endif %}  
     </div>
-</div> 
+
+</div>   

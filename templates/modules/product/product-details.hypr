@@ -111,9 +111,11 @@
     <div class="mz-middle-breakpoint hidden-xs">
         {% dropzone "product-middle-breakpoint" scope="template" %}  
     </div>
+
     {% include "modules/product/product-tabs" %}
+    
     {% if themeSettings.rviEnable %}
-    {% include "modules/product/recent/recently-viewed-products" %}
+        {% include "modules/product/recent/recently-viewed-products" %}  
     {% endif %}
 </div>
 
