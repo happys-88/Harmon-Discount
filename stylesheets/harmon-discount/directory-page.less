@@ -1,4 +1,5 @@
-.mz-category {
+.mz-category,
+.mz-searchresults {
     .mz-facetingform {
         .btn-transparent i {
             color: #e20177;
@@ -287,3 +288,41 @@
     }
 }
 /***\ Qucik View ***/
+
+/*** Search page ***/
+.mz-searchresults {
+    &.mz-noresults {
+        #page-content {
+            #search-again-box {
+                margin: 0px 0 15px 0;
+                position: relative;
+            }
+            .mz-searchbox-input {
+                width: 100%;
+                height: 40px;
+                padding: 5px 50px 7px 15px;
+                position: relative;
+            }
+            .mz-searchbox-button {
+                color: #9f146c;
+                width: 40px;
+                height: 40px;
+                top: 0;
+                right: 0;
+                left: auto;
+            }
+        }
+        .mz-search-tips {
+            li {
+                line-height: 24px;
+                list-style: inside;
+            }
+        }
+        .mz-left {
+            float: right;
+            max-width: 450px;
+            width: 100%;
+        }
+    }
+}
+/***\ Search page ***/

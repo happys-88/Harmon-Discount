@@ -50,7 +50,13 @@
         {% dropzone "category-page-top" scope="page" %}
         <div id="products-wrapper" class="mz-l-paginatedlist-header">
             <div class="title-sortby-wrappper">
-                <h1 class="mz-pagetitle">{{ navigation.currentNode.name|upper }}</h1>
+                {% if not pageContext.query.partial %}
+                    {% if pageContext.search.query != "" and pageContext.search.query != 'undefined' %}
+                        <h1 class="mz-pagetitle">{{ labels.searchResults }}: <span class="mz-searchresults-query">{{ pageContext.search.query }}</span></h1>
+                        {% else %}
+                            <h1 class="mz-pagetitle">{{ navigation.currentNode.name|upper }}</h1>
+                    {% endif %}
+                {% endif %}
                 <div data-mz-pagesort class="mz-sortby">
                     {% include "modules/common/page-sort" %}
                 </div>
