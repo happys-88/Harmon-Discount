@@ -91,15 +91,22 @@
     &:visited {
         color: @colorWhite;
     }
-    &[disabled], &[disabled]:active {
+    &[disabled], &.button_disabled, &[disabled]:active {
         background-color: @colorOrange;
+        color: #fff;
         opacity: 0.5;
+    }
+    &.button_disabled {
+        &:visited, &:focus, &:active, &:hover {
+            color: #fff;
+            background-color: @colorOrange;
+        }
     }
 }
 .mz-button-large {
-    font-size: 16px;
-    padding: 5px 15px;
-    line-height: 28px;
+    font-size: 18px;
+    padding: 5px 20px;
+    line-height: 29px;
 }
 
 .mz-button-small {

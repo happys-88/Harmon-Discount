@@ -28,6 +28,11 @@
             <div class="mz-product-top-content">
                 <h1 class="mz-pagetitle" itemprop="name">{{ model.content.productName|replace("'","&rsquo;")|safe }}</h1>
                 <div class="row">
+                    {% with model|get_product_attribute("tenant~brand") as brandName %}
+                        <div class="col-xs-12 mz-view-all-brand">
+                            {{ labels.viewAll }} <a href="/">{{ brandName.values|first|prop("value") }}</a>
+                        </div>
+                    {% endwith %}
                     <div class="col-xs-5">
                         <div class="mz-productcodes-productcode p-3" itemprop="sku">{{ labels.item}} # {{ model.productCode }}</div>
                     </div>
@@ -111,9 +116,7 @@
     <div class="mz-middle-breakpoint hidden-xs">
         {% dropzone "product-middle-breakpoint" scope="template" %}  
     </div>
-
     {% include "modules/product/product-tabs" %}
-    
     {% if themeSettings.rviEnable %}
         {% include "modules/product/recent/recently-viewed-products" %}  
     {% endif %}
