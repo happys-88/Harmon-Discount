@@ -33,8 +33,15 @@
                             {{ labels.viewAll }} <a href="/">{{ brandName.values|first|prop("value") }}</a>
                         </div>
                     {% endwith %}
-                    <div class="col-xs-5">
+                    <div class="col-xs-12">
                         <div class="mz-productcodes-productcode p-3" itemprop="sku">{{ labels.item}} # {{ model.productCode }}</div>
+                        <div class="mz-reviews-ratings">
+                            <div><img src="/resources/images/harmon/star.jpg" alt="rating"><span>4.9(27) Read a Review | Write A review</span></div>
+                            <div>11 out of 12(92%) reviewers recommend this product</div>
+                        </div>
+                        <div class="mz-shipping-restiction">
+                            <span>Shipping Restiction text attribute</span>
+                        </div>
                     </div>
                     {% if model.productType != themeSettings.familyProductType %}
                         <div class="col-xs-7">

@@ -1,16 +1,9 @@
 {% include "modules/product/product-promo-message" %}
-<div class="mz-reviews-ratings">
-    <div><img src="/resources/images/harmon/star.jpg" alt="rating"><span>4.9(27) Read a Review | Write A review</span></div>
-    <div>11 out of 12(92%) reviewers recommend this product</div>
-</div>
 {% if model.content.productShortDescription %}
     <div class="mz-productdetail-shortdesc mz-l-stack-section">
         <span itemscope itemprop="description">{{ model.content.productShortDescription|safe }}</span>
     </div>
 {% endif %}
-<div class="mz-shipping-restiction">
-    <span>Shipping Restiction text attribute</span>
-</div>
 {% if model.stockInfo %}
     <div class="stock-info">{{ labels.upcInStock }}
         <span class="stock-price">{{ model.stockInfo }}</span>

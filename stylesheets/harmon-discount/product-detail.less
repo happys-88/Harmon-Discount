@@ -1,10 +1,3 @@
-/********Detail Page********/
-.mz-text-style{
-	font-weight: bold;
-	font-size: 14px;
-	color: #292929;
-}
-
 .mz-product {
 	.mz-productimages {
 		.mz-productimages-thumbs {
@@ -69,36 +62,36 @@
 		}
 	}
 	.mz-productdetail-wrap {
-		.mz-productdetail-shortdesc,
 		.mz-productdetail-shortdesc {
 		    font-size: 14px;
 		    color: #666;
+		    margin-top: 10px;
 		    margin-bottom: 15px;
 		    padding-bottom: 15px;
 	    }
 	}
-	.mz-productdetail-wrap {
-		/*** This section should delete after Development ***/
-		.mz-reviews-ratings {
+	/*** This section should delete after Development ***/
+	.mz-reviews-ratings {
+		font-size: 12px;
+		color: #535353;
+		margin: 10px 0;
+		img {
+			max-width: 68px;
+		}
+		span {
+		    display: inline-block;
+		    font-weight: 600;
+		    margin-left: 4px;
+		}
+	}
+	.mz-shipping-restiction {
+		span {
+			color: #44a2d3;
 			font-size: 12px;
-			color: #535353;
-			    margin: 15px 0;
-			img {
-				max-width: 68px;
-			}
-			span {
-			    display: inline-block;
-			    font-weight: 600;
-			    margin-left: 4px;
-			}
 		}
-		.mz-shipping-restiction {
-			span {
-				color: #44a2d3;
-				font-size: 12px;
-			}
-		}
-		/***\ This section should delete after Development ***/
+	}
+	/***\ This section should delete after Development ***/
+	.mz-productdetail-wrap {
 		#product-detail {
 			.mz-l-stack-section {
 				.mz-price {
@@ -171,8 +164,6 @@
 	}
 }
 
-
-
 .product-color-swatches {
 	.active {
 	    outline: 2px solid #e20177;
@@ -202,4 +193,74 @@
 		}
 	}
 }
-/********Detail Page********/
+
+//Faimly Product
+#mz-family-container {
+	margin-top: 25px;
+	.mz-familylist-item {
+	    margin-bottom: 25px;
+	    padding-bottom: 25px;
+		.item-image {
+			a {
+			    border: 1px solid #e0e0e0;
+			    display: block;
+			    text-align: center;
+			    img {
+				    max-width: 100%;
+				    max-height: 200px;
+				    padding: 15px;
+				}
+			}
+		}
+		.item-desc {
+			.mz-pagetitle {
+			    font-size: 20px;
+			    font-weight: 500;
+			    line-height: 1.23;
+			    margin-top: 0;
+			    padding-bottom: 0;
+			}
+			.mz-view-all-brand {
+			    margin-bottom: 0;
+			}
+			.mz-productcodes-productcode {
+			    margin: 0;
+			}
+			.mz-productdetail-shortdesc {
+			    color: #666;
+			    font-size: 14px;
+			    font-weight: 400;
+			    line-height: 1.4;
+			    margin-top: 6px;
+			}
+		}
+		.item-price {
+			.mz-price {
+				&.is-saleprice {
+				    color: #ff6c1f;
+				}
+			}
+		}
+		.item-options {
+			margin-top: 0;
+			.stock-message {
+			    color: #ff6c1f;
+			    font-weight: 600;
+			}
+			.mz-productoptions {
+				.mz-productoptions-optioncontainer {
+					.mz-productoptions-optionlabel {
+					    color: #292929;
+					    font-size: 14px;
+					    font-weight: 600;
+					    margin-bottom: 10px
+					}
+				}
+			}
+		}
+	}
+	.mz-pricestack {
+	    font-size: 24px;
+	    font-weight: 500;
+	}
+}
