@@ -77,6 +77,8 @@
         <script type="text/javascript" src="//nexus.ensighten.com/costplusworldmarket/dev-new/Bootstrap.js"></script>
         {% endif %}
         <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/vnd.microsoft.icon">
+
+        {% require_script "custom" %}
     </head>{% endblock head-tag %}
     {% block body-tag %}{% block open-body-tag %}<body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
         {% block ensighten-data %}
@@ -138,9 +140,6 @@
                     </div>
                 </div>
             </div>
-            {% block secondary-nav %}
-            {% include "modules/secondary-nav" %}
-            {% endblock secondary-nav %}
             {% block page-footer %}
             {% include "modules/page-footer" %}
             {% endblock page-footer %}
