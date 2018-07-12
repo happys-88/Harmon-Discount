@@ -55,7 +55,7 @@ a {
 }
 
 .container{
-	max-width: 1440px;        
+	max-width: 1440px;
 }
 
 .mz-cms-content{
@@ -120,6 +120,17 @@ img[data-mztp]{
 	background: #00adce;
 }
 
+.form-group {
+	textarea, 
+	input[type="text"], 
+	input[type="password"], 
+	input[type="number"], 
+	input[type="email"],
+	input[type="tel"],
+	select {
+	    border: 1px solid #d4d4d4;
+	}
+}
 
 /*** Page Header ***/
 .mz-pageheader{
@@ -574,5 +585,11 @@ footer{
 .mz-printorder {
 	#home-promo-wrapper {
 		display: none;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+	    width: 1200px;   
 	}
 }

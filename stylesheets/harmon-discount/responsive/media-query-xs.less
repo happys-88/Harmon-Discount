@@ -108,6 +108,15 @@
 				    font-size: 23px;
 				    line-height: 20px;
 				}
+				&.mz-utilitynav-link {
+					&[aria-expanded="true"] {
+					   .fa-bars {
+							&:before {
+							    content: "\f00d";
+							}
+						}
+					}
+				}
 				span {
 			    	font-size: 12px;
 				    font-weight: 600;
@@ -470,4 +479,222 @@
 	    }
 	}
 	/***\ Credit Card Page ***/
+
+
+	/*** Category ***/
+
+	.mz-category  {
+		.mz-l-paginatedlist {
+			.mz-pagingcontrols {
+			    display: block;
+			}
+		}
+	}
+
+	/*** PDP ***/
+	.mz-product {
+		.mz-l-pagecontent {
+			h1 {
+				&.mz-pagetitle {
+				    font-size: 22px;
+				}
+			}
+		}
+		.mz-productoptions-valuecontainer {
+			.product-swatches {
+				li {
+					a {
+					    min-width: 86px;
+					}
+				}
+			}
+		}
+		#add-to-cart {
+		    width: 100%;
+		    max-width: 385px;
+		}
+		.mz-product-tabs {
+			.nav {
+				text-align: left;
+				&.nav-tabs {
+					li {
+						border-top: 1px solid #e0e0e0;
+					    border-bottom: 1px solid #e0e0e0;
+					    position: relative;
+					    a {
+					    	&:after {
+							    content: "+";
+							    position: absolute;
+							    right: 10px;
+							    font-size: 22px;
+							    top: 6px;
+							}
+						}
+					}
+				}
+			}
+			.tab-content {
+				.tab-pane {
+				    padding: 15px 0;
+				}
+			}
+		}
+	}
+	#mz-family-container {
+		.mz-familylist-item {
+		    padding-right: 0;
+		    padding-left: 0;
+		    div {
+		    	padding-right: 0;
+		    	padding-left: 0;
+		    }
+		    .item-image {
+		    	a {
+				    display: inline-block;
+				}
+			}
+			.item-desc {
+				.mz-pagetitle {
+				    padding-top: 15px;
+				}
+			}
+			.item-options {
+			    margin-top: 15px;
+			}
+			.item-price-qty {
+			    margin-top: 0;
+			}
+		    .mz-productdetail-conversion-controls {
+			    padding-left: 15px;
+			}
+		}
+	}
+
+
+	#rvi-container {
+		.recently-viewed-list {
+		    padding: 0;
+		}
+	}
+
+	/*** Cart Page ***/
+	.mz-cart {
+		.mz-carttable-item-product,
+		.mz-carttable-checkout-couponcode,
+		.mz-button-bottom-cart {
+			padding-right: 0;
+			padding-left: 0;
+		}
+		.mz-qty-xs-align {
+			.btn-link {
+			    color: #e20177;
+			    font-size: 12px;
+			}
+		}
+		.mz-table-cart {
+			.mz-button-bottom-cart {
+				.mz-button {
+				    margin: 0px 0 15px;
+				    display: inline-block;
+				    width: 100%;
+				}
+			}
+			.mz-carttable-item-total,
+			.mz-carttable-item-price {
+				span {
+					&.label-price,
+					&.label-total {
+					    font-weight: 600;
+					    margin-left: 103px;
+					}
+				}
+			}
+			.mz-item-rowtotal  {
+				float: right;
+			}
+		}
+	}
+	/***\ Cart Page ***/
+
+	/*** Checkout Page ***/
+	.mz-checkout {
+	    //padding: 0;
+	    .mz-checkout-header {
+	    	.pull-right {
+	    		display: none;
+	    	}
+	    }
+	    .mz-l-pagecontent {
+		    padding: 15px 0;
+		}
+	    #checkout-rightcol {
+		    padding-left: 0;
+		}
+		.mz-checkoutform-shippingaddress {
+			.mz-formgroup-align {
+				&.mz-label {
+				    line-height: 25px;
+				}
+			}
+		}
+		label {
+		    line-height: 25px!important;
+		}
+		#mzModalDialog {
+			.modal-dialog {
+			    margin: 20px auto;
+			    max-width: 400px;
+			    width: 94%;
+			}
+		}
+		.mz-checkoutform {
+			.form-group {
+				max-width: 400px;
+				.col-sm-4,
+				.col-sm-8 {
+					padding-right: 0;
+					padding-left: 0;
+				}
+				.col-sm-4 {
+					label {
+						text-align: left;
+					}
+				}
+				&.mz-payment-credit-card-expiration-row {
+					select {
+						&#mz-payment-expiration-month,
+						&#mz-payment-expiration-year {
+			    			margin-right: 0;
+						    width: 91%;
+						}
+						&#mz-payment-expiration-year {
+							float: right;
+						}
+					}
+				}
+				&.mz-payment-credit-card-securitycode-row {
+					input[type="tel"] {
+						width: 45.5%;
+					}
+				}
+			}
+		}
+		.mz-payment-credit-card-securitycode-row,
+	    .mz-paymentselector-reenter-cvv {
+	        label {
+	            width: 115px;
+	            .cvv-code {
+	            	display: inline-block;
+	            	margin-bottom: 3px;
+	            }
+	        }
+	    }
+		footer {
+			.first-row {
+			    border-bottom: none;
+			    margin-bottom: 0;
+			}
+		}
+	}
+	/***\ Checkout Page ***/
 }

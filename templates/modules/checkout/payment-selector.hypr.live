@@ -53,7 +53,7 @@
                     {% if not themeSettings.isCvvSuppressed %}
                     <div class="form-group mz-paymentselector-reenter-cvv">
                         <div class="col-sm-4">
-                            <label for="mz-payment-security-code-{{ paymentId }}" class="mz-paymentselector-label">{{ labels.securityCode }} <span class="is-required">*</span></label>
+                            <label for="mz-payment-security-code-{{ paymentId }}" class="mz-paymentselector-label">{{ labels.securityCode }} <span class="is-required">*</span><span class="cvv-code">{{ labels.cvvNumber }}</span></label>
                         </div>
                         <div class="col-sm-4">
                             <input type="tel" {% if not model.usingSavedCard %}disabled="true"{% endif %} data-mz-saved-cvv name="security-code" id="mz-payment-security-code-{{ paymentId }}" class="form-control mz-l-formfieldgroup-halfsize" data-mz-value="card.cvv" value="{{ model.card.cvv }}" autocomplete="off" maxlength="{{themeSettings.paymentSecurityCodeLength}}"/>

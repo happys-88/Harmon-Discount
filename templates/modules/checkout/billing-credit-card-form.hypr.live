@@ -11,11 +11,9 @@
 			<span class="mz-validationmessage" data-mz-validationmessage-for="{{ cardcontext }}cvv"></span>
 		</div>
 	</div>
-    <div class="mz-l-formfieldgroup-row mz-payment-credit-card-savepayment-row">
-        <div class="mz-l-formfieldgroup-cell"></div>
-        <div class="mz-l-formfieldgroup-cell">
-			<input id="save-credit" type="checkbox" name="save-card-info" data-mz-value="{{ cardcontext }}isCardInfoSaved" value="true" {% if model.isCardInfoSaved %}checked="checked"{% endif %}> 
-			<label for="save-credit" class="mz-inline">{{ labels.saveCard }}</label>
+    <div class="form-group mz-l-formfieldgroup-row mz-payment-credit-card-savepayment-row">
+        <div class="col-sm-8 col-sm-offset-4">
+			<label for="save-credit" class="mz-inline"><input id="save-credit" type="checkbox" name="save-card-info" data-mz-value="{{ cardcontext }}isCardInfoSaved" value="true" {% if model.isCardInfoSaved %}checked="checked"{% endif %}> {{ labels.saveCard }}</label>
         </div>
     </div>
 {% endblock credit-card-form %}

@@ -3,15 +3,17 @@
     .mz-checkout-header {
         border-bottom: 1px solid #e0e0e0;
         float: left;
-        padding-bottom: 15px;
         width: 100%;
+        padding: 15px 0;
         .logo {
             display: block;
-            max-width: 250px;
+            max-width: 230px;
         }
         .mz-phone-number {
             font-size: 16px;
             font-weight: 500;
+            display: block;
+            margin-top: 15px;
         }
     }
     h1 {
@@ -128,20 +130,34 @@
                 }
             }
             .mz-l-formfieldgroup-cell {
+                float: left;
+                width: 100%;
                 .mz-paymentselector-reenter-cvv {
                     float: left;
                     width: 100%;
                     label {
+                        font-size: 14px;
                         line-height: 35px;
                         margin-right: 0;
                     }
                 }
             }
+            .mz-payment-credit-card-savepayment-row {
+                label {
+                    line-height: 18px;
+                    text-align: left;
+                    input[type="checkbox"] {
+                        margin: -2px 3px 0 0;
+                        vertical-align: middle;
+                    }
+                }
+            }
         }
     }
-    .mz-payment-credit-card-securitycode-row {
+    .mz-payment-credit-card-securitycode-row,
+    .mz-paymentselector-reenter-cvv {
         label {
-            line-height: 16px;
+            line-height: 16px!important;
         }
         .cvv-code {
             font-size: 10px;
@@ -160,6 +176,7 @@
             }
         }
     }
+
     //Address popup
     #mzModalDialog {
         .modal-dialog {
@@ -178,6 +195,7 @@
                     }
                 }
                 .modal-footer {
+                    border-top: none;
                     .mz-button {
                         margin-top: 0;
                     }
@@ -266,6 +284,21 @@
         .mz-button[disabled] {
             &:hover {
                 background: #fe832e;
+            }
+        }
+    }
+
+    .mz-global-footer {
+        margin-top: 50px;
+    }
+    .container-copyright {
+        li {
+            display: none;
+            &.copy-text {
+                display: block;
+                border-left: 0;
+                margin-left: 0;
+                padding-left: 0;
             }
         }
     }

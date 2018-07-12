@@ -130,13 +130,15 @@
             </div> 
             <div role="main" id="page-content" class="mz-l-pagecontent">
                 <div class="container">
-                    <div class="row">               
-                        {% block body-content %}
-                        {% dropzone "body" scope="page" %}
-                        {% endblock body-content %}
-                        {% block body-below-content %}
-                        {% dropzone "body-bottom" scope="template" %}
-                        {% endblock body-below-content %}
+                    <div class="row">
+                        <div class="col-xs-12">             
+                            {% block body-content %}
+                            {% dropzone "body" scope="page" %}
+                            {% endblock body-content %}
+                            {% block body-below-content %}
+                            {% dropzone "body-bottom" scope="template" %}
+                            {% endblock body-below-content %}
+                        </div>
                     </div>
                 </div>
             </div>

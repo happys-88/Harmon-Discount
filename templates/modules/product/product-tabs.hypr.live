@@ -1,30 +1,33 @@
 {% if model.properties and themeSettings.showProductDetailProperties %}
     {% if model.properties.attributeFQN == "tenant~ingredients" or property.attributeFQN == "tenant~warning" or model.content.productFullDescription %}  
         <div class="mz-product-tabs"> 
-            <ul class="nav nav-tabs" role="tablist">
+            <ul class="nav nav-tabs hidden-xs" role="tablist">
                 {% if model.content.productFullDescription %}
                     <li role="presentation" class="active"><a href="#longDescription" aria-controls="longDescription" role="tab" data-toggle="tab">Product Details</a></li> 
                 {% endif %}
                 {% if (model|get_product_attribute_value("tenant~ingredients")) %} 
-                    <li role="presentation"><a href="#prodIngredients" aria-controls="prodIngredients" role="tab" data-toggle="tab">Ingredients</a></li> 
+                    <li role="presentation"><a href="#prodIngredients" aria-controls="prodIngredients" role="tab" data-toggle="tab">Ingredients</a></li>
                 {% endif %}
                 {% if (model|get_product_attribute_value("tenant~warning")) %}  
-                    <li role="presentation"><a href="#prodWarning" aria-controls="prodWarning" role="tab" data-toggle="tab">Warning</a></li>    
+                    <li role="presentation"><a href="#prodWarning" aria-controls="prodWarning" role="tab" data-toggle="tab">Warning</a></li>
                 {% endif %}
             </ul>
-            <div class="tab-content"> 
+            <div class="tab-content mz-mobile-tabs nav nav-tabs">
                 {% if model.content.productFullDescription %}
+                    <li class="active visible-xs" role="presentation" class="active"><a href="#longDescription" aria-controls="longDescription" role="tab" data-toggle="tab">Product Details</a></li> 
                     <div role="tabpanel" class="tab-pane active" id="longDescription"> 
                         {{ model.content.productFullDescription|safe }}    
                     </div>
                 {% endif %}  
                 {% if (model|get_product_attribute_value("tenant~ingredients")) %} 
+                    <li class="visible-xs" role="presentation"><a href="#prodIngredients" aria-controls="prodIngredients" role="tab" data-toggle="tab">Ingredients</a></li>
                     <div role="tabpanel" class="tab-pane" id="prodIngredients">
                         {{ model|get_product_attribute_value("tenant~ingredients")|safe }}      
                     </div>
                 {% endif %}
                 {% if (model|get_product_attribute_value("tenant~warning")) %} 
-                    <div role="tabpanel" class="tab-pane" id="prodWarning"> 
+                    <li class="visible-xs" role="presentation"><a href="#prodWarning" aria-controls="prodWarning" role="tab" data-toggle="tab">Warning</a></li>
+                    <div role="tabpanel" class="tab-pane" id="prodWarning">
                         {{ model|get_product_attribute_value("tenant~warning")|safe }}    
                     </div>
                 {% endif %}  
