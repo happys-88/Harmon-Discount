@@ -394,7 +394,8 @@
 			}
 		}
 	}
-	/*** Footer ***/
+	/***\ Footer ***/
+
 
 	/*** My Account ***/
 	#liteRegistrationModal {
@@ -434,6 +435,7 @@
 		}
 	}
 	/***\ My Account ***/
+
 
 	/*** Credit Card Page ***/ 
 	.mz-customer-service-page{
@@ -482,7 +484,6 @@
 
 
 	/*** Category ***/
-
 	.mz-category  {
 		.mz-l-paginatedlist {
 			.mz-pagingcontrols {
@@ -490,6 +491,8 @@
 			}
 		}
 	}
+	/***\ Category ***/
+
 
 	/*** PDP ***/
 	.mz-product {
@@ -523,11 +526,22 @@
 					    position: relative;
 					    a {
 					    	&:after {
-							    content: "+";
+							    content: "\f067";
 							    position: absolute;
-							    right: 10px;
-							    font-size: 22px;
-							    top: 6px;
+							    top: 12px;
+							    right: 15px;
+							    font-size: 16px;
+							    font-family: "FontAwesome";
+							}
+						}
+						&.active {
+							a {
+								background: #e20177;
+								border-bottom: none;
+								color: #fff;
+						    	&:after {
+								    content: "\f068";
+								}
 							}
 						}
 					}
@@ -569,13 +583,8 @@
 			}
 		}
 	}
+	/***\ PDP ***/
 
-
-	#rvi-container {
-		.recently-viewed-list {
-		    padding: 0;
-		}
-	}
 
 	/*** Cart Page ***/
 	.mz-cart {
@@ -615,6 +624,7 @@
 		}
 	}
 	/***\ Cart Page ***/
+
 
 	/*** Checkout Page ***/
 	.mz-checkout {
@@ -697,4 +707,10 @@
 		}
 	}
 	/***\ Checkout Page ***/
+
+	#rvi-container {
+		.recently-viewed-list {
+		    padding: 0;
+		}
+	}
 }

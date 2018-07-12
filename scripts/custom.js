@@ -7,10 +7,11 @@ define([
             $(".mz-search-filed").toggle();
         });
         
-		$(".mz-mobile-tabs li").click(function() {
-			$(this).toggleClass("open");
-			$("ul").not($(this).next()).slideUp('medium');
-		});	
+
+		$(document).on('click','.mz-mobile-tabs li', function(){
+		    $(".mz-mobile-tabs").find(".active").prev().addClass("active");
+		});
+
 
   		$(".container-links ul:not(:first)").addClass("list");
 	    var allPanels = $('.container-links .list');
