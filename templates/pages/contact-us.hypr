@@ -5,19 +5,18 @@
 {% block body-content %} 
 	{% preload_json selectTopic "selectTopic" %}
 	{% require_script "pages/contactus" %}
-
 	<div class="mz-customer-service-page">
 		<div class="mz-l-container">
 			<div class="row"> 
 				<div class="col-xs-12 col-sm-9 pull-right"> 
-						<h3 class="mz-l-stack-sectiontitle">{{ pageContext.metaTitle }}</h3>
+					<h3 class="mz-l-stack-sectiontitle">{{ pageContext.metaTitle }}</h3>
 					<div id="contactus-container">
 						{% include "modules/contact-us/contact-us" with model=model %}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-3 mz-content-left-nav">        
 	                <div class="mz-l-sidebar">
-	                    {% include "pages/content-left-nav" %}       
+	                    {% include "pages/content-left-nav" %}
 	                </div>
 	            </div> 
 			</div>

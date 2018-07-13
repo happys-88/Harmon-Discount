@@ -1,35 +1,34 @@
-<div class="mz-l-container">
-    <form name="contactUsForm" method="post" id="contactUsForm" action="">      
-    <div class="mz-l-formfieldgroup-row"> 
-        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
+<form name="contactUsForm" method="post" id="contactUsForm" action="">      
+    <div class="form-group"> 
+        <div class="col-sm-4 col-xs-12">
             <label for="firstname">{{ labels.firstName }}</label>
         </div>
-        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
+        <div class="col-sm-8 col-xs-12">
             <input type="text" name="firstname" data-mz-value="firstname" placeholder="{{ labels.firstName }}" maxlength="{{themeSettings.firstNameLength}}" class="form-control">
         </div>
     </div>
-    <div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
+    <div class="form-group">
+        <div class="col-sm-4 col-xs-12">
             <label for="lastname">{{ labels.lastName }}</label>
         </div>
-        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
+        <div class="col-sm-8 col-xs-12">
             <input type="text" name="lastname" data-mz-value="lastname" placeholder="{{ labels.lastName }}" maxlength="{{themeSettings.lastNameLength}}" class="form-control">
         </div>
     </div>
-    <div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
-            <label for="email">*{{ labels.email }}</label>
+    <div class="form-group">
+        <div class="col-sm-4 col-xs-12">
+            <label for="email">{{ labels.email }}<span class="is-required"> *</span></label>
         </div>
-        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
+        <div class="col-sm-8 col-xs-12">
             <input type="email" id="emailAddress" name="email" data-mz-value="email" placeholder="{{ labels.emailAddress }}" maxlength="{{themeSettings.emailLength}}" class="form-control">
             <span class="mz-validationmessage" data-mz-validationmessage-for="email"></span> 
         </div>
     </div>
-    <div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
-            <label for="myCommentQuestion">*{{ labels.myCommentQuestion }}:</label>
+    <div class="form-group">
+        <div class="col-sm-4 col-xs-12">
+            <label for="myCommentQuestion">{{ labels.myCommentQuestion }}<span class="is-required"> *</span></label>
         </div>
-        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
+        <div class="col-sm-8 col-xs-12">
             <select id="selectedTopic" name="selectedTopic" data-mz-value="selectedTopic" class="select form-control">
                 <option value="" selected>{{labels.selectTopic}}</option>
                 {% comment %}
@@ -52,38 +51,36 @@
             <span class="mz-validationmessage" data-mz-validationmessage-for="selectedTopic"></span>
         </div>
 	</div>
-	<div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12">
-            <label for="message">*{{ labels.contactUsMessage }}</label>
+	<div class="form-group">
+        <div class="col-sm-4 col-xs-12">
+            <label for="message">{{ labels.contactUsMessage }}<span class="is-required"> *</span></label>
         </div>
-        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12"> 
+        <div class="col-sm-8 col-xs-12"> 
             <textarea rows="5" cols="50" id="message" name="message" data-mz-value="message" maxlength="{{ themeSettings.contactUsMessageLength }}" class="form-control"></textarea>
             <span class="mz-validationmessage" data-mz-validationmessage-for="message"></span>
         </div>
     </div>
     {% if themeSettings.enableCaptcha && themeSettings.captchaSiteKey!="" %}
-    <div class="mz-captcha-image mz-l-formfieldgroup-row margin-bottom-15">
-        <p><span class="is-required">* </span>{{ labels.captchaTitle }}</p>
-        <div id="recaptcha_widget_div"></div>
-        <span class="mz-validationmessage" data-mz-validationmessage-for="recaptcha_widget_div"></span>
-        <script type="text/javascript">
-            var onloadCallback = function() {
-                grecaptcha.render('recaptcha_widget_div', {
-                    'sitekey' : '{{themeSettings.captchaSiteKey}}',
-                    'callback' : function(response) {
-                        window.recaptchaResponse = response;
-                    }
-                });
-            };
-        </script>
-        <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async></script>
-    </div>
+        <div class="mz-captcha-image form-group margin-bottom-15">
+            <p><span class="is-required">* </span>{{ labels.captchaTitle }}</p>
+            <div id="recaptcha_widget_div"></div>
+            <span class="mz-validationmessage" data-mz-validationmessage-for="recaptcha_widget_div"></span>
+            <script type="text/javascript">
+                var onloadCallback = function() {
+                    grecaptcha.render('recaptcha_widget_div', {
+                        'sitekey' : '{{themeSettings.captchaSiteKey}}',
+                        'callback' : function(response) {
+                            window.recaptchaResponse = response;
+                        }
+                    });
+                };
+            </script>
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async></script>
+        </div>
     {% endif %}
-    <div class="mz-l-formfieldgroup-row">
-        <div class="mz-l-formfieldgroup-cell col-sm-4 col-xs-12"></div> 
-        <div class="mz-l-formfieldgroup-cell col-sm-8 col-xs-12">
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-4 text-right">
             <button class="mz-button" type="button" data-mz-action="contactUsSubmit">{{ labels.send }}</button>
         </div>
     </div>
-    </form>
-</div>
+</form>

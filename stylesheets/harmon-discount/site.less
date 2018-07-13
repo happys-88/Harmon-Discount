@@ -129,6 +129,7 @@ img[data-mztp]{
 	input[type="tel"],
 	select {
 	    border: 1px solid #d4d4d4;
+	    margin-bottom: 0;
 	}
 }
 
@@ -571,6 +572,47 @@ footer{
 		}
 	}
 }
+
+/*** Customer Service ***/
+.mz-customer-service-page {
+	margin-bottom: 40px;
+	.mz-content-left-nav {
+		.mz-l-sidebar {
+			.mz-l-stack-sectiontitle {
+			    margin-bottom: 0;
+			}
+		}
+	}
+	h3 {
+		&.mz-l-stack-sectiontitle {
+			font-size: 22px;
+			line-height: 40px;
+			margin: 0 0 30px;
+    		padding-bottom: 0;
+			text-transform: capitalize;
+		}
+	}
+	.mz-track-order-form,
+	#contactus-container {
+		.form-group {
+			float: left;
+			width: 100%;
+			label {
+				display: block;
+				font-weight: 600;
+				line-height: 34px;
+				margin-bottom: 0;
+				text-align: right;
+			}
+		}
+	}
+	.mz-track-order-form {
+		p {
+			margin: 0 0 20px;
+		}
+	}
+}
+/***\ Customer Service ***/
 
 /*** Validation error msg ***/
 .mz-validationmessage:empty {
