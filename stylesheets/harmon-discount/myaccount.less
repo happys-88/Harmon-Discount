@@ -107,7 +107,7 @@
         margin-top: 10px;
         padding: 0;
         position: absolute;
-        left: 0; 
+        left: -70px; 
         &:after {
             content: "";
             border: 10px solid transparent;
@@ -116,7 +116,7 @@
             height: 20px;
             position: absolute;
             top: -40px;
-            left: 50px;  
+            left: 101px;  
             margin: auto;
         }
     }
@@ -144,9 +144,9 @@
             margin-top: 0;
             h2 {
                 font-size: 22px;
-                font-weight: 600;
-                line-height: 40px;
+                font-weight: 500;
                 margin: 0;
+                padding: 8px 0;
                 text-transform: capitalize;
             }
         }
@@ -158,7 +158,8 @@
                     border-top: 1px solid #e0e0e0;
                     color: #495363;
                     display: block;
-                    font-weight: 700;
+                    font-weight: 600;
+                    letter-spacing: -0.1px;
                     text-transform: capitalize;
                     &:hover {
                         background: #eee;
@@ -185,15 +186,16 @@
             &.mz-l-stack-sectiontitle {
                 border-bottom: 1px solid #e0e0e0;
                 font-size: 22px;
-                font-weight: 600;
-                line-height: 40px;
+                font-weight: 500;
                 margin: 0 0 30px!important;
-                text-transform: uppercase;
+                padding: 8px 0;
+                text-transform: capitalize;
                 a {
                     color: #e20177!important;
                     float: right;
                     font-size: 14px!important;
                     font-weight: 500;
+                    line-height: 27px!important;
                     &:hover {
                         color: #e20177;
                     }
@@ -321,7 +323,25 @@
         li {
             list-style: none;
             &.mz-accountaddressbook-contact {
+                border-left: 1px solid #e0e0e0;
+                border-right: 0;
+                float: left;
+                width: 50%;
+                min-height: 160px;
+                margin: 0 0 30px 0;
+                padding: 0 15px;
                 position: relative;
+                .form-group {
+                    .col-sm-4 {
+                        padding: 0;
+                    }
+                }
+                &:nth-child(odd) {
+                    border-left: 0;
+                }
+                &:nth-child(3n+1) {
+                    clear: none;
+                }
                 &.mz-accountaddressbook-form {
                     width: 50%;
                     margin: 0 0 30px;
@@ -339,51 +359,27 @@
                         }
                     }
                 }
-            }
-        }
-        .mz-new-accountaddressbook {
-            float: left;
-            li {
-                &.mz-accountaddressbook-contact {
-                    &.mz-accountaddressbook-form {
-                        max-width: 490px;
-                        width: 100%;
+                .mz-l-formfieldgroup-row {
+                    margin: 0 0 15px;
+                }
+                .mz-accountaddressbook-actions {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    .mz-accountaddressbook-edit {
+                        color: #e20177;
+                        font-weight: 500;
+                    }
+                    .mz-accountaddressbook-delete {
+                        font-weight: 500;
                     }
                 }
-            }
-        }
-        .mz-accountaddressbook-contact {
-            border-left: 1px solid #e0e0e0;
-            border-right: 0;
-            float: left;
-            width: 33.33%;
-            min-height: 200px;
-            margin: 0 0 30px 0;
-            padding: 0 15px;
-            &:first-child {
-                border-left: 0;
-                padding-left: 0;
-            }
-            .mz-l-formfieldgroup-row {
-                margin: 0 0 15px;
-            }
-            .mz-accountaddressbook-actions {
-                position: absolute;
-                top: 0;
-                right: 0;
-                .mz-accountaddressbook-edit {
-                    color: #e20177;
-                    font-weight: 500;
+                .mz-validationmessage {
+                    font-size: 12px;
                 }
-                .mz-accountaddressbook-delete {
-                    font-weight: 500;
+                .mz-contact-save {
+                    margin: 10px 0 0;
                 }
-            }
-            .mz-validationmessage {
-                font-size: 12px;
-            }
-            .mz-contact-save {
-                margin: 10px 0 0;
             }
         }
         .mz-accountaddressbook-empty {
@@ -398,7 +394,7 @@
                 margin: 0px 0 15px 0;
             }
             .mz-itemlisting {
-                padding: 15px;
+                padding: 30px 15px 20px;
             }
             .mz-orderlist {
                 li {
@@ -406,6 +402,7 @@
                 }
                 .mz-orderlisting {
                     .mz-orderlisting-items {
+                        text-align: left;
                         .mz-itemlisting {
                             a {
                                 .mz-productlisting-imageplaceholder {
@@ -420,7 +417,9 @@
                         }
                     }
                     .mz-itemlisting-thumb {
-                        margin: 0;
+                        margin: 0 0 10px 0;
+                        width: 100%;
+                        max-width: 120px;
                         a {
                             border: 1px solid #e0e0e0;
                             display: block;
@@ -449,7 +448,7 @@
                 border-left: 1px solid #e0e0e0;
                 border-right: 0;
                 width: 50%;
-                min-height: 200px;
+                min-height: 150px;
                 margin: 0 0 30px 0;
                 padding: 0 15px;
                 position: relative;
@@ -504,6 +503,7 @@
                                     }
                                     .mz-contactselector-inputwrapper,
                                     .mz-contactselector-summarywrapper {
+                                        float: left;
                                         padding: 0;
                                         line-height: 24px;
                                         input[type=radio] {
@@ -590,7 +590,7 @@
 }
 
 //SignIn, SignUp, Forget password and Reset password Page
-.mz-login-page,
+.mz-loginform,
 .mz-forget-password,
 .mz-signupform,
 .mz-reset-password {
@@ -601,7 +601,7 @@
     padding: 15px 30px 30px;
     .mz-pagetitle {
         font-size: 22px;
-        font-weight: 600;
+        font-weight: 500;
         margin: 10px 0;
         text-transform: uppercase;
     }

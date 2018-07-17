@@ -1,7 +1,7 @@
 ﻿{% extends "page" %}
 
 {% block title-tag-content %}{% firstof pageContext.metaTitle|safe labels.logIn %} - {% parent %}{% endblock title-tag-content %}
-{% block body-tag-classes %}mz-loginpage{% endblock body-tag-classes %}
+{% block body-tag-classes %}mz-login-page{% endblock body-tag-classes %}
 {% block ensighten-data %}
 <script type="text/javascript">
         var pageData = {
@@ -22,34 +22,36 @@
 {% endblock ensighten-data %}
 {% block body-content %}
     <div class="mz-l-container">
-        {% include "modules/common/message-bar" with model=model.messages %}             
         {% dropzone "login-top" scope="template" %}
-        <div class="mz-login-page">
-            <h3 class="mz-pagetitle">{{ labels.logIn2 }}</h3>
-            <p>{{ labels.logInMsg }}.</p>
-            <form method="post" class="mz-loginform-page" name="mz-loginform">
-                <input type="hidden" name="returnUrl" value="{{ model.returnUrl }}" />
-                <div class="mz-l-formfieldgroup">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input id="{{labels.email}}" value="{{model.email|default:user.email}}" type="email" data-mz-login-email placeholder="{{ labels.emailAddress }}"/>
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="{{labels.password}}" name="password"  type="password" data-mz-login-password placeholder="{{ labels.password }}"/>
-                    </div>
-                    <div class="from-group clearfix">
-                        <div class="pull-left">
-                            <a href="/user/forgotpassword" class="mz-forgot" data-mz-action="launchforgotpassword">{{ labels.liteRegForgotPasswordLabel }}</a>
+        <div class="row">
+            {% include "modules/common/message-bar" with model=model.messages %}
+            <div class="mz-loginform">
+                <h3 class="mz-pagetitle">{{ labels.logIn2 }}</h3>
+                <p>{{ labels.logInMsg }}.</p>
+                <form method="post" class="mz-loginform-page" name="mz-loginform">
+                    <input type="hidden" name="returnUrl" value="{{ model.returnUrl }}" />
+                    <div class="mz-l-formfieldgroup">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input id="{{labels.email}}" value="{{model.email|default:user.email}}" type="email" data-mz-login-email placeholder="{{ labels.emailAddress }}"/>
                         </div>
-                        <div class="pull-right">
-                            <a href="/user/signup" class="mz-forgot" data-mz-action="signup">{{ labels.signUpLink }}</a>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input id="{{labels.password}}" name="password"  type="password" data-mz-login-password placeholder="{{ labels.password }}"/>
                         </div>
+                        <div class="from-group clearfix">
+                            <div class="pull-left">
+                                <a href="/user/forgotpassword" class="mz-forgot" data-mz-action="launchforgotpassword">{{ labels.liteRegForgotPasswordLabel }}</a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="/user/signup" class="mz-forgot" data-mz-action="signup">{{ labels.signUpLink }}</a>
+                            </div>
+                        </div>
+                        <section data-mz-role="popover-message" class="mz-popover-message"></section>
+                        <button class="mz-button" data-mz-action="loginpage-submit" disabled>{{ labels.logIn }}</button>
                     </div>
-                    <section data-mz-role="popover-message" class="mz-popover-message"></section>
-                    <button class="mz-button" data-mz-action="loginpage-submit" disabled>{{ labels.logIn }}</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock body-content %}

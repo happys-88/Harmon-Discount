@@ -397,46 +397,6 @@
 	/***\ Footer ***/
 
 
-	/*** My Account ***/
-	#liteRegistrationModal {
-		padding-right: 0!important;
-		z-index: 999999;
-		.modal-dialog {
-			&.login-modal {
-				margin: 20px auto;
-				max-width: 380px;
-				width: 94%!important;
-			}
-		}
-		.modal-body {
-			margin-top: 0;
-			.mz-pagetitle,
-			.pull-left, 
-			.pull-right {
-			    width: 100%;
-			}
-			.pull-left {
-				border-right: none;
-			    padding-right: 0;
-			}
-			.pull-right {
-			    border-left: 0;
-			    border-top: 1px solid #e0e0e0;
-			    margin-top: 11px;
-    			padding-top: 10px;
-			    padding-left: 0;
-			}
-			.mz-button {
-			    padding: 7px 6px;
-			}
-		}
-		.modal-footer {
-		    font-size: 12px;
-		}
-	}
-	/***\ My Account ***/
-
-
 	/*** Credit Card Page ***/ 
 	.mz-customer-service-page{
 	    .mz-l-container{
@@ -737,6 +697,155 @@
 		}
 	}
 	/***\ Customer Service ***/
+
+
+	/*** My account ***/
+	#liteRegistrationModal {
+		padding-right: 0!important;
+		z-index: 999999;
+		.modal-dialog {
+			&.login-modal {
+				margin: 20px auto;
+				max-width: 380px;
+				width: 94%!important;
+			}
+		}
+		.modal-body {
+			margin-top: 0;
+			.mz-pagetitle,
+			.pull-left, 
+			.pull-right {
+			    width: 100%;
+			}
+			.pull-left {
+				border-right: none;
+			    padding-right: 0;
+			}
+			.pull-right {
+			    border-left: 0;
+			    border-top: 1px solid #e0e0e0;
+			    margin-top: 11px;
+    			padding-top: 10px;
+			    padding-left: 0;
+			}
+			.mz-button {
+			    padding: 7px 6px;
+			}
+		}
+		.modal-footer {
+		    font-size: 12px;
+		}
+	}
+	#mz-logged-in-notice {
+		.dropdown-menu {
+		    right: 0;
+		    left: auto;
+		    &:after {
+			    left: 78%;
+			}
+		}
+	}
+	.mz-loginform,
+	.mz-forget-password,
+	.mz-signupform,
+	.mz-reset-password {
+	    padding: 15px 15px 30px;
+	    .mz-pagetitle {
+	        font-size: 20px;
+	    }
+	    .mz-forgot {
+	    	font-size: 13px;
+	    }
+	}
+	.mz-myaccount {
+		.mz-myaccount-nav, 
+		.mz-myaccount-panels {
+		    padding: 0;
+		}
+		.mz-scrollnav {
+			.mz-scrollnav-list {
+				.mz-scrollnav-item {
+					a {
+					    padding: 10px 15px;
+					}
+				}
+			}
+		}
+		.mz-myaccount-panels {
+			margin-top: 25px;
+			.control-label {
+			    line-height: 25px;
+			}
+			.mz-l-stack-section {
+				h3 {
+					&.mz-l-stack-sectiontitle {
+					    font-size: 20px;
+					    a {
+						    font-size: 12px!important;
+						}
+					}
+				}
+			}
+			.mz-accountaddressbook {
+				li {
+					&.mz-accountaddressbook-contact {
+						border-left: none;
+						width: 100%;
+						label {
+					    	font-size: 14px;
+						}
+					}
+				}
+			}
+			.mz-orderlisting {
+				.mz-orderlisting-items {
+				    padding: 0;
+				}
+			}
+			.mz-accountorderhistory {
+				.mz-orderhistory-section {
+					.mz-itemlisting {
+					    padding: 16px 0px 15px;
+					}
+				}
+			}
+		}
+		.mz-accountsettings {
+			.mz-accountsettings-name {
+				input {
+				    margin: 0;
+				}
+			}
+		}
+		#paymentmethods {
+			.mz-accountpaymentmethods {
+				.mz-paymentmethod {
+				    border-bottom: 1px solid #e0e0e0;
+					border-left: none;
+				    width: 100%;
+				}
+				.mz-accountpaymentmethods-method {
+					&.mz-accountpaymentmethods-form {
+						.mz-creditcardform {
+							label {
+							    line-height: 25px;
+							    text-align: left;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	/***\ My account ***/
+
+	#back-to-top {
+	    font-size: 23px;
+	    width: 45px;
+	    height: 45px;
+	    right: 15px;
+	    bottom: 25px;
+	}
 
 	#rvi-container {
 		.recently-viewed-list {

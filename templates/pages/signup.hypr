@@ -24,29 +24,31 @@
 {% block body-content %}
     <div class="mz-l-container">
         {% dropzone "signup-top" scope="template" %}
-        <div class="mz-signupform">
-            <h3 class="mz-pagetitle">{{ labels.signUp }}</h3>
-            <p>{{ labels.signUpMsg }}.</p>
-            <form method="post" class="mz-signup-page" name="mz-signupform">
-               {% include "modules/common/message-bar" with model=model.messages %}
-               <input type="hidden" name="returnUrl" value="{{ model.returnUrl }}" />
-               <div class="mz-l-formfieldgroup">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input type="email" name="emailAddress" data-mz-signup-emailaddress maxlength="{{themeSettings.emailLength}}" placeholder="{{ labels.emailAddress }}"/>
+        <div class="row">
+            <div class="mz-signupform">
+                <h3 class="mz-pagetitle">{{ labels.signUp }}</h3>
+                <p>{{ labels.signUpMsg }}.</p>
+                <form method="post" class="mz-signup-page" name="mz-signupform">
+                   {% include "modules/common/message-bar" with model=model.messages %}
+                   <input type="hidden" name="returnUrl" value="{{ model.returnUrl }}" />
+                   <div class="mz-l-formfieldgroup">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input type="email" name="emailAddress" data-mz-signup-emailaddress maxlength="{{themeSettings.emailLength}}" placeholder="{{ labels.emailAddress }}"/>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" name="password" data-mz-signup-password maxlength="{{themeSettings.passwordMaxLength}}" placeholder="{{ labels.password }}"/>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="password" name="confirmPassword" data-mz-signup-confirmpassword maxlength="{{themeSettings.passwordMaxLength}}" placeholder="{{ labels.confirmPassword }}"/>
+                        </div>
+                        <section data-mz-role="popover-message" class="mz-popover-message"></section>
+                        <button class="mz-button" data-mz-action="signuppage-submit" disabled>{{ labels.signUp }}</button>
                     </div>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" name="password" data-mz-signup-password maxlength="{{themeSettings.passwordMaxLength}}" placeholder="{{ labels.password }}"/>
-                    </div>
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" name="confirmPassword" data-mz-signup-confirmpassword maxlength="{{themeSettings.passwordMaxLength}}" placeholder="{{ labels.confirmPassword }}"/>
-                    </div>
-                    <section data-mz-role="popover-message" class="mz-popover-message"></section>
-                    <button class="mz-button" data-mz-action="signuppage-submit" disabled>{{ labels.signUp }}</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 {% endblock body-content %}

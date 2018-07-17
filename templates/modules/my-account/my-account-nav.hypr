@@ -20,6 +20,7 @@
                 {{ labels.paymentMethods }}
             </a>
         </li>
+        {% comment %}
         {% if siteContext.generalSettings.isWishlistCreationEnabled %}
         <li class="mz-scrollnav-item">
             <a class="mz-scrollnav-link" href="#wishlist">
@@ -27,7 +28,6 @@
             </a>
         </li>
         {% endif %}
-        {% comment %}
         <li class="mz-scrollnav-item">
             <a class="mz-scrollnav-link" href="#returnhistory">
                 {{ labels.returns }}

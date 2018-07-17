@@ -86,7 +86,6 @@ img[data-mztp]{
 	font-size: @headingTwoFontSize;
 	color: @headingTwoColor;
 	line-height: @headingTwoFontSize+4;
-	font-family: "LibreBaskerville-Regular";
 	text-transform: none;
 	position: relative;
 	margin: 0 0 30px; 
@@ -262,6 +261,7 @@ img[data-mztp]{
 				padding: 0; 
 				.mz-utilitynav-item{
 					float: left;
+					position: relative;
 					a { 
 						font-size: 12px;
 						font-weight: 600;
@@ -472,7 +472,13 @@ footer{
 	.regular-footer{
 		border: none; 
 	}
-	.container-menu{
+	.first-row {
+		float: left;
+		margin-bottom: 0;
+    	width: 100%;
+	}
+	.container-menu {
+		width: 71%;
 		min-height: inherit; 
 	}
 	.container-links{
@@ -502,11 +508,37 @@ footer{
 		}
 	}
 	.container-signup {
+		padding: 0 15px;
+		width: 29%;
+		.form-group {
+		    float: left;
+		    margin-bottom: 15px;
+		    width: 100%;
+		}
+		.input-group {
+		    display: block;
+		    float: left;
+		    width: 100%;
+		    .form-control {
+				width: 70%;
+				padding: 15px;
+		    }
+		    .input-group-btn {
+			    display: block;
+			    width: 30%;
+			    float: right;
+			    button {
+				    min-width: 92px;
+				    width: 100%;
+				}
+			}
+		}
 		label {
 			&.control-label {
+				display: block;
 			    font-size: 14px;
-			    line-height: 16px;
-			    margin: 10px 0;
+			    line-height: 20px;
+			    margin: 14px 0 5px;
 			}
 		}
 	} 
@@ -515,15 +547,15 @@ footer{
 	}
 	.container-copyright{
 		min-height: inherit;
-		margin-top: 20px; 
-		ul{
-			li{
+		margin: 20px 0; 
+		ul {
+			li {
 				float: left;
 				padding-left: 8px;
 				margin-left: 6px;
 				border-left: 1px solid #fff;
 				line-height: 12px; 
-				a{  
+				a {  
 					font-size: 12px;
 					color: #fff; 
 					line-height: 14px; 
@@ -629,6 +661,30 @@ footer{
 		display: none;
 	}
 }
+
+
+/*** Bact to top button ***/
+#back-to-top {
+    display: none;
+    background: rgba(159, 20, 108, 0.8);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 48px;
+    width: 85px;
+    height: 85px;
+    position: fixed;
+    right: 42px;
+    bottom: 100px;
+    padding-top: 4px;
+    text-align: center;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+#back-to-top:hover {
+    background: rgba(159, 20, 108, 1);
+}
+/*** Bact to top button ***/
 
 @media (min-width: 1200px) {
 	.container {

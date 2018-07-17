@@ -10,9 +10,8 @@
 <footer>
 	<div class="container">
 		<div class="row first-row">
-			<div class="col-xs-12 col-sm-5 col-md-4 pull-right container-signup">
-				<div>
-					{% if themeSettings.enableEmailSubscription %}
+			<div class="col-xs-12 pull-right container-signup">
+				{% if themeSettings.enableEmailSubscription %}
 					<form class="form">
 						<div class="form-group">
 							<label for="footerSignUpInput" class="control-label text-uppercase no-hover">{{ labels.footerSignUpEmail }}</label>
@@ -25,39 +24,34 @@
 							<span id="emailHelpBlock" class="text-danger"></span>
 						</div>						
 					</form>
-					{% endif %}
-					<form class="form">
-						<div class="form-group">
-							<label for="footerZipCodeInput" class="control-label text-uppercase">{{ labels.storeLocator }} <i class="fa fa-map-marker"></i></label>
-							<div class="input-group">					  	
-								<input type="text" id="footerZipCodeInput" class="form-control" maxlength="50" placeholder="{{ labels.enterZipCode }}">
-								<span class="input-group-btn">
-									<button id="btnFindStore" class="btn btn-default button_promotional text-uppercase" type="submit">{{ labels.find }}</button>									
-								</span>
-							</div>
-							<span id="zipcodeHelpBlock" class="text-danger hidden">Please enter a valid zipcode.</span>
+				{% endif %}
+				<form class="form">
+					<div class="form-group">
+						<label for="footerZipCodeInput" class="control-label text-uppercase">{{ labels.storeLocator }} <i class="fa fa-map-marker"></i></label>
+						<div class="input-group">					  	
+							<input type="text" id="footerZipCodeInput" class="form-control" maxlength="50" placeholder="{{ labels.enterZipCode }}">
+							<span class="input-group-btn">
+								<button id="btnFindStore" class="btn btn-default button_promotional text-uppercase" type="submit">{{ labels.find }}</button>									
+							</span>
 						</div>
-					</form>					
-				</div>
+						<span id="zipcodeHelpBlock" class="text-danger hidden">Please enter a valid zipcode.</span>
+					</div>
+				</form>					
 			</div>
-			<div class="col-xs-12 container-menu col-sm-7 col-md-8">
+			<div class="col-xs-12 container-menu">
 				<div class="row container-links">
-					<div class="col-xs-12">
-						<div class="row">
-							<div class="col-sm-3 col-xs-12">
-								{% dropzone "footer-cat-links-col1" scope="site" %}
-							</div>
-							<div class="col-sm-3 col-xs-12">
-								{% dropzone "footer-cat-links-col2" scope="site" %}
-							</div>
-							<div class="col-sm-3 col-xs-12">
-								{% dropzone "footer-cat-links-col3" scope="site" %}
-							</div>
-							<div class="col-sm-3 col-xs-12">
-								{% dropzone "footer-cat-links-col4" scope="site" %}
-							</div> 
-						</div>
-					</div>								
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						{% dropzone "footer-cat-links-col1" scope="site" %}
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						{% dropzone "footer-cat-links-col2" scope="site" %}
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						{% dropzone "footer-cat-links-col3" scope="site" %}
+					</div>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						{% dropzone "footer-cat-links-col4" scope="site" %}
+					</div> 								
 				</div>
 			</div>
 			<div class="col-xs-12 container-copyright">

@@ -28,13 +28,13 @@
     {% endblock ensighten-data %}
     <div class="mz-l-container">
         <div class="row">
-            <div class="mz-myaccount-nav col-xs-12 col-sm-3 col-md-2">
+            <div class="mz-myaccount-nav col-xs-12 col-sm-3">
                 <div class="mz-l-sidebar">
                     <h2>{{ labels.myAccount }}</h2>
                     {% include "modules/my-account/my-account-nav" with navtarget="body" %}
                 </div>
             </div>
-            <ul id="account-panels" class="mz-myaccount-panels mz-l-stack mz-l-stack-large col-xs-12 col-sm-9 col-md-10">
+            <ul id="account-panels" class="mz-myaccount-panels mz-l-stack mz-l-stack-large col-xs-12 col-sm-9">
                 <li id="account-messages">
                     {% include "modules/common/message-bar" with model=model.messages %}
                 </li>
