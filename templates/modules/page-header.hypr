@@ -48,7 +48,11 @@
                                     <a href="/myaccount" tabindex="0" data-mz-action="my-account" id="my-account" role="button" data-trigger="click" data-toggle="popover" data-content="" class="mz-utilitynav-link">{{user.firstName|default(user.email)}}</a>
                                     {% endcomment %}  
                                     
-                                    <a href="javascipt:void(0);" class="mz-utilitynav-link" data-toggle="dropdown"><i class="fa fa-user"></i> My Account</a>
+                                    <a href="javascipt:void(0);" class="mz-utilitynav-link" data-toggle="dropdown">
+                                        <i class="fa fa-user"></i>
+                                        <span class="hidden-xs">My Account</span>
+                                        <span class="visible-xs">Account</span> 
+                                    </a>
                                     <div class="dropdown-menu">   
                                     <div class="my-account-details">
                                         <a href="/myaccount#settings">
