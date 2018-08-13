@@ -10,7 +10,10 @@
 @textColorWhite: #fff;
 @buttonBgColor: #d15f2a;
 @defaultBorderColor: #d4d4d4;
-@listItemColor: #00adce; 
+@listItemColor: #00adce;
+@mzSiteNavBg: #e20177;
+@mzSiteNavMainLinkActive: #9f146c;
+@mzSiteNavSubLinkActive: #e20177;     
 
 @mobileNavBorderBtm: #cbcbcb; 
 @mobileNavSubMenuBg: #f1f1f1;
@@ -353,8 +356,17 @@ img[data-mztp]{
 		}   
 	}
 }
+
+/**** Navigation ****/
 .mz-sitenav{
-	background: #e20177; 
+	background: @mzSiteNavBg;
+	.mz-sitenav-sub-container{
+		.sub-nav-arrow{
+			border-bottom: none;
+			border-top: 10px solid @mzSiteNavMainLinkActive;
+			top: 0;  	
+		}
+	}  
 }
 
 /**** Product Listing ****/
@@ -690,4 +702,9 @@ footer{
 	.container {
 	    width: 1200px;   
 	}
+}
+
+
+.mz-sitenav .mz-sitenav-sub-container{
+	display: block; 
 }

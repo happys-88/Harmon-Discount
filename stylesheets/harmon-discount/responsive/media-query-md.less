@@ -1,5 +1,63 @@
 /**** Site Changes for medium screens ****/ 
 @media @mz-md-media-query{ 
+
+	/**** Navigation ****/
+	.mz-sitenav{
+		.mz-sitenav-list{
+			>.mz-sitenav-item{
+				height: auto; 
+				.mz-sitenav-item-inner{
+					.mz-sitenav-link{
+						font-weight: 500; 
+						&.main-link{
+							padding: 16px 0; 
+						}
+						&:hover, &:focus, &:active, &.is-current{
+							background: @mzSiteNavMainLinkActive; 
+							text-decoration: none !important;    
+						}  
+					}
+				}
+				h2{
+					font-size: 14px;
+					color: @headingTwoColor;
+					line-height: 28px; 
+					margin: 0 0 5px;
+					text-transform: uppercase;
+					font-weight: bold;
+					padding: 0 10px;      	
+				} 
+				.mz-sitenav-sub{
+					.mz-sitenav-item{
+						padding: 0 10px;  
+						.mz-sitenav-link{
+							&.sub-link, &.sub-sub-link{  
+								font-size: 14px;
+								color: @headingTwoColor;
+								line-height: 32px;
+								padding: 0;
+								text-transform: none;
+								border: none;      
+							}
+							&.sub-link{
+								line-height: 28px; 
+							}
+							&:hover, &:focus, &:active, &.is-current{
+								background: none;
+								color: @mzSiteNavSubLinkActive;     
+							}
+						}	
+					}
+				}
+				.mz-sitenav-sub-sub{
+					margin: 0;
+					.mz-sitenav-item{
+						padding: 0; 
+					} 
+				} 
+			}		
+		}
+	}  
 	
 	/********Detail Page********/
 	.mz-product{
