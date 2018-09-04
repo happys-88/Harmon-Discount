@@ -4,7 +4,8 @@
 <!--[if IE 8]><html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]><html class="no-js ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|(!IE) ]><!--><html class="no-js" lang="en"><!--<![endif]-->{%endblock open-html-tag %}
-{% block head-tag %}<head>
+{% block head-tag %}
+    <head>
         {% include "modules/json-required-for-hyprlive" %}
         {% block meta-tags %}
         {% if not user.isAnonymous and not user.isAuthenticated and user.email !== "" %}
@@ -77,7 +78,24 @@
         <script type="text/javascript" src="//nexus.ensighten.com/costplusworldmarket/dev-new/Bootstrap.js"></script>
         {% endif %}
         <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/vnd.microsoft.icon">
-    </head>{% endblock head-tag %}
+
+        <script>
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+            fbq('init', '{{ themeSettings.pixelId }}');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id="+{{ themeSettings.pixelId }}+"&ev=PageView&noscript=1"
+            />
+        </noscript>
+    </head>
+
+    {% endblock head-tag %}
     {% block body-tag %}{% block open-body-tag %}<body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
         {% block ensighten-data %}
             <script type="text/javascript">

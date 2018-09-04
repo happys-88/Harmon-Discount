@@ -57,6 +57,9 @@
 							<div class="col-xs-3">
 								{% dropzone "footer-cat-links-col4" scope="site" %}
 							</div> 
+							<div class="col-xs-3">
+								{% dropzone "footer-cat-links-col5" scope="site" %}
+							</div>
 						</div>
 					</div>								
 				</div>

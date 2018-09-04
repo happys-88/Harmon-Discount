@@ -22,7 +22,7 @@
            <a href="#" class="mz-utilitynav-link">Sign Up For Offers <i class="fa fa-envelope"></i></a>              
         </li>  
         <li class="mz-utilitynav-item"> 
-           <a href="templates/flippPage" class="mz-utilitynav-link">Monthly Ad <i class="fa fa-newspaper"></i></a>                
+           <a href="flipppage" class="mz-utilitynav-link">Monthly Ad <i class="fa fa-newspaper"></i></a>                
         </li> 
     </ul>  
 </nav>

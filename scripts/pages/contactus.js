@@ -76,7 +76,7 @@ define(['modules/api',
                 msg: Hypr.getLabel('emailMissing')
             },
             'selectedTopic': {
-                required: true,
+                required: false,
                 msg: Hypr.getLabel('selectedMissing')
             },
             'message': {

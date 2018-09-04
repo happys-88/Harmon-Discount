@@ -1273,7 +1273,7 @@ define('pages/cart',['modules/api', 'modules/backbone-mozu', 'underscore', 'modu
                             limitperorderModel = limitperorder;
                         }
                     } else {
-                        if(cartItems[i].mfgPartNumbers) {
+                        if (cartItems[i].mfgPartNumbers) {
                             for (var j = 0; j < cartItems[i].mfgPartNumbers.length; j++) {
                                 skuID = cartItems[i].mfgPartNumbers[j].toString();
                                 if (limitAttribute) {
@@ -1352,7 +1352,7 @@ define('pages/cart',['modules/api', 'modules/backbone-mozu', 'underscore', 'modu
                             limitperorderModel = limitperorder;
                         }
                     } else {
-                        if(cartItems[i].mfgPartNumbers) {
+                        if (cartItems[i].mfgPartNumbers) {
                             for (var j = 0; j < cartItems[i].mfgPartNumbers.length; j++) {
                                 skuID = cartItems[i].mfgPartNumbers[j].toString();
                                 if (limitAttribute) {

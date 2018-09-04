@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "67fda4c4fd0fee666e00e4a2e03ebf00d20448b3"
+      "commit": "c218918e04aabaa660db0604d233e2f9fc595e38"
     }
   },
   "editors": [
@@ -295,7 +295,7 @@
       "id": "location",
       "template": "location",
       "title": "Store Locator",
-      "userCreatable": true 
+      "userCreatable": true
     },
     {
       "documentType": "web_page",
@@ -468,7 +468,7 @@
     }
   ],
   "settings": {
-    "allProductsCategoryId": "",
+    "allProductsCategoryId": "1",
     "customCountries": [
       {
         "value": "US",
@@ -557,6 +557,7 @@
     "familyProductType": "Family Product",
     "familyProductAttribute": "tenant~Family_Members",
     "familyMemberAttribute": "tenant~Family_Code",
+    "pixelId": "1604992556421664",
     "cmsTextStyles": [
       {
         "className": "mz-style-1",
