@@ -4,25 +4,18 @@
     <div class="mz-header-promo-msg">
         {% dropzone "header-promo-msg" scope="site" %} 
     </div>  
-    <div class="mz-utilitynav-item navbar-collapse-control visible-xs">
-        <button data-target="#ml-nav" data-toggle="collapse" class="mz-utilitynav-link">
-            <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true">
-                <span class="hide">Menu</span>
-            </span>
-        </button>
-    </div>
-    <ul class="mz-utilitynav-list"> 
+    <ul class="mz-utilitynav-list hidden-xs"> 
         <li class="mz-utilitynav-item hidden-xs nav-order-status">
             <a href="/user/order-status" data-mz-action="anon-order" class="mz-utilitynav-link">{{ labels.orderStatus }} <i class="fa fa-truck"></i></a>
         </li>
         <li class="mz-utilitynav-item hidden-xs nav-stores">
-            <a href="/store-locator" data-mz-action="stores" data-placement="bottom" class="mz-utilitynav-link">{{ labels.localStores }} <i class="fa fa-map-marker"></i></a>     
+            <a href="/store-locator" data-mz-action="stores" data-placement="bottom" class="mz-utilitynav-link">{{ labels.localStores }} <i class="fa fa-map-marker"></i></a>
         </li>
         <li class="mz-utilitynav-item"> 
-           <a href="#" class="mz-utilitynav-link">Sign Up For Offers <i class="fa fa-envelope"></i></a>              
+           <a href="#" class="mz-utilitynav-link">Sign Up For Offers <i class="fa fa-envelope"></i></a>          
         </li>  
         <li class="mz-utilitynav-item"> 
-           <a href="flipppage" class="mz-utilitynav-link">Monthly Ad <i class="fa fa-newspaper"></i></a>                
+           <a href="flipppage" class="mz-utilitynav-link">Monthly Ad <i class="fa fa-newspaper"></i></a>                           
         </li> 
     </ul>  
 </nav>

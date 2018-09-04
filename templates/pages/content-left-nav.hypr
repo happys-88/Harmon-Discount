@@ -1,0 +1,63 @@
+{% if model.properties.page_type_definition=="customer-service" or pageContext.cmsContext.template.path=="order-status" or pageContext.cmsContext.template.path=="contact-us" %}     
+    <h3 class="mz-l-stack-sectiontitle">Customer Service</h3> 
+    <nav class="mz-scrollnav"> 
+        <ul class="mz-scrollnav-list nav">
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="user/order-status">Order Status</a>      
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/shipping-information">Shipping Info</a>
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/contact-us">Contact Us</a>
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/100-guarantee">100% guarantee</a> 
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/FAQS">FAQS</a>
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/return-policy">Return Policy</a>
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/privacy-policy">Privacy Policy</a> 
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/terms-conditions">Terms &amp; Conditions</a>  
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/product-recalls">Product Recalls</a>
+            </li>
+        </ul>
+    </nav> 
+{% endif %}
+
+{% if model.properties.page_type_definition=="about-us" %} 
+    <h3 class="mz-l-stack-sectiontitle">About Us</h3> 
+    <nav class="mz-scrollnav"> 
+        <ul class="mz-scrollnav-list nav">
+            <li class="mz-scrollnav-item"> 
+                <a class="mz-scrollnav-link" href="/who-we-are">Who We Are</a>  
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/our-partnerships">Our Partnerships</a>
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/media-relations">Media Relations</a> 
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/CorporateResponsibilityReport">Corporate Responsibility</a>
+            </li> 
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/">Investor Relations</a>  
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/brandcareers">Careers</a>  
+            </li>
+            <li class="mz-scrollnav-item">
+                <a class="mz-scrollnav-link" href="/corporate-sales">Corporate Sales</a>   
+            </li>
+        </ul>
+    </nav>
+{% endif %}

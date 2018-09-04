@@ -106,7 +106,8 @@
     "cardNumber": "Card Number",
     "nameOnCard": "Name On Card",
     "expires": "Expires",
-    "securityCode": "Security Code (CVV2)",
+    "securityCode": "Security Code",
+    "cvvNumber" : "(CVV/CID/CVC)",
     "phone": "Phone",
     "email": "Email",
     "emailAddress": "Email Address",
@@ -609,7 +610,7 @@
     "storeNoMsg": "Store Number is required 3 digit number",
     "successfullyAddedItems": "The following item(s) have successfully added to your cart",
     "contactusByEmail": "To Contact Us By Email",
-    "myCommentQuestion": "My comment/question concerns",
+    "myCommentQuestion": "Subject",  
     "send": "Send",
     "contactUsMessage": "Message",
     "contactUsMessageMissing": "Please enter your message",
@@ -637,7 +638,11 @@
     "shopAllBrands": "Shop All Brands",
 
     //My account
-    "logInMsg"                               :    "Welcome back! Please enter your email address and password to sign into your online shopping account",
-    "signUpMsg"                              :   "Sign up with an email address and password",
-    "createNewAccount"                       :   "Create New Account"
+    "logInMsg"            :    "Welcome back! Please enter your email address and password to sign into your online shopping account.",
+    "signUpMsg"           :   "Sign up with an email address and password.",
+    "createNewAccount"    : "Create New Account",
+    "forgetPasswordMsg"   :  "Our apologies for any inconvenience trying to login. Let's try and recover your password. To have your password reset, enter the email address associated to your Harmon Discount Explorer account below.",
+    "clickHere"           :   "Click here",
+    "checkoutAsGuest"     :  "Checkout as guest",
+    "checkoutAsGuestMsg"  :   "You will have the opportunity to register after placing your order."     
 }

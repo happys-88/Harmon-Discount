@@ -118,7 +118,7 @@ define([
                             if(orderedProductList.length > 1){
                                 $(container + ' .recently-viewed-list').slick({
                                     infinite: false,
-                                    slidesToShow: 7,
+                                    slidesToShow: 6,
                                     prevArrow: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
                                     nextArrow: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
                                     responsive: [{

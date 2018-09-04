@@ -123,34 +123,65 @@
 
 .mz-cart {
     font-family: @fontFamily;
-    .mz-header-basket-md-sm{
-        text-transform: capitalize;
+    .mz-button-checkout-cart-top {
+        margin-top: 0;
+        .mz-button {
+            margin-top: 0;
+        }
     }
-    
+    .mz-header-basket-md-sm{
+        div {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+    .mz-propertylist {
+        dd {
+            margin-bottom: 0px;
+        }
+    }
+    .mz-productdetail-conversion-controls {
+        .qty-block {
+            float: none;
+            width: 86px;
+            margin: 0 auto;
+        }
+    }
+    .mz-table-cart-items {
+        .mz-carttable-item-remove {
+            .btn-link {
+                color: #e20177;
+                font-size: 12px;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
     #coupon-code {
-        height: 36px;
+        height: 42px;
+        margin-bottom: 0;
     }
     .mz-carttable-checkout-couponcode {
+        margin-bottom: 30px;
+        label {
+            font-weight: 600;
+        }
         .mz-button {
+            height: 42px;
             margin-top: 0;
             margin-left: -1px;
         }
     }
-    .mz-button-bottom-cart{
-        a{
-            margin-right:10px;
+    .mz-button-bottom-cart {
+        a {
+            margin-right: 10px;
         }
     }
 }
-.mz-table-cart-items{
-    .mz-carttable-item{
-        .cart-item-qty{
-            .mz-productdetail-conversion-controls{
-                margin-left: 85px;
-                width: auto;
-                float: none;
-            }
-        }
+.mz-table-cart-items {
+    .mz-carttable-item {
+        padding: 15px 0;
         .mz-carttable-item-product{
            >a{
                 border: 1px solid #e0e0e0;
@@ -169,26 +200,12 @@
                         &.is-saleprice {
                             color: #ff6c1f;
                         } 
-                        &.is-crossedout{
-                            font-weight: 600;
-                            color: #262626;
-                        }
                     }
                 }
             }
             .mz-carttable-item-total{
                 text-align:center;
-                span{
-                    &.mz-item-rowtotal{
-                        &.is-saleprice {
-                            color: #262626;
-                            font-weight: 600;
-                        } 
-                       
-                    }
-                }
             }
-
         }
     }
 }

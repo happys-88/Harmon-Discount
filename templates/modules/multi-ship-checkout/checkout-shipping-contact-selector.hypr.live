@@ -2,7 +2,7 @@
 {% block contact-selector %}
     <div class="mz-l-formfieldgroup-cell">
         {% if model.length != 0 %}
-        <select aria-label="{{labels.selectShippingContact}}" data-mz-single-fulfillment-contact class="mz-contactselector" data-mz-value="{{ contactcontext }}contactId" name="contactId" {% if isLoading %} disabled {% endif %}>
+        <select aria-label="{{labels.selectShippingContact}}" data-mz-single-fulfillment-contact class="form-control mz-contactselector" data-mz-value="{{ contactcontext }}contactId" name="contactId" {% if isLoading %} disabled {% endif %}>
         <option value="" disabled selected hidden>{{labels.selectSavedAddress}}</option>
             {% for destination in model %}
                 {% if destination.customerContactType != "Billing"%}

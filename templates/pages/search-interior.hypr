@@ -1,4 +1,6 @@
-﻿<h1 class="mz-pagetitle col-xs-12">{{ labels.searchResults }}: <span class="mz-searchresults-query">{{ pageContext.search.query }}</span></h1>
+﻿{% comment %}
+<h1 class="mz-pagetitle col-xs-12">{{ labels.searchResults }}: <span class="mz-searchresults-query">{{ pageContext.search.query }}</span></h1>
+{% endcomment %}
 {% partial_cache model.categoryId pageContext.Sorting pageContext.Pagination pageContext.query.sortBy pageContext.search.query %}
 	{% include_products "modules/product/faceted-products" with includeFacets=themeSettings.showCategoryFacets and pageWithUrl=true and sortWithUrl=true and pageSize=themeSettings.defaultPageSize searchQuery=pageContext.search.query as_parameter %}
 {% endpartial_cache %}

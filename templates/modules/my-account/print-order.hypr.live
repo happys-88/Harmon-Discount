@@ -1,5 +1,5 @@
 <div class="company-logo text-left">
-    <img data-original="{{ themeSettings.ctslogo }}" src="{{ themeSettings.ctslogo }}" alt="CTS LOGO" />
+    <img data-original="{{ themeSettings.harmonlogo }}" src="{{ themeSettings.harmonlogo }}" alt="Harmon Logo" />
 </div>
 <h1 class="mz-pagetitle hide">{{ labels.orderConfirmation }} </h1>
 <table class="mz-printable-order mz-printable-order-details mz-l-stack" width="100%">

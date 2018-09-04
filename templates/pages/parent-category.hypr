@@ -32,19 +32,19 @@
             {% endfor %}
         </div>
         <div class="col-xs-12 col-sm-9">
-            <div class="col-xs-12 col-sm-12">
+            <div class="row">
                 {% dropzone "Merchandise" scope="page" %}
             </div>
-            <div class="col-xs-12 col-sm-12">
+            <div class="row">
                 {% dropzone "New" scope="page" %}
             </div>
-            <div class="col-xs-12 col-sm-12">
+            <div class="row">
                 {% dropzone "Brands" scope="page" %}
             </div>
-            <div class="col-xs-12 col-sm-12">
+            <div class="row">
                 {% dropzone "Feature" scope="page" %}
             </div>
-            <div class="col-xs-12 col-sm-12">
+            <div class="row">
                 {% dropzone "Category" scope="page" %}
             </div>
         </div>

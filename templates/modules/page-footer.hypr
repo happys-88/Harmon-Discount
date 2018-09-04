@@ -1,7 +1,7 @@
 ﻿<div class="mz-global-footer">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 hidden-xs">
+			<div class="col-xs-12">
 				{% dropzone "footer-dropzone-2" scope="site" %}  
 			</div> 
 		</div>
@@ -9,22 +9,22 @@
 </div>
 <footer>
 	<div class="container">
-		<div class="row first-row">
-			<div class="col-xs-12 col-sm-5 col-md-4 pull-right container-signup">
-				<div>
+		<div class="row">
+			<div class="first-row">
+				<div class="col-xs-12 pull-right container-signup">
 					{% if themeSettings.enableEmailSubscription %}
-					<form class="form">
-						<div class="form-group">
-							<label for="footerSignUpInput" class="control-label text-uppercase no-hover">{{ labels.footerSignUpEmail }}</label>
-							<div class="input-group">					  	
-								<input type="email" id="footerSignUpInput" maxlength="254" class="form-control" placeholder="{{ labels.yourEmailAddress }}">
-								<span class="input-group-btn">
-									<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp">{{ labels.signUp }}</button> 
-								</span>
-							</div>
-							<span id="emailHelpBlock" class="text-danger"></span>
-						</div>						
-					</form>
+						<form class="form">
+							<div class="form-group">
+								<label for="footerSignUpInput" class="control-label text-uppercase no-hover">{{ labels.footerSignUpEmail }}</label>
+								<div class="input-group">					  	
+									<input type="email" id="footerSignUpInput" maxlength="254" class="form-control" placeholder="{{ labels.yourEmailAddress }}">
+									<span class="input-group-btn">
+										<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp">{{ labels.signUp }}</button> 
+									</span>
+								</div>
+								<span id="emailHelpBlock" class="text-danger"></span>
+							</div>						
+						</form>
 					{% endif %}
 					<form class="form">
 						<div class="form-group">
@@ -39,7 +39,6 @@
 						</div>
 					</form>					
 				</div>
-				
 			</div>
 			<div class="col-xs-12 container-menu col-sm-7 col-md-8 hidden-xs regular-footer {% if themeSettings.footerEnableMini %}mini-footer-on{% else %}mini-footer-off{% endif %}">
 				<div class="row container-links">
@@ -59,12 +58,9 @@
 							</div> 
 							<div class="col-xs-3">
 								{% dropzone "footer-cat-links-col5" scope="site" %}
-							</div>
-						</div>
-					</div>								
+							</div>					
+					</div>
 				</div>
-				
-
 			</div>
 			<div class="col-xs-12 container-copyright">
 				<ul>
@@ -74,21 +70,7 @@
 					<li><a href="/product-recalls" target="_blank">Product Recalls</a></li>
 					<li class="copy-text">Copyright {% now Y %} {{ labels.copyWriteText }}</li> 
 				</ul> 
-			</div>  		
-		</div>
-		<div class="row">
-			<div class="col-xs-12 {% if themeSettings.footerEnableMini %}mini-footer-off{% else %}mini-footer-on{% endif %}">
-				<div class="row">
-					<div class="col-xs-12 mini-links">
-						{% dropzone "mini-footer-cat-links" scope="site" %}
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12 mini-copy">
-						<span>&copy; {% now Y %} {{ labels.copyWriteText }}</span>
-					</div>
-				</div>
-			</div>			
-		</div>
+			</div>
+		</div> 		
 	</div>
 </footer>

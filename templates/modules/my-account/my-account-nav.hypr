@@ -6,15 +6,21 @@
             </a>
         </li>
         <li class="mz-scrollnav-item">
+            <a class="mz-scrollnav-link" href="#addressbook">
+                {{ labels.addressBook }}
+            </a>
+        </li>
+        <li class="mz-scrollnav-item">
             <a class="mz-scrollnav-link" href="#orderhistory">
                 {{ labels.orderHistory }}
             </a>
         </li>
         <li class="mz-scrollnav-item">
-            <a class="mz-scrollnav-link" href="#addressbook">
-                {{ labels.addressBook }}
+            <a class="mz-scrollnav-link" href="#paymentmethods">
+                {{ labels.paymentMethods }}
             </a>
         </li>
+        {% comment %}
         {% if siteContext.generalSettings.isWishlistCreationEnabled %}
         <li class="mz-scrollnav-item">
             <a class="mz-scrollnav-link" href="#wishlist">
@@ -28,15 +34,15 @@
             </a>
         </li>
         <li class="mz-scrollnav-item">
-            <a class="mz-scrollnav-link" href="#paymentmethods">
-                {{ labels.paymentMethods }}
-            </a>
-        </li>
-        
-        <li class="mz-scrollnav-item">
             <a class="mz-scrollnav-link" href="#{{ labels.digitalCreditsAnchor }}">
                 {{ labels.digitalCredit }}
             </a>
         </li>
+        {% endcomment %}
+        <div class="mz-scrollnav-item">
+            <a class="mz-scrollnav-link" href="/logout">
+                {{ labels.logOut }}
+            </a>
+        </div>
     </ul>
 </nav>

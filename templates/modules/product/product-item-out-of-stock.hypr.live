@@ -11,7 +11,7 @@
                     <span class="visible-xs">{{model.content.productName|safe}}</span>
                     <!--Color Swatch-->
                     {% for option in model.options %}
-                        {% if option.attributeFQN=="tenant~COLOR" and option.values.length!=0 %}
+                        {% if option.attributeFQN=="tenant~color" and option.values.length!=0 %} 
                             <div class="ml-product-swatch mz-sold-out-blur">
                                 <div class="row">
                                     <ul class="mz-sold-out">

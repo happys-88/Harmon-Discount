@@ -2,17 +2,22 @@
 {% if themeSettings.rviEnable %}
     {% require_script "modules/product/recently-viewed-products" %}
 {% endif %}
+
 {% require_script "pages/product" %}
 {% with model.properties|findwhere('attributeFQN', "tenant~limitPerOrder") as limitPerOrder %}
     {% preload_json limitPerOrder.values|first "limit" %}
 {% endwith %}
+
 {% with model.properties|findwhere('attributeFQN', "tenant~Video_Id") as video_Id %}
     {% preload_json video_Id.values|first "Video_Id" %}
 {% endwith %}
-<div itemscope itemtype="http://schema.org/Product" class="mz-l-container">
+
+<div itemscope itemtype="http://schema.org/Product" class="mz-l-container"> 
+    {% comment %}
     {% if PageContext.isTablet or PageContext.isDesktop %}
-    {% include "modules/product/product-top-carousel" %}
+        {% include "modules/product/product-top-carousel" %}
     {% endif %}
+    {% endcomment %} 
     <div class="row">
         <div class="col-xs-12 col-sm-6">
             <div data-mz-productimages class="mz-productimages mz-product-left-container margin-top-15">
@@ -23,8 +28,20 @@
             <div class="mz-product-top-content">
                 <h1 class="mz-pagetitle" itemprop="name">{{ model.content.productName|replace("'","&rsquo;")|safe }}</h1>
                 <div class="row">
-                    <div class="col-xs-5">
+                    {% with model|get_product_attribute("tenant~brand") as brandName %}
+                        <div class="col-xs-12 mz-view-all-brand">
+                            {{ labels.viewAll }} <a href="/">{{ brandName.values|first|prop("value") }}</a>
+                        </div>
+                    {% endwith %}
+                    <div class="col-xs-12">
                         <div class="mz-productcodes-productcode p-3" itemprop="sku">{{ labels.item}} # {{ model.productCode }}</div>
+                        <div class="mz-reviews-ratings">
+                            <div><img src="/resources/images/harmon/star.jpg" alt="rating"><span>4.9(27) Read a Review | Write A review</span></div>
+                            <div>11 out of 12(92%) reviewers recommend this product</div>
+                        </div>
+                        <div class="mz-shipping-restiction">
+                            <span>Shipping Restiction text attribute</span>
+                        </div>
                     </div>
                     {% if model.productType != themeSettings.familyProductType %}
                         <div class="col-xs-7">
@@ -55,6 +72,33 @@
                 </div>
             </div>
         </div>
+        {% comment %}
+        <div class="col-xs-12">
+            {% if model.properties and themeSettings.showProductDetailProperties %}
+                <div class="mz-productdetail-properties mz-l-stack-section">
+                  <h4 class="mz-l-stack-sectiontitle">{{ labels.properties }}</h4>
+                  <div class="mz-propertylist mz-propertylist-justified tab-content">
+                    {% for property in model.properties %}
+                    {% if property.values and not property.isHidden %}
+                    <div class="mz-prop-tab {{property.attributeDetail.name}}"><a data-toggle="tab" data-parent=".mz-propertylist" href="#{{property.attributeDetail.name|slugify}}">{{property.attributeDetail.name}}</a></div>
+                    {% for v in property.values %}
+                    <div id="{{property.attributeDetail.name|slugify}}" class="tab-pane fade">{% if v.stringValue %}{% if v.stringValue == 'CHR(38)' %}
+                &amp;
+                {% else %}
+                    {% if v.stringValue == 'CHR(64)' %}
+                    @
+                    {% else %}
+                        {{ v.stringValue }}
+                    {% endif %}
+                {% endif %}{% else %}{{v.value}}{% endif %}</div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+            {% endif %}
+        </div>
+        {% endcomment %}  
     </div>
     <div class="row">
         <div class="social-sharing col-md-9 col-xs-12 mz-reset-padding-left{% if model.content.productImages.length <=1 %} mz-share-with-container-other{% endif %}">
@@ -81,6 +125,8 @@
     </div>
     {% include "modules/product/product-tabs" %}
     {% if themeSettings.rviEnable %}
-    {% include "modules/product/recent/recently-viewed-products" %}
+        {% include "modules/product/recent/recently-viewed-products" %}  
     {% endif %}
 </div>
+
+{% require_script "pages/custom_DetailPage" %}

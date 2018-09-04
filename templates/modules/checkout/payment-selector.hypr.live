@@ -51,12 +51,12 @@
                     <span class="mz-validationmessage" data-mz-validationmessage-for="savedPaymentMethodId"></span>
                 {% if model.paymentType == "CreditCard" and model.usingSavedCard %}
                     {% if not themeSettings.isCvvSuppressed %}
-                    <div class="mz-paymentselector-reenter-cvv">
-                        <div class="mz-l-formfieldgroup-cell">
-                            <label for="mz-payment-security-code-{{ paymentId }}" class="mz-paymentselector-label">{{ labels.securityCode }} <span class="is-required">*</span></label>
+                    <div class="form-group mz-paymentselector-reenter-cvv">
+                        <div class="col-sm-4">
+                            <label for="mz-payment-security-code-{{ paymentId }}" class="mz-paymentselector-label">{{ labels.securityCode }} <span class="is-required">*</span><span class="cvv-code">{{ labels.cvvNumber }}</span></label>
                         </div>
-                        <div class="mz-l-formfieldgroup-cell">
-                            <input type="tel" {% if not model.usingSavedCard %}disabled="true"{% endif %} data-mz-saved-cvv name="security-code" id="mz-payment-security-code-{{ paymentId }}" class="mz-l-formfieldgroup-halfsize" data-mz-value="card.cvv" value="{{ model.card.cvv }}" autocomplete="off" maxlength="{{themeSettings.paymentSecurityCodeLength}}"/>
+                        <div class="col-sm-4">
+                            <input type="tel" {% if not model.usingSavedCard %}disabled="true"{% endif %} data-mz-saved-cvv name="security-code" id="mz-payment-security-code-{{ paymentId }}" class="form-control mz-l-formfieldgroup-halfsize" data-mz-value="card.cvv" value="{{ model.card.cvv }}" autocomplete="off" maxlength="{{themeSettings.paymentSecurityCodeLength}}"/>
                             <span class="mz-validationmessage" data-mz-validationmessage-for="card.cvv"></span>
                         </div>                                               
                     </div>

@@ -3,9 +3,9 @@
         <div class="modal-content"> 
             <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button> 
             <div class="modal-body clearfix">
-                <div class="pull-left tab-pane" id="login">
+                <div class="first-tab pull-left tab-pane" id="login">
                     <h3 class="mz-pagetitle">{{ labels.logIn }}</h3>
-                    <p>{{ labels.logInMsg }}.</p>
+                    <p>{{ labels.logInMsg }}</p>
                     <form name="login" class="mz-loginform mz-loginform-page" onsubmit="return false" novalidate>
                        <input type="hidden" name="returnUrl" value="{{ model.returnUrl }}" />
                        <div class="mz-l-formfieldgroup">
@@ -32,10 +32,9 @@
                         </div>
                     </form>
                 </div>
-
-                <div class="pull-right tab-pane" id="newshopper">
+                <div class="second-tab pull-right tab-pane" id="newshopper">
                     <h3 class="mz-pagetitle">{{ labels.signUp }}</h3>
-                    <p>{{ labels.signUpMsg }}.</p>
+                    <p>{{ labels.signUpMsg }}</p>
                     <div class="mz-l-formfieldgroup">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -61,7 +60,15 @@
                             <span class="hide">For Error Message</span>
                         </span>                     
                     </div>
-                </div>                               
+                </div>
+                <div class="second-tab third-tab pull-right mz-checkout">
+                    <h3 class="mz-pagetitle">{{ labels.checkoutAsGuest }}</h3>
+                    <p>{{ labels.checkoutAsGuestMsg }}</p>
+                    <div class="mz-btn-section">
+                        <a href="#" class="mz-cancel-button" data-dismiss="modal">{{ labels.cancel }}</a>
+                        <a class="mz-button" href="/cart/checkout">{{ labels.checkoutAsGuest }}</a>
+                    </div>                    
+                </div>                      
             </div>
             <div class="modal-footer">
                 <p class="text-center"><i class="fa fa-lock"></i>{{ labels.secureConnectionMessage }}</p>

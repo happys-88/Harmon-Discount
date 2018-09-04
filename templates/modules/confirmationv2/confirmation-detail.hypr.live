@@ -1,5 +1,5 @@
 <div class="mz-l-container">
-    <div class="col-xs-12">
+    <div class="mz-order-msg-number">
         <h1 class="mz-pagetitle">{{ labels.orderConfirmation }} </h1>
         <div class="clearfix"></div>
         <p>{{ labels.confirmationText }}</p>
@@ -12,7 +12,7 @@
         <div class="mz-created-date-order"><span>Date: </span><span>{{ model.submittedDate|date("m/d/Y H:i:s") }}</span></div>
         <div class="clearfix"></div>
     </div>
-    <div class="mz-l-stack">
+    <div class="mz-l-stack row">
         <div class="mz-l-stack-section col-sm-6 col-xs-12 mz-payment-info-confirmation">            
             <h2 class="mz-l-stack-sectiontitle">{{ labels.payments }}</h2>
             {% if model.total == 0 %}
@@ -110,7 +110,7 @@
             {% endif %}
         </div>
     </div>
-    <div class="section section-payment col-xs-12">
+    <div class="section section-payment">
             <h3 class="mz-l-stack-sectiontitle">Payment Details</h3>
             {% if not(model.payments) %}
                 <p class="message">No payment details were provided.</p>
