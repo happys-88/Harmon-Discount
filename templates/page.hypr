@@ -6,8 +6,8 @@
 <!--[if IE 7]><html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]><html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if IE 9]><html class="no-js ie9" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|(!IE) ]><!--><html class="no-js" lang="en"><!--<![endif]-->
-{%endblock open-html-tag %}
+<!--[if (gt IE 9)|(!IE) ]><!-->
+<html class="no-js" lang="en"><!--<![endif]-->{%endblock open-html-tag %}
 
 {% block head-tag %}
     <head>
@@ -95,6 +95,69 @@
 
         <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/vnd.microsoft.icon">
 
+
+        <script>
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+            document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+            fbq('init', '{{ themeSettings.pixelId }}');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id="+{{ themeSettings.pixelId }}+"&ev=PageView&noscript=1"
+            />
+        </noscript>
+    </head>
+
+    {% endblock head-tag %}
+    {% block body-tag %}{% block open-body-tag %}<body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
+        {% block ensighten-data %}
+            <script type="text/javascript">
+                var pageData = {
+                    "page": {
+                        "serverDate": "{{serverDate}}",
+                        "isProduction": "{{isProduction|lower}}",
+                        "siteName": "{{ siteContext.generalSettings.websiteName }}",
+                        "page": "",
+                        "isMobile": "{{pageContext.isMobile|lower}}",
+                        "type": "{{pageType}}"
+                    },
+                    "customer": {
+                        "status": "{{customerType}}"
+                    }
+                };
+            </script> 
+        {% endblock ensighten-data %}
+     <a href="#page-content" class="sr-only">Skip to main content</a>
+    {% endblock open-body-tag %}<div id="page-wrapper" class="mz-l-pagewrapper">
+            {% block utility-bar %}
+                {% include "modules/utility-bar/header" %}
+            {% endblock utility-bar %}
+
+            {% block page-header %}
+                {% include "modules/page-header" %}
+            {% endblock page-header %}
+
+            {% block site-nav %}
+                {% include "modules/site-nav" %}
+            {% endblock site-nav %}
+
+            {% block login-slider %}
+                {% include "modules/login/login" %}            
+            {% endblock login-slider %}
+            
+            <div id="home-promo-wrapper" class="container-fluid hidden-sm">
+                <div class="row" id="home-promo-below-navigation">
+                    <div class="col-xs-12">
+                        <div class="ml-header-global-include-close">
+                            <button aria-label="{{labels.close}}" type="button" id="homePromoCloseBtn" class="glyphicon glyphicon-remove ml-icon-close no-print" data-toggle="collapse" data-target=".ml-global-include-header">
+                                <span class="hide">Close</span>
+                            </button>
+                        </div>
+                        {% dropzone "home-promo-below-navigation" scope="site" %} 
         {% require_script "custom" %}
         {% block conversion-tracking %}
             <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1041663433"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-1041663433'); 
