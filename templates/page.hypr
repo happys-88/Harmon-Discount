@@ -94,8 +94,6 @@
         {% endif %}
 
         <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/vnd.microsoft.icon">
-
-
         <script>
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -110,10 +108,23 @@
             src="https://www.facebook.com/tr?id="+{{ themeSettings.pixelId }}+"&ev=PageView&noscript=1"
             />
         </noscript>
-    </head>
+         {% block conversion-tracking %}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1041663433"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-1041663433'); 
+            </script>
+        {% endblock conversion-tracking %}
+        {% require_script "custom" %}
 
-    {% endblock head-tag %}
-    {% block body-tag %}{% block open-body-tag %}<body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
+    </head>
+{% endblock head-tag %} 
+    
+{% block body-tag %}
+    {% block open-body-tag %}
+        <body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
+        {% block bing-ads %}
+            <script>
+                (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5796441"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+            </script>
+        {% endblock bing-ads %}
         {% block ensighten-data %}
             <script type="text/javascript">
                 var pageData = {
@@ -132,7 +143,8 @@
             </script> 
         {% endblock ensighten-data %}
      <a href="#page-content" class="sr-only">Skip to main content</a>
-    {% endblock open-body-tag %}<div id="page-wrapper" class="mz-l-pagewrapper">
+    {% endblock open-body-tag %}
+    <div id="page-wrapper" class="mz-l-pagewrapper">
             {% block utility-bar %}
                 {% include "modules/utility-bar/header" %}
             {% endblock utility-bar %}
@@ -158,72 +170,9 @@
                             </button>
                         </div>
                         {% dropzone "home-promo-below-navigation" scope="site" %} 
-        {% require_script "custom" %}
-        {% block conversion-tracking %}
-            <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1041663433"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-1041663433'); 
-            </script>
-        {% endblock conversion-tracking %}
-    </head>
-{% endblock head-tag %} 
-    
-{% block body-tag %}
-
-    {% block bing-ads %}
-        <script>
-            (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5796441"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
-        </script>
-    {% endblock bing-ads %}
-
-    {% block open-body-tag %}
-        <body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
-            {% block ensighten-data %}
-                <script type="text/javascript">
-                    var pageData = {
-                        "page": {
-                            "serverDate": "{{serverDate}}",
-                            "isProduction": "{{isProduction|lower}}",
-                            "siteName": "{{ siteContext.generalSettings.websiteName }}",
-                            "page": "",
-                            "isMobile": "{{pageContext.isMobile|lower}}",
-                            "type": "{{pageType}}"
-                        },
-                        "customer": {
-                            "status": "{{customerType}}"
-                        }
-                    };
-                </script> 
-            {% endblock ensighten-data %}
-            <a href="#page-content" class="sr-only">Skip to main content</a>
-    {% endblock open-body-tag %}
-    <div id="page-wrapper" class="mz-l-pagewrapper">
-        {% block utility-bar %}
-            {% include "modules/utility-bar/header" %}
-        {% endblock utility-bar %}
-
-        {% block page-header %}
-            {% include "modules/page-header" %}
-        {% endblock page-header %}
-
-        {% block site-nav %}
-            {% include "modules/site-nav" %}
-        {% endblock site-nav %}
-
-        {% block login-slider %}
-            {% include "modules/login/login" %}            
-        {% endblock login-slider %}
-        
-        <div id="home-promo-wrapper" class="container-fluid hidden-sm">
-            <div class="row" id="home-promo-below-navigation">
-                <div class="col-xs-12">
-                    <div class="ml-header-global-include-close">
-                        <button aria-label="{{labels.close}}" type="button" id="homePromoCloseBtn" class="glyphicon glyphicon-remove ml-icon-close no-print" data-toggle="collapse" data-target=".ml-global-include-header">
-                            <span class="hide">Close</span>
-                        </button>
                     </div>
-                    {% dropzone "home-promo-below-navigation" scope="site" %} 
                 </div>
-            </div>
-        </div> 
+            </div> 
         <div role="main" id="page-content" class="mz-l-pagecontent">
             <div class="container">
                 <div class="row">

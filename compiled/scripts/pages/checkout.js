@@ -379,17 +379,13 @@ define('modules/models-checkout',[
 
                 },
                 helpers: ['acceptsMarketing', 'savedPaymentMethods', 'availableStoreCredits', 'applyingCredit', 'maxCreditAmountToApply',
-              'activeStoreCredits', 'nonStoreCreditTotal', 'activePayments', 'hasSavedCardPayment', 'availableDigitalCredits', 'digitalCreditPaymentTotal', 'isAnonymousShopper', 'visaCheckoutFlowComplete','isExternalCheckoutFlowComplete', 'checkoutFlow','contacts'],
-                contacts: function () {
-                    var contacts = this.getOrder().get('customer').get('contacts').toJSON();
-                    return contacts && contacts.length > 0 && contacts;
-                },
+              'activeStoreCredits', 'nonStoreCreditTotal', 'activePayments', 'hasSavedCardPayment', 'availableDigitalCredits', 'digitalCreditPaymentTotal', 'isAnonymousShopper', 'visaCheckoutFlowComplete','isExternalCheckoutFlowComplete', 'checkoutFlow'],
                 acceptsMarketing: function() {
                     return this.getOrder().get('acceptsMarketing');
                 },
-                isExternalCheckoutFlowComplete: function () {
-                    return this.get('paymentWorkflow') !== "Mozu";
-                },
+            isExternalCheckoutFlowComplete: function () {
+                return this.get('paymentWorkflow') !== "Mozu";
+            },
                 visaCheckoutFlowComplete: function() {
                     return this.get('paymentWorkflow') === 'VisaCheckout';
                 },
