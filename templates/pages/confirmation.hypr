@@ -1,12 +1,19 @@
 ﻿{% extends "page" %}
+{% block head-tag %}
+    <script> gtag('event', 'conversion', {'send_to': 'AW-1041663433/R6RICPTgo3UQyYva8AM'}); 
+    </script>
+{% endblock head-tag %}
 {% block title-tag-content %}{% firstof pageContext.metaTitle|safe labels.orderConfirmation %} - {% parent %}{% endblock title-tag-content %}
 {% block body-tag-classes %}mz-confirmation{% endblock body-tag-classes %}
 {% block body-content %}
 {% preload_json model "order" %}
+
+
 <div class="mz-l-container" id="mz-confirmation-container">
     <div class="col-xs-12 hide ml-print-logo">
         <img src='/resources/images/cts-logo-sm.png' alt="CTS_logo">
     </div>
+
     <div class="mz-order-msg-number">
         <h1 class="mz-pagetitle">{{ labels.orderConfirmation }} </h1>
         <div class="clearfix"></div>
@@ -164,6 +171,7 @@
 {% endblock body-content %}
 
 {% block trailing-scripts %}
+    {% require_script "pages/confirmation" %} 
 	{% parent %}
 	{% if siteContext.generalSettings.isGoogleAnalyticsEnabled and siteContext.generalSettings.isGoogleAnalyticsEcommerceEnabled %}
 	{% include "modules/analytics/google-analytics-ecommerce-tracking-code" %}

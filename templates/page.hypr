@@ -96,11 +96,21 @@
         <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/vnd.microsoft.icon">
 
         {% require_script "custom" %}
-
+        {% block conversion-tracking %}
+            <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1041663433"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-1041663433'); 
+            </script>
+        {% endblock conversion-tracking %}
     </head>
 {% endblock head-tag %} 
     
 {% block body-tag %}
+
+    {% block bing-ads %}
+        <script>
+            (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5796441"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");
+        </script>
+    {% endblock bing-ads %}
+
     {% block open-body-tag %}
         <body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
             {% block ensighten-data %}

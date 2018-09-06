@@ -14,7 +14,7 @@ define(['modules/api',
           items in the order. The model on the confirmation page will then
           include an array of locationDetails.
           */
-          
+          console.log("Load JS");
           $.cookie('paypal', null);
           $.cookie('GSIPaypal', null);
           $.cookie('PaypalAmnt', null);
@@ -49,17 +49,69 @@ define(['modules/api',
           }
         });
 
-          $(document).ready(function(){
-            var confModel = ConfirmationModel.fromCurrent();
-            confModel.getLocationData().then(function(response){
-              confModel.set('locationDetails', response.data.items);
+        var CJView = Backbone.MozuView.extend({
+            templateName: "modules/checkout/commission-junction-view"
+        });
 
-              var confirmationView = new ConfirmationView({
-                  el: $('#confirmation-container'),
-                  model: confModel
-              });
-              confirmationView.render();
-              });
+          $(document).ready(function(){
+                console.log("V1");
+                var confModel = ConfirmationModel.fromCurrent();
+                confModel.getLocationData().then(function(response){
+                  confModel.set('locationDetails', response.data.items);
+
+                  var confirmationView = new ConfirmationView({
+                      el: $('#confirmation-container'),
+                      model: confModel
+                  });
+                  confirmationView.render();
+                  });
+
+                var orderData = require.mozuData('order');
+                var orderModel = Backbone.Model.extend(); 
+                var order = new orderModel(orderData);
+                console.log("Order : "+JSON.stringify(order));
+                var url = getURL(order);
+                console.log("UL : "+url);
+                var NewModal = Backbone.Model.extend();
+                var urlModal = new NewModal({url:url});
+                console.log(JSON.stringify(urlModal));
+                var cjView = new CJView({
+                    model: urlModal,
+                    el: $('#CJIntegration')
+                });
+                cjView.render();  
 
             });
+
+          function getURL(order){
+            var url = "https://www/emjcd.com/tags/c?containerTagId=27891&TYPE=406572&CID=1519664";
+                url = url+"&"+order.id;
+                var amp = "&";
+                var count = 1;
+                var coupons='';
+                _.each(order.get('items'), function(item){
+                    var pCode = item.product.variationProductCode ? item.product.variationProductCode : item.product.productCode;
+                    url = url+amp+"ITEM"+count+"="+pCode;
+                    url = url+amp+"AMT"+count+"="+item.subtotal;
+                    url = url+amp+"QTY"+count+"="+item.quantity;
+                    count++;
+                });
+                url = url+amp+"OID="+order.id;
+                url = url+amp+"DISCOUNT="+order.get('discountTotal');
+                url = url+amp+"CURRENCY=USD";
+                if(order.get('couponCodes').length > 0){
+                  count = 1;
+                  _.each(order.get('couponCodes'), function(coupon) {
+                      coupons = coupons+coupon;
+                      if(count < order.get('couponCodes').length) {
+                          coupons = coupons+",";
+                      }
+                      count++;
+                  });
+                  url = url+amp+"COUPON="+coupons;
+                }
+                // url = url+amp+"COUPON="+order.couponCodes;
+                console.log("URL : "+url);
+                return url;
+          }
         });
