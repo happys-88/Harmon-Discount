@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "a39001ee2ddc927af62f45042c51a9f078f81451"
+      "commit": "b885dc397d985f8b1d98b089c688fc9a463ae82d"
     }
   },
   "editors": [
@@ -216,6 +216,15 @@
           ]
         }
       ]
+    },
+    {
+      "documentType": "web_page",
+      "editor": "landing-page",
+      "entityType": "webpage",
+      "id": "sunscribe-signup-page",
+      "template": "SubscribeSignup",
+      "title": "Subscribe Signup",
+      "userCreatable": true
     },
     {
       "documentType": "web_page",
@@ -592,6 +601,8 @@
     "familyProductAttribute": "tenant~Family_Members",
     "familyMemberAttribute": "tenant~Family_Code",
     "pixelId": "1604992556421664",
+    "merkelMid": "harmon",
+    "merkelType": "harmonemail",
     "cmsTextStyles": [
       {
         "className": "mz-style-1",

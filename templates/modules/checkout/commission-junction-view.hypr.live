@@ -1,3 +1,2 @@
-HELLO TEMPLATE
-
-	{% dump model.url %}
+<script>{{ model.CjUrl|safe }}</script>
+{{ model.merkelUrl|safe }}

@@ -69,12 +69,12 @@ define(['modules/api',
                 var orderData = require.mozuData('order');
                 var orderModel = Backbone.Model.extend(); 
                 var order = new orderModel(orderData);
-                console.log("Order : "+JSON.stringify(order));
-                var url = getURL(order);
-                console.log("UL : "+url);
+                var CjUrl = getCjURL(order);
+                var merkelUrl = getMerkelUrl(order);
+                console.log("UL : "+JSON.stringify(merkelUrl));
                 var NewModal = Backbone.Model.extend();
-                var urlModal = new NewModal({url:url});
-                console.log(JSON.stringify(urlModal));
+                var urlModal = new NewModal({CjUrl:CjUrl, merkelUrl: merkelUrl});
+                console.log("JSONSS: "+JSON.stringify(urlModal));
                 var cjView = new CJView({
                     model: urlModal,
                     el: $('#CJIntegration')
@@ -83,13 +83,14 @@ define(['modules/api',
 
             });
 
-          function getURL(order){
+          function getCjURL(order){
             var url = "https://www/emjcd.com/tags/c?containerTagId=27891&TYPE=406572&CID=1519664";
                 url = url+"&"+order.id;
                 var amp = "&";
                 var count = 1;
                 var coupons='';
                 _.each(order.get('items'), function(item){
+                    // console.log("Data: "+date.format('YYYYMMDDHHMMSS'));
                     var pCode = item.product.variationProductCode ? item.product.variationProductCode : item.product.productCode;
                     url = url+amp+"ITEM"+count+"="+pCode;
                     url = url+amp+"AMT"+count+"="+item.subtotal;
@@ -112,6 +113,43 @@ define(['modules/api',
                 }
                 // url = url+amp+"COUPON="+order.couponCodes;
                 console.log("URL : "+url);
-                return url;
+                console.log();
+                url = '<iframe height="1" width="1" frameborder="0" scrolling="no" src="'+url;
+                if(readCookie(Hypr.getLabel('cjEventCookie'))) {
+                  url = url + '&CJEVENT='+readCookie(Hypr.getLabel('cjEventCookie'))+'"';  
+                } else {
+                  url = url + '"';
+                }
+                url = url + ' name="cj_conversion"></iframe>';
+              return url;
+          }
+
+          function getMerkelUrl(order) {
+              var url = '<script type="text/javascript" src="https://cdn.merklesearch.com/merkle_track.js"></script>';
+              url = url + '<script type="text/javascript">try {';
+              
+              var count = 1;
+              _.each(order.get('items'), function(item){
+                    var pCode = item.product.variationProductCode ? item.product.variationProductCode : item.product.productCode;
+                    var icent = item.subtotal*100;
+                    url = url+'merklesearch.sendOrder( {';
+                    url = url + 'mid: "'+Hypr.getThemeSetting('MerkelMid')+'", oid: "'+order.id+'", lid: "'+count+'", ' ;
+                    url = url + 'iid:"'+pCode+'", icent:"'+icent+'", ';
+                    url = url + 'iqty: "'+item.quantity+'", iname:"'+escape(item.product.name)+'} ); } catch(e) {} </script>';
+                    count++;
+                });
+              console.log("Merkel ULR : "+url);
+              return url;
+          }
+
+          function readCookie(name) {
+              var nameEQ = name + "=";
+              var ca = document.cookie.split(';');
+              for(var i=0;i < ca.length;i++) {
+                  var c = ca[i];
+                  while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                  if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+              }
+              return null;
           }
         });

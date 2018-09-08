@@ -644,5 +644,8 @@
     "forgetPasswordMsg"   :  "Our apologies for any inconvenience trying to login. Let's try and recover your password. To have your password reset, enter the email address associated to your Harmon Discount Explorer account below.",
     "clickHere"           :   "Click here",
     "checkoutAsGuest"     :  "Checkout as guest",
-    "checkoutAsGuestMsg"  :   "You will have the opportunity to register after placing your order."     
+    "checkoutAsGuestMsg"  :   "You will have the opportunity to register after placing your order.",
+
+    "cjEventParam"        : "cjevent",
+    "cjEventCookie"       : "popupEnabled"  
 }

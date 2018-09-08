@@ -114,6 +114,18 @@
         {% endblock conversion-tracking %}
         {% require_script "custom" %}
 
+        <script type="text/javascript"
+         src="https://cdn.merklesearch.com/merkle_track.js"></script>
+        <script type="text/javascript">
+            try{ merklesearch.sendAdSid("{{themeSettings.merkelMid}}"); } catch(e) {} 
+        </script>
+
+        {% block conversion-tag %}
+            
+        {% endblock conversion-tag %}
+        {% block cj-tag %}
+
+        {% endblock cj-tag %}
     </head>
 {% endblock head-tag %} 
     
