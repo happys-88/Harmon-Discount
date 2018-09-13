@@ -133,11 +133,13 @@ define(['modules/api',
                     var pCode = item.product.variationProductCode ? item.product.variationProductCode : item.product.productCode;
                     var icent = item.subtotal*100;
                     url = url+'merklesearch.sendOrder( {';
-                    url = url + 'mid: "'+Hypr.getThemeSetting('MerkelMid')+'", oid: "'+order.id+'", lid: "'+count+'", ' ;
+                    url = url + 'mid: "'+Hypr.getThemeSetting('merkelMid')+'", oid: "'+order.id+'", lid: "'+count+'", ' ;
                     url = url + 'iid:"'+pCode+'", icent:"'+icent+'", ';
-                    url = url + 'iqty: "'+item.quantity+'", iname:"'+escape(item.product.name)+'} ); } catch(e) {} </script>';
+                    url = url + 'iqty: "'+item.quantity+'", iname:"'+escape(item.product.name)+'} );';
                     count++;
                 });
+              url = url +'} catch(e) {} </script>'; 
+
               console.log("Merkel ULR : "+url);
               return url;
           }
