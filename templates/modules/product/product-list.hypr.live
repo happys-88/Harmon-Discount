@@ -5,5 +5,6 @@
         <li class="mz-productlist-item col-xs-6 col-sm-4{% if prod.variations %} mz-product-has-variation{%endif%}" data-mz-product="{{ prod.productCode }}">{% include "modules/product/product-listing" with model=prod %}</li>
         {% endfor %}
     </ul>
+{% require_script "widgets/bazaarvoice" %}
     {% endif %}
 </div> 

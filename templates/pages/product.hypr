@@ -76,6 +76,7 @@
 {% endblock ensighten-data %}
 
 {% block body-content %}
+{% require_script "pages/product" %}
 {% preload_json model "product" %}
 <div class="product-wrapper">
     {% block breadcrumbs %}
@@ -85,5 +86,6 @@
     {% endblock breadcrumbs %}
     <div class="clearfix"></div>
     {% include "modules/product/product-details" %}
+    {% dropzone "bazaar-voice-widget" scope="page" %} 
 </div>
 {% endblock body-content %}

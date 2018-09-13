@@ -181,3 +181,5 @@
         {% include "modules/product/product-item-out-of-stock" with model=model%}
     {% endif %}
 {% endif %}
+
+<div id="BVRRInlineRating-{{model.productCode}}" class="bvr-inline-rating" data-mz-product-code="{{ model.productCode }}" data-mz-product-url="{{ model.url }}"></div>
