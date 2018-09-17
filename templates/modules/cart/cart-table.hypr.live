@@ -220,7 +220,7 @@
     <div class="col-xs-12 text-right">
       <div class="margin-bottom-15">{{labels.orWith}}</div>
       {% for externalPayment in siteContext.checkoutSettings.externalPaymentWorkflowSettings %}
-          {% if externalPayment.isEnabled and externalPayment.name == "GSIPaypal" %}
+          {% if externalPayment.isEnabled and externalPayment.name == "PayPalExpress2" %}
               <div class="mz-carttable-thirdpartypayment margin-bottom-30" >
                 {% if not user.isAnonymous && user.isAuthenticated %}
                   <a href="javascript:void(0);" data-mz-action="paypalCheckout">

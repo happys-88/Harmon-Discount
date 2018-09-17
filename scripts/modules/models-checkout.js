@@ -8,16 +8,16 @@
         'modules/models-address',
         'modules/models-paymentmethods',
         'hyprlivecontext'
-    ],
-    function($, _, Hypr, Backbone, api, CustomerModels, AddressModels, PaymentMethods, HyprLiveContext) {
+],
+    function ($, _, Hypr, Backbone, api, CustomerModels, AddressModels, PaymentMethods, HyprLiveContext) {
 
         var CheckoutStep = Backbone.MozuModel.extend({
-            helpers: ['stepStatus', 'requiresFulfillmentInfo','isNonMozuCheckout', 'requiresDigitalFulfillmentContact','isShippingEditHidden'],  //
+            helpers: ['stepStatus', 'requiresFulfillmentInfo','isNonMozuCheckout', 'requiresDigitalFulfillmentContact', 'isShippingEditHidden'],
                 // instead of overriding constructor, we are creating
                 // a method that only the CheckoutStepView knows to
                 // run, so it can run late enough for the parent
                 // reference in .getOrder to exist;
-                initStep: function() {
+            initStep: function () {
                     var me = this;
                     this.next = (function(next) {
                         return _.debounce(function() {
@@ -61,7 +61,7 @@
             isNonMozuCheckout: function() {
                 var activePayments = this.getOrder().apiModel.getActivePayments();
                 if (activePayments && activePayments.length === 0) return false;
-                return (activePayments && (_.findWhere(activePayments, { paymentType: 'GSIPaypal' })));
+                return (activePayments && (_.findWhere(activePayments, { paymentType: 'PayPalExpress2' })));
             },
             isShippingEditHidden: function() {
                 if (HyprLiveContext.locals.themeSettings.changeShipping) return false;
@@ -165,12 +165,16 @@
 
                     if (validationObj) {
                         // Might need
-                        // Object.keys(validationObj).forEach(function(key){
-                        //     this.trigger('error', {message: validationObj[key]});
-                        // }, this);
+                         Object.keys(validationObj).forEach(function(key){
+                             this.trigger('error', {message: validationObj[key]});
+                         }, this);
 
                         return false;
                     }
+
+                if (this.get('updateMode') === 'edit') {
+                    this.set('updateMode', 'editComplete');
+                }
 
                     var parent = this.parent,
                         order = this.getOrder(),
@@ -207,7 +211,7 @@
                         if (!addr.get('candidateValidatedAddresses')) {
                             var methodToUse = allowInvalidAddresses ? 'validateAddressLenient' : 'validateAddress';
                         addr.syncApiModel();
-                            addr.apiModel[methodToUse]().then(function(resp) {
+                            addr.apiModel[methodToUse]().then(function (resp) {
                                 if (resp.data && resp.data.addressCandidates && resp.data.addressCandidates.length) {
                                     if (_.find(resp.data.addressCandidates, addr.is, addr)) {
                                         addr.set('isValidated', true);
@@ -310,6 +314,7 @@
                                 var billingInfo = me.parent.get('billingInfo');
                                 if (billingInfo) {
                                     billingInfo.loadCustomerDigitalCredits();
+                                // This should happen only when order doesn't have payments..
                                 billingInfo.updatePurchaseOrderAmount();
                                 }
                             })
@@ -398,7 +403,9 @@
                     return order.apiVoidPayment(currentPayment.id).then(function() {
                         self.clear();
                         self.stepStatus('incomplete');
+                    // need to re-enable purchase order information if purchase order is available.
                     self.setPurchaseOrderInfo();
+                    // Set the defualt payment method for the customer.
                         self.setDefaultPaymentType(self);
                     });
                 },
@@ -702,7 +709,7 @@
                                 activationDate = creditModel.get('activationDate') ? new Date(creditModel.get('activationDate')) : null,
                                 expDate = creditModel.get('expirationDate') ? new Date(creditModel.get('expirationDate')) : null;
                             if (expDate && expDate < now) {
-                            return self.deferredError(Hypr.getLabel('digitalCreditExpired', expDate.toLocaleDateString()), self);
+                            return self.deferredError(Hypr.getLabel('expiredCredit', expDate.toLocaleDateString()), self);
                             }
                             if (activationDate && activationDate > now) {
                                 return self.deferredError(Hypr.getLabel('digitalCreditNotYetActive', activationDate.toLocaleDateString()), self);
@@ -785,7 +792,7 @@
                     var self = this;
 
                     var digitalCredit = self._cachedDigitalCredits.find(function(credit) {
-                        return credit.get('code').toLowerCase() === creditCode.toLowerCase();
+                    return credit.code.toLowerCase() === creditCode.toLowerCase();
                     });
 
                     if (!digitalCredit) {
@@ -949,7 +956,9 @@
                 var amount = purchaseOrderInfo.totalAvailableBalance > order.get('amountRemainingForPayment') ?
                         order.get('amountRemainingForPayment') : purchaseOrderInfo.totalAvailableBalance;
 
+                if(!currentPurchaseOrderAmount || currentPurchaseOrderAmount !== amount) {
                 currentPurchaseOrder.set('amount', amount);
+                }
 
                 currentPurchaseOrder.set('totalAvailableBalance', purchaseOrderInfo.totalAvailableBalance);
                 currentPurchaseOrder.set('availableBalance', purchaseOrderInfo.availableBalance);
@@ -958,7 +967,8 @@
                 if(purchaseOrderInfo.totalAvailableBalance < order.get('amountRemainingForPayment')) {
                     currentPurchaseOrder.set('splitPayment', true);
                 }
-                
+
+                if(currentPurchaseOrder.get('paymentTermOptions').length === 0) {
                 var paymentTerms = [];
                 purchaseOrderInfo.paymentTerms.forEach(function(term) {
                     if(term.siteId === siteId) {
@@ -969,9 +979,10 @@
                     }
                 });
                 currentPurchaseOrder.set('paymentTermOptions', paymentTerms, {silent: true});
+                }
 
                 var paymentTermOptions = currentPurchaseOrder.get('paymentTermOptions');
-                if(paymentTermOptions.length === 1) {
+                if(!currentPurchaseOrder.get('paymentTerm').get('code') && paymentTermOptions.length === 1) {
                     var paymentTerm = {};
                     paymentTerm.code = paymentTermOptions.models[0].get('code');
                     paymentTerm.description = paymentTermOptions.models[0].get('description');
@@ -1011,7 +1022,8 @@
                 initialize: function() {
                     var me = this;
 
-                    _.defer(function() {
+                _.defer(function () {
+                    //set purchaseOrder defaults here.
                     me.setPurchaseOrderInfo();
                         me.getPaymentTypeFromCurrentPayment();
                         var savedCardId = me.get('card.paymentServiceCardId');
@@ -1077,9 +1089,10 @@
                         activePayments = this.activePayments(),
                         thereAreActivePayments = activePayments.length > 0,
                         paymentTypeIsCard = activePayments && !!_.findWhere(activePayments, { paymentType: 'CreditCard' }),
-                        paymentTypeIsPayPalNew = activePayments && !!_.findWhere(activePayments, { paymentType: 'GSIPaypal' }),
+                    paymentTypeIsPayPalNew = activePayments && !!_.findWhere(activePayments, { paymentType: 'PayPalExpress2' }),
                         balanceNotPositive = this.parent.get('amountRemainingForPayment') <= 0;
 
+                if (this.isNonMozuCheckout()) return this.stepStatus("complete");
                     if (paymentTypeIsCard && !Hypr.getThemeSetting('isCvvSuppressed')) return this.stepStatus('incomplete'); // initial state for CVV entry
 
                     if (!fulfillmentComplete) return this.stepStatus('new');
@@ -1090,6 +1103,7 @@
                 },
                 hasPaymentChanged: function(payment) {
 
+                // fix this for purchase orders, currently it constantly voids, then re-applys the payment even if nothing changes.
                     function normalizeBillingInfos(obj) {
                         return {
                             paymentType: obj.paymentType,
@@ -1483,12 +1497,15 @@
             onCheckoutError: function(error) {
                 var order = this,
                     errorHandled = false;
+
                 order.isLoading(false);
+
                 if (!error || !error.items || error.items.length === 0) {
+
                     if (error.message.indexOf('10486') != -1){
 
                         var siteContext = HyprLiveContext.locals.siteContext,
-                            externalPayment = _.findWhere(siteContext.checkoutSettings.externalPaymentWorkflowSettings, {"name" : "GSIPaypal"}),
+                            externalPayment = _.findWhere(siteContext.checkoutSettings.externalPaymentWorkflowSettings, {"name" : "PayPalExpress2"}),
                             environment = _.findWhere(externalPayment.credentials, {"apiName" : "environment"}),
                             url = "";
 
@@ -1724,7 +1741,7 @@
             isNonMozuCheckout: function() {
                 var activePayments = this.apiModel.getActivePayments();
                 if (activePayments && activePayments.length === 0) return false;
-                return (activePayments && (_.findWhere(activePayments, { paymentType: 'GSIPaypal' })));
+                return (activePayments && (_.findWhere(activePayments, { paymentType: 'PayPalExpress2' })));
             },
             validateReviewCheckoutFields: function(){
                 var validationResults = [];

@@ -1,4 +1,4 @@
-require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu", "modules/models-checkout", "modules/views-messages", "modules/cart-monitor", 'hyprlivecontext', 'modules/editable-view', 'modules/preserve-element-through-render', 'modules/block-ui', 'modules/on-image-load-error'], function($, _, Hypr, Backbone, CheckoutModels, messageViewFactory, CartMonitor, HyprLiveContext, EditableView, preserveElements, blockUiLoader, onImageLoadError) {
+require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu", "modules/models-checkout", "modules/views-messages", "modules/cart-monitor", 'hyprlivecontext', 'modules/editable-view', 'modules/preserve-element-through-render', 'modules/block-ui', 'modules/on-image-load-error', 'modules/xpresspaypal'], function($, _, Hypr, Backbone, CheckoutModels, messageViewFactory, CartMonitor, HyprLiveContext, EditableView, preserveElements, blockUiLoader, onImageLoadError, paypal) {
 
     var CheckoutStepView = EditableView.extend({
         edit: function() {
@@ -244,13 +244,13 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
         allowDigit: function(e) {
             e.target.value = e.target.value.replace(/[^\d]/g, '');
         },
-        resetPaymentData: function(e) {
+        resetPaymentData: function (e) {
             if (e.target !== $('[data-mz-saved-credit-card]')[0]) {
                 $("[name='savedPaymentMethods']").val('0');
             }
             this.model.clear();
             this.model.resetAddressDefaults();
-            if (HyprLiveContext.locals.siteContext.checkoutSettings.purchaseOrder.isEnabled) {
+            if(HyprLiveContext.locals.siteContext.checkoutSettings.purchaseOrder.isEnabled) {
                 this.model.resetPOInfo();
             }
         },
@@ -267,6 +267,8 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
                 require([pageContext.visaCheckoutJavaScriptSdkUrl]);
                 this.visaCheckoutInitialized = true;
             }
+            if (this.$(".p-button").length > 0)
+              paypal.loadScript();
         },
         updateAcceptsMarketing: function(e) {
             this.model.getOrder().set('acceptsMarketing', $(e.currentTarget).prop('checked'));

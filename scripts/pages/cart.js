@@ -1,7 +1,7 @@
 define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mozu', 'modules/models-cart', 'modules/cart-monitor', 'hyprlivecontext', 'hyprlive', 'modules/preserve-element-through-render', 'modules/block-ui',
     'modules/modal-dialog',
-    'modules/on-image-load-error'
-], function(api, Backbone, _, $, CartModels, CartMonitor, HyprLiveContext, Hypr, preserveElement, blockUiLoader, modalDialog, onImageLoadError) {
+    'modules/on-image-load-error', 'modules/xpressPaypal'
+], function(api, Backbone, _, $, CartModels, CartMonitor, HyprLiveContext, Hypr, preserveElement, blockUiLoader, modalDialog, onImageLoadError, paypal) {
     var pageContext = require.mozuData('pagecontext');
     var CartView = Backbone.MozuView.extend({
         templateName: "modules/cart/cart-table",
@@ -627,7 +627,7 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
                 });
             });
         },
-        onEnterCouponCode: function(model, code) {
+        onEnterCouponCode: function (model, code) {
             if (code && !this.codeEntered) {
                 this.codeEntered = true;
             }
@@ -768,6 +768,8 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
         if (querystring === 'isLimit=false') {
             cartViews.cartView.checkoutGuest();
         }
+
+         paypal.loadScript();
     });
 
 });
