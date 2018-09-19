@@ -703,3 +703,46 @@ footer{
 	    width: 1200px;   
 	}
 }
+
+
+#newsletterPopup {
+	.modal-dialog {
+    	width: 500px;
+    }
+	.modal-content {
+	    border-radius: 0;
+	    button {
+	    	&.close {
+			    padding: 10px;
+			    color: #009fd3;
+			    opacity: 0.7;
+				position: absolute;
+				top: 0;
+				right: 0;
+				z-index: 1;
+			}
+		}
+	    .layout {
+	    	.mz-signup-image {
+			    max-width: 320px;
+			    margin: 0 auto;
+			}
+			.dynamicentry {
+				form {
+					width: 380px;
+					margin: 0 auto;
+				}
+			}
+			.image-area {
+				position: absolute;
+				cursor: pointer;
+			}
+			button {
+			    margin-top: 15px;
+			}
+		}
+	}
+	.dynamic-footer {
+		margin-top: 25px;
+	}	
+}
