@@ -647,5 +647,5 @@
     "checkoutAsGuestMsg"  :   "You will have the opportunity to register after placing your order.",
 
     "cjEventParam"        : "cjevent",
-    "cjEventCookie"       : "popupEnabled"  
+    "signUpCookie"        : "popupEnabled"  
 }

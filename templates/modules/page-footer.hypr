@@ -13,13 +13,13 @@
 			<div class="first-row">
 				<div class="col-xs-12 pull-right container-signup">
 					{% if themeSettings.enableEmailSubscription %}
-						<form class="form">
+						<form class="form" onsubmit="return false">
 							<div class="form-group">
 								<label for="footerSignUpInput" class="control-label text-uppercase no-hover">{{ labels.footerSignUpEmail }}</label>
 								<div class="input-group">					  	
 									<input type="email" id="footerSignUpInput" maxlength="254" class="form-control" placeholder="{{ labels.yourEmailAddress }}">
 									<span class="input-group-btn">
-										<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp">{{ labels.signUp }}</button> 
+										<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp" data-toggle="modal" data-target="#newsletterPopup">{{ labels.signUp }}</button> 
 									</span>
 								</div>
 								<span id="emailHelpBlock" class="text-danger"></span>
@@ -74,3 +74,4 @@
 		</div> 		
 	</div>
 </footer>
+{% require_script "modules/offer-signup" %}
