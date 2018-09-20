@@ -700,8 +700,10 @@
             var cookieName = Hypr.getLabel('signUpCookie');
             if(!readCookie(cookieName)) {
                 createCookie(cookieName, '1', 365);
-                $('#newsletterPopup').addClass("in");
-                $('#newsletterPopup').show();
+                // $('body').addClass("modal-open");
+                // $('#newsletterPopup').addClass("in");
+                // $('#newsletterPopup').show();
+                $('#newsletterPopup').modal('show');
             }
         }
 
