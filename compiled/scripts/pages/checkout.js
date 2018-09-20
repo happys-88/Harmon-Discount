@@ -9,16 +9,16 @@ define('modules/models-checkout',[
         'modules/models-address',
         'modules/models-paymentmethods',
         'hyprlivecontext'
-    ],
-    function($, _, Hypr, Backbone, api, CustomerModels, AddressModels, PaymentMethods, HyprLiveContext) {
+],
+    function ($, _, Hypr, Backbone, api, CustomerModels, AddressModels, PaymentMethods, HyprLiveContext) {
 
         var CheckoutStep = Backbone.MozuModel.extend({
-            helpers: ['stepStatus', 'requiresFulfillmentInfo','isNonMozuCheckout', 'requiresDigitalFulfillmentContact','isShippingEditHidden'],  //
+            helpers: ['stepStatus', 'requiresFulfillmentInfo','isNonMozuCheckout', 'requiresDigitalFulfillmentContact', 'isShippingEditHidden'],
                 // instead of overriding constructor, we are creating
                 // a method that only the CheckoutStepView knows to
                 // run, so it can run late enough for the parent
                 // reference in .getOrder to exist;
-                initStep: function() {
+            initStep: function () {
                     var me = this;
                     this.next = (function(next) {
                         return _.debounce(function() {
@@ -62,7 +62,7 @@ define('modules/models-checkout',[
             isNonMozuCheckout: function() {
                 var activePayments = this.getOrder().apiModel.getActivePayments();
                 if (activePayments && activePayments.length === 0) return false;
-                return (activePayments && (_.findWhere(activePayments, { paymentType: 'GSIPaypal' })));
+                return (activePayments && (_.findWhere(activePayments, { paymentType: 'PayPalExpress2' })));
             },
             isShippingEditHidden: function() {
                 if (HyprLiveContext.locals.themeSettings.changeShipping) return false;
@@ -166,12 +166,16 @@ define('modules/models-checkout',[
 
                     if (validationObj) {
                         // Might need
-                        // Object.keys(validationObj).forEach(function(key){
-                        //     this.trigger('error', {message: validationObj[key]});
-                        // }, this);
+                         Object.keys(validationObj).forEach(function(key){
+                             this.trigger('error', {message: validationObj[key]});
+                         }, this);
 
                         return false;
                     }
+
+                if (this.get('updateMode') === 'edit') {
+                    this.set('updateMode', 'editComplete');
+                }
 
                     var parent = this.parent,
                         order = this.getOrder(),
@@ -208,7 +212,7 @@ define('modules/models-checkout',[
                         if (!addr.get('candidateValidatedAddresses')) {
                             var methodToUse = allowInvalidAddresses ? 'validateAddressLenient' : 'validateAddress';
                         addr.syncApiModel();
-                            addr.apiModel[methodToUse]().then(function(resp) {
+                            addr.apiModel[methodToUse]().then(function (resp) {
                                 if (resp.data && resp.data.addressCandidates && resp.data.addressCandidates.length) {
                                     if (_.find(resp.data.addressCandidates, addr.is, addr)) {
                                         addr.set('isValidated', true);
@@ -311,6 +315,7 @@ define('modules/models-checkout',[
                                 var billingInfo = me.parent.get('billingInfo');
                                 if (billingInfo) {
                                     billingInfo.loadCustomerDigitalCredits();
+                                // This should happen only when order doesn't have payments..
                                 billingInfo.updatePurchaseOrderAmount();
                                 }
                             })
@@ -399,7 +404,9 @@ define('modules/models-checkout',[
                     return order.apiVoidPayment(currentPayment.id).then(function() {
                         self.clear();
                         self.stepStatus('incomplete');
+                    // need to re-enable purchase order information if purchase order is available.
                     self.setPurchaseOrderInfo();
+                    // Set the defualt payment method for the customer.
                         self.setDefaultPaymentType(self);
                     });
                 },
@@ -703,7 +710,7 @@ define('modules/models-checkout',[
                                 activationDate = creditModel.get('activationDate') ? new Date(creditModel.get('activationDate')) : null,
                                 expDate = creditModel.get('expirationDate') ? new Date(creditModel.get('expirationDate')) : null;
                             if (expDate && expDate < now) {
-                            return self.deferredError(Hypr.getLabel('digitalCreditExpired', expDate.toLocaleDateString()), self);
+                            return self.deferredError(Hypr.getLabel('expiredCredit', expDate.toLocaleDateString()), self);
                             }
                             if (activationDate && activationDate > now) {
                                 return self.deferredError(Hypr.getLabel('digitalCreditNotYetActive', activationDate.toLocaleDateString()), self);
@@ -786,7 +793,7 @@ define('modules/models-checkout',[
                     var self = this;
 
                     var digitalCredit = self._cachedDigitalCredits.find(function(credit) {
-                        return credit.get('code').toLowerCase() === creditCode.toLowerCase();
+                    return credit.code.toLowerCase() === creditCode.toLowerCase();
                     });
 
                     if (!digitalCredit) {
@@ -950,7 +957,9 @@ define('modules/models-checkout',[
                 var amount = purchaseOrderInfo.totalAvailableBalance > order.get('amountRemainingForPayment') ?
                         order.get('amountRemainingForPayment') : purchaseOrderInfo.totalAvailableBalance;
 
+                if(!currentPurchaseOrderAmount || currentPurchaseOrderAmount !== amount) {
                 currentPurchaseOrder.set('amount', amount);
+                }
 
                 currentPurchaseOrder.set('totalAvailableBalance', purchaseOrderInfo.totalAvailableBalance);
                 currentPurchaseOrder.set('availableBalance', purchaseOrderInfo.availableBalance);
@@ -959,7 +968,8 @@ define('modules/models-checkout',[
                 if(purchaseOrderInfo.totalAvailableBalance < order.get('amountRemainingForPayment')) {
                     currentPurchaseOrder.set('splitPayment', true);
                 }
-                
+
+                if(currentPurchaseOrder.get('paymentTermOptions').length === 0) {
                 var paymentTerms = [];
                 purchaseOrderInfo.paymentTerms.forEach(function(term) {
                     if(term.siteId === siteId) {
@@ -970,9 +980,10 @@ define('modules/models-checkout',[
                     }
                 });
                 currentPurchaseOrder.set('paymentTermOptions', paymentTerms, {silent: true});
+                }
 
                 var paymentTermOptions = currentPurchaseOrder.get('paymentTermOptions');
-                if(paymentTermOptions.length === 1) {
+                if(!currentPurchaseOrder.get('paymentTerm').get('code') && paymentTermOptions.length === 1) {
                     var paymentTerm = {};
                     paymentTerm.code = paymentTermOptions.models[0].get('code');
                     paymentTerm.description = paymentTermOptions.models[0].get('description');
@@ -1012,7 +1023,8 @@ define('modules/models-checkout',[
                 initialize: function() {
                     var me = this;
 
-                    _.defer(function() {
+                _.defer(function () {
+                    //set purchaseOrder defaults here.
                     me.setPurchaseOrderInfo();
                         me.getPaymentTypeFromCurrentPayment();
                         var savedCardId = me.get('card.paymentServiceCardId');
@@ -1078,9 +1090,10 @@ define('modules/models-checkout',[
                         activePayments = this.activePayments(),
                         thereAreActivePayments = activePayments.length > 0,
                         paymentTypeIsCard = activePayments && !!_.findWhere(activePayments, { paymentType: 'CreditCard' }),
-                        paymentTypeIsPayPalNew = activePayments && !!_.findWhere(activePayments, { paymentType: 'GSIPaypal' }),
+                    paymentTypeIsPayPalNew = activePayments && !!_.findWhere(activePayments, { paymentType: 'PayPalExpress2' }),
                         balanceNotPositive = this.parent.get('amountRemainingForPayment') <= 0;
 
+                if (this.isNonMozuCheckout()) return this.stepStatus("complete");
                     if (paymentTypeIsCard && !Hypr.getThemeSetting('isCvvSuppressed')) return this.stepStatus('incomplete'); // initial state for CVV entry
 
                     if (!fulfillmentComplete) return this.stepStatus('new');
@@ -1091,6 +1104,7 @@ define('modules/models-checkout',[
                 },
                 hasPaymentChanged: function(payment) {
 
+                // fix this for purchase orders, currently it constantly voids, then re-applys the payment even if nothing changes.
                     function normalizeBillingInfos(obj) {
                         return {
                             paymentType: obj.paymentType,
@@ -1484,12 +1498,15 @@ define('modules/models-checkout',[
             onCheckoutError: function(error) {
                 var order = this,
                     errorHandled = false;
+
                 order.isLoading(false);
+
                 if (!error || !error.items || error.items.length === 0) {
+
                     if (error.message.indexOf('10486') != -1){
 
                         var siteContext = HyprLiveContext.locals.siteContext,
-                            externalPayment = _.findWhere(siteContext.checkoutSettings.externalPaymentWorkflowSettings, {"name" : "GSIPaypal"}),
+                            externalPayment = _.findWhere(siteContext.checkoutSettings.externalPaymentWorkflowSettings, {"name" : "PayPalExpress2"}),
                             environment = _.findWhere(externalPayment.credentials, {"apiName" : "environment"}),
                             url = "";
 
@@ -1725,7 +1742,7 @@ define('modules/models-checkout',[
             isNonMozuCheckout: function() {
                 var activePayments = this.apiModel.getActivePayments();
                 if (activePayments && activePayments.length === 0) return false;
-                return (activePayments && (_.findWhere(activePayments, { paymentType: 'GSIPaypal' })));
+                return (activePayments && (_.findWhere(activePayments, { paymentType: 'PayPalExpress2' })));
             },
             validateReviewCheckoutFields: function(){
                 var validationResults = [];
@@ -1989,7 +2006,271 @@ define('modules/preserve-element-through-render',['underscore'], function(_) {
 
   };
 });
-require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu", "modules/models-checkout", "modules/views-messages", "modules/cart-monitor", 'hyprlivecontext', 'modules/editable-view', 'modules/preserve-element-through-render', 'modules/block-ui', 'modules/on-image-load-error'], function($, _, Hypr, Backbone, CheckoutModels, messageViewFactory, CartMonitor, HyprLiveContext, EditableView, preserveElements, blockUiLoader, onImageLoadError) {
+define('modules/models-location',["modules/jquery-mozu", "modules/backbone-mozu", "hyprlive", "modules/api"], 
+    function ($, Backbone, Hypr, api) {
+
+        var Location = Backbone.MozuModel.extend({
+            mozuType: 'location',
+            idAttribute: 'code'
+        });
+
+        var LocationCollection = Backbone.MozuModel.extend({
+            mozuType: 'locations',
+            relations: {
+                items: Backbone.Collection.extend({
+                    model: Location
+                })
+            }
+        });
+
+        return {
+            Location: Location,
+            LocationCollection: LocationCollection
+        };
+    }
+);
+define('modules/models-cart',['underscore', 'modules/backbone-mozu', 'hyprlive', "modules/api", "modules/models-product",
+    "hyprlivecontext", 'modules/models-location'
+  ], function (_, Backbone, Hypr, api, ProductModels,
+        HyprLiveContext, LocationModels) {
+
+    var CartItemProduct = ProductModels.Product.extend({
+        helpers: ['mainImage','directShipSupported', 'inStorePickupSupported'],
+        mainImage: function() {
+            var imgs = this.get("productImages"),
+                img = imgs && imgs[0],
+                imgurl = 'http://placehold.it/160&text=' + Hypr.getLabel('noImages');
+            return img || { ImageUrl: imgurl, imageUrl: imgurl }; // to support case insensitivity
+        },
+        initialize: function() {
+            var url = "/product/" + this.get("productCode");
+            this.set({ Url: url, url: url });
+        },
+        directShipSupported: function(){
+            return (_.indexOf(this.get('fulfillmentTypesSupported'), "DirectShip") !== -1) ? true : false;
+        },
+        inStorePickupSupported: function(){
+            return (_.indexOf(this.get('fulfillmentTypesSupported'), "InStorePickup") !== -1) ? true : false;
+        }
+    }),
+
+    CartItem = Backbone.MozuModel.extend({
+        relations: {
+            product: CartItemProduct
+        },
+        validation: {
+            quantity: {
+                min: 1
+            }
+        },
+        dataTypes: {
+            quantity: Backbone.MozuModel.DataTypes.Int
+        },
+        mozuType: 'cartitem',
+        handlesMessages: true,
+        helpers: ['priceIsModified', 'storeLocation'],
+        priceIsModified: function() {
+            var price = this.get('unitPrice');
+            return price.baseAmount != price.discountedAmount;
+        },
+        saveQuantity: function() {
+            var self = this;
+            var oldQuantity = this.previous("quantity");
+            if (this.hasChanged("quantity")) {
+                this.apiUpdateQuantity(this.get("quantity"))
+                    .then(null, function() {
+                        // Quantity update failed, e.g. due to limited quantity or min. quantity not met. Roll back.
+                        self.set("quantity", oldQuantity);
+                        self.trigger("quantityupdatefailed", self, oldQuantity);
+                    });
+            }
+        },
+        storeLocation : function(){
+            var self = this;
+            if(self.get('fulfillmentLocationCode')) {
+                return self.collection.parent.get('storeLocationsCache').getLocationByCode(self.get('fulfillmentLocationCode'));
+            }
+            return;
+        }
+
+    }),
+    StoreLocationsCache = Backbone.Collection.extend({
+        addLocation : function(location){
+            this.add(new LocationModels.Location(location), {merge: true});
+        },
+        getLocations : function(){
+            return this.toJSON();
+        },
+        getLocationByCode : function(code){
+            if(this.get(code)){
+                return this.get(code).toJSON();
+            }
+        }
+    }),
+
+    Cart = Backbone.MozuModel.extend({
+        mozuType: 'cart',
+        handlesMessages: true,
+        helpers: ['isEmpty','count'],
+        relations: {
+            items: Backbone.Collection.extend({
+                model: CartItem
+            }),
+            storeLocationsCache : StoreLocationsCache
+        },
+
+        initialize: function() {
+            var self = this;
+            this.get("items").on('sync remove', this.fetch, this)
+                             .on('loadingchange', this.isLoading, this);
+
+            this.get("items").each(function(item, el) {
+                if(item.get('fulfillmentLocationCode') && item.get('fulfillmentLocationName')) {
+                    self.get('storeLocationsCache').addLocation({
+                        code: item.get('fulfillmentLocationCode'),
+                        name: item.get('fulfillmentLocationName')
+                    });
+                }
+            });
+        },
+        isEmpty: function() {
+            return this.get("items").length < 1;
+        },
+        count: function() {
+            return this.apiModel.count();
+            //return this.get("Items").reduce(function(total, item) { return item.get('Quantity') + total; },0);
+        },
+        toOrder: function() {
+            var me = this;
+            me.apiCheckout().then(function(order) {
+                me.trigger('ordercreated', order);
+            });
+        },
+        toCheckout: function() {
+            var me = this;
+            me.apiCheckout2().then(function(checkout) {
+                me.trigger('checkoutcreated', checkout);
+            });
+        },
+        removeItem: function (id) {
+            return this.get('items').get(id).apiModel.del();
+        },
+        addCoupon: function () {
+            var me = this;
+            var code = this.get('couponCode');
+            var orderDiscounts = me.get('orderDiscounts');
+            if (orderDiscounts && _.findWhere(orderDiscounts, { couponCode: code })) {
+                // to maintain promise api
+                var deferred = api.defer();
+                deferred.reject();
+                deferred.promise.otherwise(function () {
+                    me.trigger('error', {
+                        message: Hypr.getLabel('promoCodeAlreadyUsed', code)
+                    });
+                });
+                return deferred.promise;
+            }
+            this.isLoading(true);
+            return this.apiAddCoupon(this.get('couponCode')).then(function () {
+                me.set('couponCode', '');
+                var productDiscounts = _.flatten(_.pluck(_.pluck(me.get('items').models, 'attributes'), 'productDiscounts'));
+                var shippingDiscounts = _.flatten(_.pluck(_.pluck(me.get('items').models, 'attributes'), 'shippingDiscounts'));
+
+                var allDiscounts = me.get('orderDiscounts').concat(productDiscounts).concat(shippingDiscounts);
+                var allCodes = me.get('couponCodes') || [];
+                var lowerCode = code.toLowerCase();
+
+                var couponExists = _.find(allCodes, function(couponCode) {
+                    return couponCode.toLowerCase() === lowerCode;
+                });
+                if (!couponExists) {
+                    me.trigger('error', {
+                        message: Hypr.getLabel('promoCodeError', code)
+                    });
+                }
+
+                var couponIsNotApplied = (!allDiscounts || !_.find(allDiscounts, function(d) {
+                    return d.couponCode && d.couponCode.toLowerCase() === lowerCode;
+                }));
+                me.set('tentativeCoupon', couponExists && couponIsNotApplied ? code : undefined);
+
+                me.isLoading(false);
+            });
+        },
+        toJSON: function(options) {
+            var j = Backbone.MozuModel.prototype.toJSON.apply(this, arguments);
+            return j;
+        }
+    });
+
+    return {
+        CartItem: CartItem,
+        Cart: Cart
+    };
+});
+define('modules/xpresspaypal',['modules/jquery-mozu',
+        "modules/api",
+        'modules/models-cart',
+        'hyprlivecontext',
+        'underscore'],
+function($, Api, CartModels, hyprlivecontext, _) {
+
+    window.paypalCheckoutReady = function() {
+
+      var siteContext = hyprlivecontext.locals.siteContext,
+          externalPayment = _.findWhere(siteContext.checkoutSettings.externalPaymentWorkflowSettings, {"name" : "PayPalExpress2"}),
+          merchantAccountId = _.findWhere(externalPayment.credentials, {"apiName" : "merchantAccountId"}),
+          environment = _.findWhere(externalPayment.credentials, {"apiName" : "environment"}),
+          id = CartModels.Cart.fromCurrent().id || window.order.id,
+          isCart = window.location.href.indexOf("cart") > 0;
+
+        window.paypal.checkout.setup(merchantAccountId.value, {
+            environment: environment.value,
+            click: function(event) {
+                event.preventDefault();
+                var url = "../paypal/token?id=" + id + (!document.URL.split('?')[1] ? "": "&" + document.URL.split('?')[1].replace("id="+id,"").replace("&&", "&"));
+                if (isCart)
+                  url += "&isCart="+ isCart;
+                window.paypal.checkout.initXO();
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    async: true,
+
+                    //Load the minibrowser with the redirection url in the success handler
+                    success: function (token) {
+                        var url = window.paypal.checkout.urlPrefix + token.token;
+                        //Loading Mini browser with redirect url, true for async AJAX calls
+                        window.paypal.checkout.startFlow(url);
+                    },
+                    error: function (responseData, textStatus, errorThrown) {
+                        console.log("Error in ajax post " + responseData.statusText);
+                        //Gracefully Close the minibrowser in case of AJAX errors
+                        window.paypal.checkout.closeFlow();
+                    }
+                });
+            },
+            button: ['btn_xpressPaypal']
+        });
+    };
+    var paypal = {
+      scriptLoaded: false,
+     loadScript: function() {
+      var self = this;
+       if (this.scriptLoaded) return;
+        this.scriptLoaded = true;
+      $.getScript("//www.paypalobjects.com/api/checkout.js").done(function(scrit, textStatus){
+        //console.log(textStatus);
+
+      }).fail(function(jqxhr, settings, exception) {
+        console.log(jqxhr);
+      });
+    }
+   };
+   return paypal;
+});
+
+require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu", "modules/models-checkout", "modules/views-messages", "modules/cart-monitor", 'hyprlivecontext', 'modules/editable-view', 'modules/preserve-element-through-render', 'modules/block-ui', 'modules/on-image-load-error', 'modules/xpresspaypal'], function($, _, Hypr, Backbone, CheckoutModels, messageViewFactory, CartMonitor, HyprLiveContext, EditableView, preserveElements, blockUiLoader, onImageLoadError, paypal) {
 
     var CheckoutStepView = EditableView.extend({
         edit: function() {
@@ -2235,13 +2516,13 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
         allowDigit: function(e) {
             e.target.value = e.target.value.replace(/[^\d]/g, '');
         },
-        resetPaymentData: function(e) {
+        resetPaymentData: function (e) {
             if (e.target !== $('[data-mz-saved-credit-card]')[0]) {
                 $("[name='savedPaymentMethods']").val('0');
             }
             this.model.clear();
             this.model.resetAddressDefaults();
-            if (HyprLiveContext.locals.siteContext.checkoutSettings.purchaseOrder.isEnabled) {
+            if(HyprLiveContext.locals.siteContext.checkoutSettings.purchaseOrder.isEnabled) {
                 this.model.resetPOInfo();
             }
         },
@@ -2258,6 +2539,8 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
                 require([pageContext.visaCheckoutJavaScriptSdkUrl]);
                 this.visaCheckoutInitialized = true;
             }
+            if (this.$(".p-button").length > 0)
+              paypal.loadScript();
         },
         updateAcceptsMarketing: function(e) {
             this.model.getOrder().set('acceptsMarketing', $(e.currentTarget).prop('checked'));

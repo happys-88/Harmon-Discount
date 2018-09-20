@@ -800,10 +800,72 @@ define('modules/modal-dialog',['modules/jquery-mozu', 'shim!vendor/bootstrap/js/
 	};
  });
 
+define('modules/xpresspaypal',['modules/jquery-mozu',
+        "modules/api",
+        'modules/models-cart',
+        'hyprlivecontext',
+        'underscore'],
+function($, Api, CartModels, hyprlivecontext, _) {
+
+    window.paypalCheckoutReady = function() {
+
+      var siteContext = hyprlivecontext.locals.siteContext,
+          externalPayment = _.findWhere(siteContext.checkoutSettings.externalPaymentWorkflowSettings, {"name" : "PayPalExpress2"}),
+          merchantAccountId = _.findWhere(externalPayment.credentials, {"apiName" : "merchantAccountId"}),
+          environment = _.findWhere(externalPayment.credentials, {"apiName" : "environment"}),
+          id = CartModels.Cart.fromCurrent().id || window.order.id,
+          isCart = window.location.href.indexOf("cart") > 0;
+
+        window.paypal.checkout.setup(merchantAccountId.value, {
+            environment: environment.value,
+            click: function(event) {
+                event.preventDefault();
+                var url = "../paypal/token?id=" + id + (!document.URL.split('?')[1] ? "": "&" + document.URL.split('?')[1].replace("id="+id,"").replace("&&", "&"));
+                if (isCart)
+                  url += "&isCart="+ isCart;
+                window.paypal.checkout.initXO();
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    async: true,
+
+                    //Load the minibrowser with the redirection url in the success handler
+                    success: function (token) {
+                        var url = window.paypal.checkout.urlPrefix + token.token;
+                        //Loading Mini browser with redirect url, true for async AJAX calls
+                        window.paypal.checkout.startFlow(url);
+                    },
+                    error: function (responseData, textStatus, errorThrown) {
+                        console.log("Error in ajax post " + responseData.statusText);
+                        //Gracefully Close the minibrowser in case of AJAX errors
+                        window.paypal.checkout.closeFlow();
+                    }
+                });
+            },
+            button: ['btn_xpressPaypal']
+        });
+    };
+    var paypal = {
+      scriptLoaded: false,
+     loadScript: function() {
+      var self = this;
+       if (this.scriptLoaded) return;
+        this.scriptLoaded = true;
+      $.getScript("//www.paypalobjects.com/api/checkout.js").done(function(scrit, textStatus){
+        //console.log(textStatus);
+
+      }).fail(function(jqxhr, settings, exception) {
+        console.log(jqxhr);
+      });
+    }
+   };
+   return paypal;
+});
+
 define('pages/cart',['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mozu', 'modules/models-cart', 'modules/cart-monitor', 'hyprlivecontext', 'hyprlive', 'modules/preserve-element-through-render', 'modules/block-ui',
     'modules/modal-dialog',
-    'modules/on-image-load-error'
-], function(api, Backbone, _, $, CartModels, CartMonitor, HyprLiveContext, Hypr, preserveElement, blockUiLoader, modalDialog, onImageLoadError) {
+    'modules/on-image-load-error', 'modules/xpressPaypal'
+], function(api, Backbone, _, $, CartModels, CartMonitor, HyprLiveContext, Hypr, preserveElement, blockUiLoader, modalDialog, onImageLoadError, paypal) {
     var pageContext = require.mozuData('pagecontext');
     var CartView = Backbone.MozuView.extend({
         templateName: "modules/cart/cart-table",
@@ -1429,7 +1491,7 @@ define('pages/cart',['modules/api', 'modules/backbone-mozu', 'underscore', 'modu
                 });
             });
         },
-        onEnterCouponCode: function(model, code) {
+        onEnterCouponCode: function (model, code) {
             if (code && !this.codeEntered) {
                 this.codeEntered = true;
             }
@@ -1570,6 +1632,8 @@ define('pages/cart',['modules/api', 'modules/backbone-mozu', 'underscore', 'modu
         if (querystring === 'isLimit=false') {
             cartViews.cartView.checkoutGuest();
         }
+
+         paypal.loadScript();
     });
 
 });
