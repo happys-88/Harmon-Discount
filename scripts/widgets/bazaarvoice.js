@@ -6,7 +6,7 @@ require([
         "modules/api",
         'modules/models-orders'
     ],
-    function($, Hypr, Backbone, ProductModels, Api, OrderModels, $BV) {
+    function($, Hypr, Backbone, ProductModels, Api, OrderModels) {
 
         $(document).ready(function() {
 

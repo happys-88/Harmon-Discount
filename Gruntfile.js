@@ -58,7 +58,10 @@ module.exports = function (grunt) {
                 browser: true,
                 undef: true,
                 nonstandard: true,
-                ignores: ['scripts/vendor/**/*.js'],
+                ignores: [
+                    'scripts/vendor/**/*.js',
+                    'scripts/widgets/bazaarvoice.js'
+                ],
                 globals: {
                     JSON: true,
                     define: true,
