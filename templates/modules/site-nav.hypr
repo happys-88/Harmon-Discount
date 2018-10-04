@@ -12,36 +12,40 @@
                 <div class="mz-sitenav-item-inner">
                   <a class="mz-sitenav-link main-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{link.url}}">{{link.name|safe}}</a> 
                   {% if link.items %} 
-                    <div class="mz-sitenav-sub-container">
-                      <span class="sub-nav-arrow"></span>
-                      <ul class="mz-sitenav-sub">
-                        <li class="hide" aria-hidden="true">For Blank</li>
-                          {% for sublink in link.items %}
-                            {% if not sublink.isHidden and not sublink.isEmpty %}
-                              {% with "id eq {0}"|string_format(sublink.originalId) as filter %} 
-                                {% include_entities "modules/category-header-attribute" listFQN=themeSettings.categoryEntityName filter=filter %}
-                              {% endwith %}
-                              <li class="mz-sitenav-item" data-mz-role="sitemenu-item"> 
-                                <a class="mz-sitenav-link sub-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{sublink.url}}">{{ sublink.name|safe }}</a> 
-                                
-                                {% if sublink.items %}
-                                  <ul class="mz-sitenav-sub-sub clearfix">
-                                    {% for subsublink in sublink.items %}
-                                      {% if not subsublink.isHidden and not subsublink.isEmpty %}
-                                        <li class="mz-sitenav-item">
-                                          <a class="mz-sitenav-link sub-sub-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsublink.url}}">{{ subsublink.name|safe }}</a> 
-                                        </li>
-                                      {% endif %}
-                                    {% endfor %}
-                                    <li class="hide" aria-hidden="true">For Blank</li>
-                                  </ul>
-                                {% endif %}
-                                
-                              </li>
-                            {% endif %}
-                          {% endfor %}
-                      </ul>
-                    </div> 
+                    {% if link.name=="Shop By Brand" %}
+                    {% else %}
+                      <div class="mz-sitenav-sub-container">
+                        <span class="sub-nav-arrow"></span>
+                        <ul class="mz-sitenav-sub">
+                          <li class="hide" aria-hidden="true">For Blank</li>
+                            {% for sublink in link.items %}
+                              {% if not sublink.isHidden and not sublink.isEmpty %}
+                                {% with "id eq {0}"|string_format(sublink.originalId) as filter %} 
+                                  {% include_entities "modules/category-header-attribute" listFQN=themeSettings.categoryEntityName filter=filter %}
+                                {% endwith %}
+                                <li class="mz-sitenav-item" data-mz-role="sitemenu-item"> 
+                                  <a class="mz-sitenav-link sub-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{sublink.url}}">{{ sublink.name|safe }}</a> 
+                                  
+                                  {% if sublink.items %}
+                                    <ul class="mz-sitenav-sub-sub clearfix">
+                                      {% for subsublink in sublink.items %}
+                                        {% if not subsublink.isHidden and not subsublink.isEmpty %}
+                                          <li class="mz-sitenav-item">
+                                            <a class="mz-sitenav-link sub-sub-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{subsublink.url}}">{{ subsublink.name|safe }}</a> 
+                                          </li>
+                                        {% endif %}
+                                      {% endfor %}
+                                      <li class="hide" aria-hidden="true">For Blank</li>
+                                    </ul>
+                                  {% endif %}
+                                  
+                                </li>
+                              {% endif %}
+                            {% endfor %}
+                        </ul>
+                      </div>
+                    {% endif %}
+                     
                   {% endif %}
                 </div>
               </li>

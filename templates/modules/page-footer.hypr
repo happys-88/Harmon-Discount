@@ -13,13 +13,13 @@
 			<div class="first-row">
 				<div class="col-xs-12 pull-right container-signup">
 					{% if themeSettings.enableEmailSubscription %}
-						<form class="form" onsubmit="return false">
+						<form class="form">
 							<div class="form-group">
 								<label for="footerSignUpInput" class="control-label text-uppercase no-hover">{{ labels.footerSignUpEmail }}</label>
 								<div class="input-group">					  	
 									<input type="email" id="footerSignUpInput" maxlength="254" class="form-control" placeholder="{{ labels.yourEmailAddress }}">
 									<span class="input-group-btn">
-										<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp" data-toggle="modal" data-target="#newsletterPopup">{{ labels.signUp }}</button> 
+										<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp">{{ labels.signUp }}</button> 
 									</span>
 								</div>
 								<span id="emailHelpBlock" class="text-danger"></span>
@@ -39,26 +39,20 @@
 						</div>
 					</form>					
 				</div>
-			</div>
-			<div class="col-xs-12 container-menu col-sm-7 col-md-8 hidden-xs regular-footer {% if themeSettings.footerEnableMini %}mini-footer-on{% else %}mini-footer-off{% endif %}">
-				<div class="row container-links">
-					<div class="col-xs-12">
-						<div class="row">
-							<div class="col-xs-3">
-								{% dropzone "footer-cat-links-col1" scope="site" %}
-							</div>
-							<div class="col-xs-3">
-								{% dropzone "footer-cat-links-col2" scope="site" %}
-							</div>
-							<div class="col-xs-3">
-								{% dropzone "footer-cat-links-col3" scope="site" %}
-							</div>
-							<div class="col-xs-3">
-								{% dropzone "footer-cat-links-col4" scope="site" %}
-							</div> 
-							<div class="col-xs-3">
-								{% dropzone "footer-cat-links-col5" scope="site" %}
-							</div>					
+				<div class="col-xs-12 container-menu">
+					<div class="row container-links">
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							{% dropzone "footer-cat-links-col1" scope="site" %}
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							{% dropzone "footer-cat-links-col2" scope="site" %}
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							{% dropzone "footer-cat-links-col3" scope="site" %}
+						</div>
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							{% dropzone "footer-cat-links-col4" scope="site" %}
+						</div> 								
 					</div>
 				</div>
 			</div>
@@ -74,4 +68,3 @@
 		</div> 		
 	</div>
 </footer>
-{% require_script "modules/offer-signup" %}

@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "b885dc397d985f8b1d98b089c688fc9a463ae82d"
+      "commit": "1edf227cba9e2dc27945cb3faaadc0117545b8e0"
     }
   },
   "editors": [
@@ -185,13 +185,13 @@
   ],
   "pageTypes": [
     {
-        "documentType": "web_page",
-        "entityType": "webpage",
-        "id": "bvContainer",
-        "template": "bazaarvoice",
-        "title": "BazaarVoice Container Page",
-        "userCreatable": true
-      },
+      "documentType": "web_page",
+      "entityType": "webpage",
+      "id": "bvContainer",
+      "template": "bazaarvoice",
+      "title": "BazaarVoice Container Page",
+      "userCreatable": true
+    },
     {
       "documentType": "web_page",
       "entityType": "webpage",
@@ -227,7 +227,6 @@
     },
     {
       "documentType": "web_page",
-      "editor": "landing-page",
       "entityType": "webpage",
       "id": "sunscribe-signup-page",
       "template": "SubscribeSignup",
@@ -236,7 +235,6 @@
     },
     {
       "documentType": "web_page",
-      "editor": "landing-page",
       "entityType": "webpage",
       "id": "credit-card-landing-page",
       "template": "credit-card-landing-page",
@@ -245,11 +243,10 @@
     },
     {
       "documentType": "web_page",
-      "editor": "landing-page",
-      "entityType": "webpage",
-      "id": "brands",
+      "entityType": "category",
+      "id": "brands", 
       "template": "brand-gateway",
-      "title": "Brands Gateway",
+      "title": "Brand Gateway",
       "userCreatable": true
     },
     {
@@ -304,7 +301,6 @@
       "entityType": "webpage",
       "documentType": "web_page",
       "template": "pages/print-order",
-      "customEditor": "back-office@mozu",
       "userCreatable": true
     },
     {
@@ -822,24 +818,53 @@
         "*"
       ]
     },
-    { 
-        "category" : "catalog",
-        "id":"bv-conversations-ratings",
-        "displayName":"BazaarVoice Conversations Ratings",
-        "displayTemplate":"BVConversations/bv-conversations-ratings",
-        "editViewFields":[
-            {"name":"widgetType", "fieldLabel":"Widget Type", "xtype":"combo", "store":[[ "summary","Summary"],["customerReviews","Customer Reviews"], ["qanda","Q & A"],["seo","SEO"]]},
-            {"name":"tabCode", "fieldLabel":"Tab Code"}
+    {
+      "category": "catalog",
+      "id": "bv-conversations-ratings",
+      "displayName": "BazaarVoice Conversations Ratings",
+      "displayTemplate": "BVConversations/bv-conversations-ratings",
+      "editViewFields": [
+        {
+          "name": "widgetType",
+          "fieldLabel": "Widget Type",
+          "xtype": "combo",
+          "store": [
+            [
+              "summary",
+              "Summary"
             ],
-        "icon":"/resources/admin/widgets/BV_Conversations.png",
-        "validPageTypes":["product"]
+            [
+              "customerReviews",
+              "Customer Reviews"
+            ],
+            [
+              "qanda",
+              "Q & A"
+            ],
+            [
+              "seo",
+              "SEO"
+            ]
+          ]
+        },
+        {
+          "name": "tabCode",
+          "fieldLabel": "Tab Code"
+        }
+      ],
+      "icon": "/resources/admin/widgets/BV_Conversations.png",
+      "validPageTypes": [
+        "product"
+      ]
     },
-    { 
-        "id":"bv-conversations-roibeacon",
-        "displayName":"BazaarVoice Conversations ROI Beacon",
-        "displayTemplate":"BVConversations/bv-conversations-roi",
-        "icon":"/resources/admin/widgets/BV_ROI_Beacon.png",
-        "validPageTypes":["order"]
+    {
+      "id": "bv-conversations-roibeacon",
+      "displayName": "BazaarVoice Conversations ROI Beacon",
+      "displayTemplate": "BVConversations/bv-conversations-roi",
+      "icon": "/resources/admin/widgets/BV_ROI_Beacon.png",
+      "validPageTypes": [
+        "order"
+      ]
     },
     {
       "displayName": "RTI Observation Tag",
