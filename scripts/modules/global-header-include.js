@@ -2,7 +2,6 @@ define(
     ['modules/jquery-mozu', 'modules/backbone-mozu','hyprlive'],
     function($, Backbone, Hypr) {
         $(function() {
-            console.log("Hello");
             $('#global-header-wrapper').each(function(index, globalHeader) {
                 globalHeader = $(globalHeader);
                 var globalHeaderIncludeClosed = sessionStorage.getItem('globalHeaderIncludeClosed');
