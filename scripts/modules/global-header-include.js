@@ -2,6 +2,7 @@ define(
     ['modules/jquery-mozu', 'modules/backbone-mozu','hyprlive'],
     function($, Backbone, Hypr) {
         $(function() {
+            console.log("Hello");
             $('#global-header-wrapper').each(function(index, globalHeader) {
                 globalHeader = $(globalHeader);
                 var globalHeaderIncludeClosed = sessionStorage.getItem('globalHeaderIncludeClosed');
@@ -49,10 +50,12 @@ define(
                     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     if(re.test(email.toLowerCase())){
                          $("#emailHelpBlock").text("");
-                        window.open(Hypr.getThemeSetting('emailSubscriptionUrl')+email,'mywindow2','height=640,width=960');
-                    }else{
+                         $("#footerSignUpInput").val("");
+                        window.open(Hypr.getThemeSetting('emailSubscriptionUrl')+email,'hhm2m','height=640,width=960,resizable=yes,scrollbars=yes,status=no,titlebar=no');
+                    } else {
                         $("#emailHelpBlock").text('Please enter a valid email');
                     }
+                    return false;
                }
             });
 

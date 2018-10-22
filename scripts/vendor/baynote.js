@@ -1,3 +1,4 @@
+
 var BaynoteJSVersion="Version: V1222-03";var BaynoteIgnored=false;var BN_READY_SIGNAL="ReadySignal";var Strategy={"ScriptDOMInject":2,"OnLoadInject":3};if(typeof(baynote_globals)=="undefined")var baynote_globals=new Object();baynote_globals.CommonResourceURL="/baynote/tags3/common";baynote_globals.CommonResourceID="Common";baynote_globals.PolicyResourceID="Policy";baynote_globals.CustomerStatus="/baynote/customerstatus2";baynote_globals.CommonScriptId="commonScriptId";if(typeof(baynote_inject_strategy)!="undefined"){baynote_globals.DefaultInjectStrategy=baynote_inject_strategy;}else{baynote_globals.DefaultInjectStrategy=Strategy.ScriptDOMInject;}
 if(typeof(baynote_server_timeout)!="undefined"){baynote_globals.ServerTimeout=baynote_server_timeout;}else{baynote_globals.ServerTimeout=undefined;}
 if(typeof(baynote_use_window_name)!="undefined"){baynote_globals.UseWindowName=baynote_use_window_name;}else{baynote_globals.UseWindowName=false;}
@@ -41,7 +42,7 @@ bnCommon.waitAndExecuteAll(handlerparams);};BaynoteAPI.call=function(handlerName
 bnCommon.finishCall(handlerName,method,methodArgs,scopeObj);};BaynoteAPI.isBaynoteIgnored=function(){return BaynoteIgnored;};BaynoteAPI.getCookieDomain=function(){var cDomain="";var bn_locHref=window.location.href;var i=bn_locHref.indexOf('//');var s1=bn_locHref.substring(i+2);var j=s1.indexOf('/');if(j<0)
 var s2=s1;else
 var s2=s1.substring(0,j);var k=s2.indexOf('.');var s3=s2.substring(k+1);s3;return cDomain=s3;}
-baynote_globals.cookieDomain=BaynoteAPI.getCookieDomain();var preLoadObj={};var bn_locHref=window.location.href;if(bn_locHref.indexOf("https://")==0){preLoadObj.server="https://costplus-cts.baynote.net";}else{preLoadObj.server="http://costplus-cts.baynote.net";}
-preLoadObj.customerId="costplus";preLoadObj.code="cts";BaynoteAPI.init(preLoadObj);if(typeof(baynoteObserver)=="undefined"||typeof(baynoteObserver)!="boolean"||baynoteObserver){BaynoteAPI.execute("observer");}
+baynote_globals.cookieDomain=BaynoteAPI.getCookieDomain();var preLoadObj={};var bn_locHref=window.location.href;if(bn_locHref.indexOf("https://")==0){preLoadObj.server="https://costplus-harmon.baynote.net";}else{preLoadObj.server="http://costplus-harmon.baynote.net";}
+preLoadObj.customerId="costplus";preLoadObj.code="harmon";BaynoteAPI.init(preLoadObj);if(typeof(baynoteObserver)=="undefined"||typeof(baynoteObserver)!="boolean"||baynoteObserver){BaynoteAPI.execute("observer");}
 if(typeof(baynoteGuide)=="undefined"||typeof(baynoteGuide)!="boolean"||baynoteGuide){BaynoteAPI.execute("recommendation");}
 if(typeof(baynoteDisableAjax)!="undefined"&&typeof(baynoteDisableAjax)=="boolean"&&!baynoteDisableAjax){BaynoteAPI.execute("ajax");}

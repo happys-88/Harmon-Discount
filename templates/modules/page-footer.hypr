@@ -7,6 +7,7 @@
 		</div>
 	</div>
 </div>
+{% require_script "modules/global-header-include" %}
 <footer>
 	<div class="container">
 		<div class="row">
@@ -19,7 +20,7 @@
 								<div class="input-group">					  	
 									<input type="email" id="footerSignUpInput" maxlength="254" class="form-control" placeholder="{{ labels.yourEmailAddress }}">
 									<span class="input-group-btn">
-										<button class="btn btn-default button_promotional text-uppercase" type="submit" id="emailSignUp">{{ labels.signUp }}</button> 
+										<button class="btn btn-default button_promotional text-uppercase" type="button" id="emailSignUp">{{ labels.signUp }}</button> 
 									</span>
 								</div>
 								<span id="emailHelpBlock" class="text-danger"></span>
@@ -52,7 +53,10 @@
 						</div>
 						<div class="col-md-3 col-sm-6 col-xs-12">
 							{% dropzone "footer-cat-links-col4" scope="site" %}
-						</div> 								
+						</div> 
+						<div class="col-md-3 col-sm-6 col-xs-12">
+							{% dropzone "footer-cat-links-col5" scope="site" %}
+						</div>								
 					</div>
 				</div>
 			</div>

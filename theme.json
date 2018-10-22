@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "1edf227cba9e2dc27945cb3faaadc0117545b8e0"
+      "commit": "b885dc397d985f8b1d98b089c688fc9a463ae82d"
     }
   },
   "editors": [
@@ -244,7 +244,7 @@
     {
       "documentType": "web_page",
       "entityType": "category",
-      "id": "brands", 
+      "id": "brands",
       "template": "brand-gateway",
       "title": "Brand Gateway",
       "userCreatable": true
@@ -679,7 +679,7 @@
     "viewOurLatestFlyerURL": "flyer",
     "categoryEntityName": "categoryAttributes@cts",
     "enableEmailSubscription": true,
-    "emailSubscriptionUrl": "https://bbbprefcenter.com/SignupWidget/dynamic/CTSUS_email_offers?aqu_source=1180&email=",
+    "emailSubscriptionUrl": "https://offers.harmondiscount.com/SignupWidget/dynamic/Harmon20160526?email=",
     "contactUsMessageLength": 1000,
     "customerServiceEmail": "customerservice@christmastreeshops.com",
     "customerServiceNumber": "1-877-463-1549",
