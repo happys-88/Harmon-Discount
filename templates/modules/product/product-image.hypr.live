@@ -8,9 +8,9 @@
         {%if isMainImage=="true" %}
             class="mz-productimages-mainimage" data-mz-productimage-main id="zoom" itemprop="image"
             {% if productZoomWidth %}
-                data-zoom-image="{% make_url "image" productImage with maxWidth=productZoomWidth %}"
+                data-zoom-image="{% make_url "image" productImage with maxWidth=productZoomWidth as_parameter %}"
             {% else %}
-                data-zoom-image="{% make_url "image" productImage with maxWidth=themeSettings.productZoomImageMaxWidth %}"
+            data-zoom-image="{% make_url "image" productImage with maxWidth=themeSettings.productZoomImageMaxWidth as_parameter %}"
             {% endif %}
         {% endif %}
         {% if productImageClass %}

@@ -22,24 +22,24 @@
         <ul id="productmobile-Carousel" class="products_list_mobile">
         {% for image in model.content.productImages %}
             <li data-label="{{image.imageLabel}}">
-                <img id="zoom_{{forloop.index}}" prop="image" src="{% make_url "image" image with maxWidth=themeSettings.productImagePdpMaxWidth as_parameters %}" {% if image.altText %} alt="{{ image.altText }}"{% endif %} data-zoom-image="{% make_url "image" image with maxWidth=themeSettings.productZoomImageMaxWidth %}" {% if forloop.index==1 %} class="active"{% endif %} data-mz-productimage-mobile="{{ forloop.index }}"/>
+                <img id="zoom_{{forloop.index}}" prop="image" src="{% make_url "image" image with maxWidth=themeSettings.productImagePdpMaxWidth as_parameters %}" {% if image.altText %} alt="{{ image.altText }}"{% endif %} data-zoom-image="{% make_url "image" image with maxWidth=themeSettings.productZoomImageMaxWidth as_parameter %}" {% if forloop.index==1 %} class="active"{% endif %} data-mz-productimage-mobile="{{ forloop.index }}"/>
             </li>
         {% endfor %}
         </ul>
     </div>
     <div class="hidden-xs">
-        <ul{% if model.content.productImages.length > 4 %} id="productpager-Carousel"{% endif %} class="products_list">
+        <ul {% if model.content.productImages.length > 4 %} id="productpager-Carousel"{% endif %} class="products_list">
         {% for image in model.content.productImages %}
             {% with model|get_product_attribute_value("tenant~Video_Id") as videoImage %}
                 {% if forloop.last and  videoImage %}
-                    <li{% if forloop.index==1 %} class="active"{% endif %} data-mz-productimage-thumb="{{ forloop.index }}" data-label="{{image.imageLabel}}">
+                    <li {% if forloop.index==1 %} class="active"{% endif %} data-mz-productimage-thumb="{{ forloop.index }}" data-label="{{image.imageLabel}}">
                         <a class="mz-productimages-thumb video-image-position" data-slide-index="{{ forloop.index0 }}" href="javascript:void(0);" data-pagename="{{image.altText}}">
                          <div class="video-image"></div>
                             {% include "modules/product/product-image" with productImage=image productAltText=image.altText productMaxWidth=themeSettings.maxProductImageThumbnailSize productImageClass="mz-productimages-thumbimage" isThumb="true" as_parameter %}
                         </a><br>
                     </li>
                 {% else %}
-                    <li{% if forloop.index==1 %} class="active"{% endif %} data-mz-productimage-thumb="{{ forloop.index }}" data-label="{{image.imageLabel}}">
+                    <li {% if forloop.index==1 %} class="active"{% endif %} data-mz-productimage-thumb="{{ forloop.index }}" data-label="{{image.imageLabel}}">
                         <a class="mz-productimages-thumb" data-slide-index="{{ forloop.index0 }}" href="javascript:void(0);">
                             {% include "modules/product/product-image" with productImage=image productAltText=image.altText productMaxWidth=themeSettings.maxProductImageThumbnailSize productImageClass="mz-productimages-thumbimage" isThumb="true" as_parameter %}
                         </a><br>

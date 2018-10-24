@@ -30,7 +30,7 @@
                     <h3 class="mz-l-stack-sectiontitle">Order Status</h3>   
                     <div class="mz-track-order-form">
                         <p>Orders placed as a guest or single order lookup</p>
-                        <form method="post" class="mz-loginform mz-loginform-page" name="mz-anonymousorder">
+                        <form method="post" class="mz-loginform-page" name="mz-anonymousorder">
                             <input type="hidden" name="order-returnUrl" value="{{ model.returnUrl }}"/>
                             <div class="form-group">
                                 <div class="col-sm-4">

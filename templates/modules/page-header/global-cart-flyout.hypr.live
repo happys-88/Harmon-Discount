@@ -43,12 +43,12 @@
 						  {% if colorAttr %}
 						    {% with colorAttr.value|replace(" ","_") as colorValue %}
 						      {% with "/cms/files/{0}_{1}_v1.jpg"|string_format(items.product.productCode, colorValue) as fileName %}
-						            <img class="mz-itemlisting-thumb-img mz-carttable-item-image" src="https:{% make_url "cdn" fileName with maxWidth=100 as_parameter %}" {% if items.product.imageAlternateText %}alt="{{ items.product.imageAlternateText }}" {%else%}alt='{{ items.product.name|safe }}' {% endif %} />   
+						            <img class="mz-itemlisting-thumb-img mz-carttable-item-image" src="https:{% make_url "cdn" fileName with max=100 as_parameter %}" {% if items.product.imageAlternateText %}alt="{{ items.product.imageAlternateText }}" {%else%}alt='{{ items.product.name|safe }}' {% endif %} />   
 						      {% endwith %}     
 						    {% endwith %}
 						  {% else %}
 						    {% if items.product.imageUrl %}
-						          <img class="mz-itemlisting-thumb-img mz-carttable-item-image" src="{% make_url "image" items.product with maxWidth=100 as_parameters %}" {% if items.product.imageAlternateText %}alt="{{ items.product.imageAlternateText }}" {%else%}alt='{{ items.product.name|safe }}' {% endif %} />
+						          <img class="mz-itemlisting-thumb-img mz-carttable-item-image" src="{% make_url "image" items.product with max=100 as_parameters %}" {% if items.product.imageAlternateText %}alt="{{ items.product.imageAlternateText }}" {%else%}alt='{{ items.product.name|safe }}' {% endif %} />
 						    {% else %}
 						      	{% include "modules/product/product-no-image" %}
 						    {% endif %}    
