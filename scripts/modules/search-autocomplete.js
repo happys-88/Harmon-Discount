@@ -67,16 +67,7 @@
         set.initialize();
     });
 
-    var dataSetConfigs = [{
-        name: 'pages',
-        displayKey: function(datum) {
-            return datum.suggestion.productCode;
-        },
-        templates: {
-            suggestion: makeTemplateFn('modules/search/autocomplete-page-result')
-        },
-        source: AutocompleteManager.datasets.pages.ttAdapter()
-    }];
+    var dataSetConfigs = [];
 
     if (useSearchAutocomplete && suggestPriorSearchTerms) {
         AutocompleteManager.datasets.terms = new Bloodhound({
@@ -101,6 +92,17 @@
             source: AutocompleteManager.datasets.terms.ttAdapter()
         });
     }
+
+    dataSetConfigs.push({
+        name: 'pages',
+        displayKey: function(datum) {
+            return datum.suggestion.productCode;
+        },
+        templates: {
+            suggestion: makeTemplateFn('modules/search/autocomplete-page-result')
+        },
+        source: AutocompleteManager.datasets.pages.ttAdapter()
+    });
 
     $(document).ready(function() {
         var $field = AutocompleteManager.$typeaheadField = $('[data-mz-role="searchquery"]');
