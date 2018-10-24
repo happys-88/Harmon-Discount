@@ -116,9 +116,9 @@
     {% comment %}<input aria-label="{{labels.itemQuantity}}" class="mz-carttable-qty-field text-center" type="number" {% if model.isLoading %}disabled="disabled"{% endif %} data-mz-cart-item="{{ item.id }}" data-mz-value="quantity" value="{{ item.quantity }}" min="1"/>{% endcomment %}
     <div class="mz-productdetail-conversion-controls">
         <div class="qty-block">
-            <div class="qty-counter" id="minus" data-mz-qty-minus role="button"><i class="fa fa-minus"  aria-hidden="true"></i></div>
-            <input id="mz_quickview_qty" class="mz-productdetail-qty text-center" type="text" value="1" readonly="readonly" data-mz-value="quantity" title="Quantity">
-            <div class="qty-counter" id="plus" data-mz-qty-plus role="button"><i class="fa fa-plus" aria-hidden="true"></i></div>
+            <div class="qty-counter" id="minus" value="{{ item.quantity }}" data-mz-cart-item="{{ item.id }}" data-mz-qty-minus role="button"><i class="fa fa-minus"  aria-hidden="true"></i></div>
+            <input class="mz-productdetail-qty text-center" type="text" value="{{ item.quantity }}" readonly="readonly" data-mz-value="quantity" title="Quantity">
+            <div class="qty-counter" id="plus" value="{{ item.quantity }}" data-mz-cart-item="{{ item.id }}" data-mz-qty-plus role="button"><i class="fa fa-plus" aria-hidden="true"></i></div>
         </div>
      </div>
   </div>

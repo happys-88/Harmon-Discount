@@ -6,7 +6,7 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
     var CartView = Backbone.MozuView.extend({
         templateName: "modules/cart/cart-table",
         additionalEvents: {
-            "keypress .mz-carttable-qty-field": "updateQuantity",
+            "click .qty-counter": "updateQuantity",
             "input [data-mz-value='quantity']": "checkNumeric"
         },
         initialize: function() {
@@ -60,16 +60,21 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
                 onImageLoadError.checkImage(this);
             });
         },
-        updateQuantity: _.debounce(function(e) {
-            if (e.type != 'focusout') {
+        updateQuantity: function(e) {
                 var flag = true;
                 var $qField = $(e.currentTarget),
-                    newQuantity = parseInt($qField.val(), 10),
+                    newQuantity = parseInt($qField.attr("value"), 10),
                     id = $qField.data('mz-cart-item'),
                     item = this.model.get("items").get(id);
+                    if ($qField.attr("id")==="plus"){
+                        newQuantity = newQuantity+1;
+                    }else{
+                        newQuantity = newQuantity -1;
+                    }
                 if (newQuantity !== item.get('quantity')) {
                     var skuID = item.attributes.product.attributes.mfgPartNumber;
                     var limitAttribute = _.findWhere(item.attributes.product.get('properties'), { "attributeFQN": "tenant~limitPerOrder" });
+                    console.log(limitAttribute);
                     var itemQuantity = item.attributes.quantity;
                     if (limitAttribute) {
                         var limitperorder = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
@@ -102,9 +107,7 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
                 } else {
                     $("[data-mz-cart-item=" + item.get('id') + "]").blur();
                 }
-
-            }
-        }, 600),
+        },
         checkNumeric: function(e) {
             e.target.value = e.target.value.replace(/[^\d]/g, '');
         },
