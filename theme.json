@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "b885dc397d985f8b1d98b089c688fc9a463ae82d"
+      "commit": "fc9e0aed4bb54c91b8d03f1ebe2808a62643bafe"
     }
   },
   "editors": [
@@ -577,7 +577,7 @@
     "googleMapLongitude": -70.288112,
     "googleMapZoom": 8,
     "storesPageSize": 5,
-    "googleMapPinIcon": "resources/images/cts-pin-icon.png",
+    "googleMapPinIcon": "resources/images/Har-icon.jpg",
     "googleMapMaxNearbyDistance": 10000000,
     "rviEnable": true,
     "rviHeading": "Recently Viewed Items",
