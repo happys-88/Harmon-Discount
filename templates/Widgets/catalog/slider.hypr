@@ -1,87 +1,37 @@
 <div id="mz-home-slider">
   <div class="slider">
-    {% if model.config.slideImageOne %}
-      <div>
-        <a class="mz-slide" {% if model.config.slideLinkOne %}href="{{ model.config.slideLinkOne }}"{% endif %}> 
-          <div class="col-sm-6 mz-slide-details">
-            {% if model.config.slideTitleOne %}
-              <h2>{{ model.config.slideTitleOne }}</h2>
-            {% endif %}
-            {% if model.config.slide1_ShortDescText1 %} 
-              <p class="text-1">{{ model.config.slide1_ShortDescText1 }}</p> 
-            {% endif %}
-            {% if model.config.slide1_ShortDescText2 %} 
-              <p class="text-2">{{ model.config.slide1_ShortDescText2 }}</p> 
-            {% endif %}
-            {% if model.config.slide1_ShortDescText3 %}
-              <p class="text-3">{{ model.config.slide1_ShortDescText3 }}</p>   
-            {% endif %}
-            {% if model.config.slideButtonOne %}
-              <button class="mz-button" type="submit">{{ model.config.slideButtonOne }}</button>
-            {% endif %}
+    {% if model.config.slideImageOnePart1 or model.config.slideImageOnePart2 %}
+        <a class="mz-slide" {% if model.config.slideLinkOne %}href="{{ model.config.slideLinkOne }}" {% endif %} >
+          <div class="col-sm-6 mz-banner-image">
+            <img src='{% make_url "image" model.config.slideImageOnePart1.imageUrl %}' alt="{{ model.config.slideImageOnePart1.altText }}" >
           </div>
-          <div class="col-sm-6 mz-banner-image"> 
-            <img src="{% make_url "image" model.config.slideImageOne.imageUrl %}" {% if model.config.slideImageOne.altText %}alt="{{ model.config.slideImageOne.altText }}"{% endif %}>   
+          <div class="col-sm-6 mz-banner-image">
+            <img src='{% make_url "image" model.config.slideImageOnePart2.imageUrl %}' alt="{{ model.config.slideImageOnePart2.altText }}">
           </div>
         </a>
-      </div>
-    {% endif %} 
- 
-    {% if model.config.slideImageTwo %}
-      <div>
-        <a class="mz-slide" {% if model.config.slideLinkTwo %}href="{{ model.config.slideLinkTwo }}"{% endif %}> 
-          <div class="col-sm-6 mz-slide-details"> 
-            {% if model.config.slideTitleTwo %}
-              <h2>{{ model.config.slideTitleTwo }}</h2>
-            {% endif %}
-            {% if model.config.slide2_ShortDescText1 %} 
-              <p class="text-1">{{ model.config.slide2_ShortDescText1 }}</p> 
-            {% endif %}
-            {% if model.config.slide2_ShortDescText2 %} 
-              <p class="text-2">{{ model.config.slide2_ShortDescText2 }}</p> 
-            {% endif %}
-            {% if model.config.slide2_ShortDescText3 %}
-              <p class="text-3">{{ model.config.slide2_ShortDescText3 }}</p>   
-            {% endif %}
-            {% if model.config.slideButtonTwo %} 
-              <button class="mz-button" type="submit">{{ model.config.slideButtonTwo }}</button>
-            {% endif %}
-          </div>
-          <div class="col-sm-6 mz-banner-image"> 
-            <img src="{% make_url "image" model.config.slideImageTwo.imageUrl %}" {% if model.config.slideImageTwo.altText %}alt="{{ model.config.slideImageTwo.altText }}"{% endif %}>    
-          </div>
-        </a>
-
-      </div>
+        {% endif %}
+        {% if model.config.slideImageTwoPart1 %}
+          <a class="mz-slide" {% if model.config.slideLinkTwo %}href="{{ model.config.slideLinkTwo }}" {% endif %}>
+            <div class="col-sm-6 mz-banner-image">
+              <img src='{% make_url "image" model.config.slideImageTwoPart1.imageUrl %}' alt="{{ model.config.slideImageTwoPart1.altText }}" >
+            </div>
+            <div class="col-sm-6 mz-banner-image">
+              <img src='{% make_url "image" model.config.slideImageTwoPart2.imageUrl %}' alt="{{ model.config.slideImageTwoPart2.altText }}"
+                >
+            </div>
+          </a>
     {% endif %}
- 
-    {% if model.config.slideImageThree %}
-      <div>
-        <a class="mz-slide" {% if model.config.slideLinkThree %}href="{{ model.config.slideLinkThree }}"{% endif %}> 
-          <div class="col-sm-6 mz-slide-details"> 
-            {% if model.config.slideTitleTwo %}
-              <h2>{{ model.config.slideTitleTwo }}</h2>
-            {% endif %}
-            {% if model.config.slide3_ShortDescText1 %} 
-              <p class="text-1">{{ model.config.slide3_ShortDescText1 }}</p>  
-            {% endif %}
-            {% if model.config.slide3_ShortDescText2 %} 
-              <p class="text-2">{{ model.config.slide3_ShortDescText2 }}</p> 
-            {% endif %}
-            {% if model.config.slide3_ShortDescText3 %}
-              <p class="text-3">{{ model.config.slide3_ShortDescText3 }}</p>   
-            {% endif %}
-            {% if model.config.slideButtonTwo %} 
-              <button class="mz-button" type="submit">{{ model.config.slideButtonTwo }}</button>
-            {% endif %}
-          </div>
-          <div class="col-sm-6 mz-banner-image"> 
-            <img src="{% make_url "image" model.config.slideImageThree.imageUrl %}" {% if model.config.slideImageThree.altText %}alt="{{ model.config.slideImageThree.altText }}"{% endif %}>     
-          </div>
-        </a>
-
-      </div>
-    {% endif %} 
+    {% if model.config.slideImageThreePart1  %}
+          <a class="mz-slide" {% if model.config.slideLinkThree %}href="{{ model.config.slideLinkThree }}" {% endif %}>
+            <div class="col-sm-6 mz-banner-image">
+              <img src='{% make_url "image" model.config.slideImageThreePart1.imageUrl %}' alt="{{ model.config.slideImageThreePart1.altText }}">
+            </div>
+            <div class="col-sm-6 mz-banner-image">
+              <img src='{% make_url "image" model.config.slideImageThreePart2.imageUrl %}' alt="{{ model.config.slideImageThreePart2.altText }}"
+                >
+            </div>
+          </a>
+    {% endif %}
   </div>
 </div>
 

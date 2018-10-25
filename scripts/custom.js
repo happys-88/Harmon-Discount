@@ -3,9 +3,12 @@ define([
 	"hyprlive"
 ], function( $, Hypr ) { 
 	$(document).ready(function() {
+
+		
 		GetURLParameter();
 		
 		showPopUp();
+		selectUrl();
         function showPopUp() {
             var cookieName = Hypr.getLabel('signUpCookie');
             if(!readCookie(cookieName)) {
@@ -70,8 +73,14 @@ define([
 		});
 		$("#back-to-top").click(function(){
 	        scrollToTop(); 
-	    });
+		});
+		
 	});
+	function selectUrl() {
+		var hash = window.location.pathname;
+		var href = "a[value~=" + "'" + hash + "'" + "]";
+		$(href).parent(".mz-scrollnav-item").addClass("active");
+	}
 
 	function GetURLParameter()
 	{
