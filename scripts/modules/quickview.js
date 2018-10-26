@@ -60,7 +60,7 @@ define([
 
         var QuickViewView = Backbone.View.extend({
             events: {
-                'click .qvButton': 'buttonClicked',
+                'click .qvButton': 'qvShow',
                 'click .qvPromo': 'promoOpen',
                 "click [data-mz-quickview-close]": "quickviewClose",
                 "click #quickViewModal [data-mz-swatch-color]": "selectSwatch",
@@ -609,7 +609,7 @@ define([
                     });
                 }
             },
-            buttonClicked: function(e) {
+            qvShow: function(e) {
                 blockUiLoader.globalLoader();
                 var self = this;
                 window.quickviewProduct = null;
@@ -620,7 +620,30 @@ define([
 
                 var qvProductCode = $(e.currentTarget).data("target");
                 var productJSONData = $(e.currentTarget).data("mz-product-data");
-                var product = new ProductModels.Product(productJSONData);
+                if (productJSONData != "") {
+                    var product = new ProductModels.Product(productJSONData);
+                    self.buttonClicked(product, qvProductCode);
+                } else {
+                    api.request("GET", "/api/commerce/catalog/storefront/products/" + qvProductCode).then(function (body) {
+                        var product = new ProductModels.Product(body);
+                        self.buttonClicked(product, qvProductCode);
+                    });
+                }
+                
+            },
+            buttonClicked: function(product, qvProductCode) {
+                var self = this;
+                /*blockUiLoader.globalLoader();
+                var self = this;
+                window.quickviewProduct = null;
+                this.currentProductCode = null;
+
+                // Reset modal dialog content
+                $('.quickviewSlider .modal-body').html('');
+
+                var qvProductCode = $(e.currentTarget).data("target");
+                var productJSONData = $(e.currentTarget).data("mz-product-data");
+                var product = new ProductModels.Product(productJSONData);*/
                 window.quickviewProduct = product;
                 this.currentProductCode = qvProductCode;
                 var options_pro = product.attributes.options;
@@ -694,7 +717,7 @@ define([
                             "categoryName": storedPageData.page.productCategories.join(" > "),
                             "id": window.quickviewProduct.get('productCode'),
                             "markDownAmount": markDownAmount,
-                            "onlineStockStatus": window.quickviewProduct.get('inventoryInfo').onlineStockAvailable > 0 ? Hypr.getLabel('upcInStock') : Hypr.getLabel('outOfStock'),
+                            "onlineStockStatus": window.quickviewProduct.get('inventoryInfo') && window.quickviewProduct.get('inventoryInfo').onlineStockAvailable > 0 ? Hypr.getLabel('upcInStock') : Hypr.getLabel('outOfStock'),
                             "price": pro_price,
                             "priceTotal": pro_price,
                             "productCategories": storedPageData.page.productCategories,
@@ -766,7 +789,7 @@ define([
                                 $('.stock-info').hide();
                             }
                         }
-                        if (typeof window.quickviewProduct.attributes.inventoryInfo.onlineStockAvailable !== "undefined" && window.quickviewProduct.get('inventoryInfo').onlineStockAvailable === 0) {
+                        if (window.quickviewProduct.attributes.inventoryInfo && typeof window.quickviewProduct.attributes.inventoryInfo.onlineStockAvailable !== "undefined" && window.quickviewProduct.get('inventoryInfo').onlineStockAvailable === 0) {
                             $('[data-mz-validationmessage-for="item-out-of-stock"]').text("* This item is out of stock.");
                             $('.stock-info').hide();
                         } else {
