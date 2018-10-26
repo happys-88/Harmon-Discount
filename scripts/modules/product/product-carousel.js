@@ -98,7 +98,9 @@ define([
             }
         }
     };
-    if ($("#carousel-container:visible").length) {
-        CarouselListView.loadMoreProducts();
-    }
+    $(document).ready(function () {
+        if ($("#carousel-container:visible").length) {
+            CarouselListView.loadMoreProducts();
+        }
+   });
 });
