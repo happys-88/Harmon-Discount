@@ -12,6 +12,7 @@ define(['modules/jquery-mozu', 'modules/api', 'bootstrap', 'modules/page-header/
             setAmount: function(amount) {  
                 var localAmount = Hypr.engine.render("{{price|currency}}", { locals: { price: amount } });
                 this.$amountEl.text(localAmount);
+                $('.mz-cart-count').html(localAmount);
             },
             setCount: function(count) {
                 this.$el.text(count);

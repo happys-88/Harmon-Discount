@@ -686,6 +686,7 @@
 
     $(document).ready(function() {
 
+
         var product = ProductModels.Product.fromCurrent();
 
         if ($('.mz-product-detail-tabs ul.tabs li').length === 0)
@@ -870,6 +871,11 @@
             e.preventDefault();
             blockUiLoader.unblockUi();
         });
+
+        var prod = product.get('productCode');
+        var htmlData = '<div id="wc-power-page"></div>';
+        htmlData = htmlData+'<script>Webcollage.loadProductContent("harmondiscount", "'+prod+'", {"power-page":{autoPlayAndStop: true}});</script>';
+        $('#webcollage').html(htmlData);
 
     }).bind("touchstart", function(e) {
         var container = $(".ipad > div:visible");

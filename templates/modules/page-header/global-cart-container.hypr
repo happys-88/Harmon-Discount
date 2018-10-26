@@ -3,7 +3,7 @@
 	<i class="fa fa-shopping-cart"></i> 
     Cart
 </a>
-<span class="mz-cart-count">$XX.00</span> 
+<span class="mz-cart-count">$00.00</span> 
 <div id="global-cart"{% if pageContext.isEditMode and pageContext.cmsContext.template.path=="" %} style="display:block;"{% endif %}>
     <div id="global-cart-listing"></div>
     <div id="global-cart-rti">

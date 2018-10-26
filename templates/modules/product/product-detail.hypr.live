@@ -152,7 +152,7 @@
 {% endif %}
 
 <!-- WebCollage code snippet. Place the <div> tag as per the UI requirement -->
- <!-- <div id="wc-power-page"></div>
-  {% block webcollage-loader %}
-   <script>Webcollage.loadProductContent('harmondiscount', '{{ model.productCode }}', {"power-page":{autoPlayAndStop: true}});</script>    
-  {% endblock webcollage-loader %} -->
+<div id="webcollage" value="{{ model.productCode }}">
+    
+</div>
+  
