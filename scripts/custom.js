@@ -1,10 +1,11 @@
 define([ 
 	"modules/jquery-mozu",
-	"hyprlive"
-], function( $, Hypr ) { 
+	"hyprlive",
+	"bxslider"
+], function ($, Hypr, bxSlider ) { 
 	$(document).ready(function() {
 
-		
+		homeslider();
 		GetURLParameter();
 		
 		showPopUp();
@@ -107,5 +108,25 @@ define([
 	    }
 	    else expires = "";
 	    document.cookie = name+"="+value+expires+"; path=/";
+	}
+	function homeslider(){
+		$('#mz-home-slider .slider').bxSlider({
+			auto: false,
+			useCSS: false,
+			speed: 1000,
+			minSlides: 1,
+			maxSlides: 1,
+			moveSlides: 1,
+			slideMargin: 0,
+			infiniteLoop: false,
+			controls: true,
+			pager: true,
+			hideControlOnEnd: true,
+			touchEnabled: true,
+			onSliderLoad: function () {
+				$(".slider").css("visibility", "visible");
+			}
+		});
+
 	}
 }); 

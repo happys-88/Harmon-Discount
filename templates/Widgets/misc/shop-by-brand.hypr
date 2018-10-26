@@ -5,7 +5,7 @@
 		{% for getBrandCategoryId in model.config.shopByBrand %} 
 			{% for categoryObject in categories.all %}
 				{% if categoryObject.content.name == "Shop By Brand" %}    
-					{% for brandSubCat in categoryObject.childrenCategories %}
+				{% for brandSubCat in categoryObject.childrenCategories %}
 						{% if brandSubCat.categoryId == getBrandCategoryId %}
 							<li> 
 								<div class="brand-logo">

@@ -11,7 +11,7 @@
         </a>
         {% endif %}
         {% if model.config.slideImageTwoPart1 %}
-          <a class="mz-slide" {% if model.config.slideLinkTwo %}href="{{ model.config.slideLinkTwo }}" {% endif %}>
+          <a class="mz-slide" {% if model.config.slideLinkTwo %}href="{{ model.config.slideLinkTwo }}" {% endif %} hidden="true">
             <div class="col-sm-6 mz-banner-image">
               <img src='{% make_url "image" model.config.slideImageTwoPart1.imageUrl %}' alt="{{ model.config.slideImageTwoPart1.altText }}" >
             </div>
@@ -22,7 +22,7 @@
           </a>
     {% endif %}
     {% if model.config.slideImageThreePart1  %}
-          <a class="mz-slide" {% if model.config.slideLinkThree %}href="{{ model.config.slideLinkThree }}" {% endif %}>
+          <a class="mz-slide" {% if model.config.slideLinkThree %}href="{{ model.config.slideLinkThree }}" {% endif %} hidden="true">
             <div class="col-sm-6 mz-banner-image">
               <img src='{% make_url "image" model.config.slideImageThreePart1.imageUrl %}' alt="{{ model.config.slideImageThreePart1.altText }}">
             </div>
@@ -32,7 +32,17 @@
             </div>
           </a>
     {% endif %}
+    {% if model.config.slideImageFourPart1 %}
+    <a class="mz-slide" {% if model.config.slideLinkFour %}href="{{ model.config.slideLinkFour }}" {% endif %} hidden="true">
+      <div class="col-sm-6 mz-banner-image">
+        <img src='{% make_url "image" model.config.slideImageFourPart1.imageUrl %}' alt="{{ model.config.slideImageFourPart1.altText }}">
+      </div>
+      <div class="col-sm-6 mz-banner-image">
+        <img src='{% make_url "image" model.config.slideImageFourPart2.imageUrl %}' alt="{{ model.config.slideImageFourPart2.altText }}">
+      </div>
+    </a>
+    {% endif %}
   </div>
 </div>
 
-{% require_script "widgets/home-slider" %}
+{% comment %} {% require_script "widgets/home-slider" %} {% endcomment %}

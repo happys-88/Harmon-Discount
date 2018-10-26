@@ -3,10 +3,9 @@ define([
     'modules/jquery-mozu',
     'underscore',
     "hyprlivecontext",
-    "modules/api",
     "modules/get-partial-view",
     "bxslider"
-], function(Backbone, $, _, HyprLiveContext, api, getPartialView, bxslider) {
+], function(Backbone, $, _, HyprLiveContext, getPartialView, bxslider) {
     var items = [];
     var isLoadMore = true;
     var startIndex = 0;
