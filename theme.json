@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "03ec3e310f27369b82a5204774b0e44ede072b92"
+      "commit": "d075f7f12ea70a81b24389c44cc7ba07dabf793d"
     }
   },
   "editors": [
@@ -185,6 +185,20 @@
   ],
   "pageTypes": [
     {
+      "entityType": "siteTemplate",
+      "id": "site_page",
+      "template": "page",
+      "title": "Default Site Template"
+    },
+    {
+      "documentType": "web_page",
+      "entityType": "webpage",
+      "id": "blank-page",
+      "template": "blank-page",
+      "title": "Blank Page",
+      "userCreatable": true
+    }, 
+    {
       "documentType": "web_page",
       "entityType": "webpage",
       "id": "bvContainer",
@@ -271,20 +285,6 @@
       "id": "flippPage",
       "template": "flipp-page",
       "title": "Flipp Flyer",
-      "userCreatable": true
-    },
-    {
-      "entityType": "siteTemplate",
-      "id": "site_page",
-      "template": "page",
-      "title": "Default Site Template"
-    },
-    {
-      "documentType": "web_page",
-      "entityType": "webpage",
-      "id": "blank-page",
-      "template": "blank-page",
-      "title": "Blank Page",
       "userCreatable": true
     },
     {
