@@ -108,7 +108,7 @@
                                         {% if prod.mainImage.altText %}alt="{{ prod.mainImage.altText }}"{% endif %}
                                     />
                                     {% else %}
-                                        <span class="mz-productlisting-imageplaceholder"><span class="mz-productlisting-imageplaceholdertext">{{ labels.productImagePlaceholder }}</span></span>
+										<img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
                                     {% endif %}
                                     <span class="mainImageContainer2">
                                         <span class="spinner icon-spinner-2 imageload"></span>

@@ -12,7 +12,7 @@
         <label for="checkNumber">{{ labels.routingNumber }}<span class="is-required"> *</span>:</label>
     </div>
     <div class="col-sm-8">
-        <input type="text" name="checkNumber" class="form-control" id="checkNumber" data-mz-value="check.routingNumber" value="{{ model.check.routingNumber }}">
+        <input type="text" name="routingNumber" class="form-control" id="routingNumber" data-mz-value="check.routingNumber" value="{{ model.check.routingNumber }}">
         <span class="mz-validationmessage" data-mz-validationmessage-for="check.routingNumber"></span>
     </div>
 </div>

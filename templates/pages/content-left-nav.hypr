@@ -6,28 +6,28 @@
                 <a class="mz-scrollnav-link" href="/user/order-status">Order Status</a>      
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/shipping-information">Shipping Info</a>
+                <a class="mz-scrollnav-link" href="/shipping-information" name="/shipping-information">Shipping Info</a>
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/contact-us">Contact Us</a>
+                <a class="mz-scrollnav-link" href="/contact-us" name="/contact-us">Contact Us</a>
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/100-guarantee">100% guarantee</a> 
+                <a class="mz-scrollnav-link" href="/100-guarantee" name="/100-guarantee">100% guarantee</a> 
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/FAQS">FAQS</a>
+                <a class="mz-scrollnav-link" href="/faqs" name="/faqs">FAQS</a>
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/return-policy">Return Policy</a>
+                <a class="mz-scrollnav-link" href="/return-policy" name="/return-policy">Return Policy</a>
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/privacy-policy">Privacy Policy</a> 
+                <a class="mz-scrollnav-link" href="/privacy-policy" name="/privacy-policy">Privacy Policy</a> 
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/terms-conditions">Terms &amp; Conditions</a>  
+                <a class="mz-scrollnav-link" href="/terms-conditions" vlaue="/terms-conditions">Terms &amp; Conditions</a>  
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/product-recalls">Product Recalls</a>
+                <a class="mz-scrollnav-link" href="/product-recalls" name="/product-recalls">Product Recalls</a>
             </li>
         </ul>
     </nav> 
@@ -38,25 +38,25 @@
     <nav class="mz-scrollnav"> 
         <ul class="mz-scrollnav-list nav">
             <li class="mz-scrollnav-item"> 
-                <a class="mz-scrollnav-link" href="/who-we-are">Who We Are</a>  
+                <a class="mz-scrollnav-link" href="/who-we-are" name="/who-we-are">Who We Are</a>  
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/our-partnerships">Our Partnerships</a>
+                <a class="mz-scrollnav-link" href="/our-partnerships" name="/our-partnerships">Our Partnerships</a>
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/media-relations">Media Relations</a> 
+                <a class="mz-scrollnav-link" href="/media-relations" name="/media-relations">Media Relations</a> 
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/CorporateResponsibilityReport">Corporate Responsibility</a>
+                <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/CorporateResponsibilityReport" target="_blank">Corporate Responsibility</a>
             </li> 
             <li class="mz-scrollnav-item">
                 <a class="mz-scrollnav-link" href="/">Investor Relations</a>  
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/brandcareers">Careers</a>  
+                <a class="mz-scrollnav-link" href="https://www.bedbathandbeyond.com/store/static/brandcareers" target="_blank">Careers</a>  
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/corporate-sales">Corporate Sales</a>   
+                <a class="mz-scrollnav-link" href="/corporate-sales" name="/corporate-sales">Corporate Sales</a>   
             </li>
         </ul>
     </nav>

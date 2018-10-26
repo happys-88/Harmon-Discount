@@ -64,7 +64,7 @@
                 var _img = $(".mz-productlist-list li[data-mz-product='" + productCode + "'] .mz-productlisting-image img");
                 _img.attr("src", _mainImage);
             }else{
-                $(".mz-productlist-list li[data-mz-product='" + productCode + "'] .mz-productlisting-image a").html('<span class="mz-productlisting-imageplaceholder img-responsive"><span class="mz-productlisting-imageplaceholdertext">[no image]</span></span>');
+                $(".mz-productlist-list li[data-mz-product='" + productCode + "'] .mz-productlisting-image a").html("<img src=' / cms / files / no - image - hr.jpg' class='mz - productlisting - imageplaceholder' alt='no - image' />");
             }
         },
         setMainImage: function( _dom ){
@@ -85,7 +85,7 @@
                         }
                         img.attr("src", imagefilepath + '/' + productCode + '_' + colorCode + '_v1.jpg?maxWidth=' + imageMaxWidth);        
                     }else if(typeof _mainImage === 'undefined'){
-                        $(".mz-productlist-list li[data-mz-product='" + productCode + "'] .mz-productlisting-image a").html('<span class="mz-productlisting-imageplaceholder img-responsive"><span class="mz-productlisting-imageplaceholdertext">[no image]</span></span>');
+                        $(".mz-productlist-list li[data-mz-product='" + productCode + "'] .mz-productlisting-image a").html("<img src='/cms/files/no-image-hr.jpg' class='mz-productlisting-imageplaceholder' alt='no-image' />");
                     }
                 });
                             

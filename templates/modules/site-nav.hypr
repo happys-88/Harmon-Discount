@@ -7,7 +7,7 @@
         <li class="hide" aria-hidden="true">For Blank</li>
         {% partial_cache %}
           {% for link in navigation.tree %}
-            {% if not link.isHidden and not link.isEmpty and forloop.counter0 < themeSettings.maxTopLevelNavItems and link.url != "/home" and link.nodeType!="page" %} 
+            {% if not link.isHidden and not link.isEmpty and forloop.counter < themeSettings.maxTopLevelNavItems and link.url != "/home" and link.nodeType!="page" %} 
               <li class="mz-sitenav-item">
                 <div class="mz-sitenav-item-inner">
                   <a class="mz-sitenav-link main-link" {% if link.openInNewWindow %}target='_blank'{% endif %} href="{{link.url}}">{{link.name|safe}}</a> 

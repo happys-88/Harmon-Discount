@@ -178,7 +178,7 @@
                 } else if (typeof this.mainImage != 'undefined') {
                     $(_e.delegateTarget).find('img').attr('src', this.mainImage);
                 } else {
-                    $('.mz-productimages-main').html('<span class="mz-productlisting-imageplaceholder img-responsive"><span class="mz-productlisting-imageplaceholdertext">[no image]</span></span>');
+                    $('.mz-productimages-main').html("<img src='/cms/files/no-image-hr.jpg' class='mz-productlisting-imageplaceholder' alt='no-image' />");
                 }
             }
         },
@@ -203,7 +203,7 @@
                         if(self.isColorClicked)
                             self.model.set('mainImage', imagepath);
                 } else if (typeof self.mainImage === 'undefined') {
-                    $('.mz-productimages-main').html('<span class="mz-productlisting-imageplaceholder img-responsive"><span class="mz-productlisting-imageplaceholdertext">[no image]</span></span>');
+                    $('.mz-productimages-main').html("<img src='/cms/files/no-image-hr.jpg' class='mz-productlisting-imageplaceholder' alt='no-image' />");
                 }
                
             });
