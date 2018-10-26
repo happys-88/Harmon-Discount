@@ -19,6 +19,12 @@
 @mobileNavSubMenuBg: #f1f1f1;
 @textColorGrey: #262626;   
 
+@media (min-width: 1200px) { 
+	.container {
+	    width: 1200px;   
+	}
+} 
+
 html, body{
 	height: 100%;
 	min-height: 100%;
@@ -676,7 +682,7 @@ footer{
 }
 
 
-/*** Bact to top button ***/
+/*** Back to top button ***/
 #back-to-top {
     display: none;
     background: rgba(159, 20, 108, 0.8);
@@ -697,13 +703,23 @@ footer{
 #back-to-top:hover {
     background: rgba(159, 20, 108, 1);
 }
-/*** Bact to top button ***/
+/*** Back to top button ***/
 
-@media (min-width: 1200px) {
-	.container {
-	    width: 1200px;   
-	}
-}
+/**** Category Factes ****/
+.mz-category{
+	.new-hierarchy{
+		ul{
+			li{
+				font-size: 14px;
+				line-height: 22px;
+				a{
+					padding: 0 10px;  
+				}  
+			}
+		}	
+	}	
+}  
+
 
 
 #newsletterPopup {

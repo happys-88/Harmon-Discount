@@ -29,18 +29,14 @@
                 <h1 class="mz-pagetitle" itemprop="name">{{ model.content.productName|replace("'","&rsquo;")|safe }}</h1>
                 <div class="row">
               {% with model|get_product_attribute("tenant~brand") as brandName %}
-                    <div class="col-xs-12 mz-view-all-brand">
-                        {{ labels.viewAll }} <a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
-                    </div>
-                {% for brandCat in model.categories %} 
-                {{  brandCat.content.name }}
-                    {% if brandCat.content.name == {{ brandName.values|first|prop("value") }} %}
-                        <div class="col-xs-12 mz-view-all-brand">
-                            {{ labels.viewAll }} <a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
-                        </div>
-                        {% endif %}
-                    {% endfor %}
-                {% endwith %}
+                    {% for brandCat in model.categories %}  
+                        {% if brandCat.content.name == {{ brandName.values|first|prop("value") }} %}
+                            <div class="col-xs-12 mz-view-all-brand">
+                                {{ labels.viewAll }} <a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endwith %}
                     <div class="col-xs-12">
                         <div class="mz-productcodes-productcode p-3" itemprop="sku">{{ labels.item}} # {{ model.productCode }}</div>
                         <div class="mz-reviews-ratings">
@@ -80,33 +76,6 @@
                 </div>
             </div>
         </div>
-        {% comment %}
-        <div class="col-xs-12">
-            {% if model.properties and themeSettings.showProductDetailProperties %}
-                <div class="mz-productdetail-properties mz-l-stack-section">
-                  <h4 class="mz-l-stack-sectiontitle">{{ labels.properties }}</h4>
-                  <div class="mz-propertylist mz-propertylist-justified tab-content">
-                    {% for property in model.properties %}
-                    {% if property.values and not property.isHidden %}
-                    <div class="mz-prop-tab {{property.attributeDetail.name}}"><a data-toggle="tab" data-parent=".mz-propertylist" href="#{{property.attributeDetail.name|slugify}}">{{property.attributeDetail.name}}</a></div>
-                    {% for v in property.values %}
-                    <div id="{{property.attributeDetail.name|slugify}}" class="tab-pane fade">{% if v.stringValue %}{% if v.stringValue == 'CHR(38)' %}
-                &amp;
-                {% else %}
-                    {% if v.stringValue == 'CHR(64)' %}
-                    @
-                    {% else %}
-                        {{ v.stringValue }}
-                    {% endif %}
-                {% endif %}{% else %}{{v.value}}{% endif %}</div>
-                    {% endfor %}
-                    {% endif %}
-                    {% endfor %}
-                  </div>
-                </div>
-            {% endif %}
-        </div>
-        {% endcomment %}  
     </div>
     <div class="row">
         <div class="social-sharing col-md-9 col-xs-12 mz-reset-padding-left{% if model.content.productImages.length <=1 %} mz-share-with-container-other{% endif %}">
@@ -137,4 +106,3 @@
     {% endif %}
 </div>
 
-{% require_script "pages/custom_DetailPage" %}

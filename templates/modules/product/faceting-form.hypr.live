@@ -6,11 +6,11 @@
                     <span class="hide">Refine Button</span>
                 </span>
                 {% if pageContext.search.facets %}
-                <button class="btn-transparent text-uppercase mz-facetingform-clearall pull-right" data-mz-action="clearFacets" data-mz-url="{% make_url "facet" "clear"  %}">{{ labels.clearAllFilters }} <i data-mz-action="clearFacets" data-mz-url="{% make_url "facet" "clear"  %}" class="fa fa-times-circle" aria-hidden="true"></i></button>
+                    <button class="btn-transparent text-uppercase mz-facetingform-clearall pull-right" data-mz-action="clearFacets" data-mz-url="{% make_url "facet" "clear"  %}">{{ labels.clearAllFilters }} <i data-mz-action="clearFacets" data-mz-url="{% make_url "facet" "clear"  %}" class="fa fa-times-circle" aria-hidden="true"></i></button>
                 {% endif %}
             </div>
             {% if pageContext.search.facets %}
-            <ul id="filterOptionList" class="filer-options"></ul>
+                <ul id="filterOptionList" class="filer-options"></ul>
             {% endif %}
         </div>
         <div id="filterOptions">
@@ -39,23 +39,23 @@
                                     {% endif %}
                                 {% else %}
                                     <div class="mz-l-sidebaritem" id="facet_{{facetSetting.key|replace("tenant~")}}">
-                                    <div class="faceting-header" data-mz-filter-collapse="{{ forloop.index0 }}">{{ facetSetting.name }} <span id="filterIcon{{ forloop.index0 }}" class="filter-icon pull-right"><i class="fa fa-plus" aria-hidden="true"></i></span></div>
-                                    <ul class="mz-facetingform-facet mz-facetingform-facet-hierarchy clearfix {{facetSetting.definition.type|lower}}" id="filterList{{ forloop.index0 }}">
-                                        <li class="hide" aria-hidden="true">For Blank</li>
-                                        {% if facetSetting.definition.type|lower == "swatch" %}
-                                            {% include "modules/facets/facet-color" with allfacets=facetValues and showCount=facetSetting.showCount and showMore=facetSetting.definition.showMoreCount and isDirectory="true" %}
-                                        {% else %}
-                                            {% if facetSetting.definition.type|lower == "stars" %}
-                                                {% include "modules/facets/facet-stars" with stars=facetValues and showMore=facetSetting.definition.showMoreCount and showCount=facetSetting.showCount and isDirectory="true" %}
+                                        <div class="faceting-header" data-mz-filter-collapse="{{ forloop.index0 }}">{{ facetSetting.name }} <span id="filterIcon{{ forloop.index0 }}" class="filter-icon pull-right"><i class="fa fa-plus" aria-hidden="true"></i></span></div>
+                                        <ul class="mz-facetingform-facet mz-facetingform-facet-hierarchy clearfix {{facetSetting.definition.type|lower}}" id="filterList{{ forloop.index0 }}">
+                                            <li class="hide" aria-hidden="true">For Blank</li>
+                                            {% if facetSetting.definition.type|lower == "swatch" %}
+                                                {% include "modules/facets/facet-color" with allfacets=facetValues and showCount=facetSetting.showCount and showMore=facetSetting.definition.showMoreCount and isDirectory="true" %}
                                             {% else %}
-                                                {% if facet.facetType|lower == "rangequery" %}
-                                                    {% include "modules/facets/facet-price" with prices=facetValues and showMore=facetSetting.definition.showMoreCount and showCount=facetSetting.showCount and isDirectory="true" %}
+                                                {% if facetSetting.definition.type|lower == "stars" %}
+                                                    {% include "modules/facets/facet-stars" with stars=facetValues and showMore=facetSetting.definition.showMoreCount and showCount=facetSetting.showCount and isDirectory="true" %}
                                                 {% else %}
-                                                    {% include "modules/facets/facet-text" with texts=facetValues and showMore=facetSetting.definition.showMoreCount and showCount=facetSetting.showCount and isDirectory="true" %}
+                                                    {% if facet.facetType|lower == "rangequery" %}
+                                                        {% include "modules/facets/facet-price" with prices=facetValues and showMore=facetSetting.definition.showMoreCount and showCount=facetSetting.showCount and isDirectory="true" %}
+                                                    {% else %}
+                                                        {% include "modules/facets/facet-text" with texts=facetValues and showMore=facetSetting.definition.showMoreCount and showCount=facetSetting.showCount and isDirectory="true" %}
+                                                    {% endif %}
                                                 {% endif %}
                                             {% endif %}
-                                        {% endif %}
-                                    </ul>
+                                        </ul>
                                     </div>
                                 {% endif %}
                             {% endif %}
@@ -81,6 +81,14 @@
                             {% endif %}
                         {% endif %}
                     {% else %}
+                        {% if facet.values and facet.facetType == "Hierarchy" %}
+                            {% if facet.values.length == 1 %}        
+                                {% include "modules/product/hierarchy-facets" with facet=facet facetValues=facet.values|first|prop("childrenFacetValues") %}
+                            {% else %}
+                                {% include "modules/product/hierarchy-facets" with facet=facet facetValues=facet.values %}
+                            {% endif %}
+                        {% endif %} 
+
                         {% if facet.values and facet.facetType != "Hierarchy" %}
                             <div class="mz-l-sidebaritem">
                                 <div class="faceting-header" data-mz-filter-collapse="{{ forloop.index0 }}">{{ facet.label }} <span id="filterIcon{{ forloop.index0 }}" class="filter-icon pull-right"><i class="fa fa-plus" aria-hidden="true"></i></span></div>
