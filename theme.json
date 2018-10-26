@@ -681,7 +681,7 @@
     "enableEmailSubscription": true,
     "emailSubscriptionUrl": "https://offers.harmondiscount.com/SignupWidget/dynamic/Harmon20160526?email=",
     "contactUsMessageLength": 1000,
-    "customerServiceEmail": "customerservice@christmastreeshops.com",
+    "customerServiceEmail": "support@harmondiscount.com",
     "customerServiceNumber": "1-877-463-1549",
     "brontoAPIToken": "3F349C54-0ABD-4A94-AF0A-6D8B597BE830",
     "brontoUrl": "https://api.bronto.com/v4?wsdl",
