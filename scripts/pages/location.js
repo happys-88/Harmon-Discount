@@ -176,7 +176,7 @@ require([
                     google.maps.event.addListener(marker, 'click', (function(marker, i) {
                         return function() {
                             var dirQueryString = [
-                                "Christmas Tree Shops " +
+                                "Harmon Discount " +
                                 location.address.address1,
                                 location.address.address2,
                                 location.address.address2,
