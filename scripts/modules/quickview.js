@@ -417,7 +417,7 @@ define([
                         }
                     } else if (typeof _this.mainImage === 'undefined') {
                         $('.zoomContainer').remove();
-                        $('.mz-productimages-main').html('<span class="mz-productlisting-imageplaceholder img-responsive"><span class="mz-productlisting-imageplaceholdertext">[no image]</span></span>');
+                        $('.mz-productimages-main').html("<img src='/cms/files/no-image-hr.jpg' alt='no-image' />");
                     }
                 });
                 if ($("figure.mz-productimages-thumbs").length && $("figure.mz-productimages-thumbs").data("length") && _updateThumbNails == 'Y') {

@@ -2,8 +2,10 @@
     <img  
         {% if productMaxWidth %}
             src="{% make_url "image" productImage with maxWidth=productMaxWidth %}"
+            onerror="this.src='/cms/files/no-image-hr.jpg'"
         {% else %}
             src="{% make_url "image" productImage with maxWidth=themeSettings.productCarouselImageWidth %}"
+            onerror="this.src='/cms/files/no-image-hr.jpg'"
         {% endif %}
         {%if isMainImage=="true" %}
             class="mz-productimages-mainimage" data-mz-productimage-main id="zoom" itemprop="image"
@@ -40,7 +42,7 @@
             data-orig-zoom="{% make_url "image" productImage with maxWidth=themeSettings.productZoomImageMaxWidth %}"
             {% endif %}
         {% endif %}
-        > 
-{% else %}
-    {% include "modules/product/product-no-image" %}
+        >
+        {% else %}
+        <img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
 {% endif %}

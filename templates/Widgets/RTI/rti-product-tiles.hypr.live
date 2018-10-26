@@ -111,7 +111,7 @@
                                     {% endcomment %}
                                     <img src="{{ prod.mainImage.imageUrl }}" style="max-height: 200px"/>
                                     {% else %}
-                                        <span class="mz-productlisting-imageplaceholder"><span class="mz-productlisting-imageplaceholdertext">{{ labels.productImagePlaceholder }}</span></span>
+                                        <img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
                                     {% endif %}
                                     <span class="mainImageContainer2">
                                         <span class="spinner icon-spinner-2 imageload"></span>

@@ -54,8 +54,6 @@
 {% endif %}
 {% else %}
 <figure class="mz-productimages-main text-center">
-    <span class="mz-productlisting-imageplaceholder img-responsive">
-        <span class="mz-productlisting-imageplaceholdertext">{{ labels.productImagePlaceholder }}</span>
-    </span>
+    <img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
 </figure>
 {% endif %}

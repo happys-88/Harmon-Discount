@@ -78,7 +78,7 @@ define([
 	});
 	function selectUrl() {
 		var hash = window.location.pathname;
-		var href = "a[value~=" + "'" + hash + "'" + "]";
+		var href = "a[name~=" + "'" + hash + "'" + "]";
 		$(href).parent(".mz-scrollnav-item").addClass("active");
 	}
 
