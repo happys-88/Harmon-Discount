@@ -14,8 +14,6 @@ define([
         checkImage: function(imagepath, callback) {
             $.get(imagepath).done(function() {
                 callback(true);
-            }).error(function() {
-                callback(false);
             });
         },
         addZoom: function(img, newImgPath) {

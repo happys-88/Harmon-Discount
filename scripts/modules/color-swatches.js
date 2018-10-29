@@ -16,8 +16,6 @@
     var checkImage = function(imagepath, callback) {
         $.get(imagepath).done(function() {
             callback(true); //return true if image exist
-        }).error(function() {
-            callback(false);
         });
     };
 
