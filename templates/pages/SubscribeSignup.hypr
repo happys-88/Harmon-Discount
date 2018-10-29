@@ -1,4 +1,4 @@
-<script type="text/javascript" id="ca_eum_ba" src="https://collector-axa.cloud.ca.com//api/1/urn:ca:tenantId:7761DB74-4B2C-EF23-F778-EFC179032CA1/urn:ca:appId:M2M/bajs?agent=browser" data-profileUrl="https://collector-axa.cloud.ca.com//api/1/urn:ca:tenantId:7761DB74-4B2C-EF23-F778-EFC179032CA1/urn:ca:appId:M2M/profile?agent=browser" data-tenantID="7761DB74-4B2C-EF23-F778-EFC179032CA1" data-appID="M2M" data-appKey="8dd0f960-7ec5-11e8-a3cf-9563110194e2"></script>
+{% comment %} <script type="text/javascript" id="ca_eum_ba" src="https://collector-axa.cloud.ca.com//api/1/urn:ca:tenantId:7761DB74-4B2C-EF23-F778-EFC179032CA1/urn:ca:appId:M2M/bajs?agent=browser" data-profileUrl="https://collector-axa.cloud.ca.com//api/1/urn:ca:tenantId:7761DB74-4B2C-EF23-F778-EFC179032CA1/urn:ca:appId:M2M/profile?agent=browser" data-tenantID="7761DB74-4B2C-EF23-F778-EFC179032CA1" data-appID="M2M" data-appKey="8dd0f960-7ec5-11e8-a3cf-9563110194e2"></script> {% endcomment %}
 {% comment %} <script type="text/javascript">
     var buttonImageFile = "/SignupWidget/Content" + "/images/calendar.png";
 </script> {% endcomment %}

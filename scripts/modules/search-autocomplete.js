@@ -1,4 +1,4 @@
-﻿define(['shim!vendor/typeahead.js/typeahead.bundle[modules/jquery-mozu=jQuery]>jQuery', 'hyprlive', 'modules/api'], function($, Hypr, api) {
+﻿require(['shim!vendor/typeahead.js/typeahead.bundle[modules/jquery-mozu=jQuery]>jQuery', 'hyprlive', 'modules/api'], function($, Hypr, api) {
 
     // bundled typeahead saves a lot of space but exports bloodhound to the root object, let's lose it
     var Bloodhound = window.Bloodhound.noConflict();
@@ -104,26 +104,26 @@
         source: AutocompleteManager.datasets.pages.ttAdapter()
     });
 
-    $(document).ready(function() {
-        var $field = AutocompleteManager.$typeaheadField = $('[data-mz-role="searchquery"]');
-        AutocompleteManager.typeaheadInstance = $field.typeahead({
-            minLength: 1
-        }, dataSetConfigs).data('ttTypeahead');
-        // user hits enter key while menu item is selected;
-        $field.on('typeahead:selected', function(e, data, set) {
-            if (data.suggestion.productCode) window.location = "/p/" + data.suggestion.productCode;
-        });
-        $('#searchbox').on('submit', function(e) {
-            var searchVal = $('#search-field').val().trim();
-            if (searchVal === "") {
-                window.alert(Hypr.getLabel('blankSearchResult'));
-                e.preventDefault();
-            } else if (searchVal.length < 3) {
-                window.alert("Your keyword or item number must be at least 3 characters long");
-                e.preventDefault();
-            }
-        });
-    });
+            $('window').ready( function(){
+                var $field = AutocompleteManager.$typeaheadField = $('[data-mz-role="searchquery"]');
+                AutocompleteManager.typeaheadInstance = $field.typeahead({
+                    minLength: 1
+                }, dataSetConfigs).data('ttTypeahead');
+                // user hits enter key while menu item is selected;
+                $field.on('typeahead:selected', function (e, data, set) {
+                    if (data.suggestion.productCode) window.location = "/p/" + data.suggestion.productCode;
+                });
+                $('#searchbox').on('submit', function (e) {
+                    var searchVal = $('#search-field').val().trim();
+                    if (searchVal === "") {
+                        window.alert(Hypr.getLabel('blankSearchResult'));
+                        e.preventDefault();
+                    } else if (searchVal.length < 3) {
+                        window.alert("Your keyword or item number must be at least 3 characters long");
+                        e.preventDefault();
+                    }
+                });
+            }); 
 
     return AutocompleteManager;
 });

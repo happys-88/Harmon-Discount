@@ -1,6 +1,7 @@
 <div id="mz-home-slider">
   <div class="slider">
     {% if model.config.slideImageOnePart1 or model.config.slideImageOnePart2 %}
+     <div>
         <a class="mz-slide" {% if model.config.slideLinkOne %}href="{{ model.config.slideLinkOne }}" {% endif %} >
           <div class="col-sm-6 mz-banner-image">
             <img src='{% make_url "image" model.config.slideImageOnePart1.imageUrl %}' alt="{{ model.config.slideImageOnePart1.altText }}" >
@@ -9,9 +10,11 @@
             <img src='{% make_url "image" model.config.slideImageOnePart2.imageUrl %}' alt="{{ model.config.slideImageOnePart2.altText }}">
           </div>
         </a>
-        {% endif %}
+       </div>
+    {% endif %}
         {% if model.config.slideImageTwoPart1 %}
-          <a class="mz-slide" {% if model.config.slideLinkTwo %}href="{{ model.config.slideLinkTwo }}" {% endif %} hidden="true">
+        <div >
+          <a class="mz-slide" {% if model.config.slideLinkTwo %}href="{{ model.config.slideLinkTwo }}" {% endif %} hidden=true>
             <div class="col-sm-6 mz-banner-image">
               <img src='{% make_url "image" model.config.slideImageTwoPart1.imageUrl %}' alt="{{ model.config.slideImageTwoPart1.altText }}" >
             </div>
@@ -20,9 +23,11 @@
                 >
             </div>
           </a>
+        </div>
     {% endif %}
     {% if model.config.slideImageThreePart1  %}
-          <a class="mz-slide" {% if model.config.slideLinkThree %}href="{{ model.config.slideLinkThree }}" {% endif %} hidden="true">
+        <div >
+          <a class="mz-slide" {% if model.config.slideLinkThree %}href="{{ model.config.slideLinkThree }}" {% endif %} hidden=true>
             <div class="col-sm-6 mz-banner-image">
               <img src='{% make_url "image" model.config.slideImageThreePart1.imageUrl %}' alt="{{ model.config.slideImageThreePart1.altText }}">
             </div>
@@ -31,18 +36,21 @@
                 >
             </div>
           </a>
+          </div>
     {% endif %}
     {% if model.config.slideImageFourPart1 %}
-    <a class="mz-slide" {% if model.config.slideLinkFour %}href="{{ model.config.slideLinkFour }}" {% endif %} hidden="true">
-      <div class="col-sm-6 mz-banner-image">
-        <img src='{% make_url "image" model.config.slideImageFourPart1.imageUrl %}' alt="{{ model.config.slideImageFourPart1.altText }}">
-      </div>
-      <div class="col-sm-6 mz-banner-image">
-        <img src='{% make_url "image" model.config.slideImageFourPart2.imageUrl %}' alt="{{ model.config.slideImageFourPart2.altText }}">
-      </div>
-    </a>
+     <div >
+        <a class="mz-slide" {% if model.config.slideLinkFour %}href="{{ model.config.slideLinkFour }}" {% endif %} hidden=true>
+          <div class="col-sm-6 mz-banner-image">
+            <img src='{% make_url "image" model.config.slideImageFourPart1.imageUrl %}' alt="{{ model.config.slideImageFourPart1.altText }}">
+          </div>
+          <div class="col-sm-6 mz-banner-image">
+            <img src='{% make_url "image" model.config.slideImageFourPart2.imageUrl %}' alt="{{ model.config.slideImageFourPart2.altText }}">
+          </div>
+        </a>
+    </div>
     {% endif %}
   </div>
 </div>
 
-{% comment %} {% require_script "widgets/home-slider" %} {% endcomment %}
+ {% require_script "widgets/home-slider" %}

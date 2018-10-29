@@ -93,15 +93,15 @@ if (!window.myEditors) {
                                     beforerender: {
                                         scope: this,
                                         fn: function(that, eOpts) {
-                                            console.log(that);
-                                            console.log(eOpts);
+                                           // console.log(that);
+                                           // console.log(eOpts);
                                         }
                                     },
                                     change: {
                                         scope: this,
                                         fn: function(field, newValue, oldValue) {
-                                            console.log('Feed Value');
-                                            console.log(newValue);
+                                           // console.log('Feed Value');
+                                           // console.log(newValue);
                                         }
                                     }
                                 }
@@ -224,7 +224,7 @@ if (!window.myEditors) {
                                 id: 'carouselFormat',
                                 boxLabel: 'Carousel Format',
                                 flex: 1,
-                                margin: '20px 0 0 0',
+                               // margin: '20px 0 0 0',
                                 items: [{
                                     boxLabel: 'Carousel Format',
                                     name: 'carouselFormat',
@@ -374,15 +374,15 @@ if (!window.myEditors) {
                                 id: feed.item.id,
                                 name: feed.item.name
                             });
-                        })
+                        });
                     },
                     failure: function(err) {
-                        console.log(err);
+                       // console.log(err);
                     }
                 });
 
             } catch (e) {
-                console.log(e);
+              //  console.log(e);
             }
         },
         toggleDisplayTemplate: function(field, newValue, oldValue) {
@@ -448,4 +448,4 @@ if (!window.myEditors) {
     });
 }
 
-Ext.create('myEditors.socialContent')
+Ext.create('myEditors.socialContent');

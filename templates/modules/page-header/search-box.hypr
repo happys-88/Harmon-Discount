@@ -7,9 +7,9 @@
             <i class="fa fa-search"></i> 
         </button>
     </span>
-    {% require_script "modules/contextify" %}
-    {% if themeSettings.useSearchAutocomplete %}
-        {% require_script "modules/search-autocomplete" %}
-    {% endif %}
-    <input type="hidden" name="categoryId" value="{{themeSettings.allProductsCategoryId}}">
+   <input type="hidden" name="categoryId" value="{{themeSettings.allProductsCategoryId}}">
 </form>
+{% require_script "modules/contextify" %}
+{% if themeSettings.useSearchAutocomplete %}
+    {% require_script "modules/search-autocomplete" %}
+{% endif %}
