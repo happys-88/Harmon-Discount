@@ -3,6 +3,14 @@ define([
 	"hyprlive"
 ], function ($, Hypr ) { 
 	$(document).ready(function() {	
+		//brand
+		$(document).on('click', '.brand-letter a', function () { 
+			var id = $(this).attr("name");
+			var position = $(id + " .brand-letter").offset().top;
+			$('body,html').animate({
+				scrollTop: position
+			}, 500);
+		}); 
 		GetURLParameter();
 		
 		showPopUp();
@@ -28,7 +36,7 @@ define([
               }
               return null;
         }
-
+		
 		$(".search-icon").click(function() {
         	$(".search-icon").toggleClass("search-open");
             $(".mz-search-filed").toggle();
