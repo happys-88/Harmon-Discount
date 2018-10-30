@@ -5,8 +5,8 @@
     		<ul class="mz-sitenav-sub"> 
 				{% if entityModel.topNavHeader != '~' %}
 					<h2>{{ entityModel.topNavHeader|safe}}</h2>
-				{% else %}
-					<h2>&nbsp;&nbsp;</h2>
+				{% else %} 
+					
 				{% endif %}
 		{% endif %}
 	{% endwith %} 

@@ -14,8 +14,8 @@
         <li class="mz-utilitynav-item"> 
            <a href="javascript:void(0);" class="mz-utilitynav-link" data-toggle="modal" data-target="#newsletterPopup">Sign Up For Offers <i class="fa fa-envelope"></i></a>          
         </li>  
-        <li class="mz-utilitynav-item"> 
-           <a href="flipppage" class="mz-utilitynav-link">Monthly Ad <i class="fa fa-list-alt"></i></a>                 
+        <li class="mz-utilitynav-item">   
+           <a href="/monthly-ad" class="mz-utilitynav-link">Monthly Ad <i class="fa fa-list-alt"></i></a>                 
         </li> 
     </ul>  
 </nav>
