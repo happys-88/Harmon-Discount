@@ -2,7 +2,7 @@
   <span class="discount">{{ thresholdMsg.message }} </span> 
 {% endfor %} 
 <div class="col-md-6 pull-right col-sm-6 col-xs-12 text-right hidden-xs mz-button-checkout-cart-top">
-  {% if not user.isAnonymous && user.isAuthenticated %}
+  {% if pageData.customer.status == "registered" %}
    <button id="cart-checkout-btn" class="mz-button mz-button-large{% if model.isLoading %} button_disabled{% endif %}" data-mz-action="proceedToCheckout"{% if model.isLoading %} disabled="disabled"{% endif %}>
       {{ labels.proceedToCheckout }}
     </button>
@@ -200,7 +200,7 @@
 {% if not model.isEmpty %}<span class="mz-empty-cart-link-container"><button class="font-large button_promotional" data-mz-action="empty">{{ labels.emptyCart }}</button></span>{% endif %}
 {% endif %} 
 <a href="/" class="mz-button mz-button-large">Continue Shopping</a>
- {% if not user.isAnonymous && user.isAuthenticated %}
+ {% if pageData.customer.status == "registered" %}
    <button id="cart-checkout" aria-label="{{ labels.cartCheckout }}" class="mz-button mz-button-large{% if model.isLoading %} button_disabled{% endif %}"  {% if model.isLoading or model.isEmpty %} disabled="disabled" {% endif %} data-mz-action="proceedToCheckout">{{ labels.proceedToCheckout }}</button>
   {%else%}
     <button type="button" id="cart-checkout" aria-label="{{ labels.cartCheckout }}" class="mz-button mz-button-large{% if model.isLoading %} button_disabled{% endif %}"  {% if model.isLoading or model.isEmpty %} disabled="disabled" {% endif %} data-mz-action="checkoutGuest">{{ labels.proceedToCheckout }}</button>
@@ -222,7 +222,7 @@
       {% for externalPayment in siteContext.checkoutSettings.externalPaymentWorkflowSettings %}
           {% if externalPayment.isEnabled and externalPayment.name == "PayPalExpress2" %}
               <div class="mz-carttable-thirdpartypayment margin-bottom-30" >
-                {% if not user.isAnonymous && user.isAuthenticated %}
+                {% if pageData.customer.status == "registered" %}
                   <a href="javascript:void(0);" data-mz-action="paypalCheckout">
                 {% else %}
                   <a href="javascript:void(0);" data-mz-action="paypalCheckoutGuest">
