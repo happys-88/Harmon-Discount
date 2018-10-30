@@ -1,15 +1,13 @@
 define([
-    'modules/backbone-mozu',
     'modules/jquery-mozu',
+    'modules/backbone-mozu',
     "modules/api",
     "hyprlive",
     'underscore',
-    "modules/models-product",
-    "bxslider",
     "session-management",
     "modules/on-image-load-error",
     'modules/block-ui'
-], function(Backbone, $, Api, Hypr, _, ProductModels, bxslider, sessionManagement, onImageLoadError, blockUiLoader) {
+], function ($, Backbone, Api, Hypr, _, sessionManagement, onImageLoadError, blockUiLoader) {
     if (require.mozuData('user').isAuthenticated) {
         $(window).sessionManagement(Hypr.getThemeSetting('sessionTimeout'), function() {
             window.location.href = '/logout';
