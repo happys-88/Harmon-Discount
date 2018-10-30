@@ -9,11 +9,19 @@
 						{% if brandSubCat.categoryId == getBrandCategoryId %}
 							<li> 
 								<div class="brand-logo">
-									{% for brandLogoImage in brandSubCat.content.categoryImages %}
-						   			    <a href="{{ brandSubCat.url }}">
-									    	<img src="{{ brandLogoImage.imageUrl }}" alt="{{ brandLogoImage.altText }}">  
+									{% if brandSubCat.content.categoryImages.length > 0 %}
+										{% for imgurl in brandSubCat.content.categoryImages %}
+										 {% if forloop.first %}
+											<a href='{% make_url "category" brandSubCat %}'>
+												<img src='{% make_url "image" imgurl.imageUrl %}' alt="{{ brandSubCat.content.categoryImages.altText }}" >  
+											</a>
+											{% endif %}
+										{% endfor %}
+									{% else %}
+										<a href='{% make_url "category" brandSubCat %}'>
+											<img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
 										</a>
-						   			{% endfor %}	
+									{% endif %}	
 								</div>
 							</li>
 						{% endif %}
