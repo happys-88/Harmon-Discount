@@ -44,6 +44,10 @@
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password" name="confirmPassword" data-mz-signup-confirmpassword maxlength="{{themeSettings.passwordMaxLength}}" placeholder="{{ labels.confirmPassword }}"/>
                         </div>
+                         <p>{{ labels.signUpEmailMsg }}</p>
+                        <div class="checkbox">
+                            <label for="signupEmailupdates"><input type="checkbox" id="signupEmailupdates" data-mz-signup-emailupdates> {{ labels.signupEmailupdates }}</label>
+                        </div>
                         <section data-mz-role="popover-message" class="mz-popover-message"></section>
                         <button class="mz-button" data-mz-action="signuppage-submit" disabled>{{ labels.signUp }}</button>
                     </div>

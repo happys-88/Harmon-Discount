@@ -104,7 +104,8 @@
         source: AutocompleteManager.datasets.pages.ttAdapter()
     });
 
-            $('window').ready( function(){
+            $(document).ready( function(){
+                setTimeout(function(){  
                 var $field = AutocompleteManager.$typeaheadField = $('[data-mz-role="searchquery"]');
                 AutocompleteManager.typeaheadInstance = $field.typeahead({
                     minLength: 1
@@ -125,6 +126,8 @@
                         e.preventDefault();
                     }
                 });
+             }, 1500);
+               
             }); 
 
     return AutocompleteManager;
