@@ -577,7 +577,7 @@
     "googleMapLongitude": -70.288112,
     "googleMapZoom": 8,
     "storesPageSize": 5,
-    "googleMapPinIcon": "resources/images/Har-icon.png",
+    "googleMapPinIcon": "resources/images/Har-icon.jpg",
     "googleMapMaxNearbyDistance": 10000000,
     "rviEnable": true,
     "rviHeading": "Recently Viewed Items",
