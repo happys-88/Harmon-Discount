@@ -164,11 +164,19 @@
             {% block page-header %}
                 {% include "modules/page-header" %}
             {% endblock page-header %}
-
-            {% block site-nav %}
-                {% include "modules/site-nav" %}
-            {% endblock site-nav %}
-
+           
+            
+                {% block mobile-nav %}
+                <div class="visible-xs">
+                     {% include "modules/mobile-nav" %}
+                </div>
+                {% endblock mobile-nav %}
+                {% block site-nav %}
+                <div class="hidden-xs">
+                 {% include "modules/site-nav" %}
+                </div>
+                {% endblock site-nav %}
+          
             {% block login-slider %}
                 {% include "modules/login/login" %}            
             {% endblock login-slider %}
@@ -199,6 +207,28 @@
                 </div>
             </div>
         </div>
+        {% block error-message %}
+        <div class="modal fade" id="emptymsg" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a type="button" class="close" data-dismiss="modal">&times;</a>
+                        <h5>{{ labels.blankSearchResult }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="threeletter" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <a type="button" class="close" data-dismiss="modal">&times;</a>
+                        <h5>Your keyword or item number must be at least 3 characters long</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endblock error-message %}
         {% block page-footer %}
             {% include "modules/page-footer" %}
         {% endblock page-footer %}

@@ -67,9 +67,9 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
         },
         render: function() {
             Backbone.MozuView.prototype.render.call(this);
-            $(".mz-order-summary-image img, img[data-mz-check-image]").each(function() {
+            /*$(".mz-order-summary-image img, img[data-mz-check-image]").each(function() {
                 onImageLoadError.checkImage(this);
-            });
+            });*/
         },
 
         // override loading button changing at inappropriate times
