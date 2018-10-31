@@ -16,7 +16,7 @@
 @mzSiteNavSubLinkActive: #e20177;     
 
 @mobileNavBorderBtm: #cbcbcb; 
-@mobileNavSubMenuBg: #f1f1f1;
+@mobileNavSubMenuBg: #fff;
 @textColorGrey: #262626;   
 
 @media (min-width: 1200px) { 
@@ -765,4 +765,16 @@ footer{
 }
 .zoomWindow {
     max-height: 450px !important;
+}
+.modal{
+	&.fade{
+		&.in{
+			.modal-content{
+				  border-radius: 0!important;
+				  .modal-header {
+						padding: 10px!important;
+					}
+			}
+		}
+	}
 }
