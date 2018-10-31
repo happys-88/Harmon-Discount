@@ -16,9 +16,10 @@
                         class="collapsed"
                         data-toggle="collapse" data-parent="#accordion" data-target="#main-nav-{{link.categoryCode}}" aria-expanded="false" aria-controls="main-nav-{{link.categoryCode}}"
                       {% endif %}
-                      Shop By Brand
                       {% if not link.items or link.name=="Shop By Brand" %} href="{{link.url}}" {% endif %}>
-                      {{link.name|replace(themeSettings.columnBreaker, ""|replace("_", " ")|safe}}
+                      {% if link.name!="AllProds" %}
+                         {{link.name|replace(themeSettings.columnBreaker, ""|replace("_", " ")|safe}}
+                      {% endif %}
                       {% if link.name!="Shop By Brand" %}
                         {% if link.items %} 
                           <span class="glyphicon glyphicon-plus-minus" aria-hidden="true"></span>  
@@ -28,7 +29,7 @@
                     </a>
                   </h4>
                 </div>
-                {% if link.name!="Shop By Brand" %}
+                {% if link.name!="Shop By Brand" or link.name!="AllProds" %}
                   {% if link.items %}
                   <div id="main-nav-{{link.categoryCode}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="main-nav-heading-{{link.categoryCode}}">
                     <div class="panel-body">

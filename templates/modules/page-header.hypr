@@ -39,7 +39,7 @@
                 <div class="col-sm-3 col-xs-4 mz-header-global-cart-wrapper">
                     <ul class="mz-utilitynav-list{% if not user.isAnonymous %} logged-in{%endif%}">
                     {% if user.isAuthenticated %}
-                       {# {% if pageData.customer.status == "registered" %} #}
+                       {% comment %} {% if pageData.customer.status == "registered" %} {% endcomment %}
                             <li class="mz-utilitynav-item nav-logout hide"> 
                                 <a href="/logout" class="mz-utilitynav-link">{{ labels.logOut }}<i class="fa fa-user"></i></a> 
                             </li>
