@@ -122,11 +122,12 @@
 									}
 								}
 							}
-							&[aria-expanded="true"] {
-								//&:first-of-type{
+							&[aria-expanded="true"] {			
 								background: @mzSiteNavBg;
-								color: #fff !important;
-								//}
+								color: #fff;
+								.glyphicon{
+									color: #fff;
+								}
 							}
 						}
 					}
@@ -142,7 +143,7 @@
 								.panel-title {
 									a {
 										font-size: 14px;
-										color: @textColor;
+										//color: @textColor;
 										.glyphicon {
 											color: @textColor;
 										}
@@ -186,6 +187,22 @@
 				}
 			}
 		}
+		.in {
+            .panel-group {
+                .panel {
+                    .panel-heading {
+                        .panel-title{
+                            a{
+                                &[aria-expanded="true"] {
+                                background: #fff;
+                                color: #000!important;
+                              }
+                        } 
+                    }
+                }
+            }
+        }
+    }
 	}
 	.mz-close-nav {
 		background: #495363;
