@@ -6,7 +6,9 @@
 <div class="mz-itemlisting-thumb">
     {% with model.content.productImages|first as image %}
     {% if image.imageUrl %}
-    <img class="mz-itemlisting-thumb-img" src="{% make_url "image" image with max=80 as_parameters %}" {% if image.altText %}alt="{{ image.altText }}"{% endif %} />
+       <img class="mz-itemlisting-thumb-img" src='{% make_url "image" image with max=80 as_parameters %}'  onerror="this.src='/cms/files/no-image-hr.jpg'"{% if image.altText %}alt="{{ image.altText }}"{% endif %} />
+     {% else %}
+       <img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
     {% endif %}
     {% endwith %}
 </div>

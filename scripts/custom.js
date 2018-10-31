@@ -48,20 +48,24 @@ define([
 
 
   		$(".container-links ul:not(:first)").addClass("list");
-	   	var allPanels = $('.container-links .list');
-		$('.container-links h4').click(function(e) {
-			var target = $( e.target );
-			if ( target.is( ".open" ) ) {
-		    	allPanels.slideUp();
-				allPanels.prev().removeClass("open");
-		     	return;
-		  	}
-		  	else {
-				allPanels.slideUp();
-				allPanels.prev().removeClass("open");
-				$(this).addClass("open").next().slideDown();
-			}		
-		});
+		   var allPanels = $('.container-links .list');
+		
+		if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android|Mobile)/i)) {
+			$('.container-links h4').click(function (e) {
+				var target = $(e.target);
+				if (target.is(".open")) {
+					allPanels.slideUp();
+					allPanels.prev().removeClass("open");
+					return;
+				}
+				else {
+					allPanels.slideUp();
+					allPanels.prev().removeClass("open");
+					$(this).addClass("open").next().slideDown();
+				}
+			});
+		};
+		
 
 	  	// Back To 
 	  	function scrollToTop(){
