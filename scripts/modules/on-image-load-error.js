@@ -8,9 +8,9 @@ define([
             var self = $(el);
             var imagepath = self.attr("src");
             //using GET request function checks whether an image exist on server or not
-            $.get(imagepath).error(function () {
+            /*$.get(imagepath).error(function () {
                 me.replaceImage(el);
-            });
+            });*/
         },
         replaceImage: function(el) {
             var self = $(el);
