@@ -30,15 +30,15 @@
                                                 
                                                 {% with model|get_product_attribute("tenant~brand") as brandName %}
                                                     <div class="mz-view-all-brand">
-                                                        {{ labels.viewAll }} <a href="/">{{ brandName.values|first|prop("value") }}</a>
+                                                       <a href="/shop-by-brand/c/1270">{{ labels.viewAll   }}</a><a href='{% make_url "category" brandCat %}'>{{   brandName.values|first|prop("value") }}</a>
                                                     </div>
                                                 {% endwith %}
                                                     
-                                                <div class="row">
+                                                {% comment %} <div class="row">
                                                     <div class="col-xs-12 col-sm-12">
                                                     <div class="mz-productcodes-productcode p-3" itemprop="sku">Item # {{ model.productCode }}</div>
                                                     </div>
-                                                </div>
+                                                </div> {% endcomment %}
                                                 {% comment %}
                                                 <div class="mz-all-review-container">
                                                     <span class="mz-reviews-pdp-stars">
