@@ -6,14 +6,15 @@ define(['modules/jquery-mozu',
 function($, Api, CartModels, hyprlivecontext, _) {
 
     window.paypalCheckoutReady = function() {
-
       var siteContext = hyprlivecontext.locals.siteContext,
           externalPayment = _.findWhere(siteContext.checkoutSettings.externalPaymentWorkflowSettings, {"name" : "PayPalExpress2"}),
           merchantAccountId = _.findWhere(externalPayment.credentials, {"apiName" : "merchantAccountId"}),
           environment = _.findWhere(externalPayment.credentials, {"apiName" : "environment"}),
-          id = CartModels.Cart.fromCurrent().id || window.order.id,
+          id = CartModels.Cart.fromCurrent().id,
           isCart = window.location.href.indexOf("cart") > 0;
-
+          if(window.order) {
+            id = window.order.id;
+          }
         window.paypal.checkout.setup(merchantAccountId.value, {
             environment: environment.value,
             click: function(event) {

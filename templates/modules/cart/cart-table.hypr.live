@@ -31,7 +31,7 @@
         {% with colorAttr.value|replace(" ","_") as colorValue %}
           {% with "/cms/files/{0}_{1}_v1.jpg"|string_format(item.product.productCode, colorValue, themeSettings.globalCartItemImageMaxWidth) as fileName %}
               <a href="{{ item.product.url }}">
-                <img class="mz-carttable-item-image" src="https:{% make_url "cdn" fileName with maxWidth=themeSettings.globalCartItemImageMaxWidth as_parameter %} " {% if item.product.imageAlternateText %}alt="{{ item.product.imageAlternateText }}" {%else%} alt='{{ item.product.name|safe}}' {% endif %} />
+                <img class="mz-carttable-item-image" src="https:{% make_url "cdn" fileName with maxWidth=themeSettings.globalCartItemImageMaxWidth as_parameter %}" onerror="this.src='/cms/files/no-image-hr.jpg'" {% if item.product.imageAlternateText %}alt="{{ item.product.imageAlternateText }}" {%else%} alt='{{ item.product.name|safe}}' {% endif %} />
               </a>
           {% endwith %}     
         {% endwith %}

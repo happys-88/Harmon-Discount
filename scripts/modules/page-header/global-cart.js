@@ -9,9 +9,9 @@ define([
     'modules/block-ui'
 ], function ($, Backbone, Api, Hypr, _, sessionManagement, onImageLoadError, blockUiLoader) {
     if (require.mozuData('user').isAuthenticated) {
-        $(window).sessionManagement(Hypr.getThemeSetting('sessionTimeout'), function() {
-            window.location.href = '/logout';
-        });
+            $(window).sessionManagement(Hypr.getThemeSetting('sessionTimeout'), function () {
+                window.location.href = '/logout';
+            });
     }
     var globalCartMaxItemCount = Hypr.getThemeSetting('globalCartMaxItemCount'),
         globalCartHidePopover = Hypr.getThemeSetting('globalCartHidePopover'),

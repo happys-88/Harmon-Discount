@@ -21,9 +21,9 @@
                         <span>Search</span>
                     </div>
                 </div>
-                <div class="col-xs-12 mz-promo-msg">
+                {% comment %} <div class="col-xs-12 mz-promo-msg">
                     {% dropzone "global-cart-promo-msg" scope="site" %} 
-                </div>
+                </div> {% endcomment %}
                 <div class="col-sm-3 col-xs-4 mz-header-logo-wrapper">
                     {% block store-branding %}
                         {% include "modules/page-header/store-branding" %}
