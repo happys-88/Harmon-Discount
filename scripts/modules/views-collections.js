@@ -71,11 +71,18 @@ define([
                             }
                             displayValue = displayValue.replace("[", "$").replace("]", "").replace(/to/gi, "-");
                         }
-                        available_facets += '<li><i class="fa fa-times-circle remove-facet" data-mz-facet="' + facetKey + '" data-mz-facet-value="' + facetValue[j].split(":")[1] + '" data-mz-purpose="remove" data-mz-action="clearFacet"></i> <u>' + displayValue + '</u></li>';
+                        available_facets += '<li ><i class="fa fa-times-circle remove-facet" data-mz-facet="' + facetKey + '" data-mz-facet-value="' + facetValue[j].split(":")[1] + '" data-mz-purpose="remove" data-mz-action="clearFacet"></i> <label class="'+facetKey+'" style="background:#'+ displayValue +'"><u>' + displayValue + '</u></label></li>';
                     }
                     if (available_facets !== '') {
+                        //console.log(displayValue);
                         var filterOptionList = $("#filterOptionList");
                         filterOptionList.append(available_facets);
+                        // if(facetKey === "tenant~facet-color"){
+                        //     alert("color");
+                        //style="background:" '+ #displayValue +
+                        //     $("#filterOptionList li").addClass("color");
+                        //     $("#filterOptionList li").css("background","#'"+displayValue);
+                        // }
                     }
                     return true;
                 }

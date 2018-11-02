@@ -46,6 +46,7 @@
                 'modules/views-messages',
                 'modules/views-paging',
                 'modules/views-productlists',
+                'vendor/sessionManagement/sessionManagement'
             ],
             exclude: ['jquery'],
         },

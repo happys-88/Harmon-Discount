@@ -33,7 +33,7 @@
                     <div class="mz-l-formfieldgroup">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input id="{{labels.email}}" value="{{model.email|default:user.email}}" type="email" data-mz-login-email placeholder="{{ labels.emailAddress }}"/>
+                            <input  value="{{model.email|default:user.email}}" type="email" data-mz-login-email placeholder="{{ labels.emailAddress }}"/>
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
