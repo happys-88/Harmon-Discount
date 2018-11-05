@@ -39,6 +39,7 @@
                 <span class="mz-pagetitle-note">
                     <a data-placement="left" data-mz-action="lite-registration">{{ labels.registeredCustomer }} {{ labels.logIn }}</a>
                 </span>
+                {% require_script "modules/login-links" %}
             {% endif %}
         </div>
 
