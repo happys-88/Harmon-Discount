@@ -391,7 +391,9 @@ img[data-mztp]{
 			}
 			.mz-productlisting-info{
 				.ml-product-info-wrapper{
-					min-height: 60px; 
+					min-height: 60px;
+					max-height: 60px;
+					overflow-y: hidden; 
 					.mz-productlisting-title{
 						font-size: 14px;
 						color: @textColorGrey; 
@@ -766,6 +768,11 @@ footer{
 .zoomWindow {
 	max-height: 450px !important;
 	//width: 280px !important;
+}
+.mz-category, .mz-searchresults {
+	.zoomWindow {
+	max-height: 374px !important;
+   }
 }
 .modal{
 	&.fade{
