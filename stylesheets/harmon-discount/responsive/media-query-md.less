@@ -59,7 +59,7 @@
 		}
 	}  
 	
-	/********Detail Page********/
+	/**** Detail Page ****/
 	.mz-product{
 		#page-wrapper{
 			#page-content{
@@ -76,5 +76,28 @@
 			}
 		}
 	}
-	/********Detail Page********/
+	/**** Detail Page ****/ 
+
+	/**** Directory Page Column Change ****/
+	#filterOptions {
+	    .mz-facetingform-facet{
+	        &.color {
+	            li {
+	            	margin-right: 6px;   
+	            }
+	        }
+	    }
+	}  
+
+	.mz-productlist{
+		.grid-view{
+			.mz-productlist-item{
+				width: 25%; 
+				&:nth-child(3n+1){
+					clear: none; 
+				}
+			}	
+		}	
+	}  
+
 }
