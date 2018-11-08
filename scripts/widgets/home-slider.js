@@ -16,6 +16,7 @@ require([
                 pager: true,
                 hideControlOnEnd: true,
                 touchEnabled: true,
+                adaptiveHeight: true,
                 onSliderLoad: function () {
                     $(".slider").css("visibility", "visible");
                 }

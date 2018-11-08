@@ -11,6 +11,9 @@ define([
 				scrollTop: position
 			}, 500);
 		}); 
+		$(" .mz-productimages .mz-productimages-thumbs #productpager-Carousel li img").on( "error",function() {
+             $( this ).parentsUntil( "li" ).parent().remove();
+          });
 		GetURLParameter();
 		
 		showPopUp();
