@@ -39,7 +39,9 @@
                 <span class="field-validation-valid" data-valmsg-for="ZipCode" data-valmsg-replace="true"></span>
             </div>
             <div class="bbb-recaptcha">
-                <div class="g-recaptcha" data-sitekey="6LeIa3kUAAAAAEwcWe_ERngbtKMrYkGROG0bIu99"></div>
+                {# <div class="g-recaptcha" data-sitekey="6LeIa3kUAAAAAEwcWe_ERngbtKMrYkGROG0bIu99"></div> #}
+                <div class="g-recaptcha" data-sitekey="6Ldnb3kUAAAAABO_1NeVCy3-SxnDco7sVDZcXsxO" data-callback="recaptchaCallback"></div>
+                <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
             </div>
             <div class="input-group">
                 <button id="entrysubmit" type="submit"  class="btn btn-primary" style="background-color: #82c341">Submit</button>
@@ -77,6 +79,10 @@
             $('#entryform').on('submit', function() {
                 $('#entrysubmit').attr('disabled', 'disabled').html('Please wait...');
             });
+
+            function recaptchaCallback() {
+              $('#hiddenRecaptcha').valid();
+            };
 
             $('.hasDOB').on('click', function() {
                 var parent =  $(this).closest("table");

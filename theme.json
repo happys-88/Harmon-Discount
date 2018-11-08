@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "d075f7f12ea70a81b24389c44cc7ba07dabf793d"
+      "commit": "b885dc397d985f8b1d98b089c688fc9a463ae82d"
     }
   },
   "editors": [
@@ -197,7 +197,7 @@
       "template": "blank-page",
       "title": "Blank Page",
       "userCreatable": true
-    }, 
+    },
     {
       "documentType": "web_page",
       "entityType": "webpage",

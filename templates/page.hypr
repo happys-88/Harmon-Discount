@@ -257,13 +257,11 @@
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times"></i></button>
                 <div class="modal-body clearfix">
-                    {% include "pages/SubscribeSignup" %}
+                    <iframe class="embed-responsive-item" src="https://offers.harmondiscount.com/SignupWidget/dynamic/Harmon20160526" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
     </div>
-
-
 </body>
 {% endblock body-tag %}
 </html> 

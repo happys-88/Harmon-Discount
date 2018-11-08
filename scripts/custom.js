@@ -21,10 +21,7 @@ define([
         function showPopUp() {
             var cookieName = Hypr.getLabel('signUpCookie');
             if(!readCookie(cookieName)) {
-                createCookie(cookieName, '1', 365);
-                // $('body').addClass("modal-open");
-                // $('#newsletterPopup').addClass("in");
-                // $('#newsletterPopup').show();
+                createCookie(cookieName, '1', 365);                
                 $('#newsletterPopup').modal('show');
             }
         }

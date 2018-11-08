@@ -42,6 +42,7 @@ define(
                     $("#emailSignUp").trigger("click");
                 }
             });
+
              $("#emailSignUp").click(function(e) {                 
                 e.preventDefault();
                 if (Hypr.getThemeSetting('enableEmailSubscription')){
@@ -54,6 +55,14 @@ define(
                     } else {
                         $("#emailHelpBlock").text('Please enter a valid email');
                     }
+                    return false;
+               }
+            });
+
+            $("#headerEmailSignUp").click(function(e) {                 
+                e.preventDefault();
+                if (Hypr.getThemeSetting('enableEmailSubscription')){
+                    window.open(Hypr.getThemeSetting('emailSubscriptionUrl'),'hhm2m','height=640,width=960,resizable=yes,scrollbars=yes,status=no,titlebar=no');
                     return false;
                }
             });
