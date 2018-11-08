@@ -14,8 +14,8 @@ define([
                         controls,
                         windowWidth = $(window).width();
                     if (windowWidth >= 480 || windowWidth <= 767) {
-                        minSlides = 4;
-                        maxSlides = 4;
+                        minSlides = 2;
+                        maxSlides = 2;
                         slideMargin = 0;
                         slideWidth = 400;
                         pager = false;
