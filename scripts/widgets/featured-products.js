@@ -1,47 +1,59 @@
-require([
+define([
     'modules/jquery-mozu',
     'bxslider'
 ],
-function ($, bxSlider) { 
-    $('.mz-featured-products .mz-productlist-list').ready(function () {
-        var eachSlide = $(".mz-featured-products .mz-productlist-list").find(".mz-productlist-item"), 
-            minSlides,
-            slideWidth, 
-            windowWidth = $( window ).width();  
-        if(windowWidth <= 767){
-            minSlides = 2;
-            slideWidth = 150;  
-        }else{
-            if(windowWidth >=768 && windowWidth <=1024 ){
-                minSlides = 4;
-                slideWidth = 170; 
-            }
-            else{
-                minSlides = 6;
-                slideWidth = 200;       
-            } 
-            
-        }
-        
-        if(eachSlide.length > 6){  
-           
-                $(".mz-featured-products .mz-productlist-list").bxSlider({
-                    auto: false,
-                    speed: 600,
-                    minSlides: minSlides,
-                    maxSlides: 12,
-                    slideWidth: slideWidth,
-                    moveSlides: 1,
-                    slideMargin: 0,
-                    infiniteLoop: false,
-                    controls: true,
-                    pager: false,
-                    touchEnabled: true,
-                    onSliderLoad: function () {
-                        $(".slider").css("visibility", "visible");
+    function ($, bxSlider) {
+            var slider;
+            var slide = {
+                productCarousel: function () {
+                    var minSlides,
+                        maxSlides,
+                        slideWidth,
+                        slideMargin,
+                        pager,
+                        controls,
+                        windowWidth = $(window).width();
+                    if (windowWidth >= 480 || windowWidth <= 767) {
+                        minSlides = 4;
+                        maxSlides = 4;
+                        slideMargin = 0;
+                        slideWidth = 400;
+                        pager = false;
+                        controls = true;
+
                     }
-                });     
-        }
-       
+                    if (windowWidth > 767) {
+                        minSlides = 6;
+                        maxSlides = 12;
+                        slideWidth = 400;
+                        slideMargin = 0;
+                        pager = false;
+                        controls = true;
+                    }
+                    slider = $(".mz-featured-products .mz-productlist-list").bxSlider({
+                        auto: false,
+                        speed: 600,
+                        minSlides: minSlides,
+                        maxSlides: maxSlides,
+                        slideWidth: slideWidth,
+                        moveSlides: 1,
+                        slideMargin: slideMargin,
+                        pager: pager,
+                        controls: controls,
+                        infiniteLoop: false,
+                        touchEnabled: true,
+                        stopAutoOnClick: true,
+                        preloadImages: "all",
+                        onSliderLoad: function () {
+                            $(".slider").css("visibility", "visible");
+                        }
+                    });
+                    window.slider = slider;
+                }
+            };
+            slide.productCarousel();
+            $(window).resize(function () {
+                slider.destroySlider();
+                slide.productCarousel();
+            });
     });
-});
