@@ -186,10 +186,12 @@ define([
                     window.updateGCRTI();
                 } catch (e) {}
                 if (showGlobalCart) {
+                    if ($(window).width()>767){
                     me.$el.parents('#global-cart').show();
                     setTimeout(function() {
                         me.$el.parents('#global-cart').attr('style', '');
                     }, 5000);
+                }
                 }
             });
         }
