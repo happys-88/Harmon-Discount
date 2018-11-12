@@ -16,6 +16,7 @@
                     {% else %}
                       <div class="mz-sitenav-sub-container">
                         <span class="sub-nav-arrow"></span>
+                        <div class="col-xs-8">
                         <ul class="mz-sitenav-sub">
                           <li class="hide" aria-hidden="true">For Blank</li>
                             {% for sublink in link.items %}
@@ -43,6 +44,15 @@
                               {% endif %}
                             {% endfor %}
                         </ul>
+                        </div>
+                        <div class="col-xs-4">
+                            {% with link.originalId as navNode %}
+                            <div class="mz-sitenav-dropzone">
+                              {% dropzone "mega-menu_{0}"|string_format(navNode) scope="site" %}
+                              <h1>dropzone</h1>
+                            </div>
+                            {% endwith %}
+                        </div>
                       </div>
                     {% endif %}
                      
