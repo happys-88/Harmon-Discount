@@ -29,8 +29,13 @@ define(
             $("#btnFindStore").click(function(e) {
                 e.preventDefault();
                 var zipcode = $.trim($("#footerZipCodeInput").val());
-                zipcode = (zipcode.length === 0 ? "Enter+Zip" : zipcode);
-                window.location.href = window.location.origin + "/store-locator?zipcode=" + zipcode;
+                // zipcode = (zipcode.length === 0 ? "Enter+Zip" : zipcode);
+                if(zipcode.length > 4) {
+                    $('#zipcodeHelpBlock').text('');
+                    window.location.href = window.location.origin + "/store-locator?zipcode=" + zipcode;
+                } else {
+                    $('#zipcodeHelpBlock').text(Hypr.getLabel('zipCodeEmpty'));
+                }
             });
             $("#footerZipCodeInput").keydown(function(e) {
                 if (e.which === 13) {

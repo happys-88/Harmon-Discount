@@ -36,7 +36,7 @@
 									<button id="btnFindStore" class="btn btn-default button_promotional text-uppercase" type="submit">{{ labels.find }}</button>									
 								</span>
 							</div>
-							<span id="zipcodeHelpBlock" class="text-danger hidden">Please enter a valid zipcode.</span>
+							<span id="zipcodeHelpBlock" class="text-danger"></span>
 						</div>
 					</form>					
 				</div>

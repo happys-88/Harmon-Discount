@@ -647,5 +647,6 @@
     "checkoutAsGuestMsg"  :   "You will have the opportunity to register after placing your order.",
 
     "cjEventParam"        : "cjevent",
-    "signUpCookie"        : "popupEnabled"  
+    "signUpCookie"        : "popupEnabled",
+    "zipCodeEmpty"        : "Zipcode is either empty or invalid"
 }
