@@ -24,10 +24,10 @@
                 <a class="mz-scrollnav-link" href="/privacy-policy" name="/privacy-policy">Privacy Policy</a> 
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/terms-conditions" vlaue="/terms-conditions">Terms &amp; Conditions</a>  
+                <a class="mz-scrollnav-link" href="/terms-conditions" name="/terms-conditions">Terms &amp; Conditions</a>  
             </li>
             <li class="mz-scrollnav-item">
-                <a class="mz-scrollnav-link" href="/product-recalls" name="/product-recalls">Product Recalls</a>
+                <a class="mz-scrollnav-link" href="/product-recalls" name="/product-recalls">Product Recalls</a> 
             </li>
         </ul>
     </nav> 
