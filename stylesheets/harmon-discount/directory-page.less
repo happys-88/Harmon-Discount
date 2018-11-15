@@ -12,17 +12,25 @@
                 margin: 0 0 15px;
                 li {
                     display: inline-block;
-                    margin-right: 15px;
+                    margin-right: 8px;
+                    position: relative;
                     i {
                         color: #e20177;
+                        position: absolute;
+                        left: 0;
+                        top: 3px;
                     }
-                }
+                     label{
+                        padding: 0 0 0 15px;
+                        font-weight: 500;
+                     }
+                } 
             }
         }
         .mz-facetingform-facet {
             &.mz-facetingform-facet-hierarchy {
                 &.brand {
-                    height: 250px;
+                    max-height: 250px;  
                     overflow-y: auto;
                     li {
                         input[type=checkbox] {

@@ -62,10 +62,10 @@
 			</div>
 			<div class="col-xs-12 container-copyright">
 				<ul>
-					<li><a href="/site-map" target="_blank">Site Map</a></li>
-					<li><a href="/privacy-policy" target="_blank">Privacy Policy</a></li>
-					<li><a href="/terms-conditions" target="_blank">Terms &amp; Conditions</a></li>
-					<li><a href="/product-recalls" target="_blank">Product Recalls</a></li>
+					<li><a href="/site-map">Site Map</a></li>
+					<li><a href="/privacy-policy">Privacy Policy</a></li>
+					<li><a href="/terms-conditions">Terms &amp; Conditions</a></li>
+					<li><a href="/product-recalls">Product Recalls</a></li> 
 					<li class="copy-text">Copyright {% now Y %} {{ labels.copyWriteText }}</li> 
 				</ul> 
 			</div>
