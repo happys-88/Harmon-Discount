@@ -1,20 +1,9 @@
 define([ 
 	'modules/jquery-mozu',
-	"hyprlive",
-	'vendor/lozad.min'
+	"hyprlive"
 ], function ($, Hypr, lozad ) { 
 	$(document).ready(function() {	
-		var observer = lozad('.lozad', {
-			rootMargin: '10px 0px',
-			 threshold: 0.1
-			// load: function (el) {
-			// 	//el.src = el.dataset.src;
-			// 	el.onload = function () {
-			// 		el.classList.add('fade-in')
-			// 	}
-			// }
-		});
-		observer.observe();
+		
 		//site-nav close
 		$(document).on('click', function (event) { 
 			if ($('nav[id="ml-nav"]').hasClass("in")) {
