@@ -1,8 +1,34 @@
 define([ 
 	'modules/jquery-mozu',
-	"hyprlive"
-], function ($, Hypr ) { 
+	"hyprlive",
+	'vendor/lozad.min'
+], function ($, Hypr, lozad ) { 
 	$(document).ready(function() {	
+		var observer = lozad('.lozad', {
+			rootMargin: '10px 0px',
+			 threshold: 0.1
+			// load: function (el) {
+			// 	//el.src = el.dataset.src;
+			// 	el.onload = function () {
+			// 		el.classList.add('fade-in')
+			// 	}
+			// }
+		});
+		observer.observe();
+		//site-nav close
+		$(document).on('click', function (event) { 
+			if ($('nav[id="ml-nav"]').hasClass("in")) {
+				if ($(event.target).parents("div").hasClass("panel-group")) {
+				} else {
+					$('nav[id="ml-nav"]').removeClass("in");
+					$('button[data-target="#ml-nav"]').addClass("collapsed").attr("aria-expanded", false);
+				}
+			}
+		});
+		$('[data-target="#ml-nav"]').on('click', function (event) {
+			$(".search-icon").removeClass("search-open");
+			$(".mz-search-filed").hide();
+		});
 		//brand
 		$(document).on('click', '.brand-letter a', function () { 
 			var id = $(this).attr("name");
@@ -21,7 +47,7 @@ define([
         function showPopUp() {
             var cookieName = Hypr.getLabel('signUpCookie');
             if(!readCookie(cookieName)) {
-                createCookie(cookieName, '1', 365);                
+               // createCookie(cookieName, '1', 365);                
                 $('#newsletterPopup').modal('show');
             }
         }
