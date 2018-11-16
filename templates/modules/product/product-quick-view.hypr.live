@@ -30,8 +30,13 @@
                                                 
                                                 {% with model|get_product_attribute("tenant~brand") as brandName %}
                                                     <div class="mz-view-all-brand">
-                                                       <a href="/shop-by-brand/c/1270">{{ labels.viewAll   }}</a><a href='{% make_url "category" brandCat %}'>{{   brandName.values|first|prop("value") }}</a>
-                                                    </div>
+                                                       <a href="/shop-by-brand/c/1270">{{ labels.viewAll   }}</a>
+                                                       {% for brandcategory in model.categories %}
+                                                         {% if brandcategory.parentCategoryId=="1270" %}
+                                                            <a href='{% make_url "category" brandcategory %}'>{{   brandName.values|first|prop("value") }}</a>
+                                                         {% endif %}
+                                                       {% endfor %}
+                                                    </div >
                                                 {% endwith %}
                                                     
                                                 {% comment %} <div class="row">
