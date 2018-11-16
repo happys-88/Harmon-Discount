@@ -8,7 +8,7 @@
                         </a>                        
                         {% endblock product-image %}
                     </div>
-                    <span class="visible-xs">{{model.content.productName|safe}}</span>
+                    {% comment %} <span class="visible-xs">{{model.content.productName|safe}}</span> {% endcomment %}
                     <!--Color Swatch-->
                     {% for option in model.options %}
                         {% if option.attributeFQN=="tenant~color" and option.values.length!=0 %} 
@@ -24,7 +24,7 @@
                 </div>
                 <div class="mz-productlisting-info mz-sold-out-blur">
                     <div class="ml-product-info-wrapper">
-                        <span class="hidden-xs">{{model.content.productName|safe}}</a>
+                        <span class="">{{model.content.productName|safe}}</a>
                         {% if model.content.productShortDescription and themeSettings.listProductShortDesc %}
                         <p class="mz-productlisting-shortdesc">{{ model.content.productShortDescription|truncatewords(themeSettings.maxProductSummaryWords)|safe }}</p>
                         {% endif %}
