@@ -24,6 +24,14 @@ define([
 					$('button[data-target="#ml-nav"]').addClass("collapsed").attr("aria-expanded", false);
 				}
 			}
+		
+		});
+		$('#mz-logged-in-notice').on('click', function () {
+			$('nav[id="ml-nav"]').removeClass("in");
+			$('button[data-target="#ml-nav"]').addClass("collapsed").attr("aria-expanded", false);
+			$(".search-icon").removeClass("search-open");
+			$(".mz-search-filed").hide();
+
 		});
 		$('[data-target="#ml-nav"]').on('click', function (event) {
 			$(".search-icon").removeClass("search-open");
