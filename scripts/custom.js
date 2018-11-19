@@ -1,7 +1,6 @@
 define([ 
 	'modules/jquery-mozu',
-	"hyprlive",
-	'vendor/lozad.min'
+	"hyprlive"
 ], function ($, Hypr) { 
 	$(document).ready(function() {	
 		//dropzone empty
