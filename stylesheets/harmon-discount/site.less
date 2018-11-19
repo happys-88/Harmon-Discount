@@ -430,12 +430,27 @@ img[data-mztp]{
 		margin-bottom: 60px;
 		.mz-productlist{
 			.grid-view{
+				&:first-child {
+						margin-left: -5px;
+					}
 				.mz-productlist-item,
 				.mz-productlist-item:nth-child(2n+1),
 				.mz-productlist-item:nth-child(3n+1){
 					clear: none;
 
-				} 
+				}
+				.mz-productlist-item{
+					.mz-productlisting{
+						.product-image-swatch-wrapper{
+							.mz-productlisting-image{
+								min-height: 130px;
+								img{
+									max-height: 110px;
+								}
+							}
+						}
+					}
+				}
 			}
 			.mz-product-badge,
 			.quick-view-btn{ 
