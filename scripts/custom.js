@@ -1,7 +1,7 @@
 define([ 
 	'modules/jquery-mozu',
 	"hyprlive"
-], function ($, Hypr) { 
+], function ($, Hypr ) { 
 	$(document).ready(function() {	
 		//dropzone empty
 		$('.col-xs-4 .mz-sitenav-dropzone .mz-drop-zone').each(function (index) {
@@ -79,7 +79,8 @@ define([
         });
         
         $(document).on('click','.mz-mobile-tabs li', function(){
-		    $(".mz-mobile-tabs").find(".active").prev().addClass("active");
+			$(this).addClass("active");
+		    $(this).find(".active").prev().addClass("active");
 		});
 
 
