@@ -49,7 +49,6 @@
                             {% with link.originalId as navNode %}
                             <div class="mz-sitenav-dropzone">
                               {% dropzone "mega-menu_{0}"|string_format(navNode) scope="site" %}
-                              <h1>dropzone</h1>
                             </div>
                             {% endwith %}
                         </div>
