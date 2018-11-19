@@ -152,7 +152,5 @@
 {% endif %}
 
 <!-- WebCollage code snippet. Place the <div> tag as per the UI requirement -->
-<div id="webcollage" value="{{ model.productCode }}">
-    
-</div>
+
   

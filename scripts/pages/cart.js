@@ -60,21 +60,27 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
                 onImageLoadError.checkImage(this);
             });
         },
-        updateQuantity: function(e) {
+        updateQuantity: _.debounce(function(e) {
                 var flag = true;
                 var $qField = $(e.currentTarget),
                     newQuantity = parseInt($qField.attr("value"), 10),
                     id = $qField.data('mz-cart-item'),
                     item = this.model.get("items").get(id);
+            
                     if ($qField.attr("id")==="plus"){
                         newQuantity = newQuantity+1;
+                        console.log(newQuantity);
                     }else{
+                        if (newQuantity > 0) {
                         newQuantity = newQuantity -1;
                     }
+                }
+                
+            console.log(newQuantity);
+
                 if (newQuantity !== item.get('quantity')) {
                     var skuID = item.attributes.product.attributes.mfgPartNumber;
                     var limitAttribute = _.findWhere(item.attributes.product.get('properties'), { "attributeFQN": "tenant~limitPerOrder" });
-                    console.log(limitAttribute);
                     var itemQuantity = item.attributes.quantity;
                     if (limitAttribute) {
                         var limitperorder = parseInt(JSON.parse(limitAttribute.values[0].stringValue)[skuID], 10);
@@ -90,6 +96,9 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
                             }
                         } else {
                             if (item) {
+                                if (newQuantity<=0){
+                                    newQuantity=1;
+                                }
                                 item.set('quantity', newQuantity);
                                 item.saveQuantity();
                                 this.render();
@@ -97,6 +106,9 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
                         }
                     } else {
                         if (item) {
+                            if (newQuantity <= 0) {
+                                newQuantity = 1;
+                            }
                             item.set('quantity', newQuantity);
                             item.saveQuantity();
                             this.render();
@@ -107,11 +119,12 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
                 } else {
                     $("[data-mz-cart-item=" + item.get('id') + "]").blur();
                 }
-        },
+        }, 400),
         checkNumeric: function(e) {
             e.target.value = e.target.value.replace(/[^\d]/g, '');
         },
         onQuantityUpdateFailed: function(model, oldQuantity) {
+            console.log("called");
             var field = this.$('[data-mz-cart-item=' + model.get('id') + ']');
             if (field) {
                 field.val(oldQuantity);

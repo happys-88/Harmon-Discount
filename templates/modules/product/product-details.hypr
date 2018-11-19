@@ -74,6 +74,13 @@
                 <div id="product-detail" class="product-detail mz-productdetail mz-l-stack">
                     {% include "modules/product/product-detail" %}
                 </div>
+                <!-- WebCollage code snippet. Place the <div> tag as per the UI requirement -->
+                <div id="webcollage" value="{{ model.productCode }}">
+                <div id="wc-power-page"></div>
+                    {% block webcollage-loader %}
+                    <script>Webcollage.loadProductContent('harmondiscount', '{{ model.productCode }}', { "power-page": { autoPlayAndStop: true } });</script>
+                    {% endblock webcollage-loader %}
+                </div>
             </div>
         </div>
     </div>

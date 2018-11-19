@@ -873,9 +873,9 @@
         });
 
         var prod = product.get('productCode');
-        var htmlData = '<div id="wc-power-page"></div>';
-        htmlData = htmlData+'<script>Webcollage.loadProductContent("harmondiscount", "'+prod+'", {"power-page":{autoPlayAndStop: true}});</script>';
-        $('#webcollage').html(htmlData);
+        // var htmlData = '<div id="wc-power-page"></div>';
+        // htmlData = htmlData+'<script>Webcollage.loadProductContent("harmondiscount", "'+prod+'", {"power-page":{autoPlayAndStop: true}});</script>';
+        // $('#webcollage').html(htmlData);
 
     }).bind("touchstart", function(e) {
         var container = $(".ipad > div:visible");
