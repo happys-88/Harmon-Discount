@@ -69,15 +69,12 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
             
                     if ($qField.attr("id")==="plus"){
                         newQuantity = newQuantity+1;
-                        console.log(newQuantity);
+
                     }else{
                         if (newQuantity > 0) {
                         newQuantity = newQuantity -1;
                     }
                 }
-                
-            console.log(newQuantity);
-
                 if (newQuantity !== item.get('quantity')) {
                     var skuID = item.attributes.product.attributes.mfgPartNumber;
                     var limitAttribute = _.findWhere(item.attributes.product.get('properties'), { "attributeFQN": "tenant~limitPerOrder" });
@@ -124,7 +121,6 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
             e.target.value = e.target.value.replace(/[^\d]/g, '');
         },
         onQuantityUpdateFailed: function(model, oldQuantity) {
-            console.log("called");
             var field = this.$('[data-mz-cart-item=' + model.get('id') + ']');
             if (field) {
                 field.val(oldQuantity);
