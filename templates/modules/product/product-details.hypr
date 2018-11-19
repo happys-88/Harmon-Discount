@@ -32,7 +32,7 @@
                             {% for brandCat in model.categories %}  
                                 {% if brandCat.content.name == {{ brandName.values|first|prop("value") }} %}
                                     <div class="col-xs-12 mz-view-all-brand">
-                                        <a href="/shop-by-brand/c/1270">{{ labels.viewAll }}</a> <a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
+                                        <a href="/shop-by-brand/c/1270">{{ labels.viewAll }}</a> &nbsp &nbsp<a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
                                     </div>
                                     {% endif %}
                                 {% endfor %}
