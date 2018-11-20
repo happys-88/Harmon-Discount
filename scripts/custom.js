@@ -29,9 +29,6 @@ define([
 				$(".mz-hamburger-icon.mz-search-icon .search-icon").removeClass("search-open");
 
 			}
-			
-			
-
 		});
 		$('[data-target="#ml-nav"]').on('click', function (event) {
 			if ($(".mz-hamburger-icon.mz-search-icon .search-icon").hasClass("search-open")) {
@@ -102,7 +99,7 @@ define([
 				}
 			  }
 			});
-		$(document).on('click','.mobile h4', function(e){ 
+		$(document).on('touchend','.mobile h4', function(e){ 
 			var target = $(e.target);
 			if (target.is(".open")) {
 				allPanels.slideUp();
