@@ -1,7 +1,7 @@
 define([ 
 	'modules/jquery-mozu',
 	"hyprlive"
-], function ($, Hypr ) { 
+], function ($, Hypr) { 
 	$(document).ready(function() {
 		//dropzone empty
 		$('.col-xs-4 .mz-sitenav-dropzone .mz-drop-zone').each(function (index) {
@@ -29,9 +29,6 @@ define([
 				$(".mz-hamburger-icon.mz-search-icon .search-icon").removeClass("search-open");
 
 			}
-			
-			
-
 		});
 		$('[data-target="#ml-nav"]').on('click', function (event) {
 			if ($(".mz-hamburger-icon.mz-search-icon .search-icon").hasClass("search-open")) {
