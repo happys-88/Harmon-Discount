@@ -2,7 +2,7 @@ define([
 	'modules/jquery-mozu',
 	"hyprlive"
 ], function ($, Hypr ) { 
-	$(document).ready(function() {	
+	$(document).ready(function() {
 		//dropzone empty
 		$('.col-xs-4 .mz-sitenav-dropzone .mz-drop-zone').each(function (index) {
 			if ($(this).is(':empty')) {
@@ -57,7 +57,7 @@ define([
         function showPopUp() {
             var cookieName = Hypr.getLabel('signUpCookie');
             if(!readCookie(cookieName)) {
-               // createCookie(cookieName, '1', 365);                
+                createCookie(cookieName, '1', 365);                
                 $('#newsletterPopup').modal('show');
             }
         }
