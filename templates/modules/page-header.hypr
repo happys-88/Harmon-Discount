@@ -37,6 +37,9 @@
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-4 mz-header-global-cart-wrapper">
+                    {% for thresholdMsg in model.discountThresholdMessages %}
+                      <span class="discount">{{ thresholdMsg.message }} </span> 
+                    {% endfor %} 
                     <ul class="mz-utilitynav-list{% if not user.isAnonymous %} logged-in{%endif%}">
                     {% if user.isAuthenticated %}
                        {% comment %} {% if pageData.customer.status == "registered" %} {% endcomment %}
@@ -92,7 +95,7 @@
                                 <a data-type="button" class="login-link-text" data-toggle="modal" data-mz-action="lite-registration" role="button"><i class="fa fa-user"></i>{{ labels.logIn }}</a> 
                             </li> 
                         {% endif %}
-                        <li class="mz-utilitynav-item global-cart"> 
+                        <li class="mz-utilitynav-item global-cart">
                             {% block global-cart-container %}
                                 {% include "modules/page-header/global-cart-container" %}
                             {% endblock global-cart-container %}      
