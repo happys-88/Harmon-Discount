@@ -1,7 +1,7 @@
 define([ 
 	'modules/jquery-mozu',
 	"hyprlive"
-], function ($, Hypr ) { 
+], function ($, Hypr) { 
 	$(document).ready(function() {	
 		//dropzone empty
 		$('.col-xs-4 .mz-sitenav-dropzone .mz-drop-zone').each(function (index) {
@@ -99,7 +99,7 @@ define([
 				}
 			  }
 			});
-		$(document).on('touchend','.mobile h4', function(e){ 
+		$(document).on('click','.mobile h4', function(e){ 
 			var target = $(e.target);
 			if (target.is(".open")) {
 				allPanels.slideUp();
