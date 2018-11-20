@@ -92,9 +92,10 @@
         {{ labels.storePickupAt|string_format(item.fulfillmentLocationName)|safe }}
     </span>
     {% endif %}
+    {% comment %}
      <div class="mz-carttable-item-qty mz-cart-qty-box visible-xs mz-qty-xs-align">              
      <input aria-label="{{labels.itemQuantity}}{{forloop.counter0}}" class="mz-carttable-qty-field" type="number" {% if model.isLoading %}disabled="disabled"{% endif %} data-mz-cart-item="{{ item.id }}" data-mz-value="quantity" value="{{ item.quantity }}" min="1"/>
-      {% comment %}
+      
      <div class="mz-productdetail-conversion-controls">
         <div class="qty-block">
             <div class="qty-counter" id="minus" data-mz-qty-minus role="button"><i class="fa fa-minus"  aria-hidden="true"></i></div>
@@ -102,16 +103,17 @@
             <div class="qty-counter" id="plus" data-mz-qty-plus role="button"><i class="fa fa-plus" aria-hidden="true"></i></div>
         </div>
      </div>
-     {% endcomment %}
+     
 
       <a href="javascript:;" data-mz-action="removeItem" data-mz-cart-item="{{ item.id }}" class="btn-link">{{ labels.remove }}</a>
     </div>
+    {% endcomment %}
     <div class="mz-carttable-validation-msg visible-xs mz-qty-xs-align"><span class="mz-validationmessage" data-mz-validationmessage-for="quantity" id="{{ item.id }}"></span></div>
   </div>
 </div>
 
 
-<div class="col-xs-5 col-sm-3 cart-item-qty hidden-xs">  
+<div class="col-xs-8 col-sm-3 cart-item-qty">  
   <div class="mz-carttable-item-qty mz-cart-qty-box">            
     {% comment %}<input aria-label="{{labels.itemQuantity}}" class="mz-carttable-qty-field text-center" type="number" {% if model.isLoading %}disabled="disabled"{% endif %} data-mz-cart-item="{{ item.id }}" data-mz-value="quantity" value="{{ item.quantity }}" min="1"/>{% endcomment %}
     <div class="mz-productdetail-conversion-controls">
