@@ -72,7 +72,9 @@
        {% endif %}
        {% endif %}
     {% set_var subbrand=firstLetter %}
-    <div class="brands col-sm-3 col-xs-6"><a href="{{subbrands.url}}">{{ subbrands.name }}</a></div>
+    {% if subbrands.count!= 0%}
+       <div class="brands col-sm-3 col-xs-6"><a href="{{subbrands.url}}">{{ subbrands.name }}</a></div>
+    {% endif %}
    
 {% endwith %}  
 {% endfor %}
