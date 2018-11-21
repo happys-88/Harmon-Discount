@@ -4092,13 +4092,27 @@ footer {
         }
     }
 }
+.linkwrapper{
+    column-width: auto;
+    column-gap: 20px;
+    width: 100%;
+    column-count: 3;
+        .single-sitemap-item-wrapper {
+                float: none; 
+                width: 100%;
+                display:grid;
+                grid-gap: 5px;
+        }
+}
 .single-sitemap-item-wrapper {
     div {
         >a {
-            color: @colorLighterGray;
-            text-decoration: underline;
+            color: #0a0a0a;
+          //  text-decoration: underline;
+            line-height: 27px;
+            font-size: 16px;
             &:visited {
-                color: @colorLighterGray;
+                color: #0a0a0a;
             }
             &:hover {
                 color: @textColor;
