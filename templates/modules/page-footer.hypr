@@ -42,7 +42,7 @@
 				</div>
 				<div class="col-xs-12 container-menu">
 					<div class="row container-links">
-						<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="col-md-3 col-sm-6 col-xs-12 mz-contact-open">
 							<h4><a href="/contact-us">Contact Us</a></h4>
 							<ul>
 	    						<li><a href="/">(866)427-6661</a></li> 
