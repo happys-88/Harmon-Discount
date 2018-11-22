@@ -37,9 +37,12 @@
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-4 mz-header-global-cart-wrapper">
-                    {% for thresholdMsg in model.discountThresholdMessages %}
-                      <span class="discount">{{ thresholdMsg.message }} </span> 
-                    {% endfor %} 
+                    {% require_script "modules/page-header/page-header" %}
+
+
+                       <div id="thresholdMsg"></div>
+
+
                     <ul class="mz-utilitynav-list{% if not user.isAnonymous %} logged-in{%endif%}">
                     {% if user.isAuthenticated %}
                        {% comment %} {% if pageData.customer.status == "registered" %} {% endcomment %}

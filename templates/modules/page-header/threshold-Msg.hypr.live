@@ -1,0 +1,5 @@
+ <div class="thresholdMsg-header">
+ 	{% for thresholdMsg in model.discountThresholdMessages %}
+           <span class="discount">{{ thresholdMsg.message }} </span> 
+    {% endfor %} 
+</div>
