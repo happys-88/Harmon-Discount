@@ -16,7 +16,6 @@ define([
     'modules/category/infinite-scroller',
     'modules/general-functions'
 ], function(Backbone, $, _, HyprLiveContext, UrlDispatcher, IntentEmitter, getPartialView, colorSwatch, blockUiLoader, InfiniteScroller, generalFunctions) {
-
     function factory(conf) {
 
         var _$body = conf.$body;
@@ -27,7 +26,7 @@ define([
         // on page load get facet href and append facets
         var path = getFacet();
         if (path !== "") {
-            updateFacetFilter(path);
+           // updateFacetFilter(path);
         }
 
         //get facets from the href
@@ -37,57 +36,57 @@ define([
         }
 
         //create facets and append them in list
-        function updateFacetFilter(path) {
+        // function updateFacetFilter(path) {
 
-            if (path.indexOf("facetValueFilter") > -1) {
-                var pathArray = path.substring(1).split("&");
-                var facetValue = "";
-                for (var i = 0; i < pathArray.length; i++) {
-                    var currentElmnt = pathArray[i].split("=");
-                    if (currentElmnt[0] === "facetValueFilter") {
-                        facetValue = currentElmnt[1];
-                        break;
-                    }
-                }
-                if (facetValue !== "") {
-                    facetValue = decodeURIComponent(facetValue).split(",");
-                    var available_facets = "";
-                    for (var j = 0; j < facetValue.length; j++) {
-                        var facetKey = facetValue[j].split(":")[0];
-                        var facetVal = facetValue[j] !== "" ? facetValue[j].split(":")[1].replace(/\+/g, ' ') : "";
-                        if (facetVal === "") {
-                            continue;
-                        }
-                        if (facetVal.indexOf("&#38") != facetVal.indexOf("&#38;")) {
-                            facetVal = facetVal.replace(/\&#38/g, '&amp;');
-                        }
-                        var displayValue = facetVal;
-                        if (facetKey === 'price') {
-                            if (displayValue.indexOf("* TO")) {
-                                displayValue = displayValue.replace("* TO ", "");
-                                displayValue += " and under";
-                            } else if (displayValue.indexOf("TO *")) {
-                                displayValue = displayValue.replace(" TO *", "+");
-                            }
-                            displayValue = displayValue.replace("[", "$").replace("]", "").replace(/to/gi, "-");
-                        }
-                        available_facets += '<li ><i class="fa fa-times-circle remove-facet" data-mz-facet="' + facetKey + '" data-mz-facet-value="' + facetValue[j].split(":")[1] + '" data-mz-purpose="remove" data-mz-action="clearFacet"></i> <label class="'+facetKey+'" style="background:#'+ displayValue +'"><u>' + displayValue + '</u></label></li>';
-                    }
-                    if (available_facets !== '') {
-                        //console.log(displayValue);
-                        var filterOptionList = $("#filterOptionList");
-                        filterOptionList.append(available_facets);
-                        // if(facetKey === "tenant~facet-color"){
-                        //     alert("color");
-                        //style="background:" '+ #displayValue +
-                        //     $("#filterOptionList li").addClass("color");
-                        //     $("#filterOptionList li").css("background","#'"+displayValue);
-                        // }
-                    }
-                    return true;
-                }
-            }
-        }
+        //     if (path.indexOf("facetValueFilter") > -1) {
+        //         var pathArray = path.substring(1).split("&");
+        //         var facetValue = "";
+        //         for (var i = 0; i < pathArray.length; i++) {
+        //             var currentElmnt = pathArray[i].split("=");
+        //             if (currentElmnt[0] === "facetValueFilter") {
+        //                 facetValue = currentElmnt[1];
+        //                 break;
+        //             }
+        //         }
+        //         if (facetValue !== "") {
+        //             facetValue = decodeURIComponent(facetValue).split(",");
+        //             var available_facets = "";
+        //             for (var j = 0; j < facetValue.length; j++) {
+        //                 var facetKey = facetValue[j].split(":")[0];
+        //                 var facetVal = facetValue[j] !== "" ? facetValue[j].split(":")[1].replace(/\+/g, ' ') : "";
+        //                 if (facetVal === "") {
+        //                     continue;
+        //                 }
+        //                 if (facetVal.indexOf("&#38") != facetVal.indexOf("&#38;")) {
+        //                     facetVal = facetVal.replace(/\&#38/g, '&amp;');
+        //                 }
+        //                 var displayValue = facetVal;
+        //                 if (facetKey === 'price') {
+        //                     if (displayValue.indexOf("* TO")) {
+        //                         displayValue = displayValue.replace("* TO ", "");
+        //                         displayValue += " and under";
+        //                     } else if (displayValue.indexOf("TO *")) {
+        //                         displayValue = displayValue.replace(" TO *", "+");
+        //                     }
+        //                     displayValue = displayValue.replace("[", "$").replace("]", "").replace(/to/gi, "-");
+        //                 }
+        //                 available_facets += '<li ><i class="fa fa-times-circle remove-facet" data-mz-facet="' + facetKey + '" data-mz-facet-value="' + facetValue[j].split(":")[1] + '" data-mz-purpose="remove" data-mz-action="clearFacet"></i> <label class="'+facetKey+'" style="background:#'+ displayValue +'"><u>' + displayValue + '</u></label></li>';
+        //             }
+        //             if (available_facets !== '') {
+        //                 //console.log(displayValue);
+        //                // var filterOptionList = $("#filterOptionList");
+        //                // filterOptionList.append(available_facets);
+        //                 // if(facetKey === "tenant~facet-color"){
+        //                 //     alert("color");
+        //                 //style="background:" '+ #displayValue +
+        //                 //     $("#filterOptionList li").addClass("color");
+        //                 //     $("#filterOptionList li").css("background","#'"+displayValue);
+        //                 // }
+        //             }
+        //             return true;
+        //         }
+        //     }
+        // }
 
         function updateUi(response) { 
             var url = response.canonicalUrl;
@@ -103,7 +102,7 @@ define([
             }
             //add facet filter to list if any
             var path = getFacet();
-            updateFacetFilter(path);
+            //updateFacetFilter(path);
             //check default view
             if ($.cookie("currentView") === "listView") {
                 $("#listView").trigger("click");

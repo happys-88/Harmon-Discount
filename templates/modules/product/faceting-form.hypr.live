@@ -10,7 +10,19 @@
                 {% endif %}
             </div>
             {% if pageContext.search.facets %}
-                <ul id="filterOptionList" class="filer-options"></ul>
+               <ul id="filterOptionList" class="filer-options">
+                {% for facet in model.facets %}
+                    {% if facet.values and facet.facetType != "Hierarchy" %}
+                        {% for fval in facet.values %}
+                            {% if fval.isApplied %}
+                            <li>
+                                <i class="fa fa-times-circle remove-facet"  data-mz-facet="{{ facet.field }}" data-mz-facet-value="{{ fval.value }}" data-mz-purpose="remove" data-mz-action="clearFacet"></i> <label class="{{ facet.field }}" for="{{facet.field|slugify }}_{{ fval.value|slugify }}" {% if facet.label == 'Color' %}style="background:#{{fval.value}}" title="{{ fval.label }}"{% endif %} ><u>{{ fval.label }}</u></label>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+                </ul>
             {% endif %}
         </div>
         <div id="filterOptions">
