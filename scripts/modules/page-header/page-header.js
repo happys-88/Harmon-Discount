@@ -12,7 +12,7 @@ define([
             var product = new ProductModels.Product(res);
             var Quickview = new quickview({
             model: product,
-            el: $('#thresholdMsg')
+                el: $('.thresholdmsg')
             });
             Quickview.render();
         });

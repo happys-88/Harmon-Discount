@@ -180,7 +180,7 @@
             {% block login-slider %}
                 {% include "modules/login/login" %}            
             {% endblock login-slider %}
-            
+            <div class="col-xs-12 thresholdmsg visible-xs"></div>
             <div id="home-promo-wrapper" class="container-fluid hidden-sm">
                 <div class="row" id="home-promo-below-navigation">
                     <div class="col-xs-12">

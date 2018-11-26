@@ -7,8 +7,6 @@ define(['modules/api',
         'modules/preserve-element-through-render'
     ],
     function(api, Backbone, _, $, HyprLiveContext, Hypr, preserveElement) {
-        alert("V2");
-        console.log("V2");
         var orderDetails = require.mozuData('checkout');
         var orderID = orderDetails.id;
         var categorydetailsurl = '/api/commerce/orders/' + orderID;

@@ -7,6 +7,7 @@
     </div>
     <div class="container">
         <div class="row">
+         <div class="col-xs-12 thresholdmsg hidden-xs"></div>
             <div class="mz-header-content">
                 <div class="col-xs-4 mz-hamburger-icon mz-search-icon visible-xs">
                     <div class="mz-utilitynav-item navbar-collapse-control">
@@ -38,11 +39,6 @@
                 </div>
                 <div class="col-sm-3 col-xs-4 mz-header-global-cart-wrapper">
                     {% require_script "modules/page-header/page-header" %}
-
-
-                       <div id="thresholdMsg"></div>
-
-
                     <ul class="mz-utilitynav-list{% if not user.isAnonymous %} logged-in{%endif%}">
                     {% if user.isAuthenticated %}
                        {% comment %} {% if pageData.customer.status == "registered" %} {% endcomment %}

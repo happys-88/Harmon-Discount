@@ -23,10 +23,14 @@
             {% if model.fulfillmentInfo.fulfillmentContact %}
             <dt>{{ labels.shippedTo }}</dt>
             <dd>{{ model.fulfillmentInfo.fulfillmentContact.firstName }} {{ model.fulfillmentInfo.fulfillmentContact.lastNameOrSurname }}</dd>
+            
             {% endif %}
             {% endblock order-shipped-to %}
         </dl>
-        <a href="javascript:void(0);" onclick="window.open('/print-order#{{ model.id }}','{{ model.id }}','height=640,width=960');return false;">Print Order</a>
+        <div class="print-order">
+            <a href="javascript:void(0);" onclick="window.open('/print-order#{{ model.id }}','{{ model.id }}','height=640,width=960');return false;">Print Order</a>
+        </div>
+       
 
         {% if model.packages %}
             {% for pkg in model.packages %}

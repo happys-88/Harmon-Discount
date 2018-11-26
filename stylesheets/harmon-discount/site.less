@@ -291,7 +291,7 @@ img[data-mztp]{
 						} 	
 					} 
 					&.global-cart{ 
-						margin-left: 50px;
+						margin-left: 40px;
 						&:hover{
 							#global-cart{
 								display: block; 
@@ -301,7 +301,7 @@ img[data-mztp]{
 							float: left;
 							font-size: 12px;
 							font-weight: 600;
-							margin: 8px 0 0 20px;  
+							margin: 8px 10px 0 20px;  
 						}  
 					}
 					.ml-header-global-cart-count{
@@ -868,6 +868,19 @@ footer{
 				display:none;
 			}
 	}
+}
+.thresholdmsg{
+		right: 0;
+		z-index: 9;
+		padding: 3px 10px;
+		.thresholdMsg-header {
+			font-size: 12px;
+			font-weight: 600;
+		}	
+}
+.thresholdmsg:empty{
+	z-index: 0;
+	display: none!important;
 }
 
 
