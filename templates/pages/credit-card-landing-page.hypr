@@ -30,19 +30,19 @@
                 <div class="col-xs-12 mz-l-card-reward-text">rewards run in the family</div>
                 <div class="col-xs-12 mz-l-card-reward-logo">
                     <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
-                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-1.jpg" alt="Harmon Face Values Mastercard credit card">
+                        <img src="{% make_url 'cdn' '/cms/files/reward-logo-1.png' %}" alt="reward-logo-1.png">   
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
-                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-2.jpg" alt="Harmon Face Values Mastercard credit card">
+                        <img src="{% make_url 'cdn' '/cms/files/reward-logo-2.png' %}" alt="reward-logo-2.png">
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
-                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-3.jpg" alt="Harmon Face Values Mastercard credit card">
+                        <img src="{% make_url 'cdn' '/cms/files/reward-logo-3.png' %}" alt="reward-logo-3.png">
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-6 brand-img">
-                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-4.jpg" alt="Harmon Face Values Mastercard credit card">
+                        <img src="{% make_url 'cdn' '/cms/files/reward-logo-4.png' %}" alt="reward-logo-4.png">
                     </div>
                     <div class="col-md-2 col-sm-2 col-xs-12 brand-img">
-                        <img src="http://cdn-sb.mozu.com/25276-m1/cms/files/cc-5.jpg" alt="Harmon Face Values Mastercard credit card">
+                        <img src="{% make_url 'cdn' '/cms/files/reward-logo-5.png' %}" alt="reward-logo-5.png"> 
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="mz-l-creditcard-final-text">
+                <div class="mz-l-creditcard-final-text"> 
                     The Harmon Face Values Mastercard® credit card is issued by Comenity Capital Bank, pursuant to a license from Mastercard® International Incorporated. Mastercard and the Mastercard Brand Mark are registered trademarks of Mastercard International Incorporated.<br><br>1 Subject to credit approval and availability. Exclusions apply, see welcome kit insert for full details.
                     2 Reward Certificates are issued in $10 increments with your billing statement. Restrictions and exclusions apply, see Reward 
                     Certificate for details. The Harmon Face Values Rewards Program is provided by Bed Bath &amp; Beyond Inc., which is solely responsible
