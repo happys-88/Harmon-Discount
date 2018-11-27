@@ -11,8 +11,6 @@ define([
                 templateName: 'modules/page-header/threshold-Msg'          
             });
             api.request("GET", "/api/commerce/carts/current").then(function(res) {
-
-                console.log("response");
                 var product = new ProductModels.Product(res);
                 var Quickview = new quickview({
                 model: product,
