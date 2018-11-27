@@ -6,8 +6,9 @@ define([
     'underscore',
     "session-management",
     "modules/on-image-load-error",
-    'modules/block-ui'
-], function ($, Backbone, Api, Hypr, _, sessionManagement, onImageLoadError, blockUiLoader) {
+    'modules/block-ui',
+    'modules/page-header/page-header'
+], function ($, Backbone, Api, Hypr, _, sessionManagement, onImageLoadError, blockUiLoader, ThresholdMsg) {
     if (require.mozuData('user').isAuthenticated) {
             $(window).sessionManagement(Hypr.getThemeSetting('sessionTimeout'), function () {
                 window.location.href = '/logout';
@@ -29,6 +30,7 @@ define([
             $("#global-cart img").on("error", function() {
                 onImageLoadError.checkImage(this);
             });
+            ThresholdMsg.update();
         },
         openLiteRegistration: function() {
             $(".second-tab").show();

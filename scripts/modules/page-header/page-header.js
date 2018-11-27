@@ -5,17 +5,23 @@ define([
     'modules/models-product'
 
 ], function($, api, Backbone, ProductModels) { 
+    var ThresholdMsg = { 
+        update: function() {
            var quickview = Backbone.MozuView.extend({
                 templateName: 'modules/page-header/threshold-Msg'          
             });
-     api.request("GET", "/api/commerce/carts/current").then(function(res) {
-            var product = new ProductModels.Product(res);
-            var Quickview = new quickview({
-            model: product,
-                el: $('.thresholdmsg')
+            api.request("GET", "/api/commerce/carts/current").then(function(res) {
+
+                console.log("response");
+                var product = new ProductModels.Product(res);
+                var Quickview = new quickview({
+                model: product,
+                    el: $('.thresholdmsg')
+                });
+                Quickview.render();
             });
-            Quickview.render();
-        });
-    
-    });
+        }
+    };
+    return ThresholdMsg;
+});
 
