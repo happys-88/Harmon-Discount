@@ -4,12 +4,12 @@ define([
 ], function ($, Hypr) { 
 	$(document).ready(function() {
 		//dropzone empty
-		$('.col-xs-4 .mz-sitenav-dropzone .mz-drop-zone').each(function (index) {
-			if ($(this).is(':empty')) {
-				$(this).parent().parent().prev().removeClass("col-xs-8").addClass("col-xs-12");
-				$(this).parent().parent().remove();
-			}
-		});
+		// $('.col-xs-4 .mz-sitenav-dropzone .mz-drop-zone').each(function (index) {
+		// 	if ($(this).is(':empty')) {
+		// 		$(this).parent().parent().prev().removeClass("col-xs-8").addClass("col-xs-12");
+		// 		$(this).parent().parent().remove();
+		// 	}
+		// });
 		//site-nav close
 		$(document).on('click', function (event) { 
 			if ($('nav[id="ml-nav"]').hasClass("in")) {
