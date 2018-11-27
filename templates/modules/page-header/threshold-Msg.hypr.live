@@ -1,5 +1,7 @@
- <div class="thresholdMsg-header">
+ {% if model.discountThresholdMessages.length > 0 %}
+ <div class="thresholdMsg-header text-right">
  	{% for thresholdMsg in model.discountThresholdMessages %}
            <span class="discount">{{ thresholdMsg.message }} </span> 
     {% endfor %} 
 </div>
+{% endif %}
