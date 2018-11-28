@@ -125,6 +125,28 @@
                         e.preventDefault();
                     }
                 });
+
+
+                $("#search-again").keypress(function(e) {
+                    if(e.which == 13) {
+                      $('#search-again-box .mz-searchbox-button').click();
+                      return false;
+                     }
+                 });
+
+                $('.mz-searchbox-button').on('click', function (e) {
+
+                    var searchVal = $('#search-again').val();
+                    if (searchVal === "") {
+                        $('.mz-search-val').css("display","block");
+                         $('.mz-search-val').text('Please enter a keyword or item number.');
+                    } else if (searchVal.length < 3) {
+                         $('.mz-search-val').css("display","block");
+                         $('.mz-search-val').text('Your keyword or item number must be at least 3 characters long');
+                    } else{
+                        $('#search-again-box').submit();
+                    }
+                });
                
             }); 
 
