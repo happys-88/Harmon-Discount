@@ -69,7 +69,7 @@
                     <div class="col-sm-2 col-xs-6 hidden-xs mz-price-each-display mz-price-main-container">
                         {% include "modules/common/item-price" %}
                     </div>
-                    <div class="col-sm-4 col-xs-6 mz-checkout-item-total-container pull-right text-right">
+                    <div class="col-sm-2 col-xs-6 mz-checkout-item-total-container pull-right text-right">
                         {% include "modules/common/item-total" %}<span class="label-total visible-xs pull-left">{{ labels.total }}: </span>
                     </div>
                 </div>
