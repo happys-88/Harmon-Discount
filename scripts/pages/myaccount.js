@@ -512,7 +512,6 @@
 
 
     $(document).ready(function () {
-
         var accountModel = window.accountModel = CustomerModels.EditableCustomer.fromCurrent();
 
         var $accountSettingsEl = $('#account-settings'),
@@ -600,8 +599,22 @@
             $(".mz-scrollnav-list li:first-child").addClass('active');
             $("#account-panels").css('visibility', 'visible');
         }
+        $(document).on("click", ".my-account-details", function (e) {
+             $("#account-messages").html("");
+             var activeTab = $(this).children('a').attr("href").replace("/myaccount#", "");
+             $(".account_content").fadeOut(500);
+             $("#" + activeTab).delay(400).fadeIn(1000);
+             $('html, body').animate({
+                 scrollTop: $("h3.mz-l-stack-sectiontitle").offset().top - 10
+             }, 700);
+             $("ul.mz-scrollnav-list li").removeClass("active");
+             setTimeout(function () {
+                 var hash1 = window.location.hash;
+                 $('a[href="' + hash1 + '"]').parent('li').addClass('active');
+             }, 300);
+            
+        });
         $("ul.mz-scrollnav-list li").click(function (e) {
-            e.preventDefault();
             $("#account-messages").html("");
             var activeTab = $(this).children('a').attr("href").replace("#", "");
             $(".account_content").fadeOut(500);
