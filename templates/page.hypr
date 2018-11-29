@@ -11,7 +11,7 @@
 
 {% block head-tag %}
     <head>
-        {% include "modules/json-required-for-hyprlive" %}
+        
         {% block meta-tags %}
             {% if not user.isAnonymous and not user.isAuthenticated and user.email !== "" %}
                 <meta http-equiv="refresh" content="0;url=/logout">
@@ -74,6 +74,7 @@
             <link rel="next" href="{{PageContext.CrawlerInfo.NextUrl}}">
         {% endif %} 
 
+        {% include "modules/json-required-for-hyprlive" %} 
         {% block stylesheets %}
             <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet"> 
             <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/storefront.less" %}" title="default" media="all">
@@ -81,6 +82,9 @@
         {% endblock stylesheets %}
 
         {% block head-tag-scripts %}
+            <!--[if lt IE 9]>
+                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <![endif]-->  
             <script type="text/javascript" src="{% make_url "cdn" "/scripts/vendor/modernizr.min.js" %}"></script>
         {% endblock head-tag-scripts %}
 
