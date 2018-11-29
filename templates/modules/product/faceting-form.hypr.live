@@ -109,7 +109,7 @@
                                     {% if facet.values and facet.field == "tenant~color" %}
                                         {% include "modules/facets/facet-color" with allfacets=facet.values and isDirectory="true" %}
                                     {% else %}
-                                        {% include "modules/facets/facet-text" with texts=facet.values and isDirectory="true" %}
+                                        {% include "modules/facets/facet-text" with texts=facet.values and isDirectory="true" and showCount="true" %}
                                     {% endif %}
                                 </ul>
                             </div>
