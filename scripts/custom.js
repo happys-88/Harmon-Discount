@@ -1,8 +1,8 @@
-define([ 
+define([
 	'modules/jquery-mozu',
 	"hyprlive"
-], function ($, Hypr) { 
-	$(document).ready(function() {
+], function ($, Hypr) {
+	$(document).ready(function () {
 		//dropzone empty
 		// $('.col-xs-4 .mz-sitenav-dropzone .mz-drop-zone').each(function (index) {
 		// 	if ($(this).is(':empty')) {
@@ -165,13 +165,14 @@ define([
 	    else expires = "";
 	    document.cookie = name+"="+value+expires+"; path=/";
 	}
-
-	$("#resetPassword").blur(function() {
+	//$('.mz-reset-password-page .mz-message-item').text('');
+	$(document).on('blur', '#resetPassword', function () { 
+	
   		var newPassword = $('#resetPassword').val();
-  		var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6}$/;
-  		if(!regularExpression.test(newPassword)) {
+		  var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6}$/;
+  		if(regularExpression.test(newPassword)) {
   			$('.mz-reset-password-val').css("display","block");
-          $('.mz-reset-password-val').text('Minimum length should 6 and alphanumeric');
+          $('.mz-reset-password-val').text('Minimum length should be 6 and alphanumeric');
         	return false;	
    		 }else {
    		 	$('.mz-reset-password-val').text('');
