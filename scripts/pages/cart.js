@@ -124,9 +124,10 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
             var field = this.$('[data-mz-cart-item=' + model.get('id') + ']');
             if (field) {
                 field.val(oldQuantity);
-            } else {
+            } /*else {
                 this.render();
-            }
+            }*/
+            this.render();
         },
         removeItem: function(e) {
             blockUiLoader.globalLoader();
