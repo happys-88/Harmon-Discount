@@ -9,44 +9,35 @@
 <div data-mz-category="{{model.categoryId}}" class="mz-l-container">
     <h1 class="mz-pagetitle parent-heading">{{ model.name|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe }}</h1>
     <div class="row">
-        <div data-mz-facets class="mz-l-sidebar col-xs-12 col-sm-3 new-hierarchy">
+        <div data-mz-facets class="mz-l-sidebar col-xs-12 col-sm-3 col-lg-3 new-hierarchy">
             {% for link in navigation.tree %}
-            {% if not link.isHidden and not link.isEmpty and link.nodeType != "page" %}
-            {% if model.categoryId==link.categoryCode %}
-            {%for child in link.items%}
-            {% if not child.isHidden and not child.isEmpty %}
-            <div class="sub-category"><a href="{{child.url}}" class="mz-facetingform-link">{{ child.name|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe }}</a></div>
-            {% if themeSettings.showChildCategoriesInFaceting and child.items.length > 0 %}
-            <ul>
-                {% for subchild in child.items%}
-                {% if not subchild.isHidden and not subchild.isEmpty %}
-                <li><a href="{{subchild.url}}" class="mz-facetingform-link">{{ subchild.name|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe }}</a></li>
-                {% endif %}
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endif %}
-            {% endfor %}
-            {% endif %}
-            {%endif%}
+                    {% if not link.isHidden and not link.isEmpty and link.nodeType != "page" %}
+                        {% if model.categoryId==link.categoryCode %}
+                            {%for child in link.items%}
+                                {% if not child.isHidden and not child.isEmpty %}
+                                <div class="sub-category"><a href="{{child.url}}" class="mz-facetingform-link">{{ child.name|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe }}</a></div>
+                                    {% if themeSettings.showChildCategoriesInFaceting and child.items.length > 0 %}
+                                            <ul>
+                                                {% for subchild in child.items%}
+                                                    {% if not subchild.isHidden and not subchild.isEmpty %}
+                                                    <li><a href="{{subchild.url}}" class="mz-facetingform-link">{{ subchild.name|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe }}</a></li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    {%endif%}
             {% endfor %}
         </div>
-        <div class="col-xs-12 col-sm-9">
-            <div class="row">
-                {% dropzone "Merchandise" scope="page" %}
-            </div>
-            <div class="row">
-                {% dropzone "New" scope="page" %}
-            </div>
-            <div class="row">
-                {% dropzone "Brands" scope="page" %}
-            </div>
-            <div class="row">
-                {% dropzone "Feature" scope="page" %}
-            </div>
-            <div class="row">
-                {% dropzone "Category" scope="page" %}
-            </div>
+        <div class="mz-l-paginatedlist pull-right col-xs-12 col-sm-9 col-lg-9">
+            
+                {% dropzone "merchandise-category-gateway" scope="page" %}
+                {% dropzone "new-arrival-category-gateway" scope="page" %}
+                {% dropzone "featured-brands-category-gateway" scope="page" %}
+                {% dropzone "Featured-product-category-gateway" scope="page" %}
+                {% dropzone "featiured-categories-category-gateway" scope="page" %}
         </div>
        
     </div>
