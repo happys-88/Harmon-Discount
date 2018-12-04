@@ -11,7 +11,16 @@
 
 {% block head-tag %}
     <head>
-        
+        {% block gtm-tag %}
+        <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5P22DVK');</script>
+        <!-- End Google Tag Manager -->
+        {% endblock gtm-tag %}
+        {% include "modules/json-required-for-hyprlive" %}
         {% block meta-tags %}
             {% if not user.isAnonymous and not user.isAuthenticated and user.email !== "" %}
                 <meta http-equiv="refresh" content="0;url=/logout">
@@ -74,7 +83,6 @@
             <link rel="next" href="{{PageContext.CrawlerInfo.NextUrl}}">
         {% endif %} 
 
-        {% include "modules/json-required-for-hyprlive" %} 
         {% block stylesheets %}
             <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet"> 
             <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/storefront.less" %}" title="default" media="all">
@@ -82,9 +90,6 @@
         {% endblock stylesheets %}
 
         {% block head-tag-scripts %}
-            <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <![endif]-->  
             <script type="text/javascript" src="{% make_url "cdn" "/scripts/vendor/modernizr.min.js" %}"></script>
         {% endblock head-tag-scripts %}
 
@@ -134,6 +139,12 @@
 {% endblock head-tag %} 
     
 {% block body-tag %}
+    {% block gtm-body-tag %}
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P22DVK"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    {% endblock gtm-body-tag %}
     {% block open-body-tag %}
         <body class="{% block body-tag-classes %}{% endblock body-tag-classes %}">
         {% block bing-ads %}
@@ -184,7 +195,7 @@
             {% block login-slider %}
                 {% include "modules/login/login" %}            
             {% endblock login-slider %}
-            <div class="col-xs-12 thresholdmsg visible-xs"></div>
+            
             <div id="home-promo-wrapper" class="container-fluid hidden-sm">
                 <div class="row" id="home-promo-below-navigation">
                     <div class="col-xs-12">

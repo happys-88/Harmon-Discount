@@ -10,6 +10,7 @@
     {% dropzone "home-dropzone-3-brands" scope="template" %}  
     {% dropzone "home-dropzone-4" scope="template" %}
     {% dropzone "home-dropzone-5" scope="template" %}       
+    {% dropzone "featured-products" scope="template" %}       
 {% endblock body-content %}
 {% block body-below-content %}
 {% endblock body-below-content %}
