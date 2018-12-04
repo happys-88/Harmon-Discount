@@ -167,14 +167,15 @@ define([
 	}
 	//$('.mz-reset-password-page .mz-message-item').text('');
 	$(document).on('blur', '#resetPassword', function () { 
-	
   		var newPassword = $('#resetPassword').val();
-		  var regularExpression  = /^[a-zA-Z0-9!@#$%^&*]{6}$/;
-  		if(regularExpression.test(newPassword)) {
+		  var regularExpression  = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[a-zA-Z]).*$/;
+  		if(!regularExpression.test(newPassword)) {
   			$('.mz-reset-password-val').css("display","block");
-          $('.mz-reset-password-val').text('Minimum length should be 6 and alphanumeric');
+  			document.getElementById("resetPasswordButton").disabled = true;
+          $('.mz-reset-password-val').text('Password  should be alphanumeric and minimun length 8');
         	return false;	
    		 }else {
+   		 	document.getElementById("resetPasswordButton").disabled = false;
    		 	$('.mz-reset-password-val').text('');
    		 }
   		
