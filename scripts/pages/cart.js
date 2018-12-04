@@ -50,12 +50,15 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
         },
         render: function() {
             blockUiLoader.unblockUi();
-            try {
-                preserveElement(this, ['.v-button', '.p-button'], function() {
-                    Backbone.MozuView.prototype.render.call(this);
-                });
-            } catch (e) {}
-            Backbone.MozuView.prototype.render.call(this);
+            // try {
+            //     preserveElement(this, ['.v-button', '.p-button'], function() {
+            //         Backbone.MozuView.prototype.render.call(this);
+            //     });
+            // } catch (e) {}
+            // Backbone.MozuView.prototype.render.call(this);
+            preserveElement(this, ['.v-button', '.p-button'], function () {
+                Backbone.MozuView.prototype.render.call(this);
+            });
             $("#cart img").on("error", function() {
                 onImageLoadError.checkImage(this);
             });
@@ -760,9 +763,9 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
         });
 
         cartModel.on('sync', function() {
-            if (this.isEmpty())
-                window.location.reload();
-            else
+            // if (this.isEmpty())
+            //     window.location.reload();
+            // else
                 CartMonitor.update();
         });
 

@@ -1,3 +1,4 @@
+{% if not model.isEmpty %} 
 {% for thresholdMsg in model.discountThresholdMessages %}
   <span class="discount">{{ thresholdMsg.message }} </span> 
 {% endfor %} 
@@ -244,3 +245,11 @@
 <div></div>
 </div>
 </div>
+{% else %}
+<div class="cart-div">Your cart is empty.</div>
+		<div class="cart-div">
+            <a href="/" class="btn">
+            	<div class="mz-button mz-button-large"> Continue Shopping</div>
+            </a>
+     </div>
+{% endif %}
