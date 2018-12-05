@@ -7,7 +7,7 @@
 				{% if categoryObject.content.name == "Shop By Brand" %}    
 				{% for brandSubCat in categoryObject.childrenCategories %}
 						{% if brandSubCat.categoryId == getBrandCategoryId %}
-							<li> 
+							<li class="col-xs-6 col-sm-2"> 
 								<div class="brand-logo">
 									{% if brandSubCat.content.categoryImages.length > 0 %}
 										{% for imgurl in brandSubCat.content.categoryImages %}

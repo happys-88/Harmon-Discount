@@ -1,7 +1,8 @@
 define([
 	'modules/jquery-mozu',
-	"hyprlive"
-], function ($, Hypr) {
+	"hyprlive",
+	"bxslider"
+], function ($, Hypr, bxslider) {
 	$(document).ready(function () {
 		//dropzone empty
 		// $('.col-xs-4 .mz-sitenav-dropzone .mz-drop-zone').each(function (index) {
@@ -44,6 +45,26 @@ define([
 				scrollTop: position
 			}, 500);
 		}); 
+		$(window).on("resize load",function () {
+			var windowWidth = $(window).width();
+			if (windowWidth <= 767) {
+				$('#shopByCategorySlider').bxSlider({
+					minSlides: 1,
+					moveSlides: 1,
+					slideWidth: 900,
+					slideMargin: 0,
+					responsive: true,
+					controls: false,
+					speed: 1000,
+					infiniteLoop: false,
+					hideControlOnEnd: true,
+					adaptiveHeight: true,
+					onSliderLoad: function () {
+						$(".slider").css("visibility", "visible");
+					}
+				});
+			} 
+	     });
 		$(" .mz-productimages .mz-productimages-thumbs #productpager-Carousel li img").on( "error",function() {
              $( this ).parentsUntil( "li" ).parent().remove();
           });
