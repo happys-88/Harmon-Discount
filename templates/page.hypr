@@ -90,6 +90,9 @@
         {% endblock stylesheets %}
 
         {% block head-tag-scripts %}
+            <!--[if lt IE 9]>
+                <script type="text/javascript" src="{% make_url "cdn" "/scripts/vendor/html5shiv.min.js" %}"></script>  
+            <![endif]--> 
             <script type="text/javascript" src="{% make_url "cdn" "/scripts/vendor/modernizr.min.js" %}"></script>
         {% endblock head-tag-scripts %}
 

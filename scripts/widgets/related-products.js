@@ -59,7 +59,7 @@
                         var width = HyprLiveContext.locals.themeSettings.listProductImageWidth;
                         var height = HyprLiveContext.locals.themeSettings.listProductImageHeight;
                         var imagepath = imagefilepath + '/' + productCode + '_' + colorCode + '.jpg?maxWidth=' + width;
-                        $(e.target).parents('.product-code').find('.image').attr('src', imagepath);
+                        $(e.target).parents('.rti-product-item').find('.image').attr('src', imagepath); 
                     }
                 });
                 

@@ -4,9 +4,9 @@
         	{% if forloop.first && model.items.length >= 1%} 
     			<ul class="bxslider {% block list-classes %}{% endblock list-classes %}">
     		{% endif %}
-            <li class="product-code col-sm-3 col-xs-6 mz-reset-padding-left" data-mz-product="{{ prod.productCode }}">	
-		        {% block product-image %}
-		        <a href="{% make_url "product" prod %}"  data-baynote-slot="{{prod.slot}}"  data-baynote-widget="{{prod.widgetId}}" data-baynote-pid="{{prod.productCode}}" data-baynote-href="{{prod.href}}">
+            <li class="rti-product-item col-sm-3 col-xs-6" data-mz-product="{{ prod.productCode }}">   	
+		        {% block product-image %}  
+		        <a class="rti-product-image" href="{% make_url "product" prod %}"  data-baynote-slot="{{prod.slot}}"  data-baynote-widget="{{prod.widgetId}}" data-baynote-pid="{{prod.productCode}}" data-baynote-href="{{prod.href}}">
 		            {% if prod.mainImage.imageUrl %}
 		                <img class="image" src="{% make_url "image" prod.mainImage with maxWidth=themeSettings.pdpRTIMaxWidth as_parameter  %}" {% if prod.mainImage.altText %}alt="{{ prod.mainImage.altText }}"{% endif %} onerror="replaceImage(this);">
 		            {% else %}

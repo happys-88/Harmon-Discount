@@ -31,13 +31,21 @@
                     {%endif%}
             {% endfor %}
         </div>
-        <div class="mz-l-paginatedlist pull-right col-xs-12 col-sm-9 col-lg-9">
+        <div class="mz-l-paginatedlist pull-right col-xs-12 col-sm-9 col-lg-9"> 
+            {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Dropzone Area</span>{% endif %}
+            {% dropzone "merchandise-category-gateway" scope="template" %} 
             
-                {% dropzone "merchandise-category-gateway" scope="page" %}
-                {% dropzone "new-arrival-category-gateway" scope="page" %}
-                {% dropzone "featured-brands-category-gateway" scope="page" %}
-                {% dropzone "Featured-product-category-gateway" scope="page" %}
-                {% dropzone "featiured-categories-category-gateway" scope="page" %}
+            {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">RTI Widget - New Arrivals</span>{% endif %}  
+            {% dropzone "new-arrival-category-gateway" scope="template" %}
+            
+            {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Dropzone Area - Featured Brands</span>{% endif %}
+            {% dropzone "featured-brands-category-gateway" scope="template" %}
+
+            {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Dropzone Area - Featured Categories</span>{% endif %}
+            {% dropzone "featured-categories-category-gateway" scope="template" %}
+
+            {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Dropzone Area - Category Specific Text</span>{% endif %}
+            {% dropzone "category-text" scope="page" %}     
         </div>
        
     </div>
