@@ -1,5 +1,5 @@
 {% for priceItem in prices %}
-<li{%if isDirectory=="true" and showMore and showMore > 0 and forloop.counter0 >= showMore %} class="mz-hide-text hide"{% endif %}>
+<li {% if isDirectory=="true" and showMore and showMore > 0 and forloop.counter0 >= showMore %} class="mz-hide-text hide"{% endif %}>
     <a href="javascript:void(0);" data-mz-facet="Price"
        data-mz-url="{% make_url "facet" priceItem.value %}"
        data-filter-name="{% if priceItem.rangeQueryValueStart == "*" %}${{priceItem.rangeQueryValueEnd}} and under{% else %}{% if priceItem.rangeQueryValueEnd == "*" %}${{priceItem.rangeQueryValueStart}} +{% else %}${{priceItem.rangeQueryValueStart}} - ${{priceItem.rangeQueryValueEnd}}{% endif %}{% endif %}"

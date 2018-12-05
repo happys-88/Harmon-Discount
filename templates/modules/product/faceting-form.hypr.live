@@ -16,7 +16,7 @@
                         {% for fval in facet.values %}
                             {% if fval.isApplied %}
                             <li>
-                                <i class="fa fa-times-circle remove-facet"  data-mz-facet="{{ facet.field }}" data-mz-facet-value="{{ fval.value }}" data-mz-purpose="remove" data-mz-action="clearFacet"></i> <label class="{{ facet.field }}" for="{{facet.field|slugify }}_{{ fval.value|slugify }}" {% if facet.label == 'Color' %}style="background:#{{fval.value}}" title="{{ fval.label }}"{% endif %} ><u>{{ fval.label }}</u></label>
+                                <i class="fa fa-times-circle remove-facet"  data-mz-facet="{{ facet.field }}" data-mz-facet-value="{{ fval.value }}" data-mz-purpose="remove" data-mz-action="clearFacet"></i> <label class="{{ facet.field|slugify }}" for="{{facet.field|slugify }}_{{ fval.value|slugify }}" {% if facet.label == 'Color' %}style="background:#{{fval.value}}" title="{{ fval.label }}"{% endif %} ><u>{{ fval.label }}</u></label>
                                 </li>
                             {% endif %}
                         {% endfor %}
@@ -110,7 +110,7 @@
                                             {% include "modules/facets/facet-color" with allfacets=facet.values and isDirectory="true" %}
                                          {% else %}
                                             {% if facet.values and facet.facetType == "RangeQuery" %}
-                                                {% include "modules/facets/facet-price" with prices=facet.values and showCount=true and isDirectory=true %}
+                                                {% include "modules/facets/facet-text" with texts=facet.values and showCount=true and isDirectory=true and IsRangeQuery=true %}
                                             {%else%}
                                                 {% include "modules/facets/facet-text" with texts=facet.values and isDirectory=true and showCount=true  %}
                                             {% endif %}
