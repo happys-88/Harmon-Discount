@@ -1,5 +1,5 @@
 {% if model.properties and themeSettings.showProductDetailProperties %}
-    {% if model.properties.attributeFQN == "tenant~ingredients" or property.attributeFQN == "tenant~warning" or model.content.productFullDescription %}  
+    {% if model.properties.attributeFQN == "tenant~ingredients" or property.attributeFQN == "tenant~warning" or model.properties.attributeFQN == "tenant~prop-65" or model.content.productFullDescription %}  
         <div class="mz-product-tabs"> 
             <ul class="nav nav-tabs hidden-xs" role="tablist">
                 {% if model.content.productFullDescription %}
@@ -11,6 +11,11 @@
                 {% if (model|get_product_attribute_value("tenant~warning")) %}  
                     <li role="presentation"><a href="#prodWarning" aria-controls="prodWarning" role="tab" data-toggle="tab">Warning</a></li>
                 {% endif %}
+                 {% with model|get_product_attribute("tenant~prop-65") as pro65 %}
+                    {% if  pro65.values|first|prop("value") %}  
+                        <li role="presentation"><a href="#Prop65" aria-controls="Prop65" role="tab" data-toggle="tab">{{ pro65.attributeDetail.name }}</a></li>
+                    {% endif %}
+                {% endwith %}
             </ul>
             <div class="tab-content mz-mobile-tabs nav nav-tabs">
                 {% if model.content.productFullDescription %}
@@ -30,7 +35,15 @@
                     <div role="tabpanel" class="tab-pane" id="prodWarning">
                         {{ model|get_product_attribute_value("tenant~warning")|safe }}    
                     </div>
-                {% endif %}  
+                {% endif %}
+                {% with model|get_product_attribute("tenant~prop-65") as pro65 %}
+                    {% if pro65.values|first|prop("value") %}  
+                        <li class="visible-xs" role="presentation"><a href="#Prop65" aria-controls="Prop65" role="tab" data-toggle="tab">{{ pro65.attributeDetail.name }}</a></li>
+                    <div role="tabpanel" class="tab-pane" id="Prop65">
+                        {{ themeSettings.content_Prop_65 }}    
+                    </div>
+                    {% endif %}
+                {% endwith %}
             </div>
         </div>
     {% endif %}
