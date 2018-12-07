@@ -48,7 +48,7 @@ define([
 		$(window).on("resize load",function () {
 			var windowWidth = $(window).width();
 			if (windowWidth <= 767) {
-				$('#shopByCategorySlider').bxSlider({
+				$('.mz-category #shopByCategorySlider').bxSlider({
 					minSlides: 1,
 					moveSlides: 1,
 					slideWidth: 900,

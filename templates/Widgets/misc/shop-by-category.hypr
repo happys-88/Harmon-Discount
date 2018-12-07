@@ -1,6 +1,6 @@
 <div class="mz-shop-by-category"> 
 	<h2 class="heading-2"><span>{{ Model.config.title }}</span></h2>   
-	<div class="hidden-xs">
+	<div class="{% if pageContext.cmsContext.page.path== 'home' %}home-shop-category{% else %}hidden-xs{% endif %}">
 	<ul class="mz-shop-by-categorylist">   
 		{% for getCategoryId in model.config.shopByCategory %}
 			{% for categoryObject in categories.all %} 
@@ -35,39 +35,41 @@
 		{% endfor %}
 	</ul> 
 	</div>	
-	<div class="visible-xs">    
-		<ul class="mz-shop-by-categorylist" id="shopByCategorySlider"> 
-				{% for getCategoryId in model.config.shopByCategory %}
-					{% if forloop.counter|mod(4)==1 %}
-						<div> 
-					{% endif %} 
-					{% for categoryObject in categories.all %} 
-						{% if categoryObject.categoryId == getCategoryId %}  
-						 {% if categoryObject.content.categoryImages.length > 0 %}
-							{% for catImage in categoryObject.content.categoryImages %}
-								<li class="mz-shop-by-categorylist-item">
-									<a href="{% make_url "category" categoryObject %}">
-										<div class="mz-category-image">
-											<img src='{% make_url "image" catImage.imageUrl %}' alt="{{ catImage.altText }}">
-										</div>
-									</a>
-								</li>
-							{% endfor %}
-							{% else %}
-								<li class="mz-shop-by-categorylist-item">
-									<a href='{% make_url "category" categoryObject %}'>
-										<div class="mz-category-image no-category-image">
-										<img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
-										</div>
-									</a>
-								</li>
-							{% endif %}
-						{% endif %}   
+	{% if pageContext.cmsContext.page.path != 'home' %}
+		<div class="visible-xs">    
+			<ul class="mz-shop-by-categorylist" id="shopByCategorySlider"> 
+					{% for getCategoryId in model.config.shopByCategory %}
+						{% if forloop.counter|mod(4)==1 %}
+							<div> 
+						{% endif %} 
+						{% for categoryObject in categories.all %} 
+							{% if categoryObject.categoryId == getCategoryId %}  
+							{% if categoryObject.content.categoryImages.length > 0 %}
+								{% for catImage in categoryObject.content.categoryImages %}
+									<li class="mz-shop-by-categorylist-item">
+										<a href="{% make_url "category" categoryObject %}">
+											<div class="mz-category-image">
+												<img src='{% make_url "image" catImage.imageUrl %}' alt="{{ catImage.altText }}">
+											</div>
+										</a>
+									</li>
+								{% endfor %}
+								{% else %}
+									<li class="mz-shop-by-categorylist-item">
+										<a href='{% make_url "category" categoryObject %}'>
+											<div class="mz-category-image no-category-image">
+											<img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
+											</div>
+										</a>
+									</li>
+								{% endif %}
+							{% endif %}   
+						{% endfor %}
+						{% if forloop.counter|mod(4)==0 or forloop.last %}     
+						</div>       
+					{% endif %} 	
 					{% endfor %}
-					  {% if forloop.counter|mod(4)==0 or forloop.last %}     
-					</div>       
-				{% endif %} 	
-				{% endfor %}
-		</ul>  
-	</div>	
+			</ul>  
+		</div>
+	{% endif %}	
 </div>
