@@ -80,12 +80,13 @@
 {% preload_json model "product" %}
 <div class="product-wrapper">
     {% block breadcrumbs %}
-    {% if themeSettings.showBreadcrumbs %}
-    {% include "modules/breadcrumbs" %}
-    {% endif %}
+        {% if themeSettings.showBreadcrumbs %}
+            {% include "modules/breadcrumbs" %}
+        {% endif %}
     {% endblock breadcrumbs %}
+    
     <div class="clearfix"></div>
     {% include "modules/product/product-details" %}
-    {% dropzone "bazaar-voice-widget" scope="page" %} 
+       
 </div>
 {% endblock body-content %}

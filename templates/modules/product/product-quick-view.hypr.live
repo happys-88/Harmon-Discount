@@ -1,10 +1,10 @@
 <!-- Modal -->
-<div id="quickViewModal" class="modal fade quickviewElement">
+<div id="quickViewModal" class="modal fade quickviewElement" {% if pageContext.isEditMode and pageContext.cmsContext.template.path=="category" %} style="display:block; opacity: 1;"{% endif %}>  
     {% include "modules/product/product-validation" %}
-    <div class="modal-dialog">
-        <div class="modal-content">
+    <div class="modal-dialog" {% if pageContext.isEditMode and pageContext.cmsContext.template.path=="category" %} style="transform: none;"{% endif %}>
+        <div class="modal-content"> 
             <div class="close-modal">
-                <span class="mz-close-icon" aria-hidden="true" data-mz-quickview-close="true"></span>  
+                <span class="mz-close-icon" aria-hidden="true" data-mz-quickview-close="true"></span>   
             </div>
             <div class="modal-body">
                 <div class="row first">
@@ -101,7 +101,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> 
+            </div>
+            <div class="modal-footer"> 
+                <div id="quick-view-rti">
+                    dropzone content  
+                    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">RTI Widget - Recommended For You</span>{% endif %}  
+                    {% dropzone "quick-view-rti" scope="template" %}     
+                </div>    
             </div>
         </div>
     </div>

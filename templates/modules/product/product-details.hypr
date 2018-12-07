@@ -1,10 +1,5 @@
-{% require_script "modules/product/product-carousel" %}
-{% if themeSettings.rviEnable %}
-    {% require_script "modules/product/recently-viewed-products" %}
-{% endif %}
 
-{% require_script "pages/product" %}
-{% with model.properties|findwhere('attributeFQN', "tenant~limitPerOrder") as limitPerOrder %}
+{% with model.properties|findwhere('attributeFQN', "tenant~limitPerOrder") as limitPerOrder %} 
     {% preload_json limitPerOrder.values|first "limit" %}
 {% endwith %}
 
@@ -29,13 +24,14 @@
                 <h1 class="mz-pagetitle" itemprop="name">{{ model.content.productName|replace("'","&rsquo;")|safe }}</h1>
                 <div class="row">
                     {% with model|get_product_attribute("tenant~brand") as brandName %}
-                            {% for brandCat in model.categories %}  
-                                {% if brandCat.content.name == {{ brandName.values|first|prop("value") }} %}
-                                    <div class="col-xs-12 mz-view-all-brand">
-                                        <a href="/shop-by-brand/c/1270">{{ labels.viewAll }}</a> &nbsp &nbsp<a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
-                                    </div>
-                                    {% endif %}
-                                {% endfor %}
+                        {% for brandCat in model.categories %}  
+                            {% if brandCat.content.name == {{ brandName.values|first|prop("value") }} %}
+                                <div class="col-xs-12 mz-view-all-brand">
+                                    <a href="/shop-by-brand/c/1270">{{ labels.viewAll }}</a> 
+                                    <a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
+                                </div>
+                            {% endif %} 
+                        {% endfor %}
                     {% endwith %}
                     <div class="col-xs-12">
                         <div class="mz-productcodes-productcode p-3" itemprop="sku">{{ labels.item}} # {{ model.productCode }}</div>
@@ -43,9 +39,11 @@
                             <div><img src="/resources/images/harmon/star.jpg" alt="rating"><span>4.9(27) Read a Review | Write A review</span></div>
                             <div>11 out of 12(92%) reviewers recommend this product</div>
                         </div>
+                        {% comment %}
                         <div class="mz-shipping-restiction">
                             <span>Shipping Restiction text attribute</span>
                         </div>
+                        {% endcomment %} 
                     </div>
                     {% if model.productType != themeSettings.familyProductType %}
                         <div class="col-xs-7">
@@ -78,7 +76,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="social-sharing col-md-9 col-xs-12 mz-reset-padding-left{% if model.content.productImages.length <=1 %} mz-share-with-container-other{% endif %}">
+        {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Social Sharing Dropzone</span>{% endif %} 
+        <div class="social-sharing col-md-9 col-xs-12{% if model.content.productImages.length <=1 %} mz-share-with-container-other{% endif %}">
             {% dropzone "social-sharing" scope="template" %}
         </div>
     </div>
@@ -97,10 +96,12 @@
         </div>
     {% endif %}
     <div class="clearfix"></div>
-    <div class="mz-middle-breakpoint hidden-xs">
-        {% dropzone "product-middle-breakpoint" scope="template" %}  
-    </div>
-    {% include "modules/product/product-tabs" %}
+
+    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">RTI Widget - Dropzone 1</span>{% endif %}   
+    {% dropzone "rti-widget-1" scope="template" %} 
+
+    {% include "modules/product/product-tabs" %} 
+
     <!-- WebCollage code snippet. Place the <div> tag as per the UI requirement -->
     <div id="webcollage" value="{{ model.productCode }}">
         <div id="wc-power-page"></div>
@@ -108,9 +109,16 @@
         <script>Webcollage.loadProductContent('harmondiscount', '{{ model.productCode }}', { "power-page": { autoPlayAndStop: true } });</script>
         {% endblock webcollage-loader %}
     </div>
-    
-    {% if themeSettings.rviEnable %}
-        {% include "modules/product/recent/recently-viewed-products" %}  
-    {% endif %}
-</div>
+   
+    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">RTI Widget - Dropzone 2</span>{% endif %}     
+    {% dropzone "rti-widget-2" scope="template" %}
 
+    {% if themeSettings.rviEnable %}
+        {% include "modules/product/recent/recently-viewed-products" %}
+        {% require_script "modules/product/recently-viewed-products" %}   
+    {% endif %} 
+
+    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Customer Reviews - Bazaar Voice Widget</span>{% endif %} 
+    {% dropzone "bazaar-voice-widget" scope="template" %} 
+
+</div> 

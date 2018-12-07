@@ -1,5 +1,7 @@
 {% autoescape on %}
-{% block doctype %}<!DOCTYPE html>{% endblock doctype %}
+{% block doctype %}
+<!doctype html>
+{% endblock doctype %} 
 
 {% block open-html-tag %}
 <!--[if lt IE 7]><html class="no-js ie6 oldie" lang="en"> <![endif]-->
@@ -83,26 +85,26 @@
             <link rel="next" href="{{PageContext.CrawlerInfo.NextUrl}}">
         {% endif %} 
 
-        {% block stylesheets %}
-            <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet"> 
-            <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/storefront.less" %}" title="default" media="all">
-            <link rel="stylesheet" type="text/css" href="{% make_url "stylesheet" "/stylesheets/ml/print.less" %}" media="print">
+        {% block stylesheets %}   
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900">   
+            <link rel="stylesheet" href="{% make_url "stylesheet" "/stylesheets/storefront.less" %}" title="default" media="all">
+            <link rel="stylesheet" href="{% make_url "stylesheet" "/stylesheets/ml/print.less" %}" media="print"> 
         {% endblock stylesheets %}
 
         {% block head-tag-scripts %}
             <!--[if lt IE 9]>
-                <script type="text/javascript" src="{% make_url "cdn" "/scripts/vendor/html5shiv.min.js" %}"></script>  
+                <script src="{% make_url "cdn" "/scripts/vendor/html5shiv.min.js" %}"></script>     
             <![endif]--> 
-            <script type="text/javascript" src="{% make_url "cdn" "/scripts/vendor/modernizr.min.js" %}"></script>
+            <script src="{% make_url "cdn" "/scripts/vendor/modernizr.min.js" %}"></script>
         {% endblock head-tag-scripts %}
 
         {% cms_resources %}
-        {% header_content %}
+        {% header_content %} 
         
         {% if isProduction %} 
-            <script type="text/javascript" src="//nexus.ensighten.com/costplusworldmarket/prod/Bootstrap.js"></script>
+            <script src="//nexus.ensighten.com/costplusworldmarket/prod/Bootstrap.js"></script>
         {% else %}
-            <script type="text/javascript" src="//nexus.ensighten.com/costplusworldmarket/dev-new/Bootstrap.js"></script>
+            <script src="//nexus.ensighten.com/costplusworldmarket/dev-new/Bootstrap.js"></script>
         {% endif %}
 
         <link rel="shortcut icon" href="/resources/images/favicon.ico" type="image/vnd.microsoft.icon">
@@ -126,9 +128,8 @@
         {% endblock conversion-tracking %}
         {% require_script "custom" %}
 
-        <script type="text/javascript"
-         src="https://cdn.merklesearch.com/merkle_track.js"></script>
-        <script type="text/javascript">
+        <script src="https://cdn.merklesearch.com/merkle_track.js"></script> 
+        <script>
             try{ merklesearch.sendAdSid("{{themeSettings.merkelMid}}"); } catch(e) {} 
         </script>
 

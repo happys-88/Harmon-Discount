@@ -1,5 +1,5 @@
 <div class="clearfix"></div> 
-<div id="rvi-container" class="mz-related-products hide">
+<div id="rvi-container" class="mz-related-products hide"> 
 	{% if themeSettings.rviHeading!="" %}
 	<div id="recent-viewed-prdt">
 		<div class="heading-2">
