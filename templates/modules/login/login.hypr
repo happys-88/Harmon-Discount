@@ -7,7 +7,7 @@
                     <h3 class="mz-pagetitle">{{ labels.logIn }}</h3>
                     <p>{{ labels.logInMsg }}</p>
                       {% comment %}   <form name="login" class="mz-loginform-page" onsubmit="return false" novalidate>  {% endcomment %}
-                    <form method="post" class="mz-loginform-page" name="mz-loginform">
+                     <form method="post" class="mz-loginform-page" name="mz-loginform"> 
                        <input type="hidden" name="returnUrl" value="{{ model.returnUrl }}" />
                        <div class="mz-l-formfieldgroup">
                             <div class="input-group">
@@ -23,7 +23,7 @@
                             </div>
                             <div class="mz-btn-section">
                                 <a href="#" class="mz-cancel-button" data-dismiss="modal">{{ labels.cancel }}</a>
-                                <button class="mz-button" id="login-submit" type="submit" data-mz-action="doLogin">{{ labels.logIn }}</button> 
+                                <button class="mz-button" id="login-submit" type="submit" data-mz-action="loginpage-submit">{{ labels.logIn }}</button> 
                             </div>
                             <input type="hidden" class="hidden-return" name="returnUrl" id="returnUrl" value="" />
                             <script type="text/javascript">document.getElementById('returnUrl').value = window.location.href;</script>
