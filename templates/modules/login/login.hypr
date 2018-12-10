@@ -6,7 +6,8 @@
                 <div class="first-tab pull-left tab-pane" id="login">
                     <h3 class="mz-pagetitle">{{ labels.logIn }}</h3>
                     <p>{{ labels.logInMsg }}</p>
-                    <form name="login" class="mz-loginform-page" onsubmit="return false" novalidate>
+                      {% comment %}   <form name="login" class="mz-loginform-page" onsubmit="return false" novalidate>  {% endcomment %}
+                    <form method="post" class="mz-loginform-page" name="mz-loginform">
                        <input type="hidden" name="returnUrl" value="{{ model.returnUrl }}" />
                        <div class="mz-l-formfieldgroup">
                             <div class="input-group">

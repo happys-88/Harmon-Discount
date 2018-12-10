@@ -1,7 +1,7 @@
 /**
  * Adds a login popover to all login links on a page.
  */
-define(['modules/backbone-mozu', 'shim!vendor/bootstrap/js/popover[shim!vendor/bootstrap/js/tooltip[modules/jquery-mozu=jQuery]>jQuery=jQuery]>jQuery', 'modules/api', 'hyprlive', 'underscore', 'vendor/jquery-placeholder/jquery.placeholder', 'modules/on-image-load-error'], function(backbone, $, api, Hypr, _, jqPlaceHolder, onImageLoadError) {
+define(['modules/backbone-mozu', 'shim!vendor/bootstrap/js/popover[shim!vendor/bootstrap/js/tooltip[modules/jquery-mozu=jQuery]>jQuery=jQuery]>jQuery', 'modules/api', 'hyprlive', 'underscore', 'vendor/jquery-placeholder/jquery.placeholder', 'modules/on-image-load-error', 'hyprlivecontext'], function(backbone, $, api, Hypr, _, jqPlaceHolder, onImageLoadError, HyprLiveContext) {
     var current = "";
     var usePopovers = function() {
             return !Modernizr.mq('(max-width: 480px)');
@@ -325,10 +325,19 @@ define(['modules/backbone-mozu', 'shim!vendor/bootstrap/js/popover[shim!vendor/b
             }
             return true;
         },
-        handleLoginComplete: function(returnUrl) {
-            if (returnUrl) {
-                window.location.href = returnUrl;
-            } else {
+        handleLoginComplete: function (returnUrl) {
+            if ( returnUrl ){
+                // window.location.href= returnUrl;
+                var url = HyprLiveContext.locals.pageContext.url;
+                var domain = "";
+                if (url.includes("/user/login")){
+                    domain = url.split('/user')[0];
+                }else {
+                    domain = url.split('?')[0];
+                }
+                url = domain + returnUrl;
+                window.location = url;
+            }else{
                 window.location.reload();
             }
         },
