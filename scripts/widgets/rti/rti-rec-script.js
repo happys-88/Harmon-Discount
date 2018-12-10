@@ -8,9 +8,10 @@ require([
         'modules/models-product',
         'widgets/rti/recommended-products',
         'widgets/rti/gc-recommended-products',
-        'bxslider'
+        'bxslider',
+        'slick'
     ],
-    function($, Hypr, HyprLiveContext, _, api, Backbone, ProductModels, RecommendedProducts, GCRecommendedProducts, bxslider) {
+    function ($, Hypr, HyprLiveContext, _, api, Backbone, ProductModels, RecommendedProducts, GCRecommendedProducts, bxslider, slickSlider) {
 
         // rtiOptions will contain variables used by the
         //whole page. They can be set in every widget editor, but only the first
@@ -213,19 +214,49 @@ require([
                                     });
                                     productListView.render();
                                     if (productList.length > 1) {
-                                        $("." + placeholder + '.rti-recommended-products .bxslider').bxSlider({
-                                            minSlides: 2,
-                                            maxSlides: 6,    
-                                            slideWidth: 210,  
-                                            moveSlides: 1,   
-                                            slideMargin: 30, 
-                                            nextText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-                                            prevText: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                                            responsive: true,
-                                            pager: false,
-                                            infiniteLoop: false,
-                                            hideControlOnEnd: true
+
+                                        $("." + placeholder + '.rti-recommended-products .bxslider').slick({
+                                            infinite: false,
+                                            slidesToShow: 6,
+                                            prevArrow: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                                            nextArrow: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+                                            responsive: [
+                                                {
+                                                    breakpoint: 1024,
+                                                    settings: {
+                                                        arrows: true,
+                                                        slidesToShow: 5
+                                                    }
+                                                },
+                                                {
+                                                breakpoint: 992,
+                                                settings: {
+                                                    arrows: true,
+                                                    slidesToShow: 4
+                                                }
+                                            },
+                                            {
+                                                breakpoint: 768,
+                                                settings: {
+                                                    arrows: true,
+                                                    slidesToShow: 2
+                                                }
+                                            }
+                                            ]
                                         });
+                                        // $("." + placeholder + '.rti-recommended-products .bxslider').bxSlider({
+                                        //     minSlides: 2,
+                                        //     maxSlides: 6,    
+                                        //     slideWidth: 200,  
+                                        //     moveSlides: 1,   
+                                        //     slideMargin: 30, 
+                                        //     nextText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+                                        //     prevText: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                                        //     responsive: true,
+                                        //     pager: false,
+                                        //     infiniteLoop: false,
+                                        //     hideControlOnEnd: true
+                                        // });
                                     }else if(productList.length===1){
                                         $("[data-mz-product]").find('img').addClass('single-img-width'); 
                                     }

@@ -530,7 +530,8 @@ img[data-mztp] {
 
 /**** Footer ****/
 .mz-global-footer {
-	background: #4bb1da;
+	//background: #4bb1da;
+	//background: #ff007a;
 	margin: 0;
 
 	.global-footer-widget {
@@ -1040,7 +1041,6 @@ footer {
 	.mz-productlist{
 		float: left;
 		width: 100%;  
-		.bx-wrapper{
 			.rti-product-item{ 
 				.rti-product-image{
 					display: block;
@@ -1057,8 +1057,11 @@ footer {
 				.mz-productlisting-title{
 					font-size: 14px;
 					color: #262626;
-					line-height: 18px;
-					font-weight: 500;   
+					font-weight: 500; 
+					display: block;
+					text-align: center;
+					margin-bottom: 10px;
+					.multiLineEllipsis(18px, 3);
 				}
 			}
 			.bx-controls-direction{
@@ -1076,7 +1079,17 @@ footer {
 					}  
 				}
 			} 	
-		}
+			.slick-arrow{
+ 					width: 30px;
+					height: 30px;  
+					background: none;
+					text-indent: inherit;
+					text-align: center;
+					top: 75px;   
+					font-size: 48px;
+					color: #c1c1c1;  
+					font-weight: bold;
+			}
 		
 	}
 }

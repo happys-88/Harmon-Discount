@@ -318,3 +318,11 @@
         padding-left: 5px;
     }
 }
+.multiLineEllipsis(@lineHeight: 14px, @lineCount: 1){  
+   overflow: hidden;
+   position: relative;
+   line-height: @lineHeight;
+   min-height: @lineHeight * @lineCount; 
+   max-height: @lineHeight * @lineCount;   
+   padding: 0 15px;      
+}

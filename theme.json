@@ -2183,6 +2183,11 @@
       "displayTemplate": "misc/global-footer-widget",
       "editViewFields": [
         {
+          "xtype": "mz-input-color",
+          "name": "footerWidgetBackgroundcolor",
+          "fieldLabel": "Footer Widget Backgroundcolor"
+        },
+        {
           "anchor": "100%",
           "fieldLabel": "Add image for first widget",
           "name": "firstImage",

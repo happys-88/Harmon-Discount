@@ -122,10 +122,17 @@ define([
                                     prevArrow: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
                                     nextArrow: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
                                     responsive: [{
+                                        breakpoint: 1024,
+                                        settings: {
+                                            arrows: true,
+                                            slidesToShow: 5
+                                        }
+                                        },
+                                        {
                                             breakpoint: 992,
                                             settings: {
                                                 arrows: true,
-                                                slidesToShow: 5
+                                                slidesToShow: 4
                                             }
                                         },
                                         {

@@ -1,11 +1,7 @@
 ﻿<div class="mz-global-footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				{% dropzone "footer-dropzone-2" scope="site" %}  
-			</div> 
-		</div>
-	</div>
+	
+	{% dropzone "footer-dropzone-2" scope="site" %}  
+			
 </div>
 {% require_script "modules/global-header-include" %}
 <footer>

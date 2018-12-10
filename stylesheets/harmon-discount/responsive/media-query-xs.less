@@ -894,12 +894,20 @@
 	    right: 15px;
 	    bottom: 25px;
 	}
-
+.mz-product{
 	#rvi-container {
 		.recently-viewed-list {
-		    padding: 0;
+			padding: 0;
+			img{
+				 max-width: 110px;
+                 max-height: 160px;
+			}
+			.slick-slide {
+				padding: 8px;
+			}
 		}
 	}
+}
 	.mz-featured-products {
 		.mz-productlist {
 			.mz-productlist-item {
@@ -919,7 +927,6 @@
 				max-height: 300px;
 				.mz-productimages-mainimage {
 					max-width: 100%;
-					max-height:300px;
 				}
 			}
 		}
@@ -1002,4 +1009,20 @@
 		 }
 	 }
  }
+
+ // RTI section
+
+ .rti-recommended-products {
+	.mz-productlist {
+			.rti-product-item {
+				.rti-product-image {
+					min-height: 135px;
+					img {
+						max-width: 110px;
+						max-height: 110px;
+					}
+				}
+			}
+	   } 
+    }
 }

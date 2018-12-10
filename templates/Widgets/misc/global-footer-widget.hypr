@@ -1,19 +1,25 @@
-<div class="global-footer-widget">
-    <ul>
-        <li>
-            <a href="{{ model.config.firstUrl }}" title="Find A Store">
-                <img src="{% make_url "image" model.config.firstImage.imageUrl %}" alt="{{model.config.firstImage.altText}}">    
-            </a>
-        </li>
-        <li>
-            <a href="{{ model.config.secondUrl }}" title="View Now">
-                <img src="{% make_url "image" model.config.secondImage.imageUrl %}" alt="{{model.config.secondImage.altText}}">
-            </a>
-        </li>
-        <li>
-            <a href="{{ model.config.thirdUrl }}" title="Sign Up Now">
-                <img src="{% make_url "image" model.config.thirdImage.imageUrl %}" alt="{{model.config.thirdImage.altText}}">  
-            </a>
-        </li>
-    </ul>  
+<div class="global-footer-widget" style="background-color:{{ model.config.footerWidgetBackgroundcolor }};">
+    <div class="container">
+		<div class="row">
+			<div class="col-xs-12"> 
+                <ul>
+                    <li>
+                        <a href="{{ model.config.firstUrl }}" title="Find A Store">
+                            <img src="{% make_url "image" model.config.firstImage.imageUrl %}" alt="{{model.config.firstImage.altText}}">    
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ model.config.secondUrl }}" title="View Now">
+                            <img src="{% make_url "image" model.config.secondImage.imageUrl %}" alt="{{model.config.secondImage.altText}}">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ model.config.thirdUrl }}" title="Sign Up Now">
+                            <img src="{% make_url "image" model.config.thirdImage.imageUrl %}" alt="{{model.config.thirdImage.altText}}">  
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>  
 </div> 
