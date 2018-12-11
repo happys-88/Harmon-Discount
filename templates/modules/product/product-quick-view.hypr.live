@@ -103,13 +103,14 @@
                     </div>
                 </div> 
             </div>
+            {% comment %}
             <div class="modal-footer"> 
                 <div id="quick-view-rti">
-                    dropzone content  
                     {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">RTI Widget - Recommended For You</span>{% endif %}  
                     {% dropzone "quick-view-rti" scope="template" %}     
                 </div>    
             </div>
+            {% endcomment %} 
         </div>
     </div>
 </div>
