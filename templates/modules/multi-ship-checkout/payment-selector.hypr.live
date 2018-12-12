@@ -58,7 +58,7 @@
             </div>
         </div>
     {% endif %}
-    {% if siteContext.checkoutSettings.payByMail %}
+    {% comment %} {% if siteContext.checkoutSettings.payByMail %}
     <div class="mz-l-formfieldgroup-row mz-paymentselector-option mz-paymentselector-check mz-checkoutform {% if model.paymentType == "Check" %}mz-checkoutform-active{% endif %}">
         <div class="mz-l-formfieldgroup-row">
             <div class="mz-l-formfieldgroup-cell">
@@ -70,7 +70,7 @@
         {% include "modules/checkout/checking-account-form" %}
         {% endif %}
     </div>
-    {% endif %}    
+    {% endif %}     {% endcomment %}
     {% for externalPayment in siteContext.checkoutSettings.externalPaymentWorkflowSettings %}
 		{% if externalPayment.isEnabled and externalPayment.name == "paypalexpress2" %}
             {% with externalPayment.name|lower as name %}

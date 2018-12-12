@@ -54,13 +54,13 @@
                                     {% if msg.message.indexOf('Adding coupon failed for the following reason:') == 0 %}
                                         <li class="mz-message-item">{{labels.couponCodeError}}</li>
                                     {% else %}
-                                        <li class="mz-message-item">{{ msg.message|safe }}</li>
+                                        {% comment %} <li class="mz-message-item">{{ msg.message|safe }}</li> {% endcomment %}
                                     {% endif %}
                                 {% endif %}
                             {% endif %}
                         {% endif %}
                     {% endif %}
-                    <!-- <li class="mz-message-item" >{{ msg.message }}</li> -->
+                     {% comment %} <li class="mz-message-item" >{{ msg.message }}</li> {% endcomment %}
                 </ul>
             {% endif %}
         {% endfor %}
