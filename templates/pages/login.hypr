@@ -54,4 +54,5 @@
             </div>
         </div>
     </div>
+{% require_script "pages/loginPage" %}
 {% endblock body-content %}
