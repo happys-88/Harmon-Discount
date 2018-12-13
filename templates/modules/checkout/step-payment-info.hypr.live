@@ -86,7 +86,7 @@
                {%if model.isExternalCheckoutFlowComplete%}
                 <a class="mz-checkout-payment-change" href="javascript:void(0);" data-mz-action="cancelExternalCheckout">{{ labels.remove }} </a>
                {% endif %}
-               <div class="mz-l-stack-section">
+               <div class="mz-l-stack-section mz-checkout-payment-paypalbtn">
                     <div class="mz-l-formfieldgroup-cell">
                         <img alt="PayPal" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" align="left" width="100px" height="26px" style="margin-right:7px;">
                     </div>
