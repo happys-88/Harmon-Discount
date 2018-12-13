@@ -172,10 +172,10 @@
                 <div class="col-sm-8">
                     <input type="text" id="billing-email" name="billing-email" data-mz-value="billingContact.email" value="{{ model.billingContact.email }}" class="from-control"/>
                     <span class="mz-validationmessage" data-mz-validationmessage-for="billingContact.email"></span>
-                    <div class="mz-l-formfieldgroup-cell">
-                    <input type="checkbox" id="receive-special-offers" name="special-offers" {% if model.acceptsMarketing %}checked="checked" {% endif %}data-mz-value="acceptsMarketing" class="mz-checkout-optin" />
-                    <label for="receive-special-offers" class="mz-inline">{{ labels.optIn|string_format(siteContext.generalSettings.websiteName) }}
-                    </label>
+                    <div class="mz-l-formfieldgroup-cell receive-special-offers-col"> 
+                        <input type="checkbox" id="receive-special-offers" name="special-offers" {% if model.acceptsMarketing %}checked="checked" {% endif %}data-mz-value="acceptsMarketing" class="mz-checkout-optin" />
+                        <label for="receive-special-offers" class="mz-inline">{{ labels.optIn|string_format(siteContext.generalSettings.websiteName) }}
+                    </label> 
                 </div>
                 </div>
             </div>

@@ -180,13 +180,20 @@
     .mz-checkoutform-paymentinfo {
         .mz-l-formfieldgroup-row {
             .mz-l-formfieldgroup-cell {
-                .mz-checkout-optin{
+                &.receive-special-offers-col{  
                     float: left;
-                }
-                .mz-inline{
-                    float: left;
-                    width: 90%;
-                }
+                    width: 100%;
+                    margin-top: 8px;
+                    .mz-checkout-optin{
+                        float: left;
+                    }
+                    .mz-inline{
+                        float: left;
+                        width: 95%;
+                        margin: 2px 0 0 5px; 
+                    } 
+                } 
+                
                 select {
                     height: 34px;
                 }
