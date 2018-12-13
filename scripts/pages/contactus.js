@@ -23,6 +23,8 @@ define(['modules/api',
                 this.trigger('error', { message: msg || 'Something went wrong!! Please try after sometime!' });
             },
             contactUsSubmit: function() {
+                alert ("contactUsSubmit");
+                console.log("contactUsSubmit");
                 var self = this;
                 var firstName = self.model.get('firstname');
                 var lastName = self.model.get('lastname');
@@ -43,19 +45,32 @@ define(['modules/api',
                                     "email": email,
                                     "topic": selectedTopic,
                                     "message": message
+                                },
+                                "success": function(response) {
+                                    self.model.set('isLoading', false);
+                                    var labels = HyprLiveContext.locals.labels;
+                                     if(response.statusCode === 202 || response.statusCode === 200) {
+                                        $('#contactUsForm').each(function(){
+                                            this.reset();
+                                        });
+                                        $("#submitMsg").html(labels.emailMessage);
+                                        $("#submitMsg").show();    
+                                    } else {
+                                        $("#submitMsg").html("Error: "+response.body.errors[0].message);
+                                        $("#submitMsg").show();    
+                                    }
+                                    self.trigger('success', { message: 'We have received your request! We will get back with you shortly!' });
+                                    window.console.log(response);
+                                    window.setTimeout(function() {
+                                        self.render();
+                                    }, 5000);
+                                },
+                             "error": function(response) {
+                                    self.setError();
+                                   // self.trigger('success', { message: 'We have received your request! We will get back with you shortly!' });
                                 }
-                            })
-                            .success(function(response) {
-                                self.model.set('isLoading', false);
-                                self.trigger('success', { message: 'We have received your request! We will get back with you shortly!' });
-                                window.console.log(response);
-                                window.setTimeout(function() {
-                                    self.render();
-                                }, 5000);
-                            })
-                            .error(function(response) {
-                                self.setError();
                             });
+                            
                     } else {
                         self.setError();
                     }
