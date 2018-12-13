@@ -163,9 +163,10 @@
 
         <div class="mz-l-stack-section mz-formfieldgroup-row mz-paymentselector-separator mz-checkoutform">
             <div class="form-group mz-l-formfieldgroup-row">
-                <div class="col-sm-4">
+            <h4 class="mz-checkoutform-title">{{ labels.billingContact }}</h4>
+                <div class="col-sm-4 mz-label">
                     <label for="billing-email">
-                        {{ labels.billingContact }}<span class="is-required"> *</span>:
+                        {{ labels.emailAddress }}<span class="is-required"> *</span>:
                     </label>
                 </div>
                 <div class="col-sm-8">
