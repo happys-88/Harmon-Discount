@@ -532,7 +532,7 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
         },
         paypalCheckoutGuest: function(e) {
             $.cookie('paypal', 'true');
-            this.checkoutGuest(e);
+           // this.checkoutGuest(e);
         },
         proceedToCheckout: function(e) {
             e.preventDefault();
