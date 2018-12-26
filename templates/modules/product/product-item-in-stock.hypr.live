@@ -2,6 +2,7 @@
                 <div class="product-image-swatch-wrapper">
                     <div class="mz-productlisting-image">
                         {% block product-image %}
+                        {% require_script "modules/category/rti-qview" %}
                         <a href='{% make_url "product" model %}'>
                             {% include "modules/product/product-image" with productImage=model.mainImage productMaxWidth=themeSettings.productImageDirectoryMaxWidth productAltText=model.mainImage.altText productImageClass="mz-sold-out-blur" as_parameter %}
                             {% if hasBadge %}
@@ -17,7 +18,7 @@
                             {% endif %}
                         </a>
                         {% if model.productType != themeSettings.familyProductType %}
-                            <button class="quick-view-btn primary qvButton quickview-btn" type="button" data-toggle="modal" data-target="{{ model.productCode }}" data-mz-product-data="{% json_attribute model %}">
+                            <button class="quick-view-btn primary qvButton quickview-btn" type="button"  data-toggle="modal" data-target="{{ model.productCode }}" data-mz-product-data="{% json_attribute model %}">
                                     <span>{{ labels.quickView }}</span>
                             </button>
                         {% endif %}

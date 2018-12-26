@@ -102,6 +102,7 @@
                         </div>
                     </div>
                 </div> 
+                <div id="qve-rti"></div>
             </div>
             {% comment %}
             <div class="modal-footer"> 
@@ -114,6 +115,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Delivery surcharge modal -->
 <div class="del-surcharge-popup" style="display:none;">
