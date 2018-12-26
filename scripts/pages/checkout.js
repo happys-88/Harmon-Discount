@@ -248,7 +248,7 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
             if (e.target !== $('[data-mz-saved-credit-card]')[0]) {
                 $("[name='savedPaymentMethods']").val('0');
             }
-            this.model.clear();
+            //this.model.clear();
             this.model.resetAddressDefaults();
             if(HyprLiveContext.locals.siteContext.checkoutSettings.purchaseOrder.isEnabled) {
                 this.model.resetPOInfo();
