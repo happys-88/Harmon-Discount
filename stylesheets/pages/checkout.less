@@ -15,7 +15,11 @@
   .animation(pulse, 0.5s, 0s, linear, alternate, infinite);
 }
 
-.mz-checkoutform-comments-field {
+.mz-checkoutform-comments-field { 
+    display: none;
+}
+#giftmessage:checked~.mz-checkoutform-comments-field{
+    display: block;
     width: 100%;
     height: 8em;
     resize: none;
