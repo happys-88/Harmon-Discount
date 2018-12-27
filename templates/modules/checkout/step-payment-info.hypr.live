@@ -190,7 +190,7 @@
     </div>
 
     <div class="mz-formstep-next">
-        <button class="mz-button" data-mz-action="next">{{ labels.next }}</button>
+        <button class="mz-button" id="payment-next-button" data-mz-action="next">{{ labels.next }}</button>
     </div>
     </fieldset>
 </div>
