@@ -256,10 +256,12 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
             if(e.target.value === 'PayPalExpress2') {
                 $('#btn_xpressPaypal').show();
                 setTimeout(function(){
-                    var billingEmail = $('#billing-email').val();
-                    if (billingEmail){ 
+                   // var billingEmail = $('#billing-email').val();
+                   // if (billingEmail){ 
                          $("#payment-next-button").hide();
-                    }
+                         /*var _qtyObj = $('[data-mz-message-for="paypal"]');
+                         _qtyObj.text("for next step press paypal button");*/
+                   // }
                 },300);                
             } else {
                 $('#btn_xpressPaypal').hide();
