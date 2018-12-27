@@ -13,7 +13,6 @@ define([
         });
 
         $(document).ready(function() {
-            alert("Ok");
             $('.quick-view-btn').click(function(){
                 console.log("Hello");
                 var url = "https://costplus-harmon.baynote.net/recs/1/costplus_harmon?&attrs=Price&attrs=ProductId&attrs=ThumbUrl&attrs=Title&attrs=url&attrs=ProductCode&productId=800897836566&page=pdp&format=json";
