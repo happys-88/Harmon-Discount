@@ -610,7 +610,7 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
         },
         paypalCheckout: function(e) {
             $.cookie('paypal', 'true');
-            this.proceedToCheckout(e);
+            //this.proceedToCheckout(e);
         },
         addCoupon: function() {
             var self = this;
