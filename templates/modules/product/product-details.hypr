@@ -35,10 +35,10 @@
                     {% endwith %}
                     <div class="col-xs-12">
                         <div class="mz-productcodes-productcode p-3" itemprop="sku">{{ labels.item}} # {{ model.productCode }}</div>
-                        <div class="mz-reviews-ratings">
+                       {% comment %} <div class="mz-reviews-ratings">
                             <div><img src="/resources/images/harmon/star.jpg" alt="rating"><span>4.9(27) Read a Review | Write A review</span></div>
                             <div>11 out of 12(92%) reviewers recommend this product</div>
-                        </div>
+                        </div> {% endcomment %} 
                         {% comment %}
                         <div class="mz-shipping-restiction">
                             <span>Shipping Restiction text attribute</span>
