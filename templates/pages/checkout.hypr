@@ -59,6 +59,11 @@
                             {% include "modules/checkout/comments-field" %}
                         </div>
                     {% endif %}
+                    {% if themeSettings.showCheckoutGiftMessage %}
+                        <div class="mz-checkoutform-comments mz-l-formfieldgroup-row" id="giftmessage-field" >
+                            {% include "modules/checkout/gift-message" %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
 

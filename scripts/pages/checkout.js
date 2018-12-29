@@ -498,9 +498,13 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
         }
     });
 
-    var CommentsView = Backbone.MozuView.extend({
+    // var CommentsView = Backbone.MozuView.extend({
+    //     templateName: 'modules/checkout/comments-field',
+    //     autoUpdate: ['shopperNotes.comments']
+    // });
+    var GiftMessageView = Backbone.MozuView.extend({
         templateName: 'modules/checkout/comments-field',
-        autoUpdate: ['shopperNotes.comments']
+        autoUpdate: ['shopperNotes.giftMessage']
     });
 
     var attributeFields = function() {
@@ -619,11 +623,14 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
                     el: $('#coupon-code-field'),
                     model: checkoutModel
                 }),
-                comments: Hypr.getThemeSetting('showCheckoutCommentsField') && new CommentsView({
-                    el: $('#comments-field'),
+                // comments: Hypr.getThemeSetting('showCheckoutCommentsField') && new CommentsView({
+                //     el: $('#comments-field'),
+                //     model: checkoutModel
+                // }),
+                GiftMessageViews: Hypr.getThemeSetting('showCheckoutGiftMessage') && new GiftMessageView({
+                     el: $('#giftmessage-field'),
                     model: checkoutModel
                 }),
-
                 reviewPanel: new ReviewOrderView({
                     el: $('#step-review'),
                     model: checkoutModel

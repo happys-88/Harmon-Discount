@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "b885dc397d985f8b1d98b089c688fc9a463ae82d"
+      "commit": "a8c4e1d8f55f42383016a4fbec330feab0062670"
     }
   },
   "editors": [
@@ -664,7 +664,8 @@
     "showCartItemWeight": true,
     "showCategoryFacets": true,
     "showChildCategoriesInFaceting": true,
-    "showCheckoutCommentsField": true,
+    "showCheckoutCommentsField": false,
+    "showCheckoutGiftMessage": true,
     "showMSRP": true,
     "showProductDetailMeasurements": true,
     "showProductDetailMfgPartNumber": true,
