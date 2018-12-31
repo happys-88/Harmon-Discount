@@ -878,7 +878,7 @@
       ],
       "icon": "/resources/admin/widgets/BV_Conversations.png",
       "validPageTypes": [
-        "product"
+        "*"
       ]
     },
     {
