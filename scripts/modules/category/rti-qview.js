@@ -14,6 +14,7 @@ define([
 
         $(document).ready(function() {
             $('.quick-view-btn').click(function(){
+                var prodID = $(this).attr("data-target");
                 var url = "https://costplus-harmon.baynote.net/recs/1/costplus_harmon?&attrs=Price&attrs=ProductId&attrs=ThumbUrl&attrs=Title&attrs=url&attrs=ProductCode&productId=800897836566&page=pdp&format=json";
                 api.request("GET", "/commonRoute").then(function (response){
                    console.log("Success");    
@@ -38,7 +39,8 @@ define([
                     console.log("Error : "+err);
                 });*/
                    setTimeout(function(){
-                        var quickViewReview = $('.bvr-inline-rating').html();
+                    var Id = 'BVRRInlineRating-'+prodID;
+                    var quickViewReview = $('#'+ Id).html();
                         $('#BV-Qucik-View').append(quickViewReview);
                    },1000);   
             });
