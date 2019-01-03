@@ -18,16 +18,16 @@ define([
                 api.request("GET", "/commonRoute").then(function (response){
                    console.log("Success");    
                    if(response !== "FAILED") {
-                        console.log("SUCCESS : " +response);
-                   }
-                   var StateModel = Backbone.Model.extend();
-                   var rtiData = new StateModel(JSON.stringify(response));
-                   console.log("State Model : "+ JSON.stringify(rtiData));
-                   var view = new RTIView({
-                        model: rtiData,
-                        el: $('#qve-rti')
-                    });
-                    view.render();
+                        //console.log("SUCCESS : " +response);
+                       var StateModel = Backbone.Model.extend();
+                       var rtiData = new StateModel(response);
+                       console.log("State Model : "+ JSON.stringify(rtiData));
+                       var view = new RTIView({
+                            model: rtiData,
+                            el: $('#qve-rti')
+                        });
+                        view.render();
+                    }
                 }, function(err) {
                     console.log("Error : "+JSON.stringify(err));
                 });
@@ -38,9 +38,9 @@ define([
                     console.log("Error : "+err);
                 });*/
                    setTimeout(function(){
-                    var quickViewReview = $('.bvr-inline-rating').html();
-                    $('#BV-Qucik-View').append(quickViewReview);
-                },1000);   
+                        var quickViewReview = $('.bvr-inline-rating').html();
+                        $('#BV-Qucik-View').append(quickViewReview);
+                   },1000);   
             });
         });
     });

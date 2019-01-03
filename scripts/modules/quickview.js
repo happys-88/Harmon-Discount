@@ -843,7 +843,5 @@ define([
             $('body').on('click', '#surcharge-details', function() {
                 blockUiLoader.deliverySurchargeMessage();
             });
-
-
         });
     });

@@ -1,4 +1,4 @@
 <div>
 	<h3>This is recommendation zone !!</h3>
-	{% dump model.0 %}
+	{% dump model %}
 </div>
