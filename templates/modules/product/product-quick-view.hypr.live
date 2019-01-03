@@ -27,6 +27,15 @@
                                         <div id="overview-tab" class="tab_content">
                                             <div class="mz-product-top-content">
                                                 <div class="mz-pagetitle" itemprop="name">{{ model.content.productName|safe }}</div>
+                                                <div  id="BV-Qucik-View" >
+
+                                                    
+                                                    
+
+                                                </div>
+
+
+
                                                 <div id="BVRRInlineRating-{{model.productCode}}" class="bvr-inline-rating" data-mz-product-code="{{ model.productCode }}" data-mz-product-url="{{ model.url }}"></div>
                                                 {% with model|get_product_attribute("tenant~brand") as brandName %}
                                                     <div class="mz-view-all-brand">
