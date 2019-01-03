@@ -182,4 +182,3 @@
     {% endif %}
 {% endif %}
 
-<div id="BVRRInlineRating-{{model.productCode}}" class="bvr-inline-rating" data-mz-product-code="{{ model.productCode }}" data-mz-product-url="{{ model.url }}"></div>
