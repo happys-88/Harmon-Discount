@@ -16,13 +16,15 @@
 	            <span class="discount">{{ thresholdMsg.message }} </span> 
 	        {% endfor %} 
 		</div>
-		{% if model.orderDiscounts.length > 0 %}
-			<div class="mz-discount-row order-level-discount">
-				{% for orderDiscount in model.orderDiscounts  %}
-					<span class="discount">{{ orderDiscount.impact |currency }} {{ orderDiscount.discount.name }}</span>
-				{% endfor %}
-			</div>
-		{% endif %} 	
+		{% comment %}
+			{% if model.orderDiscounts.length > 0 %}
+				<div class="mz-discount-row order-level-discount">
+					{% for orderDiscount in model.orderDiscounts  %}
+						<span class="discount">{{ orderDiscount.impact |currency }} {{ orderDiscount.discount.name }}</span>
+					{% endfor %}
+				</div>
+			{% endif %}
+		{% endcomment %}	
 		<div class="row heading">
 			<div class="col-xs-7">
 				<p>{{ labels.item }}</p>
