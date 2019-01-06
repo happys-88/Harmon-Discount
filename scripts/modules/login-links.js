@@ -353,7 +353,7 @@ define(['modules/backbone-mozu', 'shim!vendor/bootstrap/js/popover[shim!vendor/b
     SignupPopover.prototype = new DismissablePopover();
     $.extend(SignupPopover.prototype, LoginPopover.prototype, {
         boundMethods: ['handleEnterKey', 'dismisser', 'displayMessage', 'displayApiMessage', 'createPopover', 'signup', 'onPopoverShow'],
-        template: Hypr.getTemplate('modules/common/signup-popover').render(),
+        //template: Hypr.getTemplate('modules/common/signup-popover').render(), 
         bindListeners: function(on) {
             var onOrOff = on ? "on" : "off";
             this.$parent[onOrOff]('click', '[data-mz-action="signup"]', this.signup);

@@ -9,14 +9,15 @@ define([
     ],
     function($, _, Hypr, hyprlivecontext, Backbone, api, async) {
         var RTIView = Backbone.MozuView.extend({
-            templateName: "modules/category/rti-recommendations"
+            templateName: "modules/category/rti-recommendations" 
         });
 
         $(document).ready(function() {
             $('.quick-view-btn').click(function(){
                 var prodID = $(this).attr("data-target");
-                var url = "https://costplus-harmon.baynote.net/recs/1/costplus_harmon?&attrs=Price&attrs=ProductId&attrs=ThumbUrl&attrs=Title&attrs=url&attrs=ProductCode&productId=800897836566&page=pdp&format=json";
-                api.request("GET", "/commonRoute").then(function (response){
+                console.log(prodID); 
+                var url = "https://costplus-harmon.baynote.net/recs/1/costplus_harmon?&attrs=Price&attrs=ProductId&attrs=ThumbUrl&attrs=Title&attrs=url&attrs=ProductCode&productId="+prodID+"&page=pdp&format=json"; 
+                api.request("GET", "/commonRoute").then(function (response){ 
                    console.log("Success");    
                    if(response !== "FAILED") {
                         //console.log("SUCCESS : " +response);

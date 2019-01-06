@@ -33,27 +33,12 @@
                                                        <a href="/shop-by-brand/c/1270">{{ labels.viewAll   }}</a>
                                                        {% for brandcategory in model.categories %}
                                                          {% if brandcategory.parentCategoryId=="1270" %}
-                                                            <a href='{% make_url "category" brandcategory %}'>&nbsp &nbsp{{   brandName.values|first|prop("value") }}</a>
+                                                            <a href='{% make_url "category" brandcategory %}'>&nbsp; &nbsp;{{   brandName.values|first|prop("value") }}</a>
                                                          {% endif %}
                                                        {% endfor %}
                                                     </div >
                                                 {% endwith %}
-                                                    
-                                                {% comment %} <div class="row">
-                                                    <div class="col-xs-12 col-sm-12">
-                                                    <div class="mz-productcodes-productcode p-3" itemprop="sku">Item # {{ model.productCode }}</div>
-                                                    </div>
-                                                </div> {% endcomment %}
-                                                {% comment %}
-                                                <div class="mz-all-review-container">
-                                                    <span class="mz-reviews-pdp-stars">
-                                                        {% include "modules/product/product-ratings" %}
-                                                    </span>
-                                                    <span class="mz-reviews-pdp-text">
-                                                        <a href="#">4.9(10) {{ labels.readAReview }}</a>
-                                                    </span>
-                                                </div>
-                                                {% endcomment %}
+                                              
                                                 <div class="qvPromo" role="button" style="display: none;">
                                                     {{ model|get_product_attribute_value("tenant~Promo") }}
                                                 </div>
@@ -104,15 +89,7 @@
                 </div> 
                 <div id="qve-rti"></div>
             </div>
-            {% comment %}
-            <div class="modal-footer"> 
-                <div id="quick-view-rti">
-                    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">RTI Widget - Recommended For You</span>{% endif %}  
-                    {% dropzone "quick-view-rti" scope="template" %}     
-                </div>    
-            </div>
-            {% endcomment %} 
-        </div>
+        </div> 
     </div>
 </div>
 

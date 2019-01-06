@@ -1,4 +1,1 @@
-{% comment %} <span class="mz-productlisting-imageplaceholder img-responsive{% if imgClass %} {{imgClass}}{% endif %}">
-    <span class="mz-productlisting-imageplaceholdertext">{{ labels.productImagePlaceholder }}</span>
-</span> {% endcomment %}
-<img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
+<img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" /> 
