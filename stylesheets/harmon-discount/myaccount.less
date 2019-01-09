@@ -387,8 +387,9 @@
             line-height: 12px;
         }
     }
-    //Order history
-    .mz-accountorderhistory {
+    //Order and Return history
+    .mz-accountorderhistory,
+    .mz-accountreturnhistory {
         .mz-orderhistory-section {
             .mz-pagingcontrols,
             .mz-pagenumbers {
@@ -444,6 +445,24 @@
                 }
             }
         }
+    }
+    .mz-accountreturnhistory {
+        .mz-l-paginatedlist-list {
+            float: left;
+            width: 100%;
+        }
+        .mz-itemlisting-rmaitem {
+            h3 {
+                margin: 0 0 5px 13px;
+            }
+            .mz-itemlisting-rmaitem-details {
+                padding-left: 15px;
+                h3 {
+                    margin: 0 0 5px 0;
+                }
+            }
+        }
+        
     }
     //Payment
     #paymentmethods {
