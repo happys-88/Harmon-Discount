@@ -10,9 +10,9 @@
 @buttonBgColor: #d15f2a;
 @defaultBorderColor: #d4d4d4;
 @listItemColor: #00adce;
-@mzSiteNavBg: #e20177;
+@mzSiteNavBg: @linkColor;
 @mzSiteNavMainLinkActive: #9f146c;
-@mzSiteNavSubLinkActive: #e20177;
+@mzSiteNavSubLinkActive: @linkColor;
 
 @mobileNavBorderBtm: #cbcbcb;
 @mobileNavSubMenuBg: #fff;
@@ -52,6 +52,9 @@ img {
 
 a {
 	outline: none;
+	&:visited{
+		text-decoration: underline;   
+	}
 }
 
 .clearfix {
@@ -1011,8 +1014,8 @@ footer {
 .mz-customer-service-page,
 .mz-customer-service-section{
 	.mz-content-widget-inner-wrap{
-		font-size: 16px; 
-        line-height: 25px;
+		font-size: 14px; 
+        line-height: 22px; 
 	}
 }
 .mz-reset-password-val{
