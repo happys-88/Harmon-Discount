@@ -10,7 +10,7 @@ define([
             templateName: "modules/category/rti-recommendations"
         });
 
-        $(document).ready(function() {
+        $(document).ready(function() { 
             $('.quick-view-btn').click(function(){
                 var prodCode = $(this).attr("data-target"); 
                 api.request("POST", "/commonRoute", {'prodCode':prodCode}).then(function (response){
@@ -34,9 +34,7 @@ define([
                         view.render(); 
 
                         // Call slick slider
-                        $('.qv-rti-content .rti-product-slider').addClass("hello"); 
-
-                        $('.qv-rti-content .rti-product-slider').slick({ 
+                        $('.qv-rti-content .rti-product-slider').slick({  
                             infinite: false,
                             slidesToShow: 4, 
                             prevArrow: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
@@ -64,7 +62,4 @@ define([
                 },1000);   
             });
         });
-
-        
-
-    });
+    }); 

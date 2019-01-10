@@ -11,12 +11,10 @@
                 {% if (model|get_product_attribute_value("tenant~warning")) %}  
                     <li role="presentation"><a href="#prodWarning" aria-controls="prodWarning" role="tab" data-toggle="tab">Warning</a></li>
                 {% endif %}
-                 {% with model|get_product_attribute("tenant~prop-65") as pro65 %}
-                    {% if  pro65.values|first|prop("value") %}  
-                        <li role="presentation"><a href="#Prop65" aria-controls="Prop65" role="tab" data-toggle="tab">{{ pro65.attributeDetail.name }}</a></li>
-                    {% endif %}
-                {% endwith %}
-            </ul>
+                {% if (model|get_product_attribute_value("tenant~ca-prop-65")) %} 
+                    <li role="presentation"><a href="#Prop65" aria-controls="Prop65" role="tab" data-toggle="tab">CA Prop 65</a></li>    
+                {% endif %}
+            </ul> 
             <div class="tab-content mz-mobile-tabs nav nav-tabs">
                 {% if model.content.productFullDescription %}
                     <li class="active visible-xs" role="presentation" class="active"><a href="#longDescription" aria-controls="longDescription" role="tab" data-toggle="tab">Product Details</a></li> 
@@ -36,14 +34,12 @@
                         {{ model|get_product_attribute_value("tenant~warning")|safe }}    
                     </div>
                 {% endif %}
-                {% with model|get_product_attribute("tenant~prop-65") as pro65 %}
-                    {% if pro65.values|first|prop("value") %}  
-                        <li class="visible-xs" role="presentation"><a href="#Prop65" aria-controls="Prop65" role="tab" data-toggle="tab">{{ pro65.attributeDetail.name }}</a></li>
+                {% if (model|get_product_attribute_value("tenant~ca-prop-65")) %} 
+                    <li class="visible-xs" role="presentation"><a href="#Prop65" aria-controls="Prop65" role="tab" data-toggle="tab">CA Prop 65</a></li>
                     <div role="tabpanel" class="tab-pane" id="Prop65">
-                        {{ themeSettings.content_Prop_65 }}    
-                    </div>
-                    {% endif %}
-                {% endwith %}
+                        {{ model|get_product_attribute_value("tenant~ca-prop-65")|safe }}     
+                    </div>     
+                {% endif %}   
             </div>
         </div>
     {% endif %}

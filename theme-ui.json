@@ -344,18 +344,8 @@
                 {
                     "xtype": "mz-input-text",
                     "name": "productInfoTabs",
-                    "fieldLabel": "Product Info Tabs"
-                },
-                {
-                    "xtype": "mz-input-text",
-                    "name": "content_CAWarning",
-                    "fieldLabel": "Content For CA Warning"
-                },
-                {
-                    "xtype": "mz-input-text",
-                    "name": "content_Prop_65",
-                    "fieldLabel": "Content For Prop 65"
-                },
+                    "fieldLabel": "Product Info Tabs"  
+                }, 
                 {
                     "xtype": "mz-input-text",
                     "name": "oneSizeAttributeName",
