@@ -22,7 +22,17 @@ define([
                         //console.log("SUCCESS : " +response);
                        var StateModel = Backbone.Model.extend();
                        var rtiData = new StateModel(response);
-                       console.log("State Model : "+ JSON.stringify(rtiData));
+                       
+                       // console.log("State Model : "+ JSON.stringify(rtiData));
+                       /*var slots = rtiData.attributes[0].slotResults;
+                       _.each(slots, function(slot){
+                        var url = slot.url;
+                        var urlLink = new URL(url);
+                        var host = urlLink.origin;
+                            // console.log("SLot URL : "+slot.url);
+                            slot.url = url.replace(host,'');
+                       });
+                       rtiData.attributes[0].slotResults = slots;*/
                        var view = new RTIView({
                             model: rtiData,
                             el: $('#qve-rti')
