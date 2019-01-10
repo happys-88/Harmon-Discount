@@ -1,45 +1,43 @@
-<div class="mz-productlist mz-prev-margin {% block module-classes %}{% endblock module-classes %}">
-    {% if model.slotResults %} 
-        {% for prod in model.slotResults %}
-        	{% if forloop.first && model.slotResults.length >= 1 %}  
-    			<ul class="bxslider {% block list-classes %}{% endblock list-classes %}">
-    		{% endif %}
-            <li class="rti-product-item col-sm-3 col-xs-6" data-mz-product="{{ prod.productCode }}">   	
-		        {% block product-image %}  
-    		        <a class="rti-product-image" href="{% make_url "product" prod %}"  data-baynote-slot="{{prod.slot}}"  data-baynote-widget="{{prod.widgetId}}" data-baynote-pid="{{prod.productCode}}" data-baynote-href="{{prod.href}}">
-    		            {% if prod.mainImage.imageUrl %}
-    		                <img class="image" src="{% make_url "image" prod.mainImage with maxWidth=themeSettings.pdpRTIMaxWidth as_parameter  %}" {% if prod.mainImage.altText %}alt="{{ prod.mainImage.altText }}"{% endif %} onerror="replaceImage(this);">
-    		            {% else %}
-    		                {% include 'modules/product/product-no-image' %}
-    		            {% endif %} 
-    		        </a> 
-		        {% endblock product-image %} 
-		        <p class="mz-related-product-brand-name">{{ prod|get_product_attribute_value('tenant~Brands')|default('')|safe }}</p>
-		        <div class="mz-related-products-title-container">
-                    <a class="mz-productlisting-title" href="{% make_url "product" prod %} "  data-baynote-slot="{{prod.slot}}"  data-baynote-widget="{{prod.widgetId}}" data-baynote-pid="{{prod.productCode}}" data-baynote-href="{{prod.href}}">{{prod.content.productName|safe}}</a>
-                    <div class="mz-productlisting-title mz-productlisting-price">
-                         {% include "modules/product/price-stack" with model=prod %}
-                    </div>
-                </div>
-                {% if prod.properties and prod|get_product_attribute_value("tenant~isExclusive") %}
-                    <p class="exclusive-text">{{ labels.exclusive }}</p>
-                {% endif %}                 
-                {% for option in prod.options %} 
-                    {% if option.attributeFQN==='tenant~color' && option.values && option.values.length > 1 %}
-                        <ul class="image-swatches text-center mz-reset-padding-left"> 
-                            {% for imageSwatch in option.availableColors %}
-                             <a data-mz-product-code='{{imageSwatch.productCode}}' data-mz-swatch-color='{{imageSwatch.color}}'><img onmouseleave="jQuery(this).parents('.product-code').find('.image').attr('src','{% make_url "image" prod.mainImage with maxWidth=themeSettings.ProductDetailImageWidth as_parameters %}')" src="{{imageSwatch.swatchIconPath}}" /></a> 
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
-                {% endfor %}
-            </li>
-    		{% if forloop.last && model.items.length >= 1 %} 
-    			</ul>
-    		{% endif %}
+<div class="mz-productlist mz-prev-margin">   
+    {% if qvRtiData.slotResults %}  
+        {% for prod in qvRtiData.slotResults %}  
+            {% if forloop.first && qvRtiData.slotResults.length >= 1 %}  
+                <ul class="rti-product-slider">   
+            {% endif %}
+            
+            <li class="rti-product-item col-sm-3">
+                
+                {% with prod.attrs|findwhere("name", "ThumbUrl") as productImage %}  
+                    {% block product-image %}   
+                        <a class="rti-product-image" href="{{prod.url}}"  data-baynote-slot="{{prod.slot}}"  data-baynote-widget="{{qvRtiData.id}}" data-baynote-pid="{% with prod.attrs|findwhere("name", "ProductId") as productId %}{{productId.values}}{% endwith %}" data-baynote-href="{{prod.url}}"> 
+                            {% if productImage %}   
+                                <img class="image" src="{{productImage.values|first}}" onerror="replaceImage(this);">      
+                            {% else %} 
+                                <img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />      
+                            {% endif %} 
+                        </a> 
+                    {% endblock product-image %}  
+                {% endwith %} 
+
+                    {% for prodData in prod.attrs %}  
+                        {% if prodData.name=="Title" %}   
+                            <div class="mz-related-products-title-container">   
+                                <a class="mz-productlisting-title" href="{{prod.url}}"  data-baynote-slot="{{prod.slot}}"  data-baynote-widget="{{qvRtiData.id}}" data-baynote-pid="{% with prod.attrs|findwhere("name", "ProductId") as productId %}{{productId.values}}{% endwith %}" data-baynote-href="{{prod.url}}">{{prodData.values|first|safe}}</a>  
+                            </div>  
+                        {% endif %}
+                        {% if prodData.name=="Price" %} 
+                            <div itemprop="priceSpecification" itemscope itemtype="http://schema.org/PriceSpecification" class="mz-pricestack">
+                                <span itemprop="price" class="mz-price">
+                                    {{prodData.values|currency}} 
+                                </span> 
+                            </div>  
+                        {% endif %}    
+                    {% endfor %}   
+                  
+            </li> 
+            {% if forloop.last && qvRtiData.slotResults.length >= 1 %}  
+                </ul>
+            {% endif %} 
         {% endfor %}
-    {% endif %}
+    {% endif %} 
 </div>
-<script type="text/javascript">
-    var BNData = '{{model.bnData}}'; 
-</script>

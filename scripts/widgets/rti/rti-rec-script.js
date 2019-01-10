@@ -243,20 +243,7 @@ require([
                                                 }
                                             }
                                             ]
-                                        });
-                                        // $("." + placeholder + '.rti-recommended-products .bxslider').bxSlider({
-                                        //     minSlides: 2,
-                                        //     maxSlides: 6,    
-                                        //     slideWidth: 200,  
-                                        //     moveSlides: 1,   
-                                        //     slideMargin: 30, 
-                                        //     nextText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-                                        //     prevText: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                                        //     responsive: true,
-                                        //     pager: false,
-                                        //     infiniteLoop: false,
-                                        //     hideControlOnEnd: true
-                                        // });
+                                        }); 
                                     }else if(productList.length===1){
                                         $("[data-mz-product]").find('img').addClass('single-img-width'); 
                                     }

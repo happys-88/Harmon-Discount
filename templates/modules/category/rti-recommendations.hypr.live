@@ -3,51 +3,8 @@
 		<h2 class="{{ qvRtiData.placeholderName }} slider-title heading-2"><span>{{ qvRtiData.displayName}}</span></h2>    
 		<div class="rti-recommended-products {{ qvRtiData.placeholderName }} carousel-parent">
 			<div data-rti-recommended-products={{qvRtiData.placeholderName}}>
-				<div class="mz-productlist mz-prev-margin"> 
-				    {% if qvRtiData.slotResults %}  
-				    	{% for prod in qvRtiData.slotResults %}  
-					        {% if forloop.first && qvRtiData.slotResults.length >= 1 %}  
-				    			<ul class="bxslider"> 
-				    		{% endif %}
-				    		
-				    		<li class="rti-product-item col-sm-3">
-				    			
-			    				{% with prod.attrs|findwhere("name", "ThumbUrl") as productImage %}
-				    				{% block product-image %}   
-					    		        <a class="rti-product-image" href="{{prod.url}}"  data-baynote-slot="{{prod.slot}}"  data-baynote-widget="{{qvRtiData.id}}" data-baynote-pid="{% if prodData.name=="ProductId" %}{{prodData.values}}{% endif%}" data-baynote-href="{{prod.url}}"> 
-					    		        	{% if productImage %}   
-					    		        		<img class="image" src="{{productImage.values|first}}" onerror="replaceImage(this);">      
-					    		            {% else %} 
-					    		                <img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />     
-					    		            {% endif %} 
-					    		        </a> 
-							        {% endblock product-image %}  
-							    {% endwith %} 
-
-								    {% for prodData in prod.attrs %} 
-										{% if prodData.name=="Title" %}   
-									    	<div class="mz-related-products-title-container">   
-							                    <a class="mz-productlisting-title" href="{{prod.url}}"  data-baynote-slot="{{prod.slot}}"  data-baynote-widget="{{qvRtiData.id}}" data-baynote-pid="{{prod.productCode}}" data-baynote-href="{{prod.url}}">{{prodData.values|first|safe}}</a> 
-							                </div>  
-									    {% endif %}
-									    {% if prodData.name=="Price" %}
-									    	<div itemprop="priceSpecification" itemscope itemtype="http://schema.org/PriceSpecification" class="mz-pricestack">
-	    										<span itemprop="price" class="mz-price">
-													{{prodData.values|currency}} 
-												</span> 
-											</div>  
-									    {% endif %}    
-					    			{% endfor %}   
-				    			  
-				    		</li> 
-				    		{% if forloop.last && qvRtiData.slotResults.length >= 1 %}  
-				    			</ul>
-				    		{% endif %} 
-				    	{% endfor %}
-				    {% endif %} 
-				</div>
+				{% include "modules/product/rti-product-list-qv" %}  
 			</div>
 		</div> 
-		 
-	{% endfor %} 
+	{% endfor %}   
 </div> 

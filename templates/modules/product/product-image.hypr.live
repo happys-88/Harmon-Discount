@@ -1,18 +1,18 @@
 {% if productImage %}
     <img  
         {% if productMaxWidth %}
-            src="{% make_url "image" productImage with max=productMaxWidth %}"
+            src="{% make_url "image" productImage with maxWidth=productMaxWidth %}"
             onerror="this.src='/cms/files/no-image-hr.jpg'"
         {% else %}
-            src="{% make_url "image" productImage with max=themeSettings.productCarouselImageWidth %}"
+            src="{% make_url "image" productImage with maxWidth=themeSettings.productCarouselImageWidth %}"
             onerror="this.src='/cms/files/no-image-hr.jpg'"
         {% endif %}
         {%if isMainImage=="true" %}
             class="mz-productimages-mainimage" data-mz-productimage-main id="zoom" itemprop="image"
             {% if productZoomWidth %}
-                data-zoom-image="{% make_url "image" productImage with max=productZoomWidth as_parameter %}"
+                data-zoom-image="{% make_url "image" productImage with maxWidth=productZoomWidth as_parameter %}"
             {% else %}
-            data-zoom-image="{% make_url "image" productImage with max=themeSettings.productZoomImageMaxWidth as_parameter %}"
+            data-zoom-image="{% make_url "image" productImage with maxWidth=themeSettings.productZoomImageMaxWidth as_parameter %}"
             {% endif %}
         {% endif %}
         {% if productImageClass %}
@@ -32,14 +32,14 @@
         {% endif %}
         {% if isThumb %}
             {% if productMaxWidth %}
-            data-orig-src="{% make_url "image" productImage with max=productMaxWidth as_parameter %}"
+            data-orig-src="{% make_url "image" productImage with maxWidth=productMaxWidth as_parameter %}"
             {% else %}
-                data-orig-src="{% make_url "image" productImage with max=themeSettings.productImagePdpMaxWidth %}"
+                data-orig-src="{% make_url "image" productImage with maxWidth=themeSettings.productImagePdpMaxWidth %}"
             {% endif %}
             {% if productZoomWidth %}
-            data-orig-zoom="{% make_url "image" productImage with max=productZoomWidth %}"
+            data-orig-zoom="{% make_url "image" productImage with maxWidth=productZoomWidth %}"
             {% else %}
-            data-orig-zoom="{% make_url "image" productImage with max=themeSettings.productZoomImageMaxWidth %}"
+            data-orig-zoom="{% make_url "image" productImage with maxWidth=themeSettings.productZoomImageMaxWidth %}"
             {% endif %}
         {% endif %}
         >
