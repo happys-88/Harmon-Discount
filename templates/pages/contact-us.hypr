@@ -15,13 +15,11 @@
 					<div id="contactus-content"> 
 						{% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Dropzone Area - HTML Widget 1</span> {% endif %} 
     					{% dropzone "contact-us-content-1" scope="page" %} 
-
     					<div class="mz-drop-zone via-email"> 
-    						<h4>Via Email</h4>
-							<p>You can send us an email directly at <a href="mailto:support@harmondiscount.com" title="Customer E-Mail To Harmon Discount">support@harmondiscount.com</a></p>
-							<hr>  
-    					</div>
-
+                            <h4>Via Email</h4>
+                            <p>You can send us an email directly at <a href="javascript:void(0);" id="mz-mailTo" title="Customer E-Mail To Harmon Discount">support@harmondiscount.com</a></p>
+                            <hr>  
+                        </div>
     					{% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Dropzone Area - HTML Widget 2</span> {% endif %} 
     					{% dropzone "contact-us-content-2" scope="page" %}     
 					</div>

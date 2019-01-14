@@ -12,6 +12,10 @@ define([
 		// 	}
 		// });
 		//site-nav close
+		$('#mz-mailTo').on('click',function(){
+	        var mail= "mailto:support@harmondiscount.com";
+	        window.open( mail,'_blank', 'height=400,width=400,resizable=yes,scrollbars=yes,status=no,titlebar=no');
+		});
 		$(document).on('click', function (event) { 
 			if ($('nav[id="ml-nav"]').hasClass("in")) {
 				if ($(event.target).parents("div").hasClass("panel-group")) {
@@ -152,6 +156,8 @@ define([
 		$("#back-to-top").click(function(){
 	        scrollToTop(); 
 		});
+
+
 		
 	});
 	function selectUrl() {
