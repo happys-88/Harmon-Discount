@@ -226,9 +226,17 @@
     function createMstLi(){
         var CheckoutNumber = "";
         $("ul.mz-orderlist>li").each(function(){
-            if(CheckoutNumber != $(this).data('mzParentcheckoutnumber')){                
+            var orderNumber = "";
+            var x = $('.mz-propertylist dt').length;
+            for (var i = 0; i < x; i++) { 
+                   var abc =  $('.mz-propertylist dt').eq(i).html();
+                   if (abc ==="Order Number"){
+                        orderNumber = $('.mz-propertylist dd').eq(i).html();
+                    }
+            }
+            if(orderNumber!=""){                
                 CheckoutNumber = $(this).data('mzParentcheckoutnumber');
-                $(this).before('<li class="mst-parent"> Order Number: '+CheckoutNumber+'</li>');
+                $(this).before('<li class="mst-parent"> Order Number: '+orderNumber+'</li>');
             }
         });
     }
