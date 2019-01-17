@@ -82,6 +82,8 @@
     "digitalCreditSubtractFromOrderPrefix": "(",
     "digitalCreditSubtractFromOrderSuffix": ")",
     "remainingBalance": "Remaining Balance",
+    "creditLimit": "Credit Limit",
+    "availableBalance": "Available Balance",
     "clear": "Clear",
     "cancel": "Cancel",
     "close": "close",
