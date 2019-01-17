@@ -745,9 +745,10 @@
                         order = me.getOrder(),
                         customer = order.get('customer');
                     var creditCode = this.get('digitalCreditCode');
-
                     var existingDigitalCredit = this._cachedDigitalCredits.filter(function(cred) {
-                        return cred.get('code').toLowerCase() === creditCode.toLowerCase();
+                        if (creditCode){
+                            return cred.get('code').toLowerCase() === creditCode.toLowerCase();
+                         }
                     });
                     if (existingDigitalCredit && existingDigitalCredit.length > 0) {
                         me.trigger('error', {
