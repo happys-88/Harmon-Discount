@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "abf64e7e083b52383d311088c30250c1cf6b136a"
+      "commit": "d494b454d27c1fc2461af80c9b8be40f819b397c"
     }
   },
   "editors": [
@@ -687,7 +687,7 @@
     "brontoAPIToken": "3F349C54-0ABD-4A94-AF0A-6D8B597BE830",
     "brontoUrl": "https://api.bronto.com/v4?wsdl",
     "enableCaptcha": false,
-    "captchaSiteKey": "6LdEoEIUAAAAAIMdhK2HqS06EqAUkkK3cyGFTeWl", 
+    "captchaSiteKey": "6LdEoEIUAAAAAIMdhK2HqS06EqAUkkK3cyGFTeWl",
     "changeShipping": false,
     "deliverySurchargeHeader": "Freight Delivery Surcharge",
     "deliverySurchargeContent": "Bulky items such as furniture and rugs cost more to ship due to greater size and weight. Therefore, a delivery surcharge will be billed in addition to the standard shipping charge.Surcharge amounts vary. The surcharge amount is noted on each product detail page.",

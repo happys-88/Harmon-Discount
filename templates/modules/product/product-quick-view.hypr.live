@@ -1,7 +1,7 @@
 <!-- Modal -->
-<div id="quickViewModal" class="modal fade quickviewElement" {% if pageContext.isEditMode and pageContext.cmsContext.template.path=="category" %} style="display:block; opacity: 1;"{% endif %}>  
+<div id="quickViewModal" class="modal fade quickviewElement">   
     {% include "modules/product/product-validation" %}
-    <div class="modal-dialog" {% if pageContext.isEditMode and pageContext.cmsContext.template.path=="category" %} style="transform: none;"{% endif %}>
+    <div class="modal-dialog"> 
         <div class="modal-content"> 
             <div class="close-modal">
                 <span class="mz-close-icon" aria-hidden="true" data-mz-quickview-close="true"></span>   

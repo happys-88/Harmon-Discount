@@ -8,34 +8,35 @@
     <div class="mz-l-container">
         <div class="row"> 
             
-            <div class="col-xs-12 mz-l-creditCard">
-                <div class="col-sm-6 col-xs-12 text-center">
-                    {% dropzone zoneId="credit-card-left-block" scope="template" %}
-                </div>
-                <div class="col-sm-6 col-xs-12 text-center">
-                    {% dropzone zoneId="credit-card-right-block" scope="template" %}
-                </div>
- 
-                <div class="mz-l-card-reward-bar col-xs-12">
-                    {% dropzone zoneId="reward-bar" scope="template" %}
-                </div>
-            </div>
+            <div class="mz-l-creditCard">  
+                <div class="col-xs-12 mz-l-creditCard">
+                    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Dropzone Area - HTML Widget 1</span> {% endif %}  
+                    {% dropzone "credit-card-blocks" scope="page" %} 
+                </div> 
+                <div class="col-xs-12 mz-l-card-reward-bar">   
+                    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">RewardBar Text - HTML Widget 2</span> {% endif %}  
+                    {% dropzone "reward-bar" scope="page" %}  
+                </div> 
+            </div> 
 
-            <div class="col-xs-12 mz-l-card-reward-logo-bar">
+            <div class="col-xs-12 mz-l-card-reward-logo-bar"> 
         
-                <div class="col-xs-12 mz-l-card-reward-logo">
-                    {% dropzone zoneId="logos_reward" scope="template" %}
+                <div class="mz-l-card-reward-logo">
+                    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Reward Logos - HTML Widget 3</span> {% endif %} 
+                    {% dropzone "reward-logos" scope="page" %} 
 
                 </div>
 
                 <div class="mz-l-cardholder-bar col-xs-12">
                     <div class="mz-l-cardholder col-xs-12">
-                        {% dropzone zoneId="cardholder-info" scope="template" %}
+                        {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Card Holder Info - HTML Widget 4</span> {% endif %}
+                        {% dropzone "cardholder-info" scope="page" %} 
                     </div>
                 </div>
 
                 <div class="mz-l-creditcard-final-text">  
-                    {% dropzone zoneId="final-text" scope="template" %}
+                    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Dropzone Area - HTML Widget 5</span> {% endif %} 
+                    {% dropzone "final-text" scope="page" %}  
                 </div>
             </div>
 
