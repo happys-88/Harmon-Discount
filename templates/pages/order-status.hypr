@@ -2,7 +2,16 @@
 
 {% block title-tag-content %}{% firstof pageContext.metaTitle labels.orderStatus %} - {% parent %}{% endblock title-tag-content %}
 {% block body-tag-classes %}mz-ordar-status {% endblock body-tag-classes %} 
-
+{% block common-data %}
+    <script type="text/javascript">
+        var pageData = {
+            "customer": {
+                "status":"{{customerType}}"
+            }
+        };
+    </script>
+{% endblock common-data %}
+{% endcomment %}
 {% block body-content %}
     <div class="mz-customer-service-page">
         <div class="mz-l-container"> 

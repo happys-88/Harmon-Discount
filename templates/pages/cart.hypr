@@ -18,6 +18,26 @@
 {% require_script "pages/cart" %}
 
 {% preload_json model "cart" %}
+{% block common-data %}
+    {% comment %}
+        Steps to get categories:
+            1. Loop inside categories and assign categor codes to variables.
+            2. As in navigation.tree category hierarchy is present as parent category -> children categories.
+            3. So start with parent most category(cat5 -> cat4 -> cat3 -> cat2 -> cat1) and proceed to chil categories.
+            4. loops are present based on parent category level(cat5, cat4, cat3, cat2, cat1).
+    {% endcomment %}
+    <script type="text/javascript">
+        var pageData = {
+        	"customer": {
+                "status": "{{customerType}}"
+            },
+            "order":{
+            	"checkoutType":"Ship"
+            }
+        };
+    </script>
+{% endblock common-data %}
+
     
 <div class="mz-l-container">
 	<h1 class="mz-pagetitle">{{ labels.yourCart }}</h1>

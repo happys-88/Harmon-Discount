@@ -123,7 +123,7 @@
 				<button data-mz-action="openLiteRegistration" class="btn btn-default">Save Cart</button>
 			{% endif %}
 		</div>
-		<div class="col-xs-6 text-right">
+		<div class="col-xs-6 text-right">{{ customerType }}
 			{% if pageData.customer.status == "registered" %}
 			<form method="post" value="" id="registeredCheckout">
 				<button type="submit" class="mz-button mz-button-large" data-mz-action="proceedToCheckout">{{ labels.checkout }}</button>

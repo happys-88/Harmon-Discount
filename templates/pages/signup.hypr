@@ -3,7 +3,15 @@
 {% block title-tag-content %}{% firstof pageContext.metaTitle|safe labels.signUp %} - {% parent %}{% endblock title-tag-content %}
 
 {% block body-tag-classes %}mz-signuppage{% endblock body-tag-classes %}
-
+{% block common-data %}
+<script type="text/javascript">
+        var pageData = {
+            "customer": {
+                "status":"{{customerType}}"
+            }
+        };
+    </script>
+{% endblock common-data %}
 {% block body-content %}
     <div class="mz-l-container">
         {% dropzone "signup-top" scope="template" %}
