@@ -11,7 +11,7 @@ require(["modules/jquery-mozu", "underscore", "hyprlive", "modules/backbone-mozu
             _.defer(function() {
                 me.model.next();
                 if (!me.model._isValid) {
-                    $('html, body').animate({scrollTop: 0}, 700);
+                    $('html, body').animate({ scrollTop: $(".is-incomplete").offset().top}, 700);
                 }
                 if (me.model.isLoading()) {
                     blockUiLoader.globalLoader();
