@@ -1,27 +1,5 @@
 ﻿{% if not pageContext.query.partial %}
-{% block ensighten-data %}
-    <script type="text/javascript">
-        var pageData = {
-            "page": {
-                "productCategories": [{% for breacrumb in navigation.breadcrumbs %}"{{breacrumb.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if not forloop.last %},{% endif %}{% endfor %}],
-                "serverDate": "{{serverDate}}",
-                "isProduction": "{{isProduction|lower}}",
-                "siteName": "{{ siteContext.generalSettings.websiteName }}",
-                "page": "",
-                "isMobile": "{{pageContext.isMobile|lower}}",
-                "type": "{{pageType}}"
-            },
-            "productList": {
-                "totalResults": "{{ model.totalCount }}",
-                "currentPage": "{{ model.currentPage }}"
-            },
-            "products": [{% for item in model.items %}{"id":"{{item.productCode}}"}{% if not forloop.last %},{% endif %}{% endfor %}],
-            "customer": {
-                "status": "{{customerType}}"
-            }
-        };
-    </script> 
-{% endblock ensighten-data %}
+
 <script type="text/json" id="data-mz-preload-facetedproducts">
 {
     "items" : {% json model.items %},

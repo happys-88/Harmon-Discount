@@ -18,46 +18,6 @@
 {% require_script "pages/cart" %}
 
 {% preload_json model "cart" %}
-{% block ensighten-data %}
-    {% comment %}
-        Steps to get categories:
-            1. Loop inside categories and assign categor codes to variables.
-            2. As in navigation.tree category hierarchy is present as parent category -> children categories.
-            3. So start with parent most category(cat5 -> cat4 -> cat3 -> cat2 -> cat1) and proceed to chil categories.
-            4. loops are present based on parent category level(cat5, cat4, cat3, cat2, cat1).
-    {% endcomment %}
-    <script type="text/javascript">
-        var pageData = {
-            "page": {
-                "serverDate": "{{serverDate}}",
-                "isProduction": "{{isProduction|lower}}",
-                "siteName": "{{ siteContext.generalSettings.websiteName }}",
-                "page": "",
-                "isMobile": "{{pageContext.isMobile|lower}}",
-                "type": "shopping cart"
-            },
-            "customer": {
-                "status": "{{customerType}}"
-            }
-            ,"products": [
-                {% for item in model.items %}
-                    {                                                
-                        "productCategories":[{% with item.product.categories|first as categories %}{% if categories.id %}{% set_var cat1=categories.id %}{% if categories.parent %}{% set_var cat2=categories.parent.id %}{% if categories.parent.parent %}{% set_var cat3=categories.parent.parent.id %}{% if categories.parent.parent.parent %}{% set_var cat4=categories.parent.parent.parent.id %}{% if categories.parent.parent.parent.parent %}{% set_var cat5=categories.parent.parent.parent.parent.id %}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% for link in navigation.tree %}{% if cat5 and cat5 == link.originalId %}"{{link.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if link.items %}{% for sublink in link.items %}{% if cat4 and cat4 == sublink.originalId %},"{{sublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if sublink.items %}{% for subsublink in sublink.items %}{% if cat3 and cat3 == subsublink.originalId %},"{{subsublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if subsublink.items %}{% for subsubsublink in subsublink.items %}{% if cat2 and cat2 == subsubsublink.originalId %},"{{subsubsublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if subsubsublink.items %}{% for subsubsubsublink in subsubsublink.items %}{% if cat1 and cat1 == subsubsubsublink.originalId %},"{{subsubsubsublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% set_var cat5="" %}{% set_var cat4="" %}{% set_var cat3="" %}{% set_var cat2="" %}{% set_var cat1="" %}{% endif %}{% endfor %}{% endif %}{% endif %}{% endfor %}{% endif %}{% endif %}{% endfor %}{% endif %}{% endif %}{% endfor %}{% endif %}{% else %}{% if cat4 and cat4 == link.originalId %}{% comment %}{% endcomment %}"{{link.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if link.items %}{% for sublink in link.items %}{% if cat3 and cat3 == sublink.originalId %},"{{sublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if sublink.items %}{% for subsublink in sublink.items %}{% if cat2 and cat2 == subsublink.originalId %},"{{subsublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if subsublink.items %}{% for subsubsublink in subsublink.items %}{% if cat1 and cat1 == subsubsublink.originalId %},"{{subsubsublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% set_var cat5="" %}{% set_var cat4="" %}{% set_var cat3="" %}{% set_var cat2="" %}{% set_var cat1="" %}{% endif %}{% endfor %}{% endif %}{% endif %}{% endfor %}{% endif %}{% endif %}{% endfor %}{% endif %}{% else %}{% if cat3 and cat3 == link.originalId %}"{{link.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if link.items %}{% for sublink in link.items %}{% if cat2 and cat2 == sublink.originalId %},"{{sublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if sublink.items %}{% for subsublink in sublink.items %}{% if cat1 and cat1 == subsublink.originalId %},"{{subsublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% set_var cat5="" %}{% set_var cat4="" %}{% set_var cat3="" %}{% set_var cat2="" %}{% set_var cat1="" %}{% endif %}{% endfor %}{% endif %}{% endif %}{% endfor %}{% endif %}{% else %}{% if cat2 and cat2 == link.originalId %}"{{link.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% if link.items %}{% for sublink in link.items %}{% if cat1 and cat1 == sublink.originalId %},"{{sublink.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% set_var cat5="" %}{% set_var cat4="" %}{% set_var cat3="" %}{% set_var cat2="" %}{% set_var cat1="" %}{% endif %}{% endfor %}{% endif %}{% else %}{% if cat1 and cat1 == link.originalId %}"{{link.name|replace("&amp;","&")|replace('"','\"')|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}"{% set_var cat5="" %}{% set_var cat4="" %}{% set_var cat3="" %}{% set_var cat2="" %}{% set_var cat1="" %}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% endwith %}],
-                        "quantity": "{{item.quantity}}",
-                        "price": "{{item.product.price.price}}",
-                        "id": "{{item.product.productCode}}",                        
-                        "sku": "{{item.product.mfgPartNumber}}"
-                    }
-                    {% if not forloop.last %},{% endif %}
-                {% endfor %}
-            ],
-            "order":{
-            	"checkoutType":"Ship"
-            }
-        };
-    </script>
-{% endblock ensighten-data %}
-
     
 <div class="mz-l-container">
 	<h1 class="mz-pagetitle">{{ labels.yourCart }}</h1>

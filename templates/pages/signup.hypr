@@ -3,24 +3,7 @@
 {% block title-tag-content %}{% firstof pageContext.metaTitle|safe labels.signUp %} - {% parent %}{% endblock title-tag-content %}
 
 {% block body-tag-classes %}mz-signuppage{% endblock body-tag-classes %}
-{% block ensighten-data %}
-<script type="text/javascript">
-        var pageData = {
-            "page": {
-                "serverDate": "{{serverDate}}",
-                "isProduction": "{{isProduction|lower}}",
-                "name":"sign up",
-                "siteName": "{{ siteContext.generalSettings.websiteName }}",
-                "page": "",
-                "isMobile": "{{pageContext.isMobile|lower}}",
-                "type": "my account"
-            },
-            "customer": {
-                "status":"{{customerType}}"
-            }
-        };
-    </script>
-{% endblock ensighten-data %}
+
 {% block body-content %}
     <div class="mz-l-container">
         {% dropzone "signup-top" scope="template" %}

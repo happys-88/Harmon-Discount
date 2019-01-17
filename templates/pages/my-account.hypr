@@ -6,26 +6,7 @@
 {% block body-content %}
     {% require_script "pages/myaccount" %}
     {% preload_json model "customer" %}
-    {% block ensighten-data %}
-        <script type="text/javascript">
-            var pageData = {
-                "page": {
-                    "serverDate": "{{serverDate}}",
-                    "isProduction": "{{isProduction|lower}}",
-                    "name":"my account",
-                    "siteName": "{{ siteContext.generalSettings.websiteName }}",
-                    "page": "",
-                    "isMobile": "{{pageContext.isMobile|lower}}",
-                    "type": "my account"
-                },
-                "customer": {
-                    "loginSuccess":"false",
-                    "registrationSuccess":"false",
-                    "status":"{{customerType}}"
-                }
-            };
-        </script>
-    {% endblock ensighten-data %}
+    
     <div class="mz-l-container">
         <div class="row">
             <div class="mz-myaccount-nav col-xs-12 col-sm-3">

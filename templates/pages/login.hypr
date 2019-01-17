@@ -2,24 +2,7 @@
 
 {% block title-tag-content %}{% firstof pageContext.metaTitle|safe labels.logIn %} - {% parent %}{% endblock title-tag-content %}
 {% block body-tag-classes %}mz-login-page{% endblock body-tag-classes %}
-{% block ensighten-data %}
-<script type="text/javascript">
-        var pageData = {
-            "page": {
-                "serverDate": "{{serverDate}}",
-                "isProduction": "{{isProduction|lower}}",
-                "name":"login",
-                "siteName": "{{ siteContext.generalSettings.websiteName }}",
-                "page": "",
-                "isMobile": "{{pageContext.isMobile|lower}}",
-                "type": "my account"
-            },
-            "customer": {
-                "status":"{{customerType}}"
-            }
-        };
-    </script>
-{% endblock ensighten-data %}
+
 {% block body-content %}
     <div class="mz-l-container">
         {% dropzone "login-top" scope="template" %}
