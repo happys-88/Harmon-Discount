@@ -26,9 +26,9 @@ require([
                 var isContainerPage = $("#containerPage").val() == 1;
                 var deploymentZone = data.deploymentZone;
                 var locale = Api.context.locale.replace("-", "_");
-                var bvScript = "//display" + staging + ".ugc.bazaarvoice.com/static/" + data.clientName + "/"+ deploymentZone +"/" + locale + "/bvapi.js";
-
-
+                // var bvScript = "//display" + staging + ".ugc.bazaarvoice.com/static/bvstaging/" + data.clientName + "/"+ deploymentZone +"/" + locale + "/bvapi.js";
+                var bvScript = "https://display.ugc.bazaarvoice.com/bvstaging/static/harmondiscount/main_site/en_US/bvapi.js";
+                
                 $.getScript(bvScript)
                     .done(function(script, textStatus) {
                         if (isWidget) {
