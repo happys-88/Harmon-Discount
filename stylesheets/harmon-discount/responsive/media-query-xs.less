@@ -214,7 +214,7 @@
 		}
 		.bx-wrapper {
 			.bx-pager {
-			    bottom: -15px;
+			    bottom: -25px;
 			}
 		}
 	}
@@ -555,57 +555,60 @@
 
 	/*** Cart Page ***/
 	.mz-cart {
-		.mz-carttable-item-product,
-		.mz-carttable-checkout-couponcode,
-		.mz-button-bottom-cart {
-			padding-right: 0;
-			padding-left: 0;
-		}
-		.mz-qty-xs-align {
-			.btn-link {
-			    color: @linkColor;
-			    font-size: 12px;
+		.mz-l-pagecontent{
+				padding: 0;
+			.mz-carttable-item-product,
+			.mz-carttable-checkout-couponcode,
+			.mz-button-bottom-cart {
+				padding-right: 0;
+				padding-left: 0;
 			}
-		}
-		.mz-table-cart {
-			.mz-table-cart-items{
-					.mz-carttable-item{
-						.cart-item-qty{
-							left: 100px;
-							.mz-carttable-item-qty{
-								.qty-block{
-									float: left;
+			.mz-qty-xs-align {
+				.btn-link {
+					color: @linkColor;
+					font-size: 12px;
+				}
+			}
+			.mz-table-cart {
+				.mz-table-cart-items{
+						.mz-carttable-item{
+							.cart-item-qty{
+								left: 100px;
+								.mz-carttable-item-qty{
+									.qty-block{
+										float: left;
+									}
+								}
+								.mz-carttable-item-remove{
+									clear: none;
+									margin-top: 8px;
+									margin-left: 10px;
+									text-align: left;
+									padding-left: 90px;
 								}
 							}
-							.mz-carttable-item-remove{
-								clear: none;
-								margin-top: 8px;
-								margin-left: 10px;
-								text-align: left;
-                                padding-left: 90px;
-							}
+						}
+				}
+				.mz-button-bottom-cart {
+					.mz-button {
+						margin: 0px 0 15px;
+						display: inline-block;
+						width: 100%;
+					}
+				}
+				.mz-carttable-item-total,
+				.mz-carttable-item-price {
+					span {
+						&.label-price,
+						&.label-total {
+							font-weight: 600;
+							margin-left: 103px;
 						}
 					}
-			}
-			.mz-button-bottom-cart {
-				.mz-button {
-				    margin: 0px 0 15px;
-				    display: inline-block;
-				    width: 100%;
 				}
-			}
-			.mz-carttable-item-total,
-			.mz-carttable-item-price {
-				span {
-					&.label-price,
-					&.label-total {
-					    font-weight: 600;
-					    margin-left: 103px;
-					}
+				.mz-item-rowtotal  {
+					float: right;
 				}
-			}
-			.mz-item-rowtotal  {
-				float: right;
 			}
 		}
 	}

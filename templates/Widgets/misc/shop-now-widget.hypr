@@ -1,11 +1,11 @@
 <div class="shop-now-widget">
     <a href="{{ model.config.shopNowWidgetUrl }}">
-        <div class="col-sm-12">
+        <div class="col-sm-12 padding-0">
             <div class="mz-image-container">
                 <img src="{% make_url "image" model.config.slideImageOne.imageUrl %}" alt="{{model.config.slideImageOne.altText}}">
             </div>
         </div>
-        <div class="col-sm-12">    
+        <div class="col-sm-12 padding-0">    
             <div class="mz-details-container text-center">
                 <p class="mz-hot-deal-title-one">{{model.config.TitleOne}}</p>
                 <p class="mz-hot-deal-title-two">{{model.config.TitleTwo}}</p>

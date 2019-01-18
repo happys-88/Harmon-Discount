@@ -29,7 +29,7 @@
                 <li id="account-messages">
                     {% include "modules/common/message-bar" with model=model.messages %}
                 </li>
-                <li id="settings" class="account_content">
+                <li id="settings" class="account_content" style="display: none;">
                     <div class="mz-l-stack-section mz-accountsettings" id="account-settings">
                         {% include "modules/my-account/my-account-settings" %}
                     </div>
@@ -37,24 +37,24 @@
                         {% include "modules/my-account/my-account-password" %}
                     </div>
                 </li>
-                <li id="addressbook" class="account_content">
+                <li id="addressbook" class="account_content" style="display: none;">
                     <div class="mz-l-stack-section mz-accountaddressbook" id="account-addressbook">
                         {% include "modules/my-account/my-account-addressbook" %}
                     </div>
                 </li>
-                 <li id="orderhistory" class="account_content">
+                 <li id="orderhistory" class="account_content" style="display: none;">
                     <div class="mz-l-stack-section mz-accountorderhistory" id="account-orderhistory">
                         {% include "modules/my-account/my-account-orderhistory" with model=model.orderHistory showPaging=true %}
                     </div>
                 </li>
-                <li id="paymentmethods" class="account_content">
+                <li id="paymentmethods" class="account_content" style="display: none;">
                     <div class="mz-l-stack-section mz-accountpaymentmethods" id="account-paymentmethods">
                         {% include "modules/my-account/my-account-paymentmethods" %}
                     </div>
                 </li>
                 {% comment %}
                 {% if siteContext.generalSettings.isWishlistCreationEnabled %}
-                <li id="wishlist" class="account_content">
+                <li id="wishlist" class="account_content" style="display: none;">
                     <div class="mz-l-stack-section mz-accountwishlist" id="account-wishlist">
                         {% include "modules/my-account/my-account-wishlist" with model=model.wishlist %}
                     </div>
