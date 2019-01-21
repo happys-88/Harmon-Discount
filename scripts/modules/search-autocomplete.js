@@ -135,8 +135,7 @@
                  });
 
                 $('.mz-searchbox-button').on('click', function (e) {
-
-                    var searchVal = $('#search-again').val();
+                    var searchVal = $('#search-again').val().trim();
                     if (searchVal === "") {
                         $('.mz-search-val').css("display","block");
                          $('.mz-search-val').text('Please enter a keyword or item number.');
