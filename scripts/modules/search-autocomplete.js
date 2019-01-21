@@ -129,12 +129,12 @@
 
                 $("#search-again").keypress(function(e) {
                     if(e.which == 13) {
-                      $('#search-again-box .mz-searchbox-button').click();
+                      $('#search-again-box .mz-searchbox-button-footer').click();
                       return false;
                      }
                  });
 
-                $('.mz-searchbox-button').on('click', function (e) {
+                $('.mz-searchbox-button-footer').on('click', function (e) {
                     var searchVal = $('#search-again').val().trim();
                     if (searchVal === "") {
                         $('.mz-search-val').css("display","block");

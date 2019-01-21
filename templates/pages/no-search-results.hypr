@@ -30,7 +30,7 @@
                                     {% endif %}
                                 {% endwith%}
                                 <input id="search-again" type="search" class="mz-searchbox-input ml-header-search-field form-control" autocomplete="off" name="query" placeholder="{{ labels.search }}">
-                                <button class="mz-searchbox-button" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                                <button class="mz-searchbox-button-footer" type="button"><span class="glyphicon glyphicon-search"></span></button>
                             </span>
                             <div class="mz-search-val" style="display:none;"></div>
                         </form>
