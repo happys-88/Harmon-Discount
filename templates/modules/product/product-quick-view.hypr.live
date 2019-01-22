@@ -36,6 +36,7 @@
                                                             <a href='{% make_url "category" brandcategory %}'>&nbsp; &nbsp;{{   brandName.values|first|prop("value") }}</a>
                                                          {% endif %}
                                                        {% endfor %}
+                                                       {% if not model.brandexist %}&nbsp; &nbsp;<span>{{ brandName.values|first|prop("value") }}</span>{% endif %}
                                                     </div >
                                                 {% endwith %}
                                               

@@ -24,16 +24,23 @@
                 <h1 class="mz-pagetitle" itemprop="name">{{ model.content.productName|replace("'","&rsquo;")|safe }}</h1>
                 <div class="row">
                     {% with model|get_product_attribute("tenant~brand") as brandName %}
+                        {% set_var noBrandCat=true %}
                         {% for brandCat in model.categories %}  
                             {% if brandCat.content.name == {{ brandName.values|first|prop("value") }} %}
+                             {% set_var noBrandCat=false %}
                                 <div class="col-xs-12 mz-view-all-brand">
                                     <a href="/shop-by-brand/c/1270">{{ labels.viewAll }}</a> 
                                     <a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
                                 </div>
                             {% endif %} 
                         {% endfor %}
+                        {% if noBrandCat %} 
+                            <div class="col-xs-12 mz-view-all-brand">
+                                <p>{{ brandName.values|first|prop("value") }}</p>  
+                            </div>
+                        {% endif %}
                     {% endwith %}
-                    <div class="col-xs-12">
+                    {% comment %} <div class="col-xs-12">
                         <div class="mz-productcodes-productcode p-3" itemprop="sku">{{ labels.item}} # {{ model.productCode }}</div>
                        {% comment %} <div class="mz-reviews-ratings">
                             <div><img src="/resources/images/harmon/star.jpg" alt="rating"><span>4.9(27) Read a Review | Write A review</span></div>
@@ -43,8 +50,7 @@
                         <div class="mz-shipping-restiction">
                             <span>Shipping Restiction text attribute</span>
                         </div>
-                        {% endcomment %} 
-                    </div>
+                    </div> {% endcomment %}
                     {% comment %} {% if model.productType != themeSettings.familyProductType %}
                         <div class="col-xs-7">
                             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="mz-productdetail-price mz-l-stack-section pull-right text-right prize-mobile-view">

@@ -739,6 +739,16 @@ define([
                         //If Size Object exist then append a new key "sizeChartImagePath" with value URL(SIZE CHART) as string.
                         product.attributes.sizeChartPath = sizeObj ? (imagefilepath + '/' + sizeObj.values[0].value) : null;
                         product.attributes.quickView = "yes";
+                        var brand = _.findWhere(product.get('properties'), {
+                            attributeFQN: "tenant~brand"
+                        });
+                        var cat = _.find(product.get('categories'), function (cat) {
+                            return cat.parentCategoryId == "1270";
+                        });
+                        if (typeof brand !== "undefined" && brand.attributeFQN == "tenant~brand" && typeof cat !== "undefined" && cat.parentCategoryId == "1270") {
+                            product.attributes.brandexist = true;
+                            console.log(product);
+                        }
                         var oneSizeOption = "",
                             id = Hypr.getThemeSetting('oneSizeAttributeName');
                         if (product.get('options') && product.get('options').length)
@@ -828,6 +838,7 @@ define([
                         blockUiLoader.unblockUi();
                     }
                 });
+               
             }
         });
 
