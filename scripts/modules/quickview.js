@@ -747,7 +747,6 @@ define([
                         });
                         if (typeof brand !== "undefined" && brand.attributeFQN == "tenant~brand" && typeof cat !== "undefined" && cat.parentCategoryId == "1270") {
                             product.attributes.brandexist = true;
-                            console.log(product);
                         }
                         var oneSizeOption = "",
                             id = Hypr.getThemeSetting('oneSizeAttributeName');
