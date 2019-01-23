@@ -102,22 +102,33 @@
     .tt-dataset-pages {
         .tt-suggestion {
             display: table;
-            cursor:pointer;
-            width:100%;
+            cursor: pointer; 
+            width: 100%;
+            margin-bottom: 10px;
         }
         .mz-itemlisting {
             display: table-row;
+            .mz-itemlisting-title { 
+                color: #242424; 
+            }
         }
         .mz-itemlisting-details {
             float: none;
             display: table-cell;
             vertical-align: top;
         }
-        .mz-itemlisting-thumb{
-            display: none;
-        }
+        .mz-itemlisting-thumb {
+            border: 1px solid #e0e0e0;
+            display: block;
+            padding: 5px;
+            width: 80px;
+            height: 80px;
+            img{
+                margin: 0 auto;
+                display: block;
+                max-height: 100%;
+            }
+        } 
     }
-
-
 
 }

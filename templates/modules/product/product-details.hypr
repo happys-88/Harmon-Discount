@@ -112,7 +112,7 @@
     <div id="webcollage" value="{{ model.productCode }}">
         <div id="wc-power-page"></div>
         {% block webcollage-loader %}
-        <script>Webcollage.loadProductContent('harmondiscount', '{{ model.productCode }}', { "power-page": { autoPlayAndStop: true } });</script>
+            <script>Webcollage.loadProductContent('harmondiscount', '{{ model.productCode }}', { "power-page": { autoPlayAndStop: true } });</script>
         {% endblock webcollage-loader %}
     </div>
    
@@ -124,7 +124,10 @@
         {% require_script "modules/product/recently-viewed-products" %}   
     {% endif %} 
 
-    {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Customer Reviews - Bazaar Voice Widget</span>{% endif %} 
-    {% dropzone "bazaar-voice-widget" scope="template" %} 
+    <div class="mz-customer-reviews">
+        <div class="heading-2"><span>Customer Reviews</span></div>    
+        {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Customer Reviews - Bazaar Voice Widget</span>{% endif %} 
+        {% dropzone "bazaar-voice-widget" scope="template" %} 
+    </div>
 
 </div> 
