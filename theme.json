@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "d494b454d27c1fc2461af80c9b8be40f819b397c"
+      "commit": "44eab4fca19cd65d7dff7f9fcccb94d08af2cb32"
     }
   },
   "editors": [
@@ -580,11 +580,11 @@
     "googleMapPinIcon": "resources/images/Har-icon.jpg",
     "googleMapMaxNearbyDistance": 10000000,
     "rviEnable": true,
-    "rviHeading": "Recently Viewed Items",
+    "rviHeading": "Recently Viewed Items", 
     "rviNumberCookie": 10,
     "rviExpirationDuration": 21,
     "searchStorePlaceHolder": "Enter City, State or ZIP",
-    "defaultStoreImage": "resources/images/defaultStoreImage.jpg",
+    "defaultStoreImage": "/cms/files/defaultStoreImage.jpg", 
     "globalCartMaxItemCount": 3,
     "globalCartEnableSaveCart": "true",
     "globalCartHidePopover": "",
@@ -2183,8 +2183,8 @@
       "editViewFields": [
         {
           "xtype": "mz-input-color",
-          "name": "footerWidgetBackgroundcolor",
-          "fieldLabel": "Footer Widget Backgroundcolor"
+          "name": "footerWidgetBackgroundColor", 
+          "fieldLabel": "Footer Widget Background Color" 
         },
         {
           "anchor": "100%",
