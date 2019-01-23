@@ -169,15 +169,17 @@
 </div>
 {% for discount in model.orderDiscounts %}
 {% if not discount.excluded %}
-<div class="mz-carttable-total-row row mz-discount-row">
-<div class="col-xs-7 col-sm-9 text-right">
-{{ discount.discount.name }}
-</div>
-<div class="mz-carttable-total-wrap col-xs-5 col-sm-3 pull-right">
-<span class="mz-carttable-rowtotal">- {{ discount.impact|currency }}</span>
-</div>
-<div></div>
-</div>
+    <div class="mz-carttable-total-row row mz-discount-row">
+        <div class="col-xs-12">
+            <div class="col-xs-7 col-sm-9 text-right">
+                {{ discount.discount.name }}
+            </div>
+            <div class="mz-carttable-total-wrap col-xs-5 col-sm-3 pull-right">
+                <span class="mz-carttable-rowtotal">- {{ discount.impact|currency }}</span>
+            </div>
+            <div></div>
+        </div>
+    </div>
 {% endif %}
 {% endfor %}
 
