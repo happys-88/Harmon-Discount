@@ -224,20 +224,25 @@
     }
 
     function createMstLi(){
+        var temp=0;
+        var incVal = 4;
         var CheckoutNumber = "";
         $("ul.mz-orderlist>li").each(function(){
             var orderNumber = "";
             var x = $('.mz-propertylist dt').length;
             for (var i = 0; i < x; i++) { 
-                   var abc =  $('.mz-propertylist dt').eq(i).html();
-                   if (abc ==="Order Number"){
-                        orderNumber = $('.mz-propertylist dd').eq(i).html();
-                    }
+                   var orderDiv =  $('.mz-propertylist dt').eq(i).html();
+                   if (temp == i){
+                       if (orderDiv ==="Order Number"){
+                            orderNumber = $('.mz-propertylist dd').eq(i).html();
+                        }
+                     }
             }
             if(orderNumber!=""){                
                 CheckoutNumber = $(this).data('mzParentcheckoutnumber');
                 $(this).before('<li class="mst-parent"> Order Number: '+orderNumber+'</li>');
             }
+           temp = temp + incVal;
         });
     }
 
