@@ -30,13 +30,13 @@
                                                 <div  id="BV-Qucik-View"></div>
                                                 {% with model|get_product_attribute("tenant~brand") as brandName %}
                                                     <div class="mz-view-all-brand">
-                                                       <a href="/shop-by-brand/c/1270">{{ labels.viewAll   }}</a>
                                                        {% for brandcategory in model.categories %}
                                                          {% if brandcategory.parentCategoryId=="1270" %}
-                                                            <a href='{% make_url "category" brandcategory %}'>&nbsp; &nbsp;{{   brandName.values|first|prop("value") }}</a>
+                                                            <span>{{ labels.viewAll}}</span>
+                                                            <a href='{% make_url "category" brandcategory %}'>{{   brandName.values|first|prop("value") }}</a>
                                                          {% endif %}
                                                        {% endfor %}
-                                                       {% if not model.brandexist %}&nbsp; &nbsp;<span>{{ brandName.values|first|prop("value") }}</span>{% endif %}
+                                                       {% if not model.brandexist %}<span>{{ brandName.values|first|prop("value") }}</span>{% endif %}
                                                     </div >
                                                 {% endwith %}
                                               

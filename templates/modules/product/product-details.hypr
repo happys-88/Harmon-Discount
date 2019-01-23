@@ -29,7 +29,7 @@
                             {% if brandCat.content.name == {{ brandName.values|first|prop("value") }} %}
                              {% set_var noBrandCat=false %}
                                 <div class="col-xs-12 mz-view-all-brand">
-                                    <a href="/shop-by-brand/c/1270">{{ labels.viewAll }}</a> 
+                                    <span>{{ labels.viewAll }}</span>
                                     <a href='{% make_url "category" brandCat %}'>{{ brandName.values|first|prop("value") }}</a>
                                 </div>
                             {% endif %} 
