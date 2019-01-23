@@ -108,7 +108,7 @@
             {%if model.discountedSubtotal > 0 %}
             <span>{{ labels.merchandiseSubtotal }}: {{ model.discountedSubtotal|currency }}</span>
             {%else%}
-            <span>{{ labels.merchandiseSubtotal }}: {{ model.subtotal|currency }}</span>
+            <span>{{ labels.merchandiseSubtotal }}: {{ model.discountedSubtotal|currency }}</span>
             {%endif%}
 		
 			{% if themeSettings.globalCartShowSubtotal %}
