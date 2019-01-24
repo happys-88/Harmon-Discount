@@ -94,9 +94,15 @@
 		    		position: static;
 		    		.mz-searchbox {
 		    			margin-bottom: 0;
-    					.ml-header-search-field {
-						    background: #e6e6e6!important;
-						}
+	    				.twitter-typeahead {
+	    					.ml-header-search-field {
+							    background: #e6e6e6!important;
+							    -webkit-appearance: none;
+								-webkit-border-radius: 0; 
+								-webkit-border: none;
+								border:	none;
+							}
+	    				}    					
 					}
 				}
 			}
@@ -140,7 +146,7 @@
 			    content: "";
 			    border-left: 12px solid transparent;
 			    border-right: 12px solid transparent;
-			    border-bottom: 14px solid #999;
+			    border-bottom: 14px solid #e6e6e6;
 			    width: 20px;
 			    margin: 0 auto;
 			    position: absolute;
