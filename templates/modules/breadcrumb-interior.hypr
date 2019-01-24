@@ -1,12 +1,12 @@
 {% for crumb in breadcrumbs %}
     {% if not crumb.isHidden %}
     <li>
-        
         {% if not forloop.last %}
-        <span class="mz-breadcrumb-separator">/</span>
-            <a href="{{crumb.url}}" class="mz-breadcrumb-link{% if forloop.first %} is-first{% endif %}">{{crumb.name|replace("_", " ")|replace(themeSettings.columnBreaker, "")|safe}}</a>
-        {% comment %} {% else %}
-            <span class="mz-breadcrumb-current">{{ crumb.name|replace("_", " ")|replace(themeSettings.columnBreaker, "")|safe }}</span> {% endcomment %}
+            <span class="mz-breadcrumb-separator"> &nbsp;/</span>
+            <a href="{{crumb.url}}" class="mz-breadcrumb-link{% if forloop.first %} is-first{% endif %}">{{crumb.name|replace("_", " ")|replace(themeSettings.columnBreaker, "")|safe }}</a>
+         {% else %}
+            <span class="mz-breadcrumb-separator"> &nbsp;/</span>
+            <span class="mz-breadcrumb-current">{{crumb.name|replace("_", " ")|replace(themeSettings.columnBreaker, "")|safe }}</span>
         {% endif %}
     </li>
     {% endif %}
