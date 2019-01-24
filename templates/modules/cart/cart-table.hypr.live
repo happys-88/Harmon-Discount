@@ -134,6 +134,23 @@
     <div class="mz-carttable-item-price col-xs-12 col-sm-6 mz-reset-padding">
       <span class="label-price visible-xs pull-left">{{ labels.price }}: </span>{% include "modules/common/item-price"  %}
     </div>
+    <div class="visible-xs">
+      {% if item.discountedTotal || item.discountedTotal == 0 %}
+        {% if item.discountedTotal < item.subtotal %}
+          {% for productDiscount in item.productDiscounts %}
+            <div class="mz-item-discount">
+            {%if isGlobalCart!="true" %}
+              <span class="mz-item-discountname link-color-code text-right">{{ productDiscount.discount.name }}</span>
+            {% endif %}
+            </div> 
+          {% endfor %}
+        {% endif %}
+      {% else %}
+        <span class="mz-item-rowtotal {% if item.unitPrice.saleAmount %}is-saleprice{% endif %}">{{ item.subtotal|currency }}</span>
+      {% endif %}
+    </div>
+
+
     <div class="mz-carttable-item-total col-xs-12 col-sm-6 mz-reset-padding text-center">
       {% include "modules/common/item-total" %}<span class="label-total visible-xs pull-left">{{ labels.total }}: </span>
     </div>
