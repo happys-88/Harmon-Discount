@@ -3691,8 +3691,8 @@ a.link-orange,
     .mz-item-discountname {
         //  font-size: @fontSize;
         color: @linkColor;
-        font-size: 12px; 
-        font-weight:600//  .fontRegular();
+        font-size: 12px;
+        font-weight: 600 //  .fontRegular();
     }
     .mz-carttable-item-code {
         color: @colorLighterGray;
@@ -4221,14 +4221,16 @@ a.link-orange,
     margin-bottom: 10px;
 }
 
-.mz-remove-coupon {
-    margin-left: 30px;
+.mz-applied-coupon-code{
+    margin-right: 30px;
 }
 
 .mz-link-span {
     cursor: pointer;
+    color: @linkColor;
+    text-decoration: underline;
     &:hover {
-        text-decoration: underline;
+        text-decoration: none;
     }
 }
 
