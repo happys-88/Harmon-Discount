@@ -628,7 +628,7 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
         },
         removeCoupon: function() {
             var self = this;
-            var getCouponCode = this.$el.find('#coupon-detail p').attr('id');
+            var getCouponCode = this.$el.find('#coupon-detail span').attr('id');
             var apiData = require.mozuData('apicontext');
             blockUiLoader.globalLoader();
             var serviceurl = '/api/commerce/carts/' + this.model.get('id') + '/coupons/' + getCouponCode;
