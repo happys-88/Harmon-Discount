@@ -2,7 +2,7 @@
     {% if model.items %}
         {% for prod in model.items %}
         	{% if forloop.first && model.items.length >= 1%} 
-    			<ul class="bxslider {% block list-classes %}{% endblock list-classes %}">
+    			<ul class="slickslider-ul {% block list-classes %}{% endblock list-classes %}">  
     		{% endif %}
             <li class="rti-product-item col-sm-3 col-xs-6" data-mz-product="{{ prod.productCode }}">   	
 		        {% block product-image %}  

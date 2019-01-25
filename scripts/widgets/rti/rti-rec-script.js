@@ -215,7 +215,7 @@ require([
                                     productListView.render();
                                     if (productList.length > 1) {
 
-                                        $("." + placeholder + '.rti-recommended-products .bxslider').slick({
+                                        $("." + placeholder + '.rti-recommended-products .slickslider-ul').slick({  
                                             infinite: false,
                                             slidesToShow: 6,
                                             prevArrow: '<i class="fa fa-angle-left" aria-hidden="true"></i>',
@@ -343,11 +343,11 @@ require([
                                         model: prodColl
                                     });
                                     try {
-                                        container.find('.rti-recommended-products .bxslider').destroySlider();
+                                        container.find('.rti-recommended-products .slickslider-ul').destroySlider();
                                     } catch (e) {}
                                     productListView.render();
                                     if (productList.length > 1) {
-                                        container.find('.rti-recommended-products .bxslider').bxSlider({
+                                        container.find('.rti-recommended-products .slickslider-ul').bxSlider({ 
                                             minSlides: 3,
                                             maxSlides: 3,
                                             slideWidth: 150,
