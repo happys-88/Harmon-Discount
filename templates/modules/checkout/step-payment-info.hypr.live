@@ -106,10 +106,11 @@
         <div class="mz-l-stack-section mz-paymentselector-separator mz-checkoutform">
             <p>{{ labels.billingContact }}: <strong>{{ model.billingContact.email }}</strong></p>
         </div>
-        
+        {% comment %}
         <div class="mz-l-stack-section mz-paymentselector-separator mz-checkoutform">
-            {% include "modules/checkout/checkout-digital-credit" %}
+             {% include "modules/checkout/checkout-digital-credit" %} 
         </div>
+        {% endcomment %}
     </div>
 
     <div class="mz-formstep-fields mz-l-stack">
@@ -183,10 +184,11 @@
                 <div class="mz-l-formfieldgroup-cell"></div>
             </div>
         </div>
-
+       {% comment %}
         <div class="mz-l-stack-section mz-formfieldgroup-row mz-paymentselector-separator mz-checkoutform">
-            {% include "modules/checkout/checkout-digital-credit" %}
+           {% include "modules/checkout/checkout-digital-credit" %}
         </div>
+       {% endcomment %}
     </div>
 
     <div class="mz-formstep-next">
