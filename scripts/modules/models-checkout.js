@@ -1164,23 +1164,23 @@
 
                     var val = this.validate();
 
-                    if (this.nonStoreCreditTotal() > 0 && val) {
-                        // display errors:
-                    /*
-                    //Might Need 
-                    var error = {"items":[]};
-                    for (var key in val) {
-                        if (val.hasOwnProperty(key)) {
-                            var errorItem = {};
-                            errorItem.name = key;
-                            errorItem.message = key.substring(0, ".") + val[key];
-                            error.items.push(errorItem);
+                    if(this.nonStoreCreditTotal() <= 0 && val) {
+                        var error = {"items":[]};
+                        for (var key in val) {
+                            if (val.hasOwnProperty(key) && key.indexOf("billingContact.email") != -1) {
+                                var errorItem = {};
+                                errorItem.name = key;
+                                errorItem.message = key.substring(0, ".") + val[key];
+                                error.items.push(errorItem);
+                            }
+                        }
+                        if (error.items.length > 0) {
+                            // order.onCheckoutError(error);
+                            return false;
                         }
                     }
-                    if (error.items.length > 0) {
-                        order.onCheckoutError(error);
-                    }
-                    */
+
+                    if (this.nonStoreCreditTotal() > 0 && val) {                    
                         return false;
                     }
 
