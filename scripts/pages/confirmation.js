@@ -14,7 +14,6 @@ define(['modules/api',
           items in the order. The model on the confirmation page will then
           include an array of locationDetails.
           */
-          console.log("Load JS");
           $.cookie('paypal', null);
           $.cookie('GSIPaypal', null);
           $.cookie('PaypalAmnt', null);
@@ -54,7 +53,6 @@ define(['modules/api',
         });
 
           $(document).ready(function(){
-                console.log("V1");
                 var confModel = ConfirmationModel.fromCurrent();
                 confModel.getLocationData().then(function(response){
                   confModel.set('locationDetails', response.data.items);
@@ -71,10 +69,9 @@ define(['modules/api',
                 var order = new orderModel(orderData);
                 var CjUrl = getCjURL(order);
                 var merkelUrl = getMerkelUrl(order);
-                console.log("UL : "+JSON.stringify(merkelUrl));
                 var NewModal = Backbone.Model.extend();
                 var urlModal = new NewModal({CjUrl:CjUrl, merkelUrl: merkelUrl});
-                console.log("JSONSS: "+JSON.stringify(urlModal));
+                // console.log("URL MOdal : "+JSON.stringify(urlModal));
                 var cjView = new CJView({
                     model: urlModal,
                     el: $('#CJIntegration')
@@ -85,7 +82,7 @@ define(['modules/api',
 
           function getCjURL(order){
             var url = "https://www/emjcd.com/tags/c?containerTagId=27891&TYPE=406572&CID=1519664";
-                url = url+"&"+order.id;
+                // url = url+"&"+order.id;
                 var amp = "&";
                 var count = 1;
                 var coupons='';
@@ -112,8 +109,7 @@ define(['modules/api',
                   url = url+amp+"COUPON="+coupons;
                 }
                 // url = url+amp+"COUPON="+order.couponCodes;
-                console.log("URL : "+url);
-                console.log();
+
                 url = '<iframe height="1" width="1" frameborder="0" scrolling="no" src="'+url;
                 if(readCookie(Hypr.getLabel('cjEventCookie'))) {
                   url = url + '&CJEVENT='+readCookie(Hypr.getLabel('cjEventCookie'))+'"';  
@@ -121,6 +117,7 @@ define(['modules/api',
                   url = url + '"';
                 }
                 url = url + ' name="cj_conversion"></iframe>';
+                console.log("URL : "+url);
               return url;
           }
 
@@ -135,12 +132,10 @@ define(['modules/api',
                     url = url+'merklesearch.sendOrder( {';
                     url = url + 'mid: "'+Hypr.getThemeSetting('merkelMid')+'", oid: "'+order.id+'", lid: "'+count+'", ' ;
                     url = url + 'iid:"'+pCode+'", icent:"'+icent+'", ';
-                    url = url + 'iqty: "'+item.quantity+'", iname:"'+escape(item.product.name)+'} );';
+                    url = url + 'iqty: "'+item.quantity+'", iname:"'+escape(item.product.name)+'"} );';
                     count++;
                 });
               url = url +'} catch(e) {} </script>'; 
-
-              console.log("Merkel ULR : "+url);
               return url;
           }
 
