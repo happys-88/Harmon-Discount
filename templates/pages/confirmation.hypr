@@ -101,6 +101,7 @@
         </div>
     </div>
 </div><!-- #order-confirmation -->
+{% comment %}
  <div class="section section-payment">
         <h3 class="mz-l-stack-sectiontitle">Payment Details</h3>
         {% if not(model.payments) %}
@@ -174,7 +175,9 @@
                 {% endfor %}
             </div>
         {% endif %}
+}
 </div>
+{% endcomment %}
 <style>
     {% inline_style "print-order.less" %}
 </style>
