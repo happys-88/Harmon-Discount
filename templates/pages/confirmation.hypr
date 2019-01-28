@@ -35,6 +35,12 @@
             <span class="">Date: </span><span>{{ model.submittedDate|date("m/d/Y H:i:s") }}</span>
         </div>
     </div>
+
+    {% if not user or user.isAnonymous %}
+         <div id="guestUserSignUp"></div>
+    {% endif %}
+
+
     <div class="mz-l-stack row">
         <div class="mz-l-stack-section col-sm-6 col-xs-12">
             <h2 class="mz-l-stack-sectiontitle">{{ labels.payments }}</h2>
