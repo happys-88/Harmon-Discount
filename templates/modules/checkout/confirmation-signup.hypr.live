@@ -32,9 +32,11 @@
                     <span class="mz-validationmessage" data-mz-validationmessage-for="confirmPassword"></span>
                 </div>
             </div>
-            <div class="col-sm-8 col-sm-offset-4">
-                <section id="errorMessageSignUp" class="mz-popover-message"></section>
-                <button type="button" class="mz-button" data-mz-value="submitAccount">{{ labels.saveMyInfo }}</button>
+            <div class="row form-group clearfix">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <section id="errorMessageSignUp" class="mz-popover-message"></section>
+                    <button type="button" class="mz-button" data-mz-value="submitAccount">{{ labels.saveMyInfo }}</button>
+                </div>
             </div>
         </div>
     </div>

@@ -642,15 +642,16 @@
     "shopAllBrands": "Shop All Brands",
 
     //My account
-    "logInMsg"            :    "Welcome back! Please enter your email address and password to sign into your online shopping account.",
+    "logInMsg"            :   "Welcome back! Please enter your email address and password to sign into your online shopping account.",
     "signUpMsg"           :   "Sign up with an email address and password.",
-    "createNewAccount"    : "Create New Account",
-    "forgetPasswordMsg"   :  "Our apologies for any inconvenience trying to login. Let's try and recover your password. To have your password reset, enter the email address associated to your Harmon Discount Explorer account below.",
+    "createNewAccount"    :   "Create New Account",
+    "forgetPasswordMsg"   :   "Our apologies for any inconvenience trying to login. Let's try and recover your password. To have your password reset, enter the email address associated to your Harmon Discount Explorer account below.",
     "clickHere"           :   "Click here",
-    "checkoutAsGuest"     :  "Checkout as guest",
+    "checkoutAsGuest"     :   "Checkout as guest",
     "checkoutAsGuestMsg"  :   "You will have the opportunity to register after placing your order.",
 
-    "cjEventParam"        : "cjevent",
-    "signUpCookie"        : "popupEnabled",
-    "zipCodeEmpty"        : "Zipcode is either empty or invalid"
+    "cjEventParam"        :   "cjevent",
+    "signUpCookie"        :   "popupEnabled",
+    "zipCodeEmpty"        :   "Zipcode is either empty or invalid",
+    "saveMyInfo"          :   "Save My Information"
 }
