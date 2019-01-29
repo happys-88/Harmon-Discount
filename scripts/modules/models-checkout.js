@@ -1185,9 +1185,9 @@
                     }
 
                     var card = this.get('card');
-                if(this.get('paymentType').toLowerCase() === "purchaseorder") {
-                    this.get('purchaseOrder').inflateCustomFields();
-                }
+                    if(this.get('paymentType').toLowerCase() === "purchaseorder") {
+                        this.get('purchaseOrder').inflateCustomFields();
+                    }
 
                     if (!currentPayment) {
                         return this.applyPayment();
@@ -1478,9 +1478,9 @@
                     };
 
                     if (!allDiscounts || !_.find(allDiscounts, matchesCode)) {
-                        me.trigger('error', {
+                       /* me.trigger('error', {
                             message: Hypr.getThemeSetting('multipleCouponMsg')
-                        });
+                        });*/
                         me.set('errorMessage',true);
                     } else if (me.get('total') === 0) {
                         me.trigger('complete');
