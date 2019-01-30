@@ -40,6 +40,11 @@
                             </div>
                         {% endif %}
                     {% endwith %}
+
+                    <div class="col-xs-12 bv-reviews-pdp">   
+                        {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Bazarvoice Reviews & Ratings - BV Widget</span>{% endif %}  
+                        {% dropzone "bv-reviews-pdp" scope="template" %}  
+                    </div> 
                     {% comment %} <div class="col-xs-12">
                         <div class="mz-productcodes-productcode p-3" itemprop="sku">{{ labels.item}} # {{ model.productCode }}</div>
                        {% comment %} <div class="mz-reviews-ratings">
@@ -59,17 +64,7 @@
                         </div>
                     {% endif %} {% endcomment %}
                 </div>
-                {% comment %}
-                <div class="mz-all-review-container">
-                    <span class="mz-reviews-pdp-stars">
-                        {% include "modules/product/product-ratings" %}
-                    </span>
-                    <span class="mz-reviews-pdp-text">
-                        <a href="#">4.9(10) Read a review | Write a review</a>
-                    </span>
-                </div>
-                {% endcomment %}
-            </div>
+            </div> 
             <div class="clearfix"></div>
             <div class="mz-productdetail-wrap">
                 {% if model.productType != themeSettings.familyProductType %}
