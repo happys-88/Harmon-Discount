@@ -4,7 +4,7 @@ require([
 ], function ($, bxSlider) {
     $('#mz-home-slider .slider').ready(function () {
         $('#mz-home-slider .slider').bxSlider({
-            auto: false,
+            auto: true,
             useCSS: false,
             speed: 1000,
             minSlides: 1,
