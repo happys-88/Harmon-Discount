@@ -90,13 +90,9 @@
                     <div class="mz-l-formfieldgroup-cell">
                         <img alt="PayPal" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" align="left" width="100px" height="26px" style="margin-right:7px;">
                     </div>
-
-                   {%if model.billingContact.firstName %}
                     <div class="mz-addresssummary">
                         {% include "modules/common/address-summary" with model=model.billingContact %}
                     </div>
-                   {%endif%}
-
                 </div>
             {%endif%}
 
