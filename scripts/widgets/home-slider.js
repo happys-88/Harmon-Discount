@@ -10,6 +10,7 @@ require([
             minSlides: 1,
             maxSlides: 1,
             moveSlides: 1,
+            pause: 8000,
             slideMargin: 0,
             infiniteLoop: true,
             controls: true,

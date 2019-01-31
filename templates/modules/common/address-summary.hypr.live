@@ -1,4 +1,5 @@
-﻿    <div>{{ model.firstName }} {{ model.lastNameOrSurname }}</div>
+﻿
+    <div>{{ model.firstName }} {{ model.lastNameOrSurname }}</div>
     <div>{{ model.address.address1 }}</div>
     {% if model.address.address2 %}
         <div>{{ model.address.address2 }}</div>
@@ -10,10 +11,10 @@
         <div>{{ model.address.address4 }}</div>
     {% endif %}
     <div>{{ model.address.cityOrTown }} {{ model.address.stateOrProvince }} {{ model.address.postalOrZipCode }}</div>
-    <div>{{ model.address.countryCode }}</div>
-    {% if model.phone %}<div>{{model.phone}}</div>{% endif %}
-    {% if model.address.addressType=="Commercial" %}<div>{{ model.phoneNumbers.home }} (office)</div>{% endif %}
-    {% if model.address.addressType=="Residential" %}<div>{{ model.phoneNumbers.home }} (home)</div>{% endif %}
+        <div>{{ model.address.countryCode }}</div>
+        {% if model.phone %}<div>{{model.phone}}</div>{% endif %}
+        {% if model.address.addressType=="Commercial" %}<div>{{ model.phoneNumbers.home }} (office)</div>{% endif %}
+        {% if model.address.addressType=="Residential" %}<div>{{ model.phoneNumbers.home }} (home)</div>{% endif %}
     {% if model.regularHours %}
         <br>
         {% if model.regularHours.monday.label!="" or model.regularHours.tuesday.label!="" or model.regularHours.wednesday.label!="" or model.regularHours.thursday.label!="" or model.regularHours.friday.label!="" or model.regularHours.saturday.label!="" or model.regularHours.sunday.label!="" %}
