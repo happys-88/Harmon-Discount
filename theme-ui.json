@@ -364,6 +364,16 @@
             "collapsed": false,
             "items": [
                 {
+                    "fieldLabel": "Enable Show More Factes Link", 
+                    "xtype": "mz-input-checkbox",
+                    "name": "showMoreFacets" 
+                },
+                {
+                    "xtype": "mz-input-number",
+                    "name": "showMoreFacetsCount",  
+                    "fieldLabel": "Show more link after number of facets" 
+                }, 
+                {
                     "xtype": "mz-input-textarea",
                     "name": "filterConfiguration",
                     "fieldLabel": "Filter's Configuration of Category Page"
