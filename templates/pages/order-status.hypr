@@ -17,20 +17,22 @@
             <div class="row"> 
                 {% include "modules/common/message-bar" with model=model.messages %}
                 <div class="col-xs-12 col-sm-9 pull-right mz-content"> 
-                    <h3 class="mz-l-stack-sectiontitle">Order Status</h3>   
+                    <h3 class="mz-l-stack-sectiontitle">{{ labels.orderStatusLabel }}</h3>   
                     <div class="mz-track-order-form">
                         <p>Orders placed as a guest or single order lookup</p>
                         <form method="post" class="mz-loginform-page" name="mz-anonymousorder">
                             <input type="hidden" name="order-returnUrl" value="{{ model.returnUrl }}"/>
                             <div class="form-group">
+                                {% comment %}
                                 <div class="col-sm-4">
                                     <label for="ordernum">{{ labels.orderNumber }}</label>
                                 </div>
+                                {% endcomment %}
                                 <div class="col-sm-8">
-                                    <input class="form-control" name="ordernum" value="" type="text" data-mz-order-number />
+                                    <input class="form-control" name="ordernum" value="" type="text" data-mz-order-number placeholder="{{ labels.orderNumber }}" />
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" hidden>
                                 <div class="col-sm-4">
                                     <label for="verifywith">{{ labels.verifyWith }}</label>
                                 </div>
@@ -43,19 +45,21 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                {% comment %}
                                 <div class="col-sm-4">
                                     <label for="verification">{{ labels.verification }}</label>
                                 </div>
+                                {% endcomment %}
                                 <div class="col-sm-8">
-                                    <input class="form-control" name="verification" value="" type="text" data-mz-verification />
+                                    <input class="form-control" name="verification" value="" type="text" data-mz-verification placeholder="{{ labels.billingPostalCode }}" />
                                 </div>
                             </div>
-                            <div class="col-sm-8 col-sm-offset-4">
+                            <div class="col-sm-8">
                                 <section data-mz-role="popover-message" class="mz-popover-message"></section>
                             </div>
                             <div class="form-group">
-                                <div class="col-sm-8 col-sm-offset-4"> 
-                                    <button class="mz-button mz-login-button" data-mz-action="anonymousorder-submit">{{ labels.submit }}</button>
+                                <div class="col-sm-8"> 
+                                    <button class="mz-button" data-mz-action="anonymousorder-submit">{{ labels.submitOrderStatus }}</button>
                                 </div>
                             </div>
                         </form>
