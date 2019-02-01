@@ -96,16 +96,7 @@
     }
 }
 
-// cart page
-.mz-l-pagecontent {
-    h1{
-        &.mz-pagetitle {
-            margin-bottom: 20px;
-            text-transform: none;
-            border-bottom: 0;
-        }
-    }   
-}
+// cart page 
 .mz-table-cart {
     .mz-button-bottom-cart {
         .mz-button {
@@ -126,6 +117,16 @@
 
 .mz-cart {
     font-family: @fontFamily;
+    .mz-l-pagecontent {
+        h1 {
+            &.mz-pagetitle {
+                border-bottom: 1px solid #e0e0e0;
+                float: none;
+                padding-bottom: 10px;
+                text-transform: none;  
+            }
+        }
+    } 
     .mz-button-checkout-cart-top {
         margin-top: 0;
         .mz-button {
@@ -196,7 +197,11 @@
                 margin-right: 15px;
             }
         }
-        .mz-price-total-container{
+        .cart-item-qty {
+            margin: 0;
+        } 
+        .mz-price-total-container{ 
+            padding-left: 15px; 
             .mz-carttable-item-price{
                 span{
                     &.mz-item-price{
