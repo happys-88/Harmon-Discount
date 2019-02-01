@@ -6,11 +6,11 @@
             <tr>
                 <td style="padding:20px;">
 					<dl class="mz-orderheader">
-						<dt>{{ labels.orderNo }}</dt>
-						<dd>{{ model.orderNumber }}</dd>
+						<dt style="display: inline-block; width: 80px;">{{ labels.orderNo }}</dt>
+						<dd style="display: inline-block; width: 360px;">{{ model.orderNumber }}</dd>
 
-						<dt>{{ labels.orderDate }}:</dt>
-						<dd>{{ model.submittedDate }}</dd>
+						<dt style="display: inline-block; width: 80px;">{{ labels.orderDate }}:</dt>
+						<dd style="display: inline-block; width: 360px;">{{ model.submittedDate }}</dd>
 					</dl>
 					<br />
 
@@ -26,7 +26,7 @@
 
 					<table class="mz-ordersummary">
 						<thead>
-							<tr>
+							<tr style="text-align: left">
 								<th class="mz-ordersummary-header-product">Refund Method</th>
 								<th>Amount Refunded</th>
 								<th>Refund Date</th>

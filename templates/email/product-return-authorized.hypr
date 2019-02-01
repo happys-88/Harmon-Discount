@@ -11,14 +11,14 @@
 						<dd><a href="https://{{domainName}}/checkout/{{model.id}}/confirmation">{{ model.orderNumber }}</a></dd>
 						-->
 
-						<dt>{{ labels.return }}</dt>
-						<dd>{{ model.returnNumber }}</dd>
+						<dt style="display: inline-block; width: 150px;">{{ labels.return }}</dt>
+						<dd style="display: inline-block; width: 300px;">{{ model.returnNumber }}</dd>
 
-						<dt>{{ labels.orderDate }}:</dt>
-						<dd>{{ model.order.submittedDate }}</dd>
+						<dt style="display: inline-block; width: 150px;">{{ labels.orderDate }}:</dt>
+						<dd style="display: inline-block; width: 300px;">{{ model.order.submittedDate }}</dd>
 
-						<dt>{{ labels.returnRequestDate }}</dt>
-						<dd>{{ model.rmaDeadline }}</dd>
+						<dt style="display: inline-block; width: 150px;">{{ labels.returnRequestDate }}</dt>
+						<dd style="display: inline-block; width: 300px;">{{ model.rmaDeadline }}</dd>
 					</dl>
 					<br />
 
