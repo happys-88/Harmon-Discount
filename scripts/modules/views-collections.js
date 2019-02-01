@@ -348,12 +348,12 @@ define([
             var parentLi = $(e.currentTarget).parent("span.show-more-link");
             if (parentLi.hasClass("show-less")) {
                 parentLi.find("a").text("More...");
-                parentLi.removeClass("show-less").prev("ul").find("li.mz-hide-text").addClass("hide");
-                parentLi.removeClass("show-less").prev("div").find("div.mz-hide-text").addClass("hide");
+                parentLi.removeClass("show-less").parent("ul").find("li.mz-hide-text").addClass("hide");
+                parentLi.removeClass("show-less").parent("div").find("div.mz-hide-text").addClass("hide");
             } else {
                 parentLi.find("a").text("Less...");
-                parentLi.addClass("show-less").prev("ul").find("li.mz-hide-text").removeClass("hide");
-                parentLi.addClass("show-less").prev("div").find("div.mz-hide-text").removeClass("hide");
+                parentLi.addClass("show-less").parent("ul").find("li.mz-hide-text").removeClass("hide");
+                parentLi.addClass("show-less").parent("div").find("div.mz-hide-text").removeClass("hide");
             }
         }
 
