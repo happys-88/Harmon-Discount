@@ -364,7 +364,7 @@
             "collapsed": false,
             "items": [
                 {
-                    "fieldLabel": "Enable Show More Factes Link", 
+                    "fieldLabel": "Enable Show More Facets Link",  
                     "xtype": "mz-input-checkbox",
                     "name": "showMoreFacets" 
                 },
