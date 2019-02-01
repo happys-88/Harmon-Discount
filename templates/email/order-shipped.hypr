@@ -10,7 +10,7 @@
                     </p>
                     <p style="color: #333;">{{ labels.orderShipmentBlob1|string_format(siteContext.generalSettings.websiteName, domainName, model.fulfillmentInfo.shippingMethodName)|safe }}</p>
 
-                    <p><b>{{ labels.orderNo }}:</b> {{ model.orderNumber }} <a href="https://{{ domainName }}/user/login">{{ labels.checkOrderStatus }}</a></p> 
+                    <p><b>{{ labels.orderNo }}:</b> {{ model.orderNumber }} <a href="https://{{ domainName }}/user/login" style="color: #e20177;">{{ labels.checkOrderStatus }}</a></p> 
                     <p>
                         {% if model.packages %}
                             {% for pkg in model.packages %}
