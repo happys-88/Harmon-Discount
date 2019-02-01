@@ -23,7 +23,8 @@
                 height: @facetColorBox;
                 margin: 3px 10px 7px 0;
                 position: relative;
-                &:after, &:before {
+                &:after,
+                &:before {
                     content: "";
                     display: block;
                     position: absolute;
@@ -42,9 +43,8 @@
                     left: -1px;
                     top: -1px;
                 }
-
-              &.active {
-                  display: block;
+                &.active {
+                    display: block;
                     &:after {
                         border: 1px solid @colorGray;
                     }
@@ -65,7 +65,7 @@
                     position: absolute;
                 }
             }
-            &.show-more-li {
+            &.show-more-link {
                 float: left;
                 width: 100%;
                 .clearfix();
@@ -75,7 +75,7 @@
             text-decoration: none;
             &.show-more {
                 text-transform: uppercase;
-                .permalink(@colorGreen);
+                .permalink(@linkColor);
             }
         }
     }
