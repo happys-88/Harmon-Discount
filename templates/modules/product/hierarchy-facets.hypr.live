@@ -4,7 +4,7 @@
             {% if fval.isDisplayed %}
                 {% for child in fval.childrenFacetValues %}
                     {% if child.isDisplayed and not child.isEmpty %}
-                    <div class="{% if forloop.counter0 >= 1 %}mz-hide-text hide {% endif %}">
+                    <div class="{% if forloop.counter0 >=themeSettings.showMoreFacetsCount and themeSettings.showMoreFacets %}mz-hide-text hide {% endif %}">
                             <div class="sub-category"><a href="{% make_url "facet" child %}" class="mz-facetingform-link" data-mz-action="drillDown" data-mz-hierarchy-id="{{ child.value }}" data-mz-facet-value="{{ child.filterValue }}" data-mz-facet="{{ facet.field }}">{{ child.label|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe }}</a></div>
                             {% if themeSettings.showChildCategoriesInFaceting and child.childrenFacetValues.length > 0 %}
                                 <ul>
@@ -21,7 +21,7 @@
             {% endif %}
         {% endfor %}
 </div>
- {% if  facetValues.0.childrenFacetValues and facetValues.0.childrenFacetValues.length >= 1 %}
+ {% if  facetValues.0.childrenFacetValues and facetValues.0.childrenFacetValues.length > themeSettings.showMoreFacetsCount and themeSettings.showMoreFacets %}
     <span class="show-more-link"><a href="javascript:void(0);" class="show-more">{{labels.navMore}}</a></span>
 {% endif %}
 {% endif %}

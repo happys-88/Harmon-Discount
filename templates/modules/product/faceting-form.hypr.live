@@ -89,9 +89,6 @@
                                             {% include "modules/facets/facet-text" with texts=facet.values and isDirectory=true %}
                                         {% endif %}
                                     </ul>
-                                     {% comment %} {% if facet.values.length > themeSettings.showMoreFacetsCount|subtract(1) and themeSettings.showMoreFacets %}
-                                         <span class="show-more-link"><a href="javascript:void(0);" class="show-more">{{labels.navMore}}</a></span>
-                                    {% endif %} {% endcomment %}
                                 </div>
                             {% endif %}
                         {% endif %}
@@ -119,9 +116,6 @@
                                             {% endif %}
                                      {% endif %}
                                 </ul>
-                                {% comment %} {% if facet.values.length > themeSettings.showMoreFacetsCount||subtract(1) and themeSettings.showMoreFacets %}
-                                    <span class="show-more-link"><a href="javascript:void(0);" class="show-more">{{labels.navMore}}</a></span>
-                                {% endif %} {% endcomment %}
                             </div>
                         {% endif %}
                     {% endif %}

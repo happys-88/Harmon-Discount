@@ -12,6 +12,7 @@
             </li> 
             {% endif %}
 {% endfor %}
-{% if texts.length >themeSettings.showMoreFacetsCount|subtract(1) and themeSettings.showMoreFacets %}
+{% if texts.length >themeSettings.showMoreFacetsCount and themeSettings.showMoreFacets %}
     <span class="show-more-link"><a href="javascript:void(0);" class="show-more">{{labels.navMore}}</a></span>
 {% endif %}
+
