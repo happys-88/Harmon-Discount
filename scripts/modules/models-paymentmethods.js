@@ -264,8 +264,7 @@
                     var data = customFields.find(function(val) {
                         return val.get('code') === field.code;
                     });
-
-                    if (data && data.get('value').length > 0) {
+                    if (typeof data!="undefined" && data.get('value').length > 0) {
                         this.set('pOCustomField-' + field.code, data.get('value'));
                     }
 
