@@ -1,4 +1,4 @@
-require([
+define([
         'modules/jquery-mozu',
         'hyprlive',
         "modules/backbone-mozu",
@@ -8,8 +8,9 @@ require([
     ],
     function($, Hypr, Backbone, ProductModels, Api, OrderModels) {
 
-        $(document).ready(function() {
-
+       
+      var bazaarvoice = {
+        update: function() {
             var res = Api.get('entityList', {
                 listName: 'bvsettings@mzint',
                 id: Api.context.site
@@ -53,7 +54,6 @@ require([
                             });
                         } else if (isROIWidget) {
                             var order = OrderModels.Order.fromCurrent().attributes;
-
                             var bvOrder = {};
                             bvOrder.orderId = order.orderNumber;
                             bvOrder.tax = order.taxTotal;
@@ -120,6 +120,9 @@ require([
                         console.log(jqxhr);
                     });
             });
+        }
+    };
 
-        });
-    });
+        bazaarvoice.update(); 
+  return bazaarvoice;
+});

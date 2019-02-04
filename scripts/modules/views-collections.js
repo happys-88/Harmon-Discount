@@ -14,8 +14,9 @@ define([
     'modules/color-swatches',
     'modules/block-ui',
     'modules/category/infinite-scroller',
-    'modules/general-functions'
-], function(Backbone, $, _, HyprLiveContext, UrlDispatcher, IntentEmitter, getPartialView, colorSwatch, blockUiLoader, InfiniteScroller, generalFunctions) {
+    'modules/general-functions',
+    'widgets/bazaarvoice'
+], function(Backbone, $, _, HyprLiveContext, UrlDispatcher, IntentEmitter, getPartialView, colorSwatch, blockUiLoader, InfiniteScroller, generalFunctions,bazaarvoice) {
     function factory(conf) {
 
         var _$body = conf.$body;
@@ -110,6 +111,7 @@ define([
                 $("#gridView").trigger("click");
             }
             blockUiLoader.unblockUi();
+            bazaarvoice.update();
             $('html,body').animate({
                 scrollTop: $('#products-wrapper').offset().top
             }, 400);
