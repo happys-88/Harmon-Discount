@@ -14,7 +14,7 @@
                               <tbody>
                                  <tr>
                                     <td align="center">
-                                       <img src="https://{{domainName|safe}}/{{themeSettings.defaultStoreImage|safe}}" alt="{{ labels.newUserEmailSalutation|string_format(siteContext.generalSettings.websiteName) }}" height="240" style="display:block;color: #042a47;font-style:italic;font-family:Arial, Helvetica, sans-serif;font-size:32px;line-height:76px;border:0;width:100%;max-width:600px;height:auto;" tabindex="0">
+                                       <img src="{{themeSettings.defaultStoreImage|safe}}" alt="{{ labels.newUserEmailSalutation|string_format(siteContext.generalSettings.websiteName) }}" height="240" style="display:block;color: #042a47;font-style:italic;font-family:Arial, Helvetica, sans-serif;font-size:32px;line-height:76px;border:0;width:100%;max-width:600px;height:auto;" tabindex="0">
                                     </td>
                                  </tr>
                               </tbody>
