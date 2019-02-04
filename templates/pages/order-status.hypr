@@ -17,9 +17,9 @@
             <div class="row"> 
                 {% include "modules/common/message-bar" with model=model.messages %}
                 <div class="col-xs-12 col-sm-9 pull-right mz-content"> 
-                    <h3 class="mz-l-stack-sectiontitle">{{ labels.orderStatusLabel }}</h3>   
+                    <h3 class="mz-l-stack-sectiontitle">{{ labels.orderStatus }}</h3>   
                     <div class="mz-track-order-form">
-                        <p>Orders placed as a guest or single order lookup</p>
+                        <p>{{ labels.orderStatusLabel }}</p>
                         <form method="post" class="mz-loginform-page" name="mz-anonymousorder">
                             <input type="hidden" name="order-returnUrl" value="{{ model.returnUrl }}"/>
                             <div class="form-group">
