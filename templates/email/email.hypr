@@ -158,9 +158,12 @@
                               <tbody>
                                  <tr>
                                     <td align="center" valign="top" style="padding:20px 0 20px 0">
-                                       <a href="https://{{siteContext.domains.primary.domainName}}" target="_blank">
-                                       <img alt="{{ siteContext.generalSettings.websiteName }}" width="230" src="{{ themeSettings.harmonlogo }}" style="display:block;font-family:Arial, Helvetica, sans-serif;color:#323330;font-size:16px;border:0">
-                                       </a>
+                                        <a href="https://{{siteContext.domains.primary.domainName}}" target="_blank">
+                                            <img alt="{{ siteContext.generalSettings.websiteName }}" width="230" src="https://cdn-tp4.mozu.com/26176-40423/resources/images/harmon/logo.png" style="display:block;font-family:Arial, Helvetica, sans-serif;color:#323330;font-size:16px;border:0">
+                                            {% comment %}
+                                            <img alt="{{ siteContext.generalSettings.websiteName }}" width="230" src="https://{{siteContext.domains.primary.domainName}}/{{ themeSettings.harmonlogo }}" style="display:block;font-family:Arial, Helvetica, sans-serif;color:#323330;font-size:16px;border:0">
+                                            {% endcomment %}
+                                        </a>
                                     </td>
                                  </tr>
                               </tbody>
@@ -215,7 +218,10 @@
                               <tbody>                                
                                  <tr> 
                                     <td align="center" valign="top" style="padding:20px 0 5px 0">
-                                       <img alt="HARMON LOGO" src="{{themeSettings.harmonlogo|safe}}" style="display:block;font-family:Arial, Helvetica, sans-serif;color:#323330;font-size:16px;border:0">
+                                        <img alt="HARMON LOGO" src="https://cdn-tp4.mozu.com/26176-40423/resources/images/harmon/logo.png" style="display:block;font-family:Arial, Helvetica, sans-serif;color:#323330;font-size:16px;border:0">
+                                        {% comment %}
+                                        <img alt="HARMON LOGO" src="https://{{siteContext.domains.primary.domainName}}/{{themeSettings.harmonlogo|safe}}" style="display:block;font-family:Arial, Helvetica, sans-serif;color:#323330;font-size:16px;border:0">
+                                        {% endcomment %}
                                     </td>
                                  </tr>
                                  <tr>
