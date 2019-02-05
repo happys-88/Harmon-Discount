@@ -15,7 +15,8 @@
         "session-management": "vendor/sessionManagement/sessionManagement",
         async: "vendor/async/async.min",
         checkimage: "modules/checkImage",
-        slick: "vendor/slick/slick.min"
+        slick: "vendor/slick/slick.min",
+        rti: "modules/category/rti-qview"
     },
     dir: "compiled/scripts/",
     locale: "en-us",
@@ -46,7 +47,8 @@
                 'modules/views-messages',
                 'modules/views-paging',
                 'modules/views-productlists',
-                'vendor/sessionManagement/sessionManagement'
+                'vendor/sessionManagement/sessionManagement',
+                'modules/category/rti-qview'
             ],
             exclude: ['jquery'],
         },

@@ -9,10 +9,14 @@ define([
         var RTIView = Backbone.MozuView.extend({
             templateName: "modules/category/rti-recommendations"
         });
-
-        $(document).ready(function() { 
-            $('.quick-view-btn').click(function(){
-                var prodCode = $(this).attr("data-target"); 
+        var rti = {     
+            update: function() {
+                var self = this;
+                $('.quick-view-btn').click(function(){
+                    self.qvUpdate($(this).attr("data-target"));
+                });
+             },
+             qvUpdate: function(prodCode) {
                 api.request("POST", "/commonRoute", {'prodCode':prodCode}).then(function (response){
                    if(response !== "FAILED") {
                        var StateModel = Backbone.Model.extend();
@@ -53,13 +57,8 @@ define([
                 }, function(err) {
                     console.log("Error : "+JSON.stringify(err));
                 });
-                
-               // Show Bazaar Voice Ratings 
-                setTimeout(function(){ 
-                    var Id = 'BVRRInlineRating-'+prodCode; 
-                    var quickViewReview = $('#'+ Id).html();
-                    $('#BV-Qucik-View').append(quickViewReview); 
-                },1000);   
-            });
-        });
+             }
+        };
+     window.update=rti.update();
+     return rti;
     }); 

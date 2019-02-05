@@ -21,7 +21,8 @@
         "session-management":"vendor/sessionManagement/sessionManagement",
         async: "vendor/async/async.min",
         checkimage: "modules/checkImage",
-        slick: "vendor/slick/slick.min"
+        slick: "vendor/slick/slick.min",
+        rti: "modules/category/rti-qview"
       },
       "shim": {
         bootstrap: {

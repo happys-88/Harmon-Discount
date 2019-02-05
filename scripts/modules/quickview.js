@@ -1,4 +1,4 @@
-define([
+require([
         'modules/jquery-mozu',
         'underscore',
         'hyprlive',
@@ -15,10 +15,10 @@ define([
         'modules/common-functions',
         "modules/api",
         'modules/general-functions',
-        "async"
+        "async",
+        "modules/category/rti-qview"
     ],
-    function($, _, Hypr, hyprlivecontext, ProductModels, CartMonitor, api, Backbone, blockUiLoader, bxslider, ProductImageViews, elevatezoom, colorSwatch, CommonFunctions, Api, generalFunctions, async) {
-
+    function($, _, Hypr, hyprlivecontext, ProductModels, CartMonitor, api, Backbone, blockUiLoader, bxslider, ProductImageViews, elevatezoom, colorSwatch, CommonFunctions, Api, generalFunctions, async, rti) {
         var sitecontext = hyprlivecontext.locals.siteContext;
         var cdn = sitecontext.cdnPrefix;
         var siteID = cdn.substring(cdn.lastIndexOf('-') + 1);
@@ -837,10 +837,16 @@ define([
                         blockUiLoader.unblockUi();
                     }
                 });
-               
+                //Show Bazaar Voice Ratings for Quick View
+                setTimeout(function(){ 
+                    var Id = 'BVRRInlineRating-'+qvProductCode; 
+                    var quickViewReview = $('#'+ Id).html();
+                    $('#BV-Qucik-View').append(quickViewReview); 
+                },1000); 
+                rti.qvUpdate(qvProductCode);
             }
         });
-
+    
         $(document).ready(function() {
             var quickViewView = new QuickViewView({
                 el: 'body'
