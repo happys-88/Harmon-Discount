@@ -238,13 +238,23 @@
 		}
 		.shop-by-brand-list {
 			li {
-			    display: inline-block;
+			   display: inline-block;
+			   padding: 11px 11px;
 			}
 			.brand-logo {
-			    min-height: 52px;
+				min-height: 30px;
+				max-height: 30px;
+				display: table;
 			    a {
+					display: table-cell;
 			    	img {
-					    max-height: 110px;
+					   max-height: 30px;
+					   display: block;
+					   margin: 0 auto;
+					   text-align: center;
+					   &.brand-no-image {
+					   	max-height: 50px;
+					   }
 					}
 				}
 			}

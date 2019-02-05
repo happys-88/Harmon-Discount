@@ -19,7 +19,7 @@
 										{% endfor %}
 									{% else %}
 										<a href='{% make_url "category" brandSubCat %}'>
-											<img src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
+											<img class="brand-no-image" src='{% make_url "cdn" "/cms/files/no-image-hr.jpg" %}' alt="no-image" />
 										</a>
 									{% endif %}	
 								</div>

@@ -192,6 +192,7 @@
 		.in {
             .panel-group {
                 .panel {
+					border-bottom: 1px solid #cbcbcb;
                     .panel-heading {
                         .panel-title{
                             a{
@@ -202,9 +203,12 @@
                         } 
                     }
                 }
-            }
+			}
+			.panel:last-child {
+				border-bottom:none;
+			}
         }
-    }
+      }
 	}
 	.mz-close-nav {
 		background: #495363;
