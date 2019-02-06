@@ -31,15 +31,21 @@
                                                 {% with model|get_product_attribute("tenant~brand") as brandName %}
                                                     <div class="mz-view-all-brand">
                                                        {% for brandcategory in model.categories %}
-                                                         {% if brandcategory.parentCategoryId=="1270" %}
-                                                            <span>{{ labels.viewAll}}</span>
-                                                            <a href='{% make_url "category" brandcategory %}'>{{   brandName.values|first|prop("value") }}</a>
+                                                       {% if  brandcategory.content.name == brandName.values|first|prop("value") %}
+                                                            {% if brandcategory.parentCategoryId=="1270" %}
+                                                                <span>{{ labels.viewAll}}</span>
+                                                                <a href='{% make_url "category" brandcategory %}'>{{   brandName.values|first|prop("value") }}</a>
+                                                            {% endif %}
                                                          {% endif %}
                                                        {% endfor %}
                                                        {% if not model.brandexist %}<span>{{ brandName.values|first|prop("value") }}</span>{% endif %}
                                                     </div >
                                                 {% endwith %}
-                                              
+                                                {% if model.upc %}
+                                                    <div class="mz-upc">
+                                                        <span><strong>UPC :</strong> {{ model.upc }}</span>
+                                                    </div>
+                                                {% endif %}
                                                 <div class="qvPromo" role="button" style="display: none;">
                                                     {{ model|get_product_attribute_value("tenant~Promo") }}
                                                 </div>

@@ -40,7 +40,11 @@
                             </div>
                         {% endif %}
                     {% endwith %}
-
+                    {% if model.upc %}
+                            <div class="col-xs-12 mz-upc">
+                                  <span><strong>UPC : </strong>{{ model.upc }}</span>
+                            </div>
+                    {% endif %}
                     <div class="col-xs-12 bv-reviews-pdp">   
                         {% if pageContext.isEditMode %}<span class="mz-dropzone-heading">Bazarvoice Reviews & Ratings - BV Widget</span>{% endif %}  
                         {% dropzone "bv-reviews-pdp" scope="template" %}  

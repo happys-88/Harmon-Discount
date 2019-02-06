@@ -777,7 +777,7 @@ define(['modules/api', 'modules/backbone-mozu', 'underscore', 'modules/jquery-mo
 
         CartMonitor.setCount(cartModel.count());
 
-        _.invoke(cartViews, 'render');
+       //_.invoke(cartViews, 'render');
 
         renderVisaCheckout(cartModel);
         var querystring = window.location.search.substring(1);
