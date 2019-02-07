@@ -3,6 +3,7 @@
 {% block title-tag-content %}{% firstof pageContext.metaTitle|safe labels.checkout %} - {% parent %}{% endblock title-tag-content %}
 {% block head-tag-scripts %}
 {% parent %}
+<script src="//cdn.polyfill.io/v2/polyfill.min.js?features=find"></script>
 {% if siteContext.checkoutSettings.visaCheckout.isEnabled and not pageContext.isEditMode %}
 {% include "modules/common/anti-clickjacking-script" %}
 {% endif %}

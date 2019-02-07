@@ -11,7 +11,7 @@
     {% include "modules/common/item-return-form" %}
     {% else %}
     {% if item.product.fulfillmentStatus == "Fulfilled" and themeSettings.allowCustomerInitiatedReturns %}
-    <a class="mz-itemlisting-action" href="javascript:;" data-mz-action="startReturnItem" data-mz-order-id="{{ order.id }}" data-mz-start-return="{{ model.id }}">{{ labels.returnOrReplace }}</a>
+    <a class="mz-itemlisting-action" data-mz-action="startReturnItem" data-mz-order-id="{{ order.id }}" data-mz-start-return="{{ model.id }}">{{ labels.returnOrReplace }}</a>
     {% endif %}
     {% endif %}
 {% endblock item-listing-actions %}

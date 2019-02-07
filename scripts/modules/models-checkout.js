@@ -1000,7 +1000,7 @@
                     contacts = order ? order.get('customer').get('contacts') : null;
                 if(purchaseOrderEnabled) {
                     if(currentPurchaseOrder.selected && contacts.length > 0) {
-                        var foundBillingContact = contacts.models.find(function(item){
+                        var foundBillingContact = contacts.models.filter(function(item){
                             return item.get('isPrimaryBillingContact');
                                 
                         });

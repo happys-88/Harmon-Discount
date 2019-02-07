@@ -655,5 +655,9 @@
     "cjEventParam"        :   "cjevent",
     "signUpCookie"        :   "popupEnabled",
     "zipCodeEmpty"        :   "Zipcode is either empty or invalid",
-    "saveMyInfo"          :   "Save My Information"
+    "saveMyInfo"          :   "Save My Information",
+    "noReturnableItems"   :   "No returnable items found",
+    "returnSuccess"       :   "Return initiated successfully",
+    "returnFailure"       :   "Error, please fill all mandatory fields.",
+    "errorGeneric"        :   "Error, please make appropriate selection"
 }
