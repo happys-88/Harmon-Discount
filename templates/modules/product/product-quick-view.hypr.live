@@ -43,7 +43,7 @@
                                                 {% endwith %}
                                                 {% if model.upc %}
                                                     <div class="mz-upc">
-                                                        <span><strong>UPC :</strong> {{ model.upc }}</span>
+                                                        <span><strong>Item # </strong> {{ model.upc }}</span>
                                                     </div>
                                                 {% endif %}
                                                 <div class="qvPromo" role="button" style="display: none;">
