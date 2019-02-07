@@ -190,8 +190,8 @@
             <div id="home-promo-wrapper" class="container-fluid hidden-sm">
                 <div class="row" id="home-promo-below-navigation">
                     <div class="col-xs-12">
-                        <div class="ml-header-global-include-close">
-                            <button aria-label="{{labels.close}}" type="button" id="homePromoCloseBtn" class="glyphicon glyphicon-remove ml-icon-close no-print" data-toggle="collapse" data-target=".ml-global-include-header">
+                        <div class="mz-header-global-include-close">
+                            <button aria-label="{{labels.close}}" type="button" id="homePromoCloseBtn" class="glyphicon glyphicon-remove mz-icon-close no-print" data-toggle="collapse" data-target=".mz-global-include-header">
                                 <span class="hide">Close</span>
                             </button>
                         </div>

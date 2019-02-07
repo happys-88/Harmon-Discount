@@ -1,5 +1,5 @@
 <a class="mz-utilitynav-link mz-utilitynav-link-cart" href="{% make_url "cart" %}">
-    <span class="ml-header-global-cart-count mz-cartmonitor pull-right" data-mz-role="cartcount">0</span>
+    <span class="mz-header-global-cart-count mz-cartmonitor pull-right" data-mz-role="cartcount">0</span>
 	<i class="fa fa-shopping-cart"></i> 
     Cart
 </a>

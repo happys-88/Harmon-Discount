@@ -1,4 +1,4 @@
-<nav class="mz-sitenav collapse" id="ml-nav" aria-label="{{labels.siteNavigation|safe}}">
+<nav class="mz-sitenav collapse" id="mz-nav" aria-label="{{labels.siteNavigation|safe}}">
     <div class="container">
       <div class="mz-close-nav hidden">                         
         <button data-toggle="collapse" data-target="#mz-mobilenav-container" aria-expanded="false"><span></span></button>  

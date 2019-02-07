@@ -1,4 +1,4 @@
-<nav class="ml-navbar-secondary" aria-label="{{labels.mobileNavigation|safe}}">
+<nav class="mz-navbar-secondary" aria-label="{{labels.mobileNavigation|safe}}">
     <div class="container">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         {% partial_cache %}

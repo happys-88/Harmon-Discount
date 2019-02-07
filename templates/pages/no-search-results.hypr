@@ -29,7 +29,7 @@
                                         <input type="hidden" name="categoryId" value="" />
                                     {% endif %}
                                 {% endwith%}
-                                <input id="search-again" type="search" class="mz-searchbox-input ml-header-search-field form-control" autocomplete="off" name="query" placeholder="{{ labels.search }}">
+                                <input id="search-again" type="search" class="mz-searchbox-input mz-header-search-field form-control" autocomplete="off" name="query" placeholder="{{ labels.search }}">
                                 <button class="mz-searchbox-button-footer" type="button"><span class="glyphicon glyphicon-search"></span></button>
                             </span>
                             <div class="mz-search-val" style="display:none;"></div>

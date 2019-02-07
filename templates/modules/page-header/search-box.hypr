@@ -2,7 +2,7 @@
     <span class="mz-searchbox-field{% if not themeSettings.useSearchAutocomplete %} hide-autocomplete{% endif %}">
         <label for="search-field" class="hide" aria-labelledby="search-field">
             <span>{{labels.searchQuery}}</span></label>
-        <input placeholder="Search" aria-label="{{labels.searchQuery}}" id="search-field" type="search" class="mz-searchbox-input ml-header-search-field form-control" autocomplete="off" name="query" data-mz-role="searchquery">
+        <input placeholder="Search" aria-label="{{labels.searchQuery}}" id="search-field" type="search" class="mz-searchbox-input mz-header-search-field form-control" autocomplete="off" name="query" data-mz-role="searchquery">
         <button class="mz-searchbox-button" type="submit">
             <i class="fa fa-search"></i> 
         </button>

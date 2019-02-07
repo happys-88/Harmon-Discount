@@ -14,7 +14,7 @@
 {% preload_json model "order" %}
 
 <div class="mz-l-container" id="mz-confirmation-container">
-    <div class="col-xs-12 hide ml-print-logo">
+    <div class="col-xs-12 hide mz-print-logo">
         <img src='/resources/images/cts-logo-sm.png' alt="CTS_logo">
     </div>
 

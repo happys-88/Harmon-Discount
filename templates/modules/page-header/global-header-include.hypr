@@ -1,8 +1,8 @@
 <div class="container">
 	<div class="row" id="global-header-container">
 		<div class="col-xs-12">
-			<div class="ml-header-global-include-close">
-				<button type="button" id="globalHeaderIncludeCloseBtn" class="glyphicon glyphicon-remove ml-icon-close no-print" data-toggle="collapse" data-target="#global-header-wrapper">
+			<div class="mz-header-global-include-close">
+				<button type="button" id="globalHeaderIncludeCloseBtn" class="glyphicon glyphicon-remove mz-icon-close no-print" data-toggle="collapse" data-target="#global-header-wrapper">
 					<span class="hide">Close Global Header</span>
 				</button>
 			</div>

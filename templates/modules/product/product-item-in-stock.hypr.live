@@ -28,7 +28,7 @@
         <!--Color Swatch-->
         {% for option in model.options %}
             {% if option.attributeFQN=="tenant~color" and option.values.length!=0 %} 
-                <div class="ml-product-swatch mz-sold-out-blur">
+                <div class="mz-product-swatch mz-sold-out-blur">
                     <div class="row">
                         <ul>
                             {% include "modules/facets/facet-color" with allfacets=option.values parent=option isListing="true" as_parameter %}
@@ -39,7 +39,7 @@
         {% endfor %}
     </div>
     <div class="mz-productlisting-info mz-sold-out-blur">
-        <div class="ml-product-info-wrapper">
+        <div class="mz-product-info-wrapper">
             <a class="mz-productlisting-title" href='{% make_url "product" model %}'>{{model.content.productName|safe}}</a>
             {% if model.content.productShortDescription and themeSettings.listProductShortDesc %}
             <p class="mz-productlisting-shortdesc">{{ model.content.productShortDescription|truncatewords(themeSettings.maxProductSummaryWords)|safe }}</p>
@@ -64,7 +64,7 @@
                 {% endif %}
             {% endblock product-extrainfo %}
         </div>
-        <div class="ml-product-price-wrapper">
+        <div class="mz-product-price-wrapper">
             {% include "modules/product/price-stack" %}
         </div>
         <div id="BVRRInlineRating-{{model.productCode}}" class="bvr-inline-rating" data-mz-product-code="{{ model.productCode }}" data-mz-product-url="{{ model.url }}"></div> 
