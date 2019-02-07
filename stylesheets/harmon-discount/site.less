@@ -403,14 +403,12 @@ img[data-mztp] {
             }
             .mz-productlisting-info {
                 .ml-product-info-wrapper {
-                    min-height: 60px;
-                    max-height: 60px;
-                    overflow-y: hidden;
                     .mz-productlisting-title {
+                        display: block;  
                         font-size: 14px;
                         color: @textColorGrey;
-                        line-height: 18px;
                         font-weight: normal;
+                        .multiLineEllipsis(18px, 3);   
                     }
                 }
                 .ml-product-price-wrapper {
@@ -965,8 +963,7 @@ footer {
                 display: block;
                 text-align: center;
                 margin-bottom: 10px;
-                .multiLineEllipsis(18px,
-                3);
+                .multiLineEllipsis(18px, 3);
             }
         }
         .bx-controls-direction {
