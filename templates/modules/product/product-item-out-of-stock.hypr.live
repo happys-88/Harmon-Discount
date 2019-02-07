@@ -24,7 +24,7 @@
     </div>
     <div class="mz-productlisting-info mz-sold-out-blur">
         <div class="mz-product-info-wrapper">
-            <span class="">{{model.content.productName|safe}}</a>
+            <span class="mz-productlisting-title">{{model.content.productName|safe}}</a>
             {% if model.content.productShortDescription and themeSettings.listProductShortDesc %}
             <p class="mz-productlisting-shortdesc">{{ model.content.productShortDescription|truncatewords(themeSettings.maxProductSummaryWords)|safe }}</p>
             {% endif %}
