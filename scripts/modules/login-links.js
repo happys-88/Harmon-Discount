@@ -565,7 +565,7 @@ define(['modules/backbone-mozu', 'shim!vendor/bootstrap/js/popover[shim!vendor/b
         };
     };
     $(document).ready(function() {
-        $(".ml-navbar-secondary .panel-body").each(function() {
+        $(".mz-navbar-secondary .panel-body").each(function() {
             var headingElemnt = $(this).parent().parent().find("a[aria-controls]");
             if ($(this).text().trim() === "" && headingElemnt.data("target")) {
                 headingElemnt.find("span").hide();

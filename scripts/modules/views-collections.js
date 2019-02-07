@@ -205,7 +205,7 @@ define([
         function toggleProductView(_e) {
             var _self = $(_e.currentTarget);
             var toggleButtons = $("button[data-btn-view-toggle]");
-            var toggleListView = $(".ml-list-view-toggle");
+            var toggleListView = $(".mz-list-view-toggle");
             //check if already active
             if (_self.hasClass("active")) {
                 return;
@@ -274,7 +274,7 @@ define([
         //show all colors
         function showMoreColors(_e) {
             var _self = $(_e.currentTarget);
-            var currentProduct = _self.parents(".ml-product-swatch");
+            var currentProduct = _self.parents(".mz-product-swatch");
             _self.parent("li").hide();
             currentProduct.find("li.mz-hide-color").removeClass("mz-hide-color");
         }
