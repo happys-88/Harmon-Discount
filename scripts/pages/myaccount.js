@@ -868,8 +868,8 @@
                 el: $orderHistoryEl.find('[data-mz-orderlist]'),
                 model: orderHistory
             }),
-            orderHistoryPagingControls: new orderHistoryPaging({
-                //templateName: 'modules/my-account/order-history-paging-controls',
+            orderHistoryPagingControls: new PagingViews.PagingControls({
+                templateName: 'modules/my-account/order-history-paging-controls',
                 el: $orderHistoryEl.find('[data-mz-pagingcontrols]'),
                 model: orderHistory
             }),

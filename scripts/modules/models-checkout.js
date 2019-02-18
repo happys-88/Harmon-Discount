@@ -160,7 +160,11 @@
                     if (!this.requiresFulfillmentInfo() && this.requiresDigitalFulfillmentContact()) {
                         return this.nextDigitalOnly();
                     }
-
+                    
+                    var number = this.get('phoneNumbers').get('home');
+                    if(number.indexOf('-') > -1 ) {
+                        this.getOrder().get('fulfillmentInfo').get('fulfillmentContact').get('phoneNumbers').set({'home' : number.replace(/-|\s/g,"")});
+                    }
                     var validationObj = this.validate();
 
                     if (validationObj) {

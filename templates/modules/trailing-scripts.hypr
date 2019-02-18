@@ -1,5 +1,5 @@
 ﻿{% with themeSettings.useDebugScripts|default:pageContext.isDebugMode as debugMode %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.42/polyfill.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.42/polyfill.js" async></script>
 <script src="{{siteContext.cdnPrefix}}/js/require-{% if debugMode %}debug{% else %}min{% endif %}.js"></script>
 <script type="text/javascript">
     require.config({
