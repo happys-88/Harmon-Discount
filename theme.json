@@ -10,7 +10,7 @@
     "allowProduction": true,
     "baseTheme": "https://github.com/happys-88/Harmon-Discount",
     "baseThemeVersion": {
-      "commit": "b885dc397d985f8b1d98b089c688fc9a463ae82d"
+      "commit": "0773146f294c8f096b5f3134dd349ab6633efe21"
     }
   },
   "editors": [
@@ -685,7 +685,7 @@
     "emailSubscriptionUrl": "https://offers.harmondiscount.com/SignupWidget/dynamic/Harmon20160526?email=",
     "contactUsMessageLength": 1000,
     "customerServiceEmail": "support@harmondiscount.com",
-    "customerServiceNumber": "1-877-463-1549",
+    "customerServiceNumber": "1-866-HARMON (1-866-427-6661)",
     "brontoAPIToken": "3F349C54-0ABD-4A94-AF0A-6D8B597BE830",
     "brontoUrl": "https://api.bronto.com/v4?wsdl",
     "enableCaptcha": false,
