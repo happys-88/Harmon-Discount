@@ -15,6 +15,7 @@ require([
             infiniteLoop: true,
             controls: true,
             pager: true,
+            stopAutoOnClick: true,
             hideControlOnEnd: true,
             touchEnabled: true,
             adaptiveHeight: true,
