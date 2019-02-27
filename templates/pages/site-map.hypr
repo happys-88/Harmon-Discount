@@ -11,7 +11,7 @@
     <div class="mz-l-container">
         <h1 class="mz-pagetitle">Site Map</h1>
         {% for link in navigation.tree %}
-            {% if not link.isHidden and not link.isHomePage %}
+            {% if not link.isHidden and not link.isHomePage and link.name!="AllProds"  %}
                 <h3><a href="{{link.url}}">{{link.name|replace(themeSettings.columnBreaker,"")|replace("_"," ")|safe}}</a></h3>
             <div class="row linkwrapper">
                 {% for sublink in link.items %}
