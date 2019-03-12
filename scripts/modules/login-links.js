@@ -56,6 +56,7 @@ define(['modules/backbone-mozu', 'shim!vendor/bootstrap/js/popover[shim!vendor/b
                 msg = Hypr.getLabel("emailExist");
             $(current).parents('.tab-pane').find('[data-mz-role="popover-message"]').html('<span class="mz-validationmessage">' + msg + '</span>');
             $("#login-submit").removeClass("is-loading");
+            $("#signup-submit").removeClass("is-loading");
             //this.newdisplayMessage(current, (xhr.message || (xhr && xhr.responseJSON && xhr.responseJSON.message) || Hypr.getLabel('unexpectedError')));
         },
         onPopoverShow: function() {
